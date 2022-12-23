@@ -3,14 +3,15 @@
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
 ## Issues and Pull Requests
+
 We will use GitHub to manage the project. Any issue (or task) will be created during your team's Sprint Planning. Then once assigned to you, you will have to implement the feature and create a PR.
 
 The PR needs to have at least 2 reviewers from your peers. Once they review it within 24 hours, you can either merge it or, in case changes are requested, you will have to make the changes and then ask for another review.
 
 > ⚠️ Never push to `main` branch. Always use a new issue and PR to merge your work.
 
-
 ## Commits
+
 You should commit on each step and make sure your commits mention the issues it fixes.
 
 Before committing, you need to run linter and prettier:
@@ -25,7 +26,7 @@ yarn lint
 yarn format
 ```
 
-> 💡 This command will format your code using prettier. 
+> 💡 This command will format your code using prettier.
 
 Each commit must have a prettier run before they are staged and committed.
 
@@ -40,16 +41,17 @@ Adding tests to your components maybe hard at the start, you can check [some res
 Showing your employer that you care about writing tests, is a competitive advantage!
 
 ## Reverting Files
-Sometimes, to test our components, we need to edit some files that are not relevant to the issue. 
+
+Sometimes, to test our components, we need to edit some files that are not relevant to the issue.
 
 For example, to test a component, we may need to change `App.js` to show only our component while building it.
 
-You need to make sure that before you commit, you change `App.js` back to how it was before your change. The reviewer can then test your component however they like. 
+You need to make sure that before you commit, you change `App.js` back to how it was before your change. The reviewer can then test your component however they like.
 
 > 💡 Always make sure that the Files Changed tab in the PR has only the relevant files for the issue.
 
-
 ---
+
 ## Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.

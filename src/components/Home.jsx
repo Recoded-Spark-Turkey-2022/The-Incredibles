@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeImage from '../assets/pics/hero.svg';
 import SocialIcons from '../assets/pics/social.svg';
+import Stories from './Stories';
 
 function Home() {
   return (
@@ -19,7 +20,9 @@ function Home() {
           </p>
           <button
             type="button"
-            className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight  rounded-full shadow-md hover:bg-purple-700 hover:shadow-lg my-9"
+            className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
+             rounded-full shadow-md
+             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-9 hover:scale-110"
           >
             Sign Up
           </button>
@@ -28,9 +31,8 @@ function Home() {
           <img src={HomeImage} alt="logo" />
         </div>
       </div>
-      <div name="icons" className=" w-fit ml-14 py-5">
-        <img src={SocialIcons} alt="social-media-icons" />
-      </div>
+
+      <Stories />
     </section>
   );
 }
