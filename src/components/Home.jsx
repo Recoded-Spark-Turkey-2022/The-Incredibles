@@ -27,7 +27,7 @@ function Home() {
             Sign Up
           </button>
         </div>
-        <div name="image">
+        <div name="image" className="mt-14">
           <img src={HomeImage} alt="logo" />
         </div>
       </div>
