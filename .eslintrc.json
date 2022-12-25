@@ -6,6 +6,11 @@
   },
   "extends": ["plugin:react/recommended"],
   "overrides": [],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
