@@ -2,6 +2,7 @@ import React from 'react';
 import HomeImage from '../assets/pics/hero.svg';
 import SocialIcons from '../assets/pics/social.svg';
 import Stories from './Stories';
+import About from './About';
 
 function Home() {
   return (
@@ -31,6 +32,7 @@ function Home() {
           <img src={HomeImage} alt="logo" />
         </div>
       </div>
+      <About />
 
       <Stories />
     </section>
