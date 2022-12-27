@@ -6,7 +6,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
   name="about"
 >
   <div
-    className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 "
+    className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 ... "
     name="about-header"
   >
     <h1
