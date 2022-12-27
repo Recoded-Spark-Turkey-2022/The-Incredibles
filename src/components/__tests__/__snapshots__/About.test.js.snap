@@ -6,60 +6,62 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
   name="about"
 >
   <div
-    className="text-center p-20 mx-10 ..."
+    className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 "
     name="about-header"
   >
     <h1
-      className="text-cyan-600 font-bold text-4xl"
+      className="text-cyan-600 lg:pb-8 font-bold text-4xl max-lg:mb-4"
     >
       About
     </h1>
-    <br />
     <p
-      className="mx-20"
+      className="mx-20 lg:px-40 lg:pb-10"
     >
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla est non repellat officia odio. Ipsam veniam, laudantium dolores praesentium nisi soluta impedit quae, suscipit fugit eveniet, qui tempora fugiat veritatis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nostrum, sint eius voluptatum cum ratione labore expedita similique iste facilis sed totam cupiditate vero inventore reiciendis dolorem dolorum accusantium voluptatibus!
     </p>
-    <br />
     <button
-      className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight  rounded-full shadow-md ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-9 hover:scale-110"
+      className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
+ rounded-full shadow-md
+ ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-5 hover:scale-110"
       type="button"
     >
       Learn More
     </button>
   </div>
   <div
-    className="flex justify-between"
+    className="flex lg:justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:text-center lg:px-20"
     name="about-body"
   >
     <div
-      className="flex justify-start"
+      className="flex lg:justify-start "
       name="cards"
     >
       <div
+        className="lg:"
         name="left-side-cards"
       >
         <div
-          className="p-6 max-w-sm mx-auto space-x-4"
+          className="lg:p-6  max-w-sm mx-auto lg:space-x-4 "
         >
           <h2
-            className="flex justify-start font-bold"
+            className="flex  lg:justify-start lg:font-bold max-lg:flex-col max-lg:items-center"
           >
             <img
               alt="about-star"
-              className="mx-3"
+              className="lg:mx-3 max-lg:w-10"
               src="about-star.svg"
             />
             Reliability
           </h2>
-          <br />
-          <p>
+          <p
+            className="lg:pt-6 flex-wrap"
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cum debitis repellendus placeat maiores eaque corrupti rerum? Reiciendis nisi voluptas corrupti, aspernatur autem est vero necessitatibus optio laudantium rerum numquam.
              
           </p>
         </div>
         <div
-          className="p-6 max-w-sm mx-auto space-x-4"
+          className="lg:p-6 max-w-sm mx-auto space-x-4 max-lg:hidden "
         >
           <h2
             className="flex justify-start font-bold"
@@ -78,10 +80,11 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
         </div>
       </div>
       <div
+        className="max-lg:hidden"
         name="right-side-cards"
       >
         <div
-          className="p-6 max-w-sm mx-auto space-x-4"
+          className="lg:p-6 max-w-sm mx-auto space-x-4 "
         >
           <h2
             className="flex justify-start font-bold"
@@ -99,7 +102,7 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
           </p>
         </div>
         <div
-          className="p-6 max-w-sm mx-auto space-x-4"
+          className="lg:p-6 max-w-sm mx-auto space-x-4"
         >
           <h2
             className="flex justify-start font-bold"
@@ -119,17 +122,18 @@ exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
       </div>
     </div>
     <div
-      className="flex justify-end"
+      className="flex justify-end max-lg:justify-center max-lg:"
       name="side-hero"
     >
       <img
         alt="about-hero"
+        className="max-lg:w-1/2"
         src="about-hero.svg"
       />
     </div>
   </div>
   <div
-    className="carousel-indicators right-0 bottom-0 left-0 flex justify-start pb-20 m-10"
+    className="carousel-indicators right-0 bottom-0 left-0 flex justify-start lg:px-20 pb-20 m-10 max-lg:justify-center"
   >
     <button
       aria-current="true"
