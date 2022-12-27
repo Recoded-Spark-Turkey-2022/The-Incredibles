@@ -1,20 +1,18 @@
-import React from "react";
-import Story from "./Story";
-import Footer from "../../components/Footer";
+import React from 'react';
+import Story from './Story';
 
-// This component will be used for a container for About Page Components 
+// This component will be used as a container for About Page Components
 
 function AboutPage() {
-    return (
-    <div>
-        <Story/>
-        {/* this part is a placeholder for Team component  */}
-        {/* this part is a placeholder for Testimonials */}
-        {/* this part is a placeholder for Partners */}
-        {/* this part is a placeholder for Call to Action */}
-        <Footer/>
+  return (
+    <div name="aboutpage">
+      <Story />
+      {/* this part is a placeholder for Team component  */}
+      {/* this part is a placeholder for Testimonials */}
+      {/* this part is a placeholder for Partners */}
+      {/* this part is a placeholder for Call to Action */}
     </div>
-    )
+  );
 }
 
 export default AboutPage;
