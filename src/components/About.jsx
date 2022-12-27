@@ -7,7 +7,7 @@ function About() {
     <section name="about" className="bg-emerald-50">
       <div
         name="about-header"
-        className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 ... "
+        className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 "
       >
         <h1 className="text-cyan-600 lg:pb-8 font-bold text-4xl max-lg:mb-4">
           About
