@@ -38,7 +38,7 @@ function Home() {
         </div>
       </div>
       <About />
-      <Partners/>
+      <Partners />
       <Stories />
     </section>
   );
