@@ -80,20 +80,20 @@ function Team() {
 
       const memberCard = memberFilter.map((member)=>{
         return(
-            <div key={member.id} >
-                <h3 >{member.name}</h3>
-                <p >{member.occupation}</p>
+            <div key={member.id} className="flex flex-col justify-start p-10">
+                <h3 className="text-xl p-2 font-bold text-cyan-700">{member.name}</h3>
+                <p className="text-xl p-2 text-cyan-700">{member.occupation}</p>
             </div>
         )
       })
 
     return (
-        <section name="team" >
-            <h2 >Our Team</h2>
-            <div name="country-filter" >
+        <section name="team" className="bg-emerald-50 min-h-screen">
+            <h2 className="text-center text-5xl pt-20 pb-20 font-bold text-cyan-700">Our Team</h2>
+            <div name="country-filter" className="flex justify-center pt-10">
                 {renderBtn}
             </div>
-            <div name="team" >
+            <div name="team" className="flex flex-wrap justify-center p-20">
                 {memberCard}
             </div>
         </section>
