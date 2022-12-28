@@ -12,7 +12,7 @@ function Partners() {
         'recoded',
     ]
   return (
-    <div className=''>
+    <div className='pt-8 max-lg:pt-0'>
         <h1 className='text-center font-bold text-3xl'>Our Partners</h1>
         <div className='flex justify-center flex-col overflow-hidden px-4'>
             <div className='w-full flex justify-center'>
