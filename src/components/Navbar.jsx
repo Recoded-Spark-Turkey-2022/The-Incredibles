@@ -38,8 +38,8 @@ function Navbar() {
         name="sid-bar"
         className={
           open
-            ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 border-2 h-screen absolute bg-white'
-            : 'md:hidden  '
+            ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 h-screen absolute bg-white'
+            : 'md:hidden'
         }
       >
         <button type="button" onClick={() => setOpen(!open)}>
