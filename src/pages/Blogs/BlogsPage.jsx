@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchIcon from '../../assets/pics/blogpage/searchIcon.svg';
 import BlogCard from './BlogCard';
 import Slider from 'react-slick';
