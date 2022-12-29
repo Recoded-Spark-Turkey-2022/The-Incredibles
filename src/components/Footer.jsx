@@ -33,7 +33,7 @@ function Footer() {
       <div className="flex max-lg:pb-10 max-lg:ml-10">
         <button
           type="button"
-          className=" h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
+          className=" h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
         >
