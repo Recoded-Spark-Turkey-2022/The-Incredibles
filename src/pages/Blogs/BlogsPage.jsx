@@ -16,23 +16,22 @@ function BlogsPage() {
       {
         breakpoint: 760,
         settings: {
-          slidesToShow:2,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: false,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 450,
         settings: {
-          slidesToShow:1,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: false,
-          dots: true
-        }
+          dots: true,
+        },
       },
-    ]
-    
+    ],
   };
   //temporary data
   const blogs = [
@@ -133,16 +132,20 @@ function BlogsPage() {
         </div>
       </div>
       <div>
-        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">Popular:</h1>
-        <div className='max-lg:pr-4' >
+        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+          Popular:
+        </h1>
+        <div className="max-lg:pr-4">
           <Slider {...settings}>
             {blogs.map((blog) =>
               blog.state === 'popular' ? <BlogCard key={blog.title} /> : null
             )}
           </Slider>
         </div>
-        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">Read also:</h1>
-        <div className='max-lg:pr-4' >
+        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+          Read also:
+        </h1>
+        <div className="max-lg:pr-4">
           <Slider {...settings}>
             {blogs.map((blog) =>
               blog.state === 'normal' ? <BlogCard key={blog.title} /> : null
