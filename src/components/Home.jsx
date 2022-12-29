@@ -2,6 +2,7 @@ import React from 'react';
 import HomeImage from '../assets/pics/hero.svg';
 import Stories from './Stories';
 import About from './About';
+import Partners from './Partners';
 
 function Home() {
   return (
@@ -37,7 +38,7 @@ function Home() {
         </div>
       </div>
       <About />
-
+      <Partners />
       <Stories />
     </section>
   );

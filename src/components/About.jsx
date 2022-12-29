@@ -105,7 +105,7 @@ function About() {
         </div>
       </div>
 
-      <div className="carousel-indicators right-0 bottom-0 left-0 flex justify-start lg:px-20 pb-20 m-10 max-lg:justify-center">
+      <div className="carousel-indicators right-0 bottom-0 left-0 hidden max-lg:flex justify-start lg:px-20 pb-20 m-10 max-lg:justify-center">
         <button
           data-bs-target="#carouselDarkVariant"
           data-bs-slide-to="0"
