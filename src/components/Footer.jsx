@@ -23,7 +23,7 @@ function Footer() {
     </Link>
   ));
   return (
-    <div className="lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
+    <div className="  lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
       <div className=" lg:flex lg:flex-row lg:pt-4 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center ">
         <div>
           <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />

@@ -99,7 +99,7 @@ function About() {
         </div>
         <div
           name="side-hero"
-          className="flex justify-end max-lg:justify-center max-lg:"
+          className="flex justify-end max-lg:justify-center "
         >
           <img src={AboutHero} alt="about-hero" className="max-lg:w-1/2" />
         </div>
