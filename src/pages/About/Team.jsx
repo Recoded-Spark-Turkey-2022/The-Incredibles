@@ -70,7 +70,14 @@ function Team() {
         ? 'rounded-full inline-block w-32 py-1 border-solid border-2 lg:border-cyan-700 lg:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300'
         : 'rounded-full w-32 py-1 mx-1 text-xl font-bold lg:text-cyan-700 lg:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50';
     return (
-      <div key={country} className={country=== 'View All'?'max-lg:hidden p-3 flex justify-center':"p-3 flex justify-center"}>
+      <div
+        key={country}
+        className={
+          country === 'View All'
+            ? 'max-lg:hidden p-3 flex justify-center'
+            : 'p-3 flex justify-center'
+        }
+      >
         <button className={className} onClick={() => setCategory(country)}>
           {country}
         </button>
@@ -106,10 +113,14 @@ function Team() {
       </h2>
       <div name="toggle-button" className="text-center pt-5">
         <button
-          onClick={() => {setShow((s) => !s), setCategory('View All')}}
-          className={show
-             ?"rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 lg:hidden"
-             :"rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 lg:hidden"}
+          onClick={() => {
+            setShow((s) => !s), setCategory('View All');
+          }}
+          className={
+            show
+              ? 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 lg:hidden'
+              : 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 lg:hidden'
+          }
         >
           {!show ? 'Show All' : 'Hide'}
         </button>
