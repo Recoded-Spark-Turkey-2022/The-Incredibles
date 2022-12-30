@@ -1,4 +1,4 @@
-import React from "react";
+
 import ReactDom from "react-dom";
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -31,6 +31,7 @@ function Login(){
 
     return(
          <>
+         <div>
         <h1>Login</h1>
         <form  className="LoginForm" onSubmit={handleSubmit}>
         <input
@@ -48,10 +49,8 @@ function Login(){
       <button  onClick={onLogin} type='button'>Login</button>
 
       </form>
+      </div>
       </>
-
-
-
 
 
     )
