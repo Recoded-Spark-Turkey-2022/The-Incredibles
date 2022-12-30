@@ -3,9 +3,6 @@ import HomeImage from '../assets/pics/hero.svg';
 import SocialIcons from '../assets/pics/social.svg';
 import { Link } from 'react-router-dom';
 import Signup from "../pages/Signup";
-
-
-
 import Stories from './Stories';
 import About from './About';
 import Partners from './Partners';

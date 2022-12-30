@@ -6,7 +6,7 @@ import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-// import Login from './pages/Login';
+import Login from './pages/Login';
 import Signup from './pages/Signup';
 // import { AuthProvider } from "./AuthProvider";
 
@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* { <Route exact path="/login" element={<Login />} /> */}
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<Blog />} />
