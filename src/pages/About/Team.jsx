@@ -70,7 +70,7 @@ function Team() {
         ? 'rounded-full inline-block w-32 py-1 border-solid border-2 lg:border-cyan-700 lg:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300'
         : 'rounded-full w-32 py-1 mx-1 text-xl font-bold lg:text-cyan-700 lg:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50';
     return (
-      <div key={country} className="p-3 flex justify-center">
+      <div key={country} className={country=== 'View All'?'max-lg:hidden p-3 flex justify-center':"p-3 flex justify-center"}>
         <button className={className} onClick={() => setCategory(country)}>
           {country}
         </button>
@@ -86,7 +86,7 @@ function Team() {
 
   const memberCard = memberFilter.map((member) => {
     return (
-      <div key={member.id} className="flex flex-col justify-start p-10">
+      <div key={member.id} className="flex flex-col justify-start p-10 ">
         <h3 className="lg:text-xl lg:p-2 font-bold text-cyan-700 sm:text-sm">
           {member.name}
         </h3>
@@ -100,14 +100,16 @@ function Team() {
   //Again, when we put info in firebase, the array used here will be change, but it functions both in lg and sm screens
 
   return (
-    <section name="team" className="bg-emerald-50 min-h-screen min-w-full">
+    <section name="team" className="bg-emerald-50 pb-20 w-screen pt-10">
       <h2 className="text-center text-5xl font-bold text-cyan-700 lg:pb-10 lg:pt-20 sm: pt-5 pb-2">
         Our Team
       </h2>
       <div name="toggle-button" className="text-center pt-5">
         <button
-          onClick={() => setShow((s) => !s)}
-          className="rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 lg:hidden"
+          onClick={() => {setShow((s) => !s), setCategory('View All')}}
+          className={show
+             ?"rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 lg:hidden"
+             :"rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 lg:hidden"}
         >
           {!show ? 'Show All' : 'Hide'}
         </button>
@@ -124,7 +126,7 @@ function Team() {
       </div>
       <div
         name="team-members"
-        className="lg:flex flex-wrap justify-center lg:p-10 sm: hidden"
+        className="lg:flex flex-wrap justify-center lg:ml-20 lg:w-fit sm: hidden"
       >
         {memberCard}
       </div>
