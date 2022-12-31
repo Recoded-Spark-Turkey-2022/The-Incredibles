@@ -2,13 +2,10 @@ import React from 'react';
 import HomeImage from '../assets/pics/hero.svg';
 import SocialIcons from '../assets/pics/social.svg';
 import { Link } from 'react-router-dom';
-import Signup from "../pages/Signup";
+import Signup from '../pages/Signup';
 import Stories from './Stories';
 import About from './About';
 import Partners from './Partners';
-
-
-
 
 function Home() {
   return (
@@ -31,15 +28,13 @@ function Home() {
             <br />I think thats it for now{' '}
           </p>
           <button
-
             type="button"
             className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-9 hover:scale-110"
-            onClick={Signup}>
-
-               <Link to="Signup">Sign Up</Link>
-
+            onClick={Signup}
+          >
+            <Link to="Signup">Sign Up</Link>
           </button>
         </div>
         <div name="image" className="mt-14">

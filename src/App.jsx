@@ -11,13 +11,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 // import { AuthProvider } from "./AuthProvider";
 
-
-
-
 function App() {
   return (
     <div className="App">
-
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
