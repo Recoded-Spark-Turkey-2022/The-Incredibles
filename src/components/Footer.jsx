@@ -9,7 +9,7 @@ function Footer() {
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
     { name: 'Blog', link: '/blog' },
-    { name: 'Contacts', link: '/contact' },
+    { name: 'Contact', link: '/contact' },
   ];
   const linksToDisplay = links.map((link) => (
     <Link
