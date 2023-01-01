@@ -3,6 +3,7 @@ import HomeImage from '../assets/pics/hero.svg';
 import Stories from './Stories';
 import About from './About';
 import Partners from './Partners';
+import Location from './Location';
 
 function Home() {
   return (
@@ -38,6 +39,7 @@ function Home() {
         </div>
       </div>
       <About />
+      <Location />
       <Partners />
       <Stories />
     </section>
