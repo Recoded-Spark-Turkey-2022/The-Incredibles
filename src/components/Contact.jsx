@@ -9,11 +9,8 @@ function Contact() {
   return (
     <div className=" flex flex-col sm:flex-row-reverse justify-center items-center">
       <div className="basis-1/2 m-auto">
-        <img
-          src={largeScreen}
-          srcSet={`${smallScreen}1x ${largeScreen}2x`}
-          className="m-auto"
-        />
+        <img src={largeScreen} className="m-auto hidden sm:flex" />
+        <img src={smallScreen} className="m-auto sm:hidden" />
       </div>
       <div className="basis-1/2 text-center sm:text-left m-auto sm:max-w-xl px-10">
         <h1 className="pb-10 font-bold text-3xl text-cyan-600 sm:text-6xl">
@@ -27,7 +24,7 @@ function Contact() {
           action=""
           className=" pl-1 flex flex-col gap-2 justify-center sm:justify-start "
         >
-          <label className="text-zinc-400	font-light  ">Email</label>
+          <label className="text-zinc-400	font-light text-left ">Email</label>
           <input
             type="email"
             placeholder="hello@gmail.com"
