@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from './pages/About/AboutPage';
-import Contacts from './components/Contacts';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/blogs/blog" element={<Blog />} />
       </Routes>
       <Footer />
