@@ -9,7 +9,7 @@ function Navbar() {
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
     { name: 'Blog', link: '/blogs' },
-    { name: 'Contacts', link: '/contact' },
+    { name: 'Contact', link: '/contact' },
   ];
   const [open, setOpen] = useState(false);
   const linksToDisplay = links.map((link) => (
