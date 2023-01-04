@@ -44,9 +44,6 @@ const Signup = () => {
   return (
     <>
       <div className="w-50 flex items-center justify-center h-50 relative bg-gradient-to-r">
-
-
-
         <div
           className="
 p-6 m-auto bg-white rounded-md shadow-xl   ring-2 ring-white-600 lg:max-w-xl
