@@ -3,7 +3,6 @@
 import React from 'react';
 
 function LocationSlide({ data }) {
-  console.log(data);
   return (
     <div>
       <p className="text-3xl">{data.text}</p>
