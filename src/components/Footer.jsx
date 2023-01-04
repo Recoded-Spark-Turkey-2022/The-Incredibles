@@ -33,7 +33,7 @@ function Footer() {
       </div>
       <div className="flex max-lg:pb-10 max-lg:ml-10 border items-start">
         <div>
-          <Button name='Sign Up' path='/signup' />
+          <Button name="Sign Up" path="/signup" />
         </div>
         <div className="pl-4">
           <div

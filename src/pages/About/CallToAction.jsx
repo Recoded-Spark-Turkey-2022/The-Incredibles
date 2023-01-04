@@ -22,7 +22,7 @@ function CallToAction() {
         </div>
       </div>
       <div>
-      <Button name='Sign Up' path='/signup' />
+        <Button name="Sign Up" path="/signup" />
       </div>
     </div>
   );

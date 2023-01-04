@@ -28,8 +28,8 @@ function Home() {
             for now I will just leave it like this and we can decide later{' '}
             <br />I think thats it for now{' '}
           </p>
-          <div className='my-9'>
-          <Button name='Sign Up' path='/signup' />
+          <div className="my-9">
+            <Button name="Sign Up" path="/signup" />
           </div>
         </div>
         <div name="image" className="mt-14">

@@ -23,8 +23,8 @@ function About() {
           labore expedita similique iste facilis sed totam cupiditate vero
           inventore reiciendis dolorem dolorum accusantium voluptatibus!
         </p>
-        <div className='my-9'>
-        <Button name='Learn More' path='about' />
+        <div className="my-9">
+          <Button name="Learn More" path="about" />
         </div>
       </div>
       <div
