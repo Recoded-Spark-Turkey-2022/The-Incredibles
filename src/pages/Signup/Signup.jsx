@@ -25,7 +25,7 @@ const Signup = () => {
         });
       }
     );
-    navigate('/');
+    navigate('/blogs');
   }
   const handleSubmit = (e) => {
     e.preventDefault();
