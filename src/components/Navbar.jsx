@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from './Button';
 import Logo from '../assets/pics/logo.svg';
 import Menu from '../assets/pics/menu-button.svg';
 import BackAroww from '../assets/pics/backArrow.svg';
@@ -27,12 +28,17 @@ function Navbar() {
   ));
   return (
     <div>
-      <nav className="lg:my-10 lg:mx-24  md:my-5 md:mx-10  md:flex justify-between hidden">
-        <div className="flex">
-          <img src={Logo} alt="logo" />
-          <h1 className="ml-3 font-bold text-cyan-600 text-xl">Refubook</h1>
+      <nav className="lg:my-10 lg:mx-16  md:my-5 md:mx-10  md:flex justify-between hidden">
+        <div className="flex items-center">
+          <img src={Logo} alt="logo" className="w-6" />
+          <h1 className="ml-1 font-bold text-cyan-600 text-xl">Refubook</h1>
         </div>
-        <div>{linksToDisplay}</div>
+        <div className="flex items-center ">
+          {linksToDisplay}
+          <div>
+            <Button name="Sign Up" path="/signup" />
+          </div>
+        </div>
       </nav>
       <nav
         name="sid-bar"

@@ -6,6 +6,7 @@ import Partners from './Partners';
 import Location from './Location';
 import Signup from '../pages/Signup/Signup';
 import { Link } from 'react-router-dom';
+import Button from './Button';
 
 function Home() {
   return (
@@ -27,15 +28,9 @@ function Home() {
             for now I will just leave it like this and we can decide later{' '}
             <br />I think thats it for now{' '}
           </p>
-          <button
-            onClick={Signup}
-            type="button"
-            className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-9 hover:scale-110"
-          >
-            <Link to="Signup">Sign Up</Link>
-          </button>
+          <div className='my-9'>
+          <Button name='Sign Up' path='/signup' />
+          </div>
         </div>
         <div name="image" className="mt-14">
           <img src={HomeImage} alt="logo" className="" />
