@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import ChangePhoto from "../../assets/pics/profilepage/changepic.svg";
 
+
 function MyAccountDetails() {
-  const [username, setUsername] = useState("");
-  const [usersurname, setUsersurname] = useState("");
-  const [biography, setBiography] = useState('');
-  const [location, setLocation] = useState("");
-  const [photo, setPhoto] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    usersurname: "",
+    biography: "",
+    location: "",
+    photo: ""
+  })
 
   function handleSubmit(event) {
     event.preventDefault()  
+  }
+
+  function handleChange(event) {
+    const key = event.target.id
+    const value = event.target.value
+    
+    setFormData({ 
+      ...formData, 
+      [key]: value
+    })
   }
 
   return (
@@ -19,20 +32,20 @@ function MyAccountDetails() {
           <form onSubmit={handleSubmit} className="lg:p-40 lg:m-40">
             
             <label 
-              className="hidden block text-sky-500 text-sm font-bold mb-2"
+              className="block text-sky-500 text-sm font-bold mb-2"
               htmlFor="userphoto"
             >
               Upload Photo
             </label>
             <input
-              type="file"
-              name="userphoto"
-              className='hidden shadow appearance-none border rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              value={photo}
-              onChange={(e) => setPhoto(e.target.files[0])}
+              type="text"
+              id="photo"
+              className='shadow appearance-none border rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              value={formData.photo}
+              onChange={handleChange}
             />
-            <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
-              <img className="lg:w-1/5 m-auto" src={ChangePhoto || photo} alt="avatar-preview"/>
+            <div className="flex flex-col items-center lg:pb-20 max-lg:p-10 rounded-full">
+              <img className="m-auto h-40 w-40" src={formData.photo || ChangePhoto} alt="avatar-preview"/>
               <h2 className="p-5 font-bold text-lg">User Name</h2>
             </div>
 
@@ -46,10 +59,10 @@ function MyAccountDetails() {
                 </label>
                 <input 
                   type="text" 
-                  name="username" 
+                  id="username" 
                   className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                  value={username} 
-                  onChange={e => setUsername(e.target.value)} 
+                  value={formData.username} 
+                  onChange={handleChange} 
                 />
               </div>
               <div name="usersurname" className='flex flex-col'>
@@ -61,10 +74,10 @@ function MyAccountDetails() {
                 </label>
                 <input 
                   type="text" 
-                  name="usersurname" 
+                  id="usersurname" 
                   className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                  value={usersurname} 
-                  onChange={e => setUsersurname(e.target.value)} 
+                  value={formData.usersurname} 
+                  onChange={handleChange} 
                 />
               </div>
             </div>
@@ -78,9 +91,9 @@ function MyAccountDetails() {
             <textarea
               rows={1}
               className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              name="biography"
-              value={biography}
-              onChange={e => setBiography(e.target.value)}
+              id="biography"
+              value={formData.biography}
+              onChange={handleChange}
             />
             
             <label 
@@ -91,10 +104,10 @@ function MyAccountDetails() {
             </label>
             <input 
               type="text" 
-              name="location" 
+              id="location" 
               className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-              value={location} 
-              onChange={e => setLocation(e.target.value)} 
+              value={formData.location} 
+              onChange={handleChange} 
             />
 
             <div name="formbuttons" className='flex flex-row justify-center p-2'>
