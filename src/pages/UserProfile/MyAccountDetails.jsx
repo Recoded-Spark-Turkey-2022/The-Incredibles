@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import ChangePhoto from "../../assets/pics/profilepage/changepic.svg";
-
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+} from "@material-tailwind/react";
 
 function MyAccountDetails() {
   const [formData, setFormData] = useState({
@@ -26,29 +30,33 @@ function MyAccountDetails() {
   }
 
   return (
-    <section name="myaccountdetails" className="bg-sky-300 lg:p-10 max-lg:p-5">
+    <section name="myaccountdetails" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
-        <div className="max-lg:p-10">          
-          <form onSubmit={handleSubmit} className="lg:p-40 lg:m-40">
-            
-            <label 
-              className="block text-sky-500 text-sm font-bold mb-2"
-              htmlFor="userphoto"
-            >
-              Upload Photo
-            </label>
-            <input
-              type="text"
-              id="photo"
-              className='shadow appearance-none border rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              value={formData.photo}
-              onChange={handleChange}
-            />
-            <div className="flex flex-col items-center lg:pb-20 max-lg:p-10 rounded-full">
-              <img className="m-auto h-40 w-40" src={formData.photo || ChangePhoto} alt="avatar-preview"/>
-              <h2 className="p-5 font-bold text-lg">User Name</h2>
-            </div>
-
+        <div className="lg:p-28 max-lg:p-3">          
+          <form onSubmit={handleSubmit} className="lg:mx-40 lg:px-28">
+            <Popover placement="top">
+              <PopoverHandler className="relative">
+              <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
+                <img className="m-auto h-40 w-40" src={formData.photo || ChangePhoto} alt="avatar-preview"/>
+              </div>
+              </PopoverHandler>
+              <PopoverContent className='absolute'>
+                <label 
+                  className="block text-sky-500 text-sm font-bold mb-2"
+                  htmlFor="userphoto"
+                >
+                  Upload Photo
+                </label>
+                <input
+                  type="text"
+                  id="photo"
+                  className='shadow appearance-none border rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                  value={formData.photo}
+                  onChange={handleChange}
+                />
+              </PopoverContent>
+            </Popover>
+              <h2 className="p-5 font-bold text-lg text-center">Name Surname</h2>
             <div name="usernameholder" className='flex lg:flex-row max-lg:flex-col justify-between w-full'>
               <div name="username" className='flex flex-col'>
                 <label 
