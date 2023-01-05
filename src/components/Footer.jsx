@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 import Logo from '../assets/pics/logo.svg';
 import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
@@ -30,15 +31,10 @@ function Footer() {
         </div>
         <div className="max-lg:pb-10 text-xl">{linksToDisplay}</div>
       </div>
-      <div className="flex max-lg:pb-10 max-lg:ml-10">
-        <button
-          type="button"
-          className=" h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
-        >
-          Sign Up
-        </button>
+      <div className="flex max-lg:pb-10 max-lg:ml-10 items-start">
+        <div>
+          <Button name="Sign Up" path="/signup" />
+        </div>
         <div className="pl-4">
           <div
             onClick={() => setOpen(!open)}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../components/Button';
 import callToActionImg from '../../assets/pics/aboutpage/aboutpgCallToAction.svg';
 
 function CallToAction() {
@@ -21,14 +22,7 @@ function CallToAction() {
         </div>
       </div>
       <div>
-        <button
-          type="button"
-          className=" h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
-        >
-          Sign Up
-        </button>
+        <Button name="Sign Up" path="/signup" />
       </div>
     </div>
   );

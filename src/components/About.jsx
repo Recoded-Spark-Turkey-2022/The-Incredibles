@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 import AboutHero from '../assets/pics/about-hero.svg';
 import AboutStar from '../assets/pics/about-star.svg';
 
@@ -22,15 +23,9 @@ function About() {
           labore expedita similique iste facilis sed totam cupiditate vero
           inventore reiciendis dolorem dolorum accusantium voluptatibus!
         </p>
-
-        <button
-          type="button"
-          className="inline-block px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
-        rounded-full shadow-md
-        ease-in duration-300 hover:bg-purple-700 hover:shadow-lg my-5 hover:scale-110"
-        >
-          Learn More
-        </button>
+        <div className="my-9">
+          <Button name="Learn More" path="about" />
+        </div>
       </div>
       <div
         name="about-body"
