@@ -9,6 +9,10 @@ import BlogsPage from './pages/Blogs/BlogsPage';
 import Blog from './pages/Blogs/Blog';
 import Signup from './pages/Signup/Signup';
 import Signin from './pages/Signup/Signin';
+import MyAccount from './pages/UserProfile/MyAccount';
+import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
+import WriteBlog from './pages/UserProfile/WriteBlog';
+import UserDetails from './pages/UserProfile/UserDetails';
 
 function App() {
   return (
@@ -22,6 +26,13 @@ function App() {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs/blog" element={<Blog />} />
+        <Route path="/signin/:id/myaccount" element={<MyAccount />} />
+        <Route
+          path="/signin/:id/myaccount/myaccountdetails"
+          element={<MyAccountDetails />}
+        />
+        <Route path="/signin/:id/write" element={<WriteBlog />} />
+        <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
       <Footer />
     </div>
