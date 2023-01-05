@@ -31,7 +31,7 @@ function Footer() {
         </div>
         <div className="max-lg:pb-10 text-xl">{linksToDisplay}</div>
       </div>
-      <div className="flex max-lg:pb-10 max-lg:ml-10 border items-start">
+      <div className="flex max-lg:pb-10 max-lg:ml-10 items-start">
         <div>
           <Button name="Sign Up" path="/signup" />
         </div>
