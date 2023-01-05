@@ -27,7 +27,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs/blog" element={<Blog />} />
         <Route path="/signin/:id/myaccount" element={<MyAccount />} />
-        <Route path="/signin/:id/myaccount/myaccountdetails" element={<MyAccountDetails/>} />
+        <Route
+          path="/signin/:id/myaccount/myaccountdetails"
+          element={<MyAccountDetails />}
+        />
         <Route path="/signin/:id/write" element={<WriteBlog />} />
         <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
