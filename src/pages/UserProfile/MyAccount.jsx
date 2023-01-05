@@ -88,7 +88,7 @@ function MyAccount() {
     <section name="myaccount" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
         <div className="lg:p-28 lg:pb-10 max-lg:p-3">
-          <div className="flex flex-col items-center lg:pb-20 max-lg:p-10" onClick={() => navigate('/myaccount/myaccountdetails')}>
+          <div className="flex flex-col items-center lg:pb-20 max-lg:p-10" onClick={() => navigate('/signin/:id/myaccount/myaccountdetails')}>
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img className="lg:w-1/5 m-auto" src={UserPhoto} />
             <h2 className="p-5 font-bold text-lg">User Name</h2>

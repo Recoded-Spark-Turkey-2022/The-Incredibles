@@ -6,7 +6,7 @@ function MyAccountCard() {
   const navigate = useNavigate();
   return (
     <div
-      onClick={() => navigate('/write')}  //this part navigates user to WriteBlog, when it has route, this might be modified
+      onClick={() => navigate('/signin/:id/write')}  //this part navigates user to WriteBlog, when sign in come, this might be modified
       className="group h-1/4 border mx-6 max-lg:mx-4 mb-6 rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]"
     >
       <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
