@@ -12,7 +12,6 @@ function WriteBlog() {
       const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
       uploadBytes(imageRef, media).then((snapshot) => {
         getDownloadURL(snapshot.ref).then(async (url) => {
-          console.log(url);
           const docRef = await addDoc(collection(db, 'blogs'), {
             title: title,
             subTitle: subTitle,
@@ -46,12 +45,11 @@ function WriteBlog() {
 
   const handleMediaChange = (event) => {
     setMedia(event.target.files[0]);
-    console.log(event.target.files[0]);
   };
 
   return (
     <div>
-      <img src={media} />
+      
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-9/12 m-auto max-sm:text-center"
         onSubmit={handleSubmit}
