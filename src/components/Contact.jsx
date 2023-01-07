@@ -4,10 +4,12 @@ import smallScreen from '../assets/pics/contactPage/smallScreen.svg';
 import faceIcon from '../assets/pics/contactPage/faceIcon.svg';
 import instaIcon from '../assets/pics/contactPage/instaIcon.svg';
 import twitterIcon from '../assets/pics/contactPage/twitterIcon.svg';
+import WriteBlog from '../pages/UserProfile/WriteBlog';
 
 function Contact() {
   return (
     <div>
+      <WriteBlog />
       <div className="m-auto w-9/12 flex flex-col sm:flex-row-reverse justify-center items-center">
         <div className="basis-1/2 m-auto w-6/12">
           <img src={largeScreen} className="m-auto hidden sm:flex" />
