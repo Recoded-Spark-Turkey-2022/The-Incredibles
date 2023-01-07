@@ -31,7 +31,7 @@ function App() {
           path="/signin/:id/myaccount/myaccountdetails"
           element={<MyAccountDetails />}
         />
-        <Route path="/write" element={<WriteBlog />} />
+        <Route path="/myaccount/write" element={<WriteBlog />} />
         <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
       <Footer />

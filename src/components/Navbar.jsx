@@ -14,7 +14,7 @@ function Navbar() {
   const links = user
     ? [
         { name: 'Home', link: '/blogs' },
-        { name: 'write', link: '/write' },
+        { name: 'Write', link: '/myaccount/write' },
         { name: 'My Account', link: '/myaccount' },
       ]
     : [
