@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from './pages/About/AboutPage';
-import Contact from './components/Contact';
+import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer';
-import Home from './components/Home';
+import Home from './pages/Home/Home';
 import Navbar from './components/Navbar';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import Blog from './pages/Blogs/Blog';
@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/Signin" element={<Signin />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<Contact />} />

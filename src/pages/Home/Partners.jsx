@@ -1,5 +1,5 @@
 import React from 'react';
-import Partner from '../assets/pics/partner.svg';
+import Partner from '../../assets/pics/homepage/partner.svg';
 
 function Partners() {
   const partners = [

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import Logo from '../assets/pics/logo.svg';
+import Logo from '../assets/pics/navbar/logo.svg';
 import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 

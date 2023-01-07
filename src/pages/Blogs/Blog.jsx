@@ -5,7 +5,7 @@ import ShareIcon from '../../assets/pics/blogpage/share.svg';
 import FaceIcon from '../../assets/pics/blogpage/faceb.svg';
 import InstaIcon from '../../assets/pics/blogpage/insta.svg';
 import TweterIcon from '../../assets/pics/blogpage/tweter.svg';
-import User from '../../assets/pics/userProfil.svg';
+import User from '../../assets/pics/navbar/userProfil.svg';
 
 function Blog() {
   //temporary data

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Worldmap from '../assets/pics/world-map.svg';
+import Worldmap from '../../assets/pics/homepage/world-map.svg';
 import LocationSlide from './LocationSlide';
 
 function Location() {

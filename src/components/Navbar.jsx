@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
-import Logo from '../assets/pics/logo.svg';
-import Menu from '../assets/pics/menu-button.svg';
-import BackAroww from '../assets/pics/backArrow.svg';
-import UserProfile from '../assets/pics/userProfil.svg';
+import Logo from '../assets/pics/navbar/logo.svg';
+import Menu from '../assets/pics/navbar/menu-button.svg';
+import BackAroww from '../assets/pics/navbar/backArrow.svg';
+import UserProfile from '../assets/pics/navbar/userProfil.svg';
 function Navbar() {
   const links = [
     { name: 'Home', link: '/' },
