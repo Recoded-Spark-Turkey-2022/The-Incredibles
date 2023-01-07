@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
-import Logo from '../assets/pics/logo.svg';
-import Menu from '../assets/pics/menu-button.svg';
-import BackAroww from '../assets/pics/backArrow.svg';
-import UserProfile from '../assets/pics/userProfil.svg';
+import Logo from '../assets/pics/navbar/logo.svg';
+import Menu from '../assets/pics/navbar/menu-button.svg';
+import BackAroww from '../assets/pics/navbar/backArrow.svg';
+import UserProfile from '../assets/pics/navbar/userProfil.svg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Navbar() {
   const links = user
     ? [
         { name: 'Home', link: '/blogs' },
-        { name: 'write', link: '/write' },
+        { name: 'Write', link: '/myaccount/write' },
         { name: 'My Account', link: '/myaccount' },
       ]
     : [

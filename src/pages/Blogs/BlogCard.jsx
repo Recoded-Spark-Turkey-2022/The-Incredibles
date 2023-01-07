@@ -1,5 +1,5 @@
 import React from 'react';
-import User from '../../assets/pics/userProfil.svg';
+import User from '../../assets/pics/navbar/userProfil.svg';
 import { useNavigate } from 'react-router-dom';
 
 function BlogCard() {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from './Button';
-import AboutHero from '../assets/pics/about-hero.svg';
-import AboutStar from '../assets/pics/about-star.svg';
+import Button from '../../components/Button';
+import AboutHero from '../../assets/pics/homepage/about-hero.svg';
+import AboutStar from '../../assets/pics/homepage/about-star.svg';
 
 function About() {
   return (

@@ -1,14 +1,14 @@
 import React from 'react';
-import HomeImage from '../assets/pics/hero.svg';
+import HomeImage from '../../assets/pics/homepage/hero.svg';
 import Stories from './Stories';
 import About from './About';
 import Partners from './Partners';
 import Location from './Location';
-import Signup from '../pages/Signup/Signup';
+import Signup from '../Signup/Signup';
 import { Link } from 'react-router-dom';
-import Button from './Button';
+import Button from '../../components/Button';
 
-function Home() {
+function HomePage() {
   return (
     <section name="home">
       <div
@@ -44,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
