@@ -31,7 +31,7 @@ function Location() {
   return (
     <div
       name="main"
-      className=" py-44 px-14 mx-20 flex justify-between  max-lg:flex-col "
+      className="lg:py-44 lg:px-14 mx-20 flex justify-between max-lg:flex-col max-lg:py-10"
     >
       <div name="Photo" className=" h-fit">
         <img src={Worldmap} alt="world-map" />
@@ -39,12 +39,12 @@ function Location() {
 
       <div
         name="paragraphs"
-        className=" h-fit w-1/3 flex justify-center flex-col align-middle "
+        className=" h-fit lg:w-1/3 flex justify-center flex-col align-middle max-lg:mt-5"
       >
         <LocationSlide data={slides[current]} />
 
         {/* points for clicking and slicking */}
-        <div className=" flex pt-4 ">
+        <div className=" flex pt-4 max-lg:justify-center">
           {slides.map((slide, slideIndex) => (
             <div
               key={slideIndex}
