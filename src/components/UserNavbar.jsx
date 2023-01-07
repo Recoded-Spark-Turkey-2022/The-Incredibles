@@ -7,7 +7,7 @@ import UserProfile from '../assets/pics/userProfil.svg';
 
 //created because the structure of this navbar contains different options than NavBar Component
 //will be sticking to pages MyAccount, MyAccountDetails, WriteBlog, UserDetails
-//when user signed in 
+//when user signed in
 //when user sign out will be redirected to Home
 function UserNavbar() {
   const links = [

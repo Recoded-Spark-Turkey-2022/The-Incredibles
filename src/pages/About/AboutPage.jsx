@@ -2,6 +2,8 @@ import React from 'react';
 import Story from './Story';
 import CallToAction from './CallToAction';
 import Team from './Team';
+import Location from '../Home/Location';
+import Partners from '../Home/Partners';
 
 // This component will be used as a container for About Page Components
 
@@ -10,8 +12,8 @@ function AboutPage() {
     <div name="aboutpage">
       <Story />
       <Team />
-      {/* this part is a placeholder for Testimonials */}
-      {/* this part is a placeholder for Partners */}
+      <Location />
+      <Partners />
       <CallToAction />
     </div>
   );
