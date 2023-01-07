@@ -6,16 +6,26 @@ import {
   googleProvider,
   faceBookProvider,
 } from '../../firebase/firebase';
+import {useAuthState} from 'react-firebase-hooks/auth'
+import { useNavigate } from 'react-router-dom';
+
+
+
 function Signup() {
+  const navigate = useNavigate()
+  const [user] = useAuthState(auth)
+  console.log(user)
   const signUpWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
-      .then((res) => console.log(res.user.displayName))
-      .catch((err) => console.log(err));
+    .then(navigate('/blogs'))
+      // .then((res) => console.log(res.user.displayName))
+      // .catch((err) => console.log(err));
   };
   const signUpWithFaceBook = () => {
     signInWithPopup(auth, faceBookProvider)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    .then(navigate('/blogs'))
+      // .then((res) => console.log(res))
+      // .catch((err) => console.log(err));
   };
   return (
     <div>

@@ -26,12 +26,12 @@ function App() {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs/blog" element={<Blog />} />
-        <Route path="/signin/:id/myaccount" element={<MyAccount />} />
+        <Route path="/myaccount" element={<MyAccount />} />
         <Route
           path="/signin/:id/myaccount/myaccountdetails"
           element={<MyAccountDetails />}
         />
-        <Route path="/signin/:id/write" element={<WriteBlog />} />
+        <Route path="/write" element={<WriteBlog />} />
         <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
       <Footer />
