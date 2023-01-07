@@ -5,7 +5,6 @@ import faceIcon from '../assets/pics/contactPage/faceIcon.svg';
 import instaIcon from '../assets/pics/contactPage/instaIcon.svg';
 import twitterIcon from '../assets/pics/contactPage/twitterIcon.svg';
 
-
 function Contact() {
   return (
     <div>

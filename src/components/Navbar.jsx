@@ -5,23 +5,24 @@ import Logo from '../assets/pics/logo.svg';
 import Menu from '../assets/pics/menu-button.svg';
 import BackAroww from '../assets/pics/backArrow.svg';
 import UserProfile from '../assets/pics/userProfil.svg';
-import {useAuthState} from 'react-firebase-hooks/auth'
-import {auth} from '../firebase/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 function Navbar() {
-  const navigate = useNavigate()
-  const[user] = useAuthState(auth)
-  const links = user?[
-    { name: 'Home', link: '/blogs' },
-    { name: 'write', link: '/write' },
-    { name: 'My Account', link: '/myaccount' },
-  ]:
-  [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
-    { name: 'Blog', link: '/blogs' },
-    { name: 'Contact', link: '/contact' },
-  ];
+  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  const links = user
+    ? [
+        { name: 'Home', link: '/blogs' },
+        { name: 'write', link: '/write' },
+        { name: 'My Account', link: '/myaccount' },
+      ]
+    : [
+        { name: 'Home', link: '/' },
+        { name: 'About', link: '/about' },
+        { name: 'Blog', link: '/blogs' },
+        { name: 'Contact', link: '/contact' },
+      ];
   const [open, setOpen] = useState(false);
   const linksToDisplay = links.map((link) => (
     <Link
@@ -45,11 +46,20 @@ function Navbar() {
         </div>
         <div className="flex items-center ">
           {linksToDisplay}
-          {user?
-          <button onClick={()=>{auth.signOut(),navigate('/')}} className='lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-blue-500 duration-500' >Sign out</button>
-          :<div>
-            <Button name="Sign Up" path="/signup" />
-          </div>}
+          {user ? (
+            <button
+              onClick={() => {
+                auth.signOut(), navigate('/');
+              }}
+              className="lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-blue-500 duration-500"
+            >
+              Sign out
+            </button>
+          ) : (
+            <div>
+              <Button name="Sign Up" path="/signup" />
+            </div>
+          )}
         </div>
       </nav>
       <nav

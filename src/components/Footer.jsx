@@ -3,11 +3,11 @@ import Button from './Button';
 import Logo from '../assets/pics/logo.svg';
 import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
-import {auth} from '../firebase/firebase'
-import {useAuthState} from 'react-firebase-hooks/auth'
+import { auth } from '../firebase/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Footer() {
-  const[user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
   const links = [
     { name: 'Home', link: '/' },
@@ -27,7 +27,13 @@ function Footer() {
     </Link>
   ));
   return (
-    <div className={user?'hidden':"lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center"}>
+    <div
+      className={
+        user
+          ? 'hidden'
+          : 'lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center'
+      }
+    >
       <div className=" lg:flex lg:flex-row lg:pt-4 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center ">
         <div>
           <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
