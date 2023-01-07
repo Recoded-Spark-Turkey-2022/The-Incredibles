@@ -8,7 +8,7 @@ import Signup from '../Signup/Signup';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 
-function Home() {
+function HomePage() {
   return (
     <section name="home">
       <div
@@ -44,4 +44,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

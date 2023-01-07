@@ -1,6 +1,31 @@
 import React, { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
+import { db, storage } from '../../firebase/firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 function WriteBlog() {
+  //function to store images in firebase storage
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (media != null) {
+      const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
+      uploadBytes(imageRef, media).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then(async (url) => {
+          const docRef = await addDoc(collection(db, 'blogs'), {
+            title: title,
+            subTitle: subTitle,
+            content: content,
+            mediaURL: url,
+            likes: 0,
+            user_name: null,
+          });
+          alert('Blog submitted successfully');
+        });
+      });
+    }
+  };
+  //
   const [title, setTitle] = useState('');
   const [subTitle, setsubTitle] = useState('');
   const [content, setContent] = useState('');
@@ -20,12 +45,6 @@ function WriteBlog() {
 
   const handleMediaChange = (event) => {
     setMedia(event.target.files[0]);
-    console.log(event.target.files[0]);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // submit the form to firebase
   };
 
   return (
@@ -89,8 +108,9 @@ function WriteBlog() {
           >
             Media (image or video):
           </label>
+
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="file"
             name="media"
             onChange={handleMediaChange}
