@@ -1,36 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signInWithPopup } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
 import {
-  auth,
-  googleProvider,
-  faceBookProvider,
-} from '../../firebase/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+  creatGoogleUser,
+  creatFacebookUser,
+} from '../../features/users/usersSlice';
 
 function Signup() {
-  const navigate = useNavigate();
-  const [user] = useAuthState(auth);
-  console.log(user);
-  const signUpWithGoogle = () => {
-    signInWithPopup(auth, googleProvider).then(navigate('/blogs'));
-    // .then((res) => console.log(res.user.displayName))
-    // .catch((err) => console.log(err));
-  };
-  const signUpWithFaceBook = () => {
-    signInWithPopup(auth, faceBookProvider).then(navigate('/blogs'));
-    // .then((res) => console.log(res))
-    // .catch((err) => console.log(err));
-  };
+  const dispatch = useDispatch();
+
   return (
     <div>
-      {/* <div className='absolute top-0  min-h-screen w-1/2 rounded-r-full bg-cyan-100 opacity-30 z-10  '></div> */}
       <div className="border flex flex-col items-center w-1/2 m-auto p-14 rounded-3xl shadow-[5px_5px_15px_-1px_rgba(0,0,0,0.3)] z-50">
         <h1 className="text-cyan-600 font-bold text-2xl pb-14">SIGN UP WITH</h1>
         <div className="flex justify-center items-center pb-20">
           <button
-            onClick={signUpWithGoogle}
+            onClick={() => dispatch(creatGoogleUser())}
             className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
@@ -41,7 +26,7 @@ function Signup() {
             OR
           </p>
           <button
-            onClick={signUpWithFaceBook}
+            onClick={() => dispatch(creatFacebookUser())}
             className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
