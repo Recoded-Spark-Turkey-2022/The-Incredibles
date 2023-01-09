@@ -1,40 +1,43 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { db } from '../../firebase/firebase';
-import { signInWithPopup } from 'firebase/auth';
-import {
-  auth,
-  googleProvider,
-  faceBookProvider,
-} from '../../firebase/firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase/firebase';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 
-export const creatGoogleUser = createAsyncThunk(
-  'users/creatGoogleUser',
-  async () => {
-    const signIn = await signInWithPopup(auth, googleProvider);
-    const user = doc(db, 'users', signIn.user.uid);
-    setDoc(user, { id: signIn.user.uid, email: signIn.user.email });
-  }
-);
-export const creatFacebookUser = createAsyncThunk(
-  'users/creatFacebookUser',
-  async () => {
-    const signIn = await signInWithPopup(auth, faceBookProvider);
-    const user = doc(db, 'users', signIn.user.uid);
-    setDoc(user, { id: signIn.user.uid, email: signIn.user.email });
+export const creatUser = createAsyncThunk(
+  'user/creatUser',
+  async (provider) => {
+    const signIn = await signInWithPopup(auth, provider);
+    const users = doc(db, 'users', signIn.user.uid);
+    setDoc(users, { id: signIn.user.uid, email: signIn.user.email }, {merge:true});
+    return signIn.user.uid
   }
 );
 
-const initialState = [];
+export const userData = createAsyncThunk(
+  'user/userData',
+  async (data, thunkAPI) => {
+    const users = doc(db, 'users', data.id);
+    setDoc(users, data, { merge: true });
+  }
+);
+export const getUser = createAsyncThunk('user/getUser', async (id) => {
+  const docRef = doc(db, 'users', id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+});
+
+const initialState = { user: {} };
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: 'user',
   initialState,
   extraReducers: {
-    [creatGoogleUser.pending]: (state, action) => {},
-    [creatGoogleUser.fulfilled]: (state, action) => {},
-    [creatGoogleUser.rejected]: (state, action) => {},
+    [getUser.fulfilled]: (state, action) => {
+      state.user = action.payload;
+    },
   },
 });
+export const selectUser = (state) => state.user;
 
 export default usersSlice.reducer;

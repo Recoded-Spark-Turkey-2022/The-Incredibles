@@ -5,18 +5,27 @@ import {
   PopoverHandler,
   PopoverContent,
 } from '@material-tailwind/react';
+import { useDispatch, useSelector } from 'react-redux';
+import { userData, selectUser } from '../../features/users/usersSlice';
+import { useNavigate } from 'react-router-dom';
 
 function MyAccountDetails() {
+  const { user } = useSelector(selectUser);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    username: '',
-    usersurname: '',
-    biography: '',
-    location: '',
-    photo: '',
+    username: user.username ? user.username : '',
+    usersurname: user.usersurname ? user.usersurname : '',
+    biography: user.biography ? user.biography : '',
+    location: user.location ? user.location : '',
+    photo: user.photo ? user.photo : '',
+    id: user.id,
   });
 
   function handleSubmit(event) {
     event.preventDefault();
+    dispatch(userData(formData));
+    navigate('/blogs');
   }
 
   function handleChange(event) {
@@ -28,7 +37,6 @@ function MyAccountDetails() {
       [key]: value,
     });
   }
-
   return (
     <section name="myaccountdetails" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
@@ -60,7 +68,7 @@ function MyAccountDetails() {
                 />
               </PopoverContent>
             </Popover>
-            <h2 className="p-5 font-bold text-lg text-center">Name Surname</h2>
+            <h2 className="p-5 font-bold text-lg text-center"> {user.username ? user.username : ''} {user.usersurname ? user.usersurname : ''} </h2>
             <div
               name="usernameholder"
               className="flex lg:flex-row max-lg:flex-col justify-between w-full"
@@ -129,13 +137,14 @@ function MyAccountDetails() {
               name="formbuttons"
               className="flex flex-row justify-center p-2"
             >
-              <input
+              <button
                 type="submit"
-                value="Save"
                 className="px-10 py-2.5 mr-5 bg-cyan-600 text-white font-medium text-l leading-tight
                 rounded-full shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
-              />
+              >
+                Save
+              </button>
               <button
                 className="px-10 py-2.5 ml-5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
                 rounded-full shadow-md
