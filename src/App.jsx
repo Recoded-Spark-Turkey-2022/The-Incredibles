@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from './pages/About/AboutPage';
 import ContactPage from './pages/Contact/ContactPage';
@@ -13,8 +13,23 @@ import MyAccount from './pages/UserProfile/MyAccount';
 import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
 import UserDetails from './pages/UserProfile/UserDetails';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from './firebase/firebase';
+import { getUser } from './features/users/usersSlice';
+import { useDispatch } from 'react-redux';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
+  // const [user] = useAuthState(auth);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(getUser(user.uid));
+      }
+    });
+  }, [onAuthStateChanged]);
+
   return (
     <div className="App">
       <Navbar />

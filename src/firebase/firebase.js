@@ -4,6 +4,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   FacebookAuthProvider,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
