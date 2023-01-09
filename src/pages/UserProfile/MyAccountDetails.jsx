@@ -25,7 +25,7 @@ function MyAccountDetails() {
   function handleSubmit(event) {
     event.preventDefault();
     dispatch(userData(formData));
-    navigate('/blogs');
+    navigate('/myaccount');
   }
 
   function handleChange(event) {

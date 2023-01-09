@@ -21,8 +21,10 @@ export const creatUser = createAsyncThunk(
 export const userData = createAsyncThunk(
   'user/userData',
   async (data, thunkAPI) => {
-    const users = doc(db, 'users', data.id);
-    setDoc(users, data, { merge: true });
+    const {dispatch} = thunkAPI;
+    const users =  doc(db, 'users', data.id);
+    await setDoc(users, data, { merge: true });
+    dispatch(getUser(data.id))
   }
 );
 export const getUser = createAsyncThunk('user/getUser', async (id) => {
@@ -39,6 +41,7 @@ const usersSlice = createSlice({
   extraReducers: {
     [getUser.fulfilled]: (state, action) => {
       state.user = action.payload;
+      console.log(action)
     },
   },
 });
