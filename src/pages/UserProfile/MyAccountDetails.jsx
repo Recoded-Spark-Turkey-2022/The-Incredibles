@@ -150,6 +150,7 @@ function MyAccountDetails() {
                 Save
               </button>
               <button
+              onClick={()=>{navigate('/myaccount')}}
                 className="px-10 py-2.5 ml-5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
                 rounded-full shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
