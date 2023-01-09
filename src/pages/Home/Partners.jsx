@@ -26,7 +26,7 @@ function Partners() {
           ))}
         </div>
         <div className="w-full hidden max-lg:flex justify-center pb-8">
-          {partners.map((par,i) => (
+          {partners.map((par, i) => (
             <button
               key={i}
               data-bs-target="#carouselDarkVariant"

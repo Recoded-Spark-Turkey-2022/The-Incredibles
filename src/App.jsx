@@ -17,18 +17,18 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase/firebase';
 import { getUser } from './features/users/usersSlice';
 import { useDispatch } from 'react-redux';
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
   // const [user] = useAuthState(auth);
   const dispatch = useDispatch();
   useEffect(() => {
-    onAuthStateChanged(auth,(user)=>{
-      if(user){
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
         dispatch(getUser(user.uid));
       }
-    })
-  },[onAuthStateChanged]);
+    });
+  }, [onAuthStateChanged]);
 
   return (
     <div className="App">

@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 
-
 //temporary data
 const blogs = [
   {
@@ -57,7 +56,7 @@ const blogs = [
 ];
 
 function MyAccount() {
-  const {user} = useSelector(selectUser)
+  const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -96,8 +95,14 @@ function MyAccount() {
             onClick={() => navigate('/signin/:id/myaccount/myaccountdetails')}
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
-            <img className="lg:w-1/5 m-auto" src={user.photo?user.photo:UserPhoto} />
-            <h2 className="p-5 font-bold text-lg">{user.username}{user.usersurname}</h2>
+            <img
+              className="lg:w-1/5 m-auto"
+              src={user.photo ? user.photo : UserPhoto}
+            />
+            <h2 className="p-5 font-bold text-lg">
+              {user.username}
+              {user.usersurname}
+            </h2>
           </div>
           <div>
             <div className="p-5 max-lg:pr-4">

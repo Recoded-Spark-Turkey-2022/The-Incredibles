@@ -9,8 +9,12 @@ export const creatUser = createAsyncThunk(
   async (provider) => {
     const signIn = await signInWithPopup(auth, provider);
     const users = doc(db, 'users', signIn.user.uid);
-    setDoc(users, { id: signIn.user.uid, email: signIn.user.email }, {merge:true});
-    return signIn.user.uid
+    setDoc(
+      users,
+      { id: signIn.user.uid, email: signIn.user.email },
+      { merge: true }
+    );
+    return signIn.user.uid;
   }
 );
 

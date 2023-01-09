@@ -68,7 +68,11 @@ function MyAccountDetails() {
                 />
               </PopoverContent>
             </Popover>
-            <h2 className="p-5 font-bold text-lg text-center"> {user.username ? user.username : ''} {user.usersurname ? user.usersurname : ''} </h2>
+            <h2 className="p-5 font-bold text-lg text-center">
+              {' '}
+              {user.username ? user.username : ''}{' '}
+              {user.usersurname ? user.usersurname : ''}{' '}
+            </h2>
             <div
               name="usernameholder"
               className="flex lg:flex-row max-lg:flex-col justify-between w-full"

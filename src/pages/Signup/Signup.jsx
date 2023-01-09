@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {creatUser} from '../../features/users/usersSlice';
+import { creatUser } from '../../features/users/usersSlice';
 import { googleProvider, faceBookProvider } from '../../firebase/firebase';
 
 function Signup() {
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -14,7 +14,9 @@ function Signup() {
         <h1 className="text-cyan-600 font-bold text-2xl pb-14">SIGN UP WITH</h1>
         <div className="flex justify-center items-center pb-20">
           <button
-            onClick={() => dispatch(creatUser(googleProvider)).then(navigate('/myaccount'))}
+            onClick={() =>
+              dispatch(creatUser(googleProvider)).then(navigate('/myaccount'))
+            }
             className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
@@ -25,7 +27,9 @@ function Signup() {
             OR
           </p>
           <button
-            onClick={() => dispatch(creatUser(faceBookProvider).then(navigate('/myaccount')))}
+            onClick={() =>
+              dispatch(creatUser(faceBookProvider).then(navigate('/myaccount')))
+            }
             className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
