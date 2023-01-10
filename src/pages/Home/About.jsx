@@ -16,11 +16,10 @@ function About() {
 
         <p className="mx-20 lg:px-40 lg:pb-10">
         Welcome to our website! We are a group of volunteers dedicated to helping refugees navigate their new lives and communities. 
-        We understand that the journey to seeking refuge can be incredibly difficult and disorienting, and we want to do everything 
-        we can to make the transition as smooth as possible.Our team is made up of individuals from all walks of life, united in our 
-        belief that everyone deserves a chance at a better future. We offer a range of services, including language classes, 
-        cultural orientation, legal assistance, and support finding housing and employment.We believe in the power of community and 
-        connection, and we strive to create a welcoming and supportive environment for all of our members. 
+        We understand that the journey to seeking refuge can be incredibly difficult and disorienting, and we want to do everything we can to make the transition as smooth as possible. 
+        Our team is made up of individuals from all walks of life, united in our belief that everyone deserves a chance at a better future. 
+        We offer a range of services, including language classes, cultural orientation, legal assistance, and support finding housing and employment. 
+        We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members. 
         Thank you for visiting our website and for considering how you can help make a difference in the lives of refugees.
 
         </p>

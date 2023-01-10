@@ -17,7 +17,7 @@ function Location() {
       author: 'Miray,',
     },
     {
-      text: 'Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause.',
+      text: '"Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause."',
       author: 'Rabia,',
     },
   ];
