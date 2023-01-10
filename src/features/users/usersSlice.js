@@ -6,14 +6,16 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 
 export const creatUser = createAsyncThunk(
   'user/creatUser',
-  async (provider) => {
+  async (provider,thunkAPI) => {
+    const { dispatch } = thunkAPI;
     const signIn = await signInWithPopup(auth, provider);
     const users = doc(db, 'users', signIn.user.uid);
-    setDoc(
+    await setDoc(
       users,
       { id: signIn.user.uid, email: signIn.user.email },
       { merge: true }
     );
+    dispatch(getUser(signIn.user.uid));
     return signIn.user.uid;
   }
 );
