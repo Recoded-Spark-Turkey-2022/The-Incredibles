@@ -3,8 +3,6 @@ import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
 import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
-import BG from '../../assets/pics/profilepage/profilebg.svg';
-import PhoneBG from '../../assets/pics/profilepage/phonebg.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
@@ -99,7 +97,7 @@ function MyAccount() {
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
               className="lg:w-1/5 m-auto"
-              src={currentUser  ? currentUser.photoURL : UserPhoto}
+              src={user.photoURL?user.photoURL: UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
               {user.username}

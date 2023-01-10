@@ -1,12 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { db } from '../../firebase/firebase';
+
 import { signInWithPopup } from 'firebase/auth';
-import { auth } from '../../firebase/firebase';
+import { auth, db, storage } from '../../firebase/firebase';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export const creatUser = createAsyncThunk(
   'user/creatUser',
-  async (provider,thunkAPI) => {
+  async (provider, thunkAPI) => {
     const { dispatch } = thunkAPI;
     const signIn = await signInWithPopup(auth, provider);
     const users = doc(db, 'users', signIn.user.uid);
@@ -23,10 +25,28 @@ export const creatUser = createAsyncThunk(
 export const userData = createAsyncThunk(
   'user/userData',
   async (data, thunkAPI) => {
+    const { profilImg, formData } = data;
+    const { username, usersurname, biography, location, id } = formData;
     const { dispatch } = thunkAPI;
-    const users = doc(db, 'users', data.id);
-    await setDoc(users, data, { merge: true });
-    dispatch(getUser(data.id));
+    if (profilImg) {
+      const imageRef = ref(storage, `usersImages/${profilImg.name + id}`);
+      const snapshot = await uploadBytes(imageRef, profilImg);
+      const photoURL = await getDownloadURL(imageRef);
+      const users = doc(db, 'users', id);
+      await setDoc(
+        users,
+        { photoURL, username, usersurname, biography, location, id },
+        { merge: true }
+      );
+      dispatch(getUser(id));
+    }
+    const users = doc(db, 'users', id);
+    await setDoc(
+      users,
+      { photoURL, username, usersurname, biography, location, id },
+      { merge: true }
+    );
+    dispatch(getUser(id));
   }
 );
 export const getUser = createAsyncThunk('user/getUser', async (id) => {

@@ -8,18 +8,15 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { userData, selectUser } from '../../features/users/usersSlice';
 import { useNavigate } from 'react-router-dom';
-import { storage } from '../../firebase/firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { v4 } from 'uuid';
-import { auth } from '../../firebase/firebase';
-import { updateProfile } from 'firebase/auth';
+
+
 
 function MyAccountDetails() {
-  const currentUser = auth.currentUser;
+  
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [imgUrl, setImgUrl] = useState(ChangePhoto);
+  
   const [formData, setFormData] = useState({
     username: user.username ? user.username : '',
     usersurname: user.usersurname ? user.usersurname : '',
@@ -29,11 +26,7 @@ function MyAccountDetails() {
   });
   const [profilImg, setProfileImg] = useState(null);
 
-  useEffect(() => {
-    if (currentUser?.photoURL) {
-      setImgUrl(currentUser.photoURL);
-    }
-  }, [currentUser]);
+  
 
   function handleImgChange(e) {
     if (e.target.files[0]) {
@@ -43,17 +36,7 @@ function MyAccountDetails() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (profilImg) {
-      const imageRef = ref(storage, `usersImages/${profilImg.name + v4()}`);
-
-      const snapshot = await uploadBytes(imageRef, profilImg);
-      const photoURL = await getDownloadURL(imageRef);
-
-      updateProfile(currentUser, { photoURL });
-    }
-
-    dispatch(userData(formData));
-
+    await dispatch(userData({formData,profilImg}));
     navigate('/myaccount');
   };
 
@@ -76,7 +59,7 @@ function MyAccountDetails() {
                 <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
                   <img
                     className="m-auto h-40 w-40"
-                    src={imgUrl}
+                    src={user.photoURL?user.photoURL:ChangePhoto}
                     alt="avatar-preview"
                   />
                 </div>
