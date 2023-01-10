@@ -24,9 +24,10 @@ function HomePage() {
             Express Freely
           </h2>
           <p className="text-xl">
-            welcome to our project, I do not know what to write here <br />
-            for now I will just leave it like this and we can decide later{' '}
-            <br />I think thats it for now{' '}
+          We believe in the power of community and connection, and we strive <br />
+          to create a welcoming and supportive environment for all of our members. {' '}
+            <br />Welcom to our website! from now thank you for considering how you can 
+            <br />help make a difference in the lives of refugees{' '}
           </p>
           <div className="my-9">
             <Button name="Sign Up" path="/signup" />

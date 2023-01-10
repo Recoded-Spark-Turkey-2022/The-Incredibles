@@ -15,13 +15,14 @@ function About() {
         </h1>
 
         <p className="mx-20 lg:px-40 lg:pb-10">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla est
-          non repellat officia odio. Ipsam veniam, laudantium dolores
-          praesentium nisi soluta impedit quae, suscipit fugit eveniet, qui
-          tempora fugiat veritatis! Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Vitae nostrum, sint eius voluptatum cum ratione
-          labore expedita similique iste facilis sed totam cupiditate vero
-          inventore reiciendis dolorem dolorum accusantium voluptatibus!
+        Welcome to our website! We are a group of volunteers dedicated to helping refugees navigate their new lives and communities. 
+        We understand that the journey to seeking refuge can be incredibly difficult and disorienting, and we want to do everything 
+        we can to make the transition as smooth as possible.Our team is made up of individuals from all walks of life, united in our 
+        belief that everyone deserves a chance at a better future. We offer a range of services, including language classes, 
+        cultural orientation, legal assistance, and support finding housing and employment.We believe in the power of community and 
+        connection, and we strive to create a welcoming and supportive environment for all of our members. 
+        Thank you for visiting our website and for considering how you can help make a difference in the lives of refugees.
+
         </p>
         <div className="my-9">
           <Button name="Learn More" path="about" />
@@ -40,26 +41,22 @@ function About() {
                   alt="about-star"
                   className="lg:mx-3 max-lg:w-10"
                 />
-                Reliability
+                Dependability 
               </h2>
               <p className="lg:pt-6 flex-wrap">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-                cum debitis repellendus placeat maiores eaque corrupti rerum?
-                Reiciendis nisi voluptas corrupti, aspernatur autem est vero
-                necessitatibus optio laudantium rerum numquam.{' '}
+              We are committed to being dependable and trustworthy, 
+              and we work hard to follow through on our commitments 
+              to refugees by giving fresh and truth information.{' '}
               </p>
             </div>
             <div className="lg:p-6 max-w-sm mx-auto space-x-4 max-lg:hidden ">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Efficiency
+                Determination
               </h2>
               <br />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam, quidem sit minus dolore explicabo velit quas
-                temporibus sequi vitae aut ducimus nostrum beatae eveniet atque
-                ullam, quisquam aliquam sed est.
+              We are determined to help refugees overcome obstacles and achieve their goals.
               </p>
             </div>
           </div>
@@ -67,27 +64,22 @@ function About() {
             <div className="lg:p-6 max-w-sm mx-auto space-x-4 ">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Motivation
+                Collaboration
               </h2>
               <br />
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptates, quaerat, molestiae vitae sed aliquid in nostrum
-                laborum obcaecati optio expedita atque ab ipsam veritatis iure
-                iusto similique quibusdam laboriosam sunt.
+              We believe that collaboration is key to achieving success, 
+              and we work with a network of partners and community organizations to support refugees.
               </p>
             </div>
             <div className="lg:p-6 max-w-sm mx-auto space-x-4">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Creativity
+                Productivity
               </h2>
               <br />
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Suscipit ex et commodi consequuntur, vel quis alias perferendis
-                magni minima labore. Totam doloribus incidunt velit odio
-                corrupti beatae quasi minima laudantium.
+              We work efficiently and effectively to help refugees make the most of their opportunities.
               </p>
             </div>
           </div>

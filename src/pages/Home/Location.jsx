@@ -5,19 +5,19 @@ import LocationSlide from './LocationSlide';
 function Location() {
   const slides = [
     {
-      text: 'Two lines of a short testimonial from someone want to say something, and can say more to explain.',
+      text: '"Working with the team at Refubook has been an incredibly rewarding experience. It is heartwarming to see the positive impact we are having on the lives of refugees every day."',
       author: 'Omer,',
     },
     {
-      text: 'onelines of a short testimonial from someone want to say something, and can say more to explain.',
+      text: '"Proud to be a part of the Refubook team and am constantly impressed by the compassion and professionalism of my colleagues. It is a pleasure to work with such a dedicated group of individuals who are committed to making a difference in the lives of refugees"',
       author: 'Ahmad,',
     },
     {
-      text: 'Two lines of a short testimonial from someone want to say something, and can say more to explain.',
+      text: '"As a member of the Refubook team, I am constantly amazed by the impact our work has on the lives of refugees. It is truly fulfilling to be a part of this organization."',
       author: 'Miray,',
     },
     {
-      text: 'three lines of a short testimonial from someone want to say something, and can say more to explain.',
+      text: 'Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause.',
       author: 'Rabia,',
     },
   ];

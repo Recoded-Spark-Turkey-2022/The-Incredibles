@@ -23,16 +23,16 @@ function Stories() {
         />
         <div className="flex flex-col  w-1/3  max-lg:pt-4 max-lg:w-full">
           <label className="w-1/4 max-lg:w-fit text-center p-1 rounded  bg-amber-200 text-cyan-600 font-bold ">
-            Language
+            Job
           </label>
           <h1 className="mt-5 mb-10 text-5xl text-white font-light max-lg:text-2xl ">
-            some words to test bla bla bla and lksjdfl
+          Follow this steps and you will get your first job in Germany as a reugee!
           </h1>
           <div className="flex">
             <div className=" rounded-full w-10 h-10 bg-amber-200 "></div>
             <div className="flex flex-col ml-10 max-lg:ml-4">
-              <p className="text-white font-bold ">Ahmad Fesal</p>
-              <p className="text-zinc-300 font-light">Refugee in Turkey</p>
+              <p className="text-white font-bold ">Khaled Hatem</p>
+              <p className="text-zinc-300 font-light">Refugee in Germany</p>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ function Stories() {
             Language
           </label>
           <h1 className="mt-5 mb-10 text-5xl text-white font-light max-lg:text-2xl">
-            some words to test bla bla bla and lksjdfl
+            Here is how i learned Turkish in just few months!
           </h1>
           <div className="flex">
             <div className=" rounded-full w-10 h-10 bg-amber-200 "></div>

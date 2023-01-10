@@ -8,7 +8,7 @@ function LocationSlide({ data }) {
       <p className="text-3xl max-lg:text-lg max-lg:text-center ">{data.text}</p>
       <p className="pt-8 max-lg:text-center">
         {data.author}
-        <br /> Trainer at Recoded
+        <br /> Refubook Team member
       </p>
     </div>
   );
