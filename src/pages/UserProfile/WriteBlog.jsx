@@ -8,22 +8,41 @@ function WriteBlog() {
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (media != null) {
-      const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
-      uploadBytes(imageRef, media).then((snapshot) => {
-        getDownloadURL(snapshot.ref).then(async (url) => {
-          const docRef = await addDoc(collection(db, 'blogs'), {
-            title: title,
-            subTitle: subTitle,
-            content: content,
-            mediaURL: url,
-            likes: 0,
-            user_name: null,
-          });
-          alert('Blog submitted successfully');
-        });
+
+    const uploadImg = async () => {
+      let url;
+      if (media) {
+        const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
+        const snapshot = await uploadBytes(imageRef, media);
+        url = await getDownloadURL(snapshot.ref);
+        console.log(url);
+      } else {
+        url = null;
+      }
+      console.log(`url:${url}`);
+      return url;
+    };
+    const submit = async () => {
+      const url = await uploadImg();
+      console.log(url);
+      await addDoc(collection(db, 'blogs'), {
+        title: title,
+        subTitle: subTitle,
+        content: content,
+        mediaURL: url,
+        likes: 0,
+        user_name: null,
       });
-    }
+      alert('Blog submitted successfully');
+      setTitle('');
+      setContent('');
+      setMedia(null);
+      setsubTitle('');
+    };
+    submit();
+  
+
+    
   };
   //
   const [title, setTitle] = useState('');
