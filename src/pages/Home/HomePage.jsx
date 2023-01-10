@@ -24,10 +24,14 @@ function HomePage() {
             Express Freely
           </h2>
           <p className="text-xl">
-             We believe in the power of community and connection, and we strive <br />
-             to create a welcoming and supportive environment for all of our members. {' '}
-            <br />Welcom to our website! From now thank you for considering how you can 
-            <br />help make a difference in the lives of refugees! {' '}
+            We believe in the power of community and connection, and we strive{' '}
+            <br />
+            to create a welcoming and supportive environment for all of our
+            members. <br />
+            Welcom to our website! From now thank you for considering how you
+            can
+            <br />
+            help make a difference in the lives of refugees!{' '}
           </p>
           <div className="my-9">
             <Button name="Sign Up" path="/signup" />
