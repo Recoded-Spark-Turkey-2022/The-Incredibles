@@ -26,7 +26,8 @@ function Stories() {
             Job
           </label>
           <h1 className="mt-5 mb-10 text-5xl text-white font-light max-lg:text-2xl ">
-          Follow this steps and you will get your first job in Germany as a reugee!
+            Follow this steps and you will get your first job in Germany as a
+            reugee!
           </h1>
           <div className="flex">
             <div className=" rounded-full w-10 h-10 bg-amber-200 "></div>

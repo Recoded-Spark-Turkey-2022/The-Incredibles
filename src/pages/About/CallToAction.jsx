@@ -14,10 +14,15 @@ function CallToAction() {
         </h4>
         <div className="text-center w-2/4 m-auto pb-3 pt-5 ">
           <p className="text-zinc-400	font-light  ">
-          After years of struggling as a refugee, while I was seeking on internet I found Refubook website and it changed my life immediately finally found a job that allowed me to provide for my family.
-          I worked hard and saved every penny, determined to build a better future for my children.
-          With the help of a kind Refubook community, I was able to put my kids through school and give them opportunities I never had. As I watch them pursue their dreams, I am filled with pride and gratitude for the journey that brought us here with this amazing Refubook members.
-
+            After years of struggling as a refugee, while I was seeking on
+            internet I found Refubook website and it changed my life immediately
+            finally found a job that allowed me to provide for my family. I
+            worked hard and saved every penny, determined to build a better
+            future for my children. With the help of a kind Refubook community,
+            I was able to put my kids through school and give them opportunities
+            I never had. As I watch them pursue their dreams, I am filled with
+            pride and gratitude for the journey that brought us here with this
+            amazing Refubook members.
           </p>
         </div>
       </div>

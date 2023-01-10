@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { creatUser } from '../../features/users/usersSlice';
-import { googleProvider, faceBookProvider } from '../../firebase/firebase';;
+import { googleProvider, faceBookProvider } from '../../firebase/firebase';
 
 function Signin() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function Signin() {
             className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
-             onClick={() =>
+            onClick={() =>
               dispatch(creatUser(googleProvider)).then(navigate('/blogs'))
             }
           >
@@ -27,9 +27,9 @@ function Signin() {
             OR
           </p>
           <button
-          onClick={() =>
-            dispatch(creatUser(faceBookProvider).then(navigate('/blogs')))
-          }
+            onClick={() =>
+              dispatch(creatUser(faceBookProvider).then(navigate('/blogs')))
+            }
             className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
