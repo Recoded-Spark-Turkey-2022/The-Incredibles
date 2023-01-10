@@ -40,9 +40,6 @@ function WriteBlog() {
       setsubTitle('');
     };
     submit();
-  
-
-    
   };
   //
   const [title, setTitle] = useState('');
