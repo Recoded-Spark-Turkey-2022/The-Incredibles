@@ -97,7 +97,7 @@ function MyAccount() {
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
               className="lg:w-1/5 m-auto"
-              src={user.photoURL?user.photoURL: UserPhoto}
+              src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
               {user.username}

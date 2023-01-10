@@ -9,14 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userData, selectUser } from '../../features/users/usersSlice';
 import { useNavigate } from 'react-router-dom';
 
-
-
 function MyAccountDetails() {
-  
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
   const [formData, setFormData] = useState({
     username: user.username ? user.username : '',
     usersurname: user.usersurname ? user.usersurname : '',
@@ -26,8 +23,6 @@ function MyAccountDetails() {
   });
   const [profilImg, setProfileImg] = useState(null);
 
-  
-
   function handleImgChange(e) {
     if (e.target.files[0]) {
       setProfileImg(e.target.files[0]);
@@ -36,7 +31,7 @@ function MyAccountDetails() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await dispatch(userData({formData,profilImg}));
+    await dispatch(userData({ formData, profilImg }));
     navigate('/myaccount');
   };
 
@@ -59,7 +54,7 @@ function MyAccountDetails() {
                 <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
                   <img
                     className="m-auto h-40 w-40"
-                    src={user.photoURL?user.photoURL:ChangePhoto}
+                    src={user.photoURL ? user.photoURL : ChangePhoto}
                     alt="avatar-preview"
                   />
                 </div>
