@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
 import {
   Popover,
@@ -13,20 +13,27 @@ function MyAccountDetails() {
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     username: user.username ? user.username : '',
     usersurname: user.usersurname ? user.usersurname : '',
     biography: user.biography ? user.biography : '',
     location: user.location ? user.location : '',
-    photo: user.photo ? user.photo : '',
     id: user.id,
   });
+  const [profilImg, setProfileImg] = useState(null);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    dispatch(userData(formData));
-    navigate('/blogs');
+  function handleImgChange(e) {
+    if (e.target.files[0]) {
+      setProfileImg(e.target.files[0]);
+    }
   }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await dispatch(userData({ formData, profilImg }));
+    navigate('/myaccount');
+  };
 
   function handleChange(event) {
     const key = event.target.id;
@@ -47,7 +54,7 @@ function MyAccountDetails() {
                 <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
                   <img
                     className="m-auto h-40 w-40"
-                    src={formData.photo || ChangePhoto}
+                    src={user.photoURL ? user.photoURL : ChangePhoto}
                     alt="avatar-preview"
                   />
                 </div>
@@ -60,11 +67,10 @@ function MyAccountDetails() {
                   Upload Photo
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   id="photo"
                   className="shadow appearance-none border rounded-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  value={formData.photo}
-                  onChange={handleChange}
+                  onChange={handleImgChange}
                 />
               </PopoverContent>
             </Popover>
@@ -150,6 +156,9 @@ function MyAccountDetails() {
                 Save
               </button>
               <button
+                onClick={() => {
+                  navigate('/myaccount');
+                }}
                 className="px-10 py-2.5 ml-5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
                 rounded-full shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"

@@ -3,11 +3,10 @@ import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
 import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
-import BG from '../../assets/pics/profilepage/profilebg.svg';
-import PhoneBG from '../../assets/pics/profilepage/phonebg.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
+import { auth } from '../../firebase/firebase';
 
 //temporary data
 const blogs = [
@@ -56,6 +55,7 @@ const blogs = [
 ];
 
 function MyAccount() {
+  const currentUser = auth.currentUser;
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
@@ -97,7 +97,7 @@ function MyAccount() {
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
               className="lg:w-1/5 m-auto"
-              src={user.photo ? user.photo : UserPhoto}
+              src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
               {user.username}
