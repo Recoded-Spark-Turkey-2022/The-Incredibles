@@ -11,11 +11,10 @@ const initialState = {
 export const writeContact = createAsyncThunk(
   'contact/writeContact',
   async (arg, thunkAPI) => {
-    const docRef = await addDoc(collection(db, 'contact'), arg, {
-      merge: true,
-    });
-    console.log(docRef);
-    alert(docRef);
+    //merge is not workin ,,we need to add messages from the same email together
+    const docRef = await addDoc(collection(db, 'contact'), arg, { merge: true });
+    //need to add condition if it is fulfilled then show:
+    alert('Your message submitted successfully!');
   }
 );
 

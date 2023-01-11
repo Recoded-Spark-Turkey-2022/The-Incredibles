@@ -16,7 +16,6 @@ function ContactPage() {
   });
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
-    console.log(formData);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
