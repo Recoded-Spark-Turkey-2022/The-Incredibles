@@ -18,41 +18,6 @@ const blogs = [
     date: 'date',
     id: 0,
   },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 1,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 2,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 3,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 4,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 5,
-  },
 ];
 
 function MyAccount() {
@@ -97,7 +62,7 @@ function MyAccount() {
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
-              className="lg:w-1/5 m-auto"
+              className="lg:w-1/5 m-auto h-40 w-40"
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">

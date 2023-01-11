@@ -1,40 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { blogData, selectBlog } from "../../features/blogs/blogsSlice";
-import { useNavigate } from 'react-router-dom';
-
+import { postBlogs, selectBlog } from "../../features/blogs/blogsSlice";
+import { Navigate, useNavigate } from 'react-router-dom';
+import { selectUser } from '../../features/users/usersSlice';
  
 function WriteBlog() {
   const dispatch = useDispatch();
-  const { blog } = useSelector(selectBlog);
+  const { blogs } = useSelector(selectBlog);
+  const { user } = useSelector(selectUser);
+  console.log(blogs)
 
-  // console.log(blog)
-  //function to store images in firebase storage
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (media != null) {
-      const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
-      uploadBytes(imageRef, media).then((snapshot) => {
-        getDownloadURL(snapshot.ref).then(async (url) => {
-          const docRef = await addDoc(collection(db, 'blogs'), {
-            title: title,
-            subTitle: subTitle,
-            content: content,
-            mediaURL: url,
-            likes: 0,
-            blogID: blogID,
-          });
-          alert('Blog submitted successfully');
-        });
-      });
-    }
-  };
-  //
   const [blogFormData, setBlogFormData] = useState({
-    title: "",
-    subtitle: "",
-    content: "",
-    blogID: "",
+    title: blogs.title ? blogs.title : "",
+    subtitle: blogs.subtitle ? blogs.subtitle : "",
+    content: blogs.content ? blogs.content : "",
+    blogID: blogs.blogID,
+    userID: user.id
   })
   
   const [media, setMedia] = useState(null);
@@ -53,6 +34,11 @@ function WriteBlog() {
     if (event.target.files[0]) {
     setMedia(event.target.files[0])
     }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await dispatch(postBlogs({ postBlogs, media }));
   };
 
   return (
@@ -75,7 +61,7 @@ function WriteBlog() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             name="title"
-            value={title}
+            value={postBlogs.title}
             onChange={handleChange}
           />
         </div>
@@ -90,7 +76,7 @@ function WriteBlog() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             name="subTitle"
-            value={subTitle}
+            value={postBlogs.subtitle}
             onChange={handleChange}
           />
         </div>
@@ -105,7 +91,7 @@ function WriteBlog() {
             rows={8}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="content"
-            value={content}
+            value={postBlogs.content}
             onChange={handleChange}
           />
         </div>
