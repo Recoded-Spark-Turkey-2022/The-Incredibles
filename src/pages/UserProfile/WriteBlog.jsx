@@ -1,44 +1,67 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { postBlogs, selectBlog } from "../../features/blogs/blogsSlice";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { collection, addDoc } from 'firebase/firestore';
+import { db, storage } from '../../firebase/firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { v4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
- 
+
 function WriteBlog() {
-  const dispatch = useDispatch();
-  const { blogs } = useSelector(selectBlog);
   const { user } = useSelector(selectUser);
-  console.log(blogs)
-
-  const [blogFormData, setBlogFormData] = useState({
-    title: blogs.title ? blogs.title : "",
-    subtitle: blogs.subtitle ? blogs.subtitle : "",
-    content: blogs.content ? blogs.content : "",
-    blogID: blogs.blogID,
-    userID: user.id
-  })
-  
-  const [media, setMedia] = useState(null);
-
-  function handleChange(e) {
-    const key = e.target.blogID;
-    const value = e.target.value;
-
-    setBlogFormData({
-      ...blogFormData,
-      [key]: value,
-    })
-  }
-
-  const handleMediaChange = (event) => {
-    if (event.target.files[0]) {
-    setMedia(event.target.files[0])
-    }
-  };
-
+  //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await dispatch(postBlogs({ postBlogs, media }));
+
+    const uploadImg = async () => {
+      let url;
+      if (media) {
+        const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
+        const snapshot = await uploadBytes(imageRef, media);
+        url = await getDownloadURL(snapshot.ref);
+      } else {
+        url = null;
+      }
+      return url;
+    };
+    const submit = async () => {
+      const url = await uploadImg();
+      await addDoc(collection(db, 'blogs'), {
+        title: title,
+        subTitle: subTitle,
+        content: content,
+        mediaURL: url,
+        likes: 0,
+        date: "",
+        userID: user.id,
+      });
+      alert('Blog submitted successfully');
+      setTitle('');
+      setContent('');
+      setMedia(null);
+      setsubTitle('');
+    };
+    submit();
+  };
+  //
+  const [title, setTitle] = useState('');
+  const [subTitle, setsubTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [media, setMedia] = useState(null);
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handlesubTitleChange = (event) => {
+    setsubTitle(event.target.value);
+  };
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
+  const handleMediaChange = (event) => {
+    setMedia(event.target.files[0]);
   };
 
   return (
@@ -61,8 +84,8 @@ function WriteBlog() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             name="title"
-            value={postBlogs.title}
-            onChange={handleChange}
+            value={title}
+            onChange={handleTitleChange}
           />
         </div>
         <div className="mb-4">
@@ -76,8 +99,8 @@ function WriteBlog() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
             name="subTitle"
-            value={postBlogs.subtitle}
-            onChange={handleChange}
+            value={subTitle}
+            onChange={handlesubTitleChange}
           />
         </div>
         <div className="mb-6">
@@ -91,8 +114,8 @@ function WriteBlog() {
             rows={8}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="content"
-            value={postBlogs.content}
-            onChange={handleChange}
+            value={content}
+            onChange={handleContentChange}
           />
         </div>
         <div className="mb-4">

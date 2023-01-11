@@ -6,33 +6,33 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 //Fetch POST blog form data to firebase
-export const postBlogs = createAsyncThunk(
-    'blogs/postBlogs',
-    async (data, thunkAPI) => {
-      const { media, blogFormData } = data;
-      const { blogID, content, subtitle, title, date, likes } = blogFormData;
-      const { dispatch } = thunkAPI;
-      if (media) {
-        const imageRef = ref(storage, `BlogImages/${media.name + blogID}`);
-        const snapshot = await uploadBytes(imageRef, media);
-        const mediaURL = await getDownloadURL(imageRef);
-        const blogs = doc(db, 'blogs', blogID);
-        await setDoc(
-          blogs,
-          { mediaURL, blogID, content, subtitle, title, date, likes },
-          { merge: false }
-        );
-        dispatch(getBlogs(blogID));
-      }
-      const blogs = doc(db, 'blogs', blogID);
-      await setDoc(
-        blogs,
-        { mediaURL, blogID, content, subtitle, title, date, likes },
-        { merge: false }
-      );
-      dispatch(getBlogs(blogID));
-    }
-  );
+// export const postBlogs = createAsyncThunk(
+//     'blogs/postBlogs',
+//     async (data, thunkAPI) => {
+//       const { media, blogFormData } = data;
+//       const { userID, content, subtitle, title, date, likes } = blogFormData;
+//       const { dispatch } = thunkAPI;
+//       if (media) {
+//         const imageRef = ref(storage, `BlogImages/${media.name + userID}`);
+//         const snapshot = await uploadBytes(imageRef, media);
+//         const mediaURL = await getDownloadURL(imageRef);
+//         const blogs = doc(db, 'blogs', userID);
+//         await setDoc(
+//           blogs,
+//           { mediaURL, userID, content, subtitle, title, date, likes },
+//           { merge: false }
+//         );
+//         dispatch(getBlogs(userID));
+//       }
+//       const blogs = doc(db, 'blogs', userID);
+//       await setDoc(
+//         blogs,
+//         { mediaURL, userID, content, subtitle, title, date, likes },
+//         { merge: false }
+//       );
+//       dispatch(getBlogs(userID));
+//     }
+//   );
 
 //Fetch GET data coming from firebase
 export const getBlogs = createAsyncThunk("blogs/getBlogs", async ()=>{

@@ -73,10 +73,10 @@ function MyAccount() {
           <div>
             <div className="p-5 max-lg:pr-4">
               <Slider {...settings}>
-                {blogs.map((blog) => (
-                  <GetBlogs key={blog.blogID} path="/myaccount/write" />
-                  // path is not working now, needs to be fixed
-                ))}
+                {/* {blogs.map((blog) => ( */}
+                  <GetBlogs key={blogs.blogID} path="/myaccount/write" />
+                   {/* path is not working now, needs to be fixed */}
+                {/* ))} */}
               </Slider>
             </div>
           </div>
