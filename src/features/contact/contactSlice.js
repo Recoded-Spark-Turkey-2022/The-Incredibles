@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { db } from '../../firebase/firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { doc, setDoc, arrayUnion } from 'firebase/firestore';
 
 const initialState = {
   uploading: false,
@@ -11,10 +11,11 @@ const initialState = {
 export const writeContact = createAsyncThunk(
   'contact/writeContact',
   async (arg, thunkAPI) => {
-    //merge is not workin ,,we need to add messages from the same email together
-    const docRef = await addDoc(collection(db, 'contact'), arg, { merge: true });
-    //need to add condition if it is fulfilled then show:
-    alert('Your message submitted successfully!');
+    await setDoc(
+      doc(db, 'contactMessages', arg.email),
+      { messages: arrayUnion(arg.message) },
+      { merge: true }
+    );
   }
 );
 
@@ -24,15 +25,13 @@ const contactSlice = createSlice({
   extraReducers: {
     [writeContact.pending]: (state, action) => {
       state.uploading = true;
-      state.error = null;
     },
     [writeContact.fulfilled]: (state, action) => {
       state.uploading = false;
-      state.contact.push(action.payload);
+      alert('Your message submitted successfully');
     },
     [writeContact.rejected]: (state, action) => {
       state.uploading = false;
-      state.error = action.payload;
     },
   },
 });
