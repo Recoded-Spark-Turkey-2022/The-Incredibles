@@ -15,16 +15,13 @@ function WriteBlog() {
         const imageRef = ref(storage, `BlogImages/${media.name + v4()}`);
         const snapshot = await uploadBytes(imageRef, media);
         url = await getDownloadURL(snapshot.ref);
-        console.log(url);
       } else {
         url = null;
       }
-      console.log(`url:${url}`);
       return url;
     };
     const submit = async () => {
       const url = await uploadImg();
-      console.log(url);
       await addDoc(collection(db, 'blogs'), {
         title: title,
         subTitle: subTitle,
