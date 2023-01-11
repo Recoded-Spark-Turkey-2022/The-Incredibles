@@ -4,8 +4,24 @@ import smallScreen from '../../assets/pics/contactPage/smallScreen.svg';
 import faceIcon from '../../assets/pics/contactPage/faceIcon.svg';
 import instaIcon from '../../assets/pics/contactPage/instaIcon.svg';
 import twitterIcon from '../../assets/pics/contactPage/twitterIcon.svg';
+import { useDispatch } from 'react-redux';
+import { writeContact } from '../../features/contact/contactSlice';
+import { useState } from 'react';
 
 function ContactPage() {
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    email: '',
+    message: '',
+  });
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.id]: event.target.value });
+    console.log(formData);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(writeContact(formData));
+  };
   return (
     <div>
       <div className="m-auto w-9/12 flex flex-col sm:flex-row-reverse justify-center items-center">
@@ -22,19 +38,23 @@ function ContactPage() {
             with the introduction.
           </p>
           <form
-            action=""
+            onSubmit={handleSubmit}
             className=" pl-1 flex flex-col gap-2 justify-center sm:justify-start "
           >
             <label className="text-zinc-400	font-light text-left ">Email</label>
             <input
+              id="email"
               type="email"
               placeholder="hello@gmail.com"
               className="border border-solid"
+              onChange={handleChange}
             />
             <textarea
+              id="message"
               placeholder="Message"
               rows={8}
               className="border border-solid"
+              onChange={handleChange}
             ></textarea>
             <input
               type="submit"
