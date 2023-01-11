@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { db, storage } from '../../firebase/firebase';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { v4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import { blogData, selectBlog } from "../../features/blogs/blogsSlice";
+import { useNavigate } from 'react-router-dom';
 
+ 
 function WriteBlog() {
+  const dispatch = useDispatch();
+  const { blog } = useSelector(selectBlog);
+
+  // console.log(blog)
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +22,7 @@ function WriteBlog() {
             content: content,
             mediaURL: url,
             likes: 0,
-            user_name: null,
+            blogID: blogID,
           });
           alert('Blog submitted successfully');
         });
@@ -26,25 +30,29 @@ function WriteBlog() {
     }
   };
   //
-  const [title, setTitle] = useState('');
-  const [subTitle, setsubTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [blogFormData, setBlogFormData] = useState({
+    title: "",
+    subtitle: "",
+    content: "",
+    blogID: "",
+  })
+  
   const [media, setMedia] = useState(null);
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
+  function handleChange(e) {
+    const key = e.target.blogID;
+    const value = e.target.value;
 
-  const handlesubTitleChange = (event) => {
-    setsubTitle(event.target.value);
-  };
-
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
-  };
+    setBlogFormData({
+      ...blogFormData,
+      [key]: value,
+    })
+  }
 
   const handleMediaChange = (event) => {
-    setMedia(event.target.files[0]);
+    if (event.target.files[0]) {
+    setMedia(event.target.files[0])
+    }
   };
 
   return (
@@ -68,7 +76,7 @@ function WriteBlog() {
             type="text"
             name="title"
             value={title}
-            onChange={handleTitleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="mb-4">
@@ -83,7 +91,7 @@ function WriteBlog() {
             type="text"
             name="subTitle"
             value={subTitle}
-            onChange={handlesubTitleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="mb-6">
@@ -98,7 +106,7 @@ function WriteBlog() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="content"
             value={content}
-            onChange={handleContentChange}
+            onChange={handleChange}
           />
         </div>
         <div className="mb-4">

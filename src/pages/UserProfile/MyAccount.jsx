@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { auth } from '../../firebase/firebase';
+import GetBlogs from '../../features/blogs/GetBlogs';
 
 //temporary data
 const blogs = [
@@ -108,7 +109,8 @@ function MyAccount() {
             <div className="p-5 max-lg:pr-4">
               <Slider {...settings}>
                 {blogs.map((blog) => (
-                  <MyAccountCard key={blog.id} />
+                  <GetBlogs key={blog.blogID} path="/myaccount/write" />
+                  // path is not working now, needs to be fixed
                 ))}
               </Slider>
             </div>
