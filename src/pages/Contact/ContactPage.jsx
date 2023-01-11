@@ -23,13 +23,13 @@ function ContactPage() {
   };
   return (
     <div>
-      <div className="m-auto w-9/12 flex flex-col sm:flex-row-reverse justify-center items-center">
+      <div className="m-auto w-9/12 flex flex-col lg:flex-row-reverse justify-center items-center">
         <div className="basis-1/2 m-auto w-6/12">
-          <img src={largeScreen} className="m-auto hidden sm:flex" />
-          <img src={smallScreen} className="m-auto sm:hidden" />
+          <img src={largeScreen} className="m-auto hidden lg:flex" />
+          <img src={smallScreen} className="m-auto lg:hidden" />
         </div>
-        <div className=" basis-1/2  h-min w-11/12 text-center sm:text-left m-auto sm:max-w-xl px-10">
-          <h1 className="pb-10 font-bold text-3xl text-cyan-600 sm:text-6xl">
+        <div className=" basis-1/2  h-min w-11/12 text-center lg:text-left m-auto lg:max-w-xl px-10">
+          <h1 className="pb-10 font-bold text-3xl text-cyan-600 lg:text-6xl">
             Get in Touch
           </h1>
           <p className="text-zinc-400	font-light pb-2 ">
@@ -38,7 +38,7 @@ function ContactPage() {
           </p>
           <form
             onSubmit={handleSubmit}
-            className=" pl-1 flex flex-col gap-2 justify-center sm:justify-start "
+            className=" pl-1 flex flex-col gap-2 justify-center lg:justify-start "
           >
             <label className="text-zinc-400	font-light text-left ">Email</label>
             <input
@@ -58,14 +58,14 @@ function ContactPage() {
             <input
               type="submit"
               value="Send"
-              className="m-auto sm:m-0 w-40 h-10 px-10 py-2.5 text-center bg-cyan-600 text-white font-medium text-l leading-tight 
+              className="m-auto lg:m-0 w-40 h-10 px-10 py-2.5 text-center bg-cyan-600 text-white font-medium text-l leading-tight 
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
             />
-            <div className="flex flex-row py-9  justify-center sm:justify-start ">
-              <img src={twitterIcon} alt="" className="p-2 m-auto sm:m-0" />
-              <img src={instaIcon} alt="" className="p-2 m-auto sm:m-0" />
-              <img src={faceIcon} alt="" className="p-2 m-auto sm:m-0" />
+            <div className="flex flex-row py-9  justify-center lg:justify-start ">
+              <img src={twitterIcon} alt="" className="p-2 m-auto lg:m-0" />
+              <img src={instaIcon} alt="" className="p-2 m-auto lg:m-0" />
+              <img src={faceIcon} alt="" className="p-2 m-auto lg:m-0" />
             </div>
           </form>
         </div>
