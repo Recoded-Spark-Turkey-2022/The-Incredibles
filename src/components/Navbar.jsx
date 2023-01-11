@@ -27,13 +27,15 @@ function Navbar() {
         { name: 'Contact', link: '/contact' },
       ];
   const [open, setOpen] = useState(false);
-  const [page, setPage] = useState('')
+  const [page, setPage] = useState('');
   const linksToDisplay = links.map((link) => (
     <Link
       className="lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-blue-500 duration-500 max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2"
       key={link.name}
       to={link.link}
-      onClick={()=>{setOpen(false),setPage(link.name)}}
+      onClick={() => {
+        setOpen(false), setPage(link.name);
+      }}
     >
       {link.name}
     </Link>
@@ -74,23 +76,35 @@ function Navbar() {
         <button type="button" onClick={() => setOpen(!open)}>
           <img className="my-7 ml-4" src={open ? BackAroww : Menu} />
         </button>
-        {open ?
-         <div className=''>
-          <img className="w-36 h-36 m-auto rounded-full " src={user.photoURL ? user.photoURL : UserPhoto} />
-          <p className='text-center font-bold mt-4'>{user.username + user.usersurname}</p>
-        </div> 
-         : <h1 className='self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold'>{page}</h1>}
         {open ? (
-          <ul className="flex flex-col  mx-10 mt-24">{linksToDisplay} {users &&(
-            <li
-              onClick={() => {
-                auth.signOut(), navigate('/'), setPage('Home');
-              }}
-              className="max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2 "
-            >
-              Sign out
-            </li>
-          ) }</ul>
+          <div className="">
+            <img
+              className="w-36 h-36 m-auto rounded-full "
+              src={user.photoURL ? user.photoURL : UserPhoto}
+            />
+            <p className="text-center font-bold mt-4">
+              {user.username + user.usersurname}
+            </p>
+          </div>
+        ) : (
+          <h1 className="self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold">
+            {page}
+          </h1>
+        )}
+        {open ? (
+          <ul className="flex flex-col  mx-10 mt-24">
+            {linksToDisplay}{' '}
+            {users && (
+              <li
+                onClick={() => {
+                  auth.signOut(), navigate('/'), setPage('Home');
+                }}
+                className="max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2 "
+              >
+                Sign out
+              </li>
+            )}
+          </ul>
         ) : null}
       </nav>
     </div>
