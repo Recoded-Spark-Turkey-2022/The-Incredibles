@@ -5,13 +5,16 @@ import Logo from '../assets/pics/navbar/logo.svg';
 import Menu from '../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../assets/pics/navbar/backArrow.svg';
 import UserProfile from '../assets/pics/navbar/userProfil.svg';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/users/usersSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 function Navbar() {
   const navigate = useNavigate();
-  const [user] = useAuthState(auth);
-  const links = user
+  const { user } = useSelector(selectUser);
+  const [users] = useAuthState(auth);
+  const links = users
     ? [
         { name: 'Home', link: '/blogs' },
         { name: 'Write', link: '/myaccount/write' },
@@ -24,15 +27,13 @@ function Navbar() {
         { name: 'Contact', link: '/contact' },
       ];
   const [open, setOpen] = useState(false);
+  const [page, setPage] = useState('')
   const linksToDisplay = links.map((link) => (
     <Link
-      className={
-        open
-          ? 'text-cyan-600 font-bold text-xl p-2 hover:underline decoration-solid'
-          : 'lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-blue-500 duration-500 '
-      }
+      className="lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-blue-500 duration-500 max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2"
       key={link.name}
       to={link.link}
+      onClick={()=>{setOpen(false),setPage(link.name)}}
     >
       {link.name}
     </Link>
@@ -46,7 +47,7 @@ function Navbar() {
         </div>
         <div className="flex items-center ">
           {linksToDisplay}
-          {user ? (
+          {users ? (
             <button
               onClick={() => {
                 auth.signOut(), navigate('/');
@@ -67,15 +68,29 @@ function Navbar() {
         className={
           open
             ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 h-screen absolute bg-white'
-            : 'md:hidden'
+            : 'md:hidden flex'
         }
       >
         <button type="button" onClick={() => setOpen(!open)}>
-          <img className="m-7" src={open ? BackAroww : Menu} />
+          <img className="my-7 ml-4" src={open ? BackAroww : Menu} />
         </button>
-        {open ? <img className="w-1/3 m-auto" src={UserProfile} /> : null}
+        {open ?
+         <div className=''>
+          <img className="w-36 h-36 m-auto rounded-full " src={user.photoURL ? user.photoURL : UserPhoto} />
+          <p className='text-center font-bold mt-4'>{user.username + user.usersurname}</p>
+        </div> 
+         : <h1 className='self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold'>{page}</h1>}
         {open ? (
-          <ul className="flex flex-col  mx-10 mt-24">{linksToDisplay}</ul>
+          <ul className="flex flex-col  mx-10 mt-24">{linksToDisplay} {users &&(
+            <li
+              onClick={() => {
+                auth.signOut(), navigate('/'), setPage('Home');
+              }}
+              className="max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2 "
+            >
+              Sign out
+            </li>
+          ) }</ul>
         ) : null}
       </nav>
     </div>
