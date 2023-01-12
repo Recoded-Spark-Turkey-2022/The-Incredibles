@@ -10,13 +10,17 @@ import { selectUser } from '../features/users/usersSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
+
 function Navbar() {
+  const [t,i18n]=useTranslation();
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
   const [users] = useAuthState(auth);
   const links = users
     ? [
-        { name: 'Home', link: '/blogs' },
+        { name: `${t("home")}`, link: '/blogs' },
         { name: 'Write', link: '/myaccount/write' },
         { name: 'My Account', link: '/myaccount' },
       ]

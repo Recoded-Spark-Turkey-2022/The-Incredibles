@@ -5,6 +5,7 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
+import './i18n';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

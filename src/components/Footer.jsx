@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 import { auth } from '../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const [t,i18n]=useTranslation();
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
   const links = [
-    { name: 'Home', link: '/' },
-    { name: 'About', link: '/about' },
+    { name: `${t("home")}`, link: '/' },
+    { name:`${t("about")}`, link: '/about' },
     { name: 'Blog', link: '/blog' },
     { name: 'Contact', link: '/contact' },
   ];
@@ -59,13 +61,20 @@ function Footer() {
                 : 'hidden duration-400 ease-in'
             }
           >
-            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer">
+            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer"
+            onClick={()=>{console.log('ar');i18n.changeLanguage('ar')}}
+            >
+              
               Arabic
             </li>
-            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer">
+            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer"
+                        onClick={()=>{console.log('tr');i18n.changeLanguage('tr')}}
+                        >
               Turkish
             </li>
-            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer">
+            <li className="p-1 hover:bg-cyan-400 w-full cursor-pointer"
+                        onClick={()=>{console.log('en');i18n.changeLanguage('en')}}
+                        >
               English
             </li>
           </ul>
