@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Logo from '../assets/pics/navbar/logo.svg';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 import { auth } from '../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [open, setOpen] = useState(false);
   const links = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '/about' },
-    { name: 'Blog', link: '/blog' },
+    { name: 'Blog', link: '/blogs' },
     { name: 'Contact', link: '/contact' },
   ];
   const linksToDisplay = links.map((link) => (
-    <Link
+    <NavLink
+      end
+      style={({ isActive }) =>
+        isActive ? { color: '#00ACC1', textDecoration: 'underline' } : {}
+      }
       className={
         'pl-10 text-gray-500 font-medium hover:text-blue-500 duration-500'
       }
@@ -24,25 +30,34 @@ function Footer() {
       to={link.link}
     >
       {link.name}
-    </Link>
+    </NavLink>
   ));
   return (
-    <div
-      className={
-        user
-          ? 'hidden'
-          : 'lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center'
-      }
-    >
+    <div className="lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
       <div className=" lg:flex lg:flex-row lg:pt-4 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center ">
         <div>
-          <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
+          <Link to="/">
+            <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
+          </Link>
         </div>
         <div className="max-lg:pb-10 text-xl">{linksToDisplay}</div>
       </div>
-      <div className="flex max-lg:pb-10 max-lg:ml-10 items-start">
-        <div>
-          <Button name="Sign Up" path="/signup" />
+      <div className=" lg:flex lg:flex-row lg:pt-4  max-lg:pb-4 max-lg:flex  max-lg:items-center max-lg:justify-center">
+        <div className="pl-10">
+          {user ? (
+            <button
+              onClick={() => {
+                auth.signOut(), navigate('/');
+              }}
+              className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
+             rounded-full shadow-md
+             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+            >
+              Sign out
+            </button>
+          ) : (
+            <Button name="Sign Up" path="/signup" />
+          )}
         </div>
         <div className="pl-4">
           <div
