@@ -7,8 +7,11 @@ import Location from './Location';
 import Signup from '../Signup/Signup';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/firebase';
 
 function HomePage() {
+  const [user] = useAuthState(auth);
   return (
     <section name="home">
       <div
@@ -33,7 +36,7 @@ function HomePage() {
             <br />
             help make a difference in the lives of refugees!{' '}
           </p>
-          <div className="my-9">
+          <div className={user?'hidden':'my-9'}>
             <Button name="Sign Up" path="/signup" />
           </div>
         </div>
