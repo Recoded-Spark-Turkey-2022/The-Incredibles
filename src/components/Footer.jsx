@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Logo from '../assets/pics/navbar/logo.svg';
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { BiChevronDown } from 'react-icons/bi';
 import { auth } from '../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-
 
 function Footer() {
   const navigate = useNavigate();
@@ -20,10 +19,10 @@ function Footer() {
   ];
   const linksToDisplay = links.map((link) => (
     <NavLink
-    end
-    style={({ isActive }) =>
-      isActive ? { color: '#00ACC1', textDecoration: 'underline' } : {}
-    }
+      end
+      style={({ isActive }) =>
+        isActive ? { color: '#00ACC1', textDecoration: 'underline' } : {}
+      }
       className={
         'pl-10 text-gray-500 font-medium hover:text-blue-500 duration-500'
       }
@@ -34,39 +33,30 @@ function Footer() {
     </NavLink>
   ));
   return (
-    <div
-      className=
-              'lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center'
-      
-    >
+    <div className="lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
       <div className=" lg:flex lg:flex-row lg:pt-4 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center ">
         <div>
-        <Link to='/'>
-          <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
-        </Link>
+          <Link to="/">
+            <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
+          </Link>
         </div>
         <div className="max-lg:pb-10 text-xl">{linksToDisplay}</div>
       </div>
       <div className=" lg:flex lg:flex-row lg:pt-4  max-lg:pb-4 max-lg:flex  max-lg:items-center max-lg:justify-center">
-        
-        <div className='pl-10'>
-        {user ? (
-          
+        <div className="pl-10">
+          {user ? (
             <button
               onClick={() => {
                 auth.signOut(), navigate('/');
               }}
-             
-                className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
+              className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
-            
             >
               Sign out
             </button>
           ) : (
-            
-              <Button name="Sign Up" path="/signup" />
+            <Button name="Sign Up" path="/signup" />
           )}
         </div>
         <div className="pl-4">

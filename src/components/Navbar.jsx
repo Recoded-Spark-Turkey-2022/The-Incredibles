@@ -47,13 +47,11 @@ function Navbar() {
   return (
     <div>
       <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
-      <Link to='/'>
-        <div className="flex items-center lg:mt-7 mt-3">
-      
-          <img src={Logo} alt="logo" className="w-6" />
-          <h1 className="ml-1 font-bold text-cyan-600 text-xl">Refubook</h1>
-          
-        </div>
+        <Link to="/">
+          <div className="flex items-center lg:mt-7 mt-3">
+            <img src={Logo} alt="logo" className="w-6" />
+            <h1 className="ml-1 font-bold text-cyan-600 text-xl">Refubook</h1>
+          </div>
         </Link>
         <div className="flex items-center text-xl">
           {linksToDisplay}

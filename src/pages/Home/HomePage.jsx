@@ -36,7 +36,7 @@ function HomePage() {
             <br />
             help make a difference in the lives of refugees!{' '}
           </p>
-          <div className={user?'hidden':'my-9'}>
+          <div className={user ? 'hidden' : 'my-9'}>
             <Button name="Sign Up" path="/signup" />
           </div>
         </div>
