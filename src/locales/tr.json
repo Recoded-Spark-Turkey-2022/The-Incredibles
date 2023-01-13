@@ -1,5 +1,13 @@
 {"nav":{
     "home": "ana sayfa",
-    "about":"Hakkimizda" 
+    "about":"Hakkimizda",
+    "write": "Yaz",
+    "myaccount":"My account",
+    "blogs":"Blogs",
+    "contact": "Contact",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "signout": "Sign Out"
+
   }
 }

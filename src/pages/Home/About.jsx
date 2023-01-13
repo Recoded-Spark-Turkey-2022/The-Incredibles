@@ -2,8 +2,11 @@ import React from 'react';
 import Button from '../../components/Button';
 import AboutHero from '../../assets/pics/homepage/about-hero.svg';
 import AboutStar from '../../assets/pics/homepage/about-star.svg';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+  const [t,i18n]=useTranslation();
+
   return (
     <section name="about" className="bg-emerald-50">
       <div
@@ -15,19 +18,7 @@ function About() {
         </h1>
 
         <p className="mx-20 lg:px-40 lg:pb-10">
-          Welcome to our website! We are a group of volunteers dedicated to
-          helping refugees navigate their new lives and communities. We
-          understand that the journey to seeking refuge can be incredibly
-          difficult and disorienting, and we want to do everything we can to
-          make the transition as smooth as possible. Our team is made up of
-          individuals from all walks of life, united in our belief that everyone
-          deserves a chance at a better future. We offer a range of services,
-          including language classes, cultural orientation, legal assistance,
-          and support finding housing and employment. We believe in the power of
-          community and connection, and we strive to create a welcoming and
-          supportive environment for all of our members. Thank you for visiting
-          our website and for considering how you can help make a difference in
-          the lives of refugees.
+      {t("about.about")}
         </p>
         <div className="my-9">
           <Button name="Learn More" path="about" />

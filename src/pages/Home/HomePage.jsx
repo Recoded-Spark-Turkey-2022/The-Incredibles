@@ -9,8 +9,10 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
+import { useTranslation } from 'react-i18next';
 
 function HomePage() {
+  const [t,i18n]=useTranslation();
   const [user] = useAuthState(auth);
   return (
     <section name="home">
@@ -22,22 +24,18 @@ function HomePage() {
           name="wirtting"
           className="lg:my-20 max-lg:my-10 max-lg:text-center max-lg:flex-wrap"
         >
-          <h1 className="font-bold text-7xl text-cyan-600">Refubook</h1>
+          <h1 className="font-bold text-7xl text-cyan-600">{t("home.h1")}</h1>
           <h2 className="text-5xl my-5 text-rose-400 font-medium lg:w-10">
-            Express Freely
+          {t("home.h2")}
           </h2>
+          <div className=''>
           <p className="text-xl">
-            We believe in the power of community and connection, and we strive{' '}
-            <br />
-            to create a welcoming and supportive environment for all of our
-            members. <br />
-            Welcom to our website! From now thank you for considering how you
-            can
-            <br />
-            help make a difference in the lives of refugees!{' '}
+          {t("home.p")}
           </p>
+          </div>
+         
           <div className={user ? 'hidden' : 'my-9'}>
-            <Button name="Sign Up" path="/signup" />
+            <Button name={t('nav.signup')} path="/signup" />
           </div>
         </div>
         <div name="image" className="mt-14">
