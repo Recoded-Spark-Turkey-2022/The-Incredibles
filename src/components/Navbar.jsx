@@ -83,7 +83,7 @@ function Navbar() {
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <p className="text-center font-bold mt-4">
-              {user.username ? user.username  + user.usersurname : "user name"}
+              {user.username ? user.username + user.usersurname : 'user name'}
             </p>
           </div>
         ) : (

@@ -9,7 +9,7 @@ import { selectUser } from '../../features/users/usersSlice';
 function WriteBlog() {
   const { user } = useSelector(selectUser);
   //userID has been added because we need to filter blogs based on userID but it needs to be global
-  // this part can be taken for somebody else because it is so much for me 
+  // this part can be taken for somebody else because it is so much for me
   //just please if you would like to change it into a redux component, put it into blogs slice because they need to share data
 
   //function to store images in firebase storage
@@ -36,7 +36,7 @@ function WriteBlog() {
         content: content,
         mediaURL: url,
         likes: 0,
-        date: "",
+        date: '',
         userID: user.id,
       });
       alert('Blog submitted successfully');
