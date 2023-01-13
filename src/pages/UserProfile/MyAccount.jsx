@@ -1,4 +1,4 @@
-import MyAccountCard from './MyAccountCard';
+import BlogCard from '../Blogs/BlogCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
@@ -8,54 +8,11 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { auth } from '../../firebase/firebase';
 
-//temporary data
-const blogs = [
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 0,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 1,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 2,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 3,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 4,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 5,
-  },
-];
+
 
 function MyAccount() {
-  const currentUser = auth.currentUser;
+  const {blogs} = useSelector(state=>state.blogs)
+  console.log(blogs)
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
@@ -107,9 +64,10 @@ function MyAccount() {
           <div>
             <div className="p-5 max-lg:pr-4">
               <Slider {...settings}>
-                {blogs.map((blog) => (
-                  <MyAccountCard key={blog.id} />
-                ))}
+                {blogs.filter(blog=>blog.userID === user.id).map((blog,i) => {
+                  console.log(blog)
+                 return <BlogCard key={i} data={blog} />
+                   })}
               </Slider>
             </div>
           </div>
