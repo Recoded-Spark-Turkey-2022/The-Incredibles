@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBlogs } from './blogsSlice';
+import { blogsData, getBlogs } from './blogsSlice';
 import User from '../../assets/pics/profilepage/profilepic.svg';
-import { selectUser } from '../users/usersSlice';
+import { selectUser, userData } from '../users/usersSlice';
 import { selectBlog } from './blogsSlice';
+import { doc } from 'firebase/firestore';
 
 //Gets blog data and puts it inside a card but it need a map or something  CHITURCA still works on it
 // shows both blog data and user pic/name
@@ -15,12 +16,14 @@ const GetBlogs = ({ path }) => {
   useEffect(() => {
     dispatch(getBlogs());
   }, []);
-  // console.log(data)
+  console.log()
 
   return (
     <div name="getbloginfo">
-      {blogs.loading && <h1>Loading...</h1>}
-      {/* {doc.data().map((blog)=>{ */}
+      <br />
+      <h1 className='font-bold text-3xl'>Hello</h1>
+      {/* {blogs.loading && <h1>Loading...</h1>} */}
+      {/* {doc.data().map((blog)=>{
       <div
         onClick={() => navigate(path)}
         className="group h-1/4 border mx-6 max-lg:mx-4 mb-6 rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]"
@@ -32,7 +35,6 @@ const GetBlogs = ({ path }) => {
             alt="blog-photo-preview"
           />
         </div>
-
         <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
           <h1 className="font-bold">
             {blogs.title ? blogs.title : 'Blog Title'}
@@ -53,7 +55,7 @@ const GetBlogs = ({ path }) => {
           </h1>
         </div>
       </div>
-      {/* })} */}
+      })} */}
     </div>
   );
 };
