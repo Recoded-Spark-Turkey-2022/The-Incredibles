@@ -1,4 +1,5 @@
-{
-    "home": "ev"
-  
+{"nav":{
+    "home": "ana sayfa",
+    "about":"Hakkimizda" 
   }
+}

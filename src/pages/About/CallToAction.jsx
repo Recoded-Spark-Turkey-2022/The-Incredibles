@@ -1,8 +1,11 @@
 import React from 'react';
 import Button from '../../components/Button';
 import callToActionImg from '../../assets/pics/aboutpage/aboutpgCallToAction.svg';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/firebase';
 
 function CallToAction() {
+  const [user] = useAuthState(auth);
   return (
     <div className="container mx-auto text-center">
       <div className="">
@@ -26,7 +29,7 @@ function CallToAction() {
           </p>
         </div>
       </div>
-      <div>
+      <div className={user ? 'hidden' : ''}>
         <Button name="Sign Up" path="/signup" />
       </div>
     </div>

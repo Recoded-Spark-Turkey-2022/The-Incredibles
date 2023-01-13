@@ -1,5 +1,5 @@
-{
+{"nav":{
   "home": "Home",
-  "about":"About"
-
-}
+  "about":"About",
+  "write": "Write"
+}}
