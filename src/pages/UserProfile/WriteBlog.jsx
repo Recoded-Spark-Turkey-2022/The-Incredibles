@@ -8,10 +8,9 @@ import { selectUser } from '../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../features/blogs/blogsSlice';
 
-
 function WriteBlog() {
   const { user } = useSelector(selectUser);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,14 +35,14 @@ function WriteBlog() {
         mediaURL: url,
         likes: 0,
         user_name: user.username,
-        userID:user.id
+        userID: user.id,
       });
       alert('Blog submitted successfully');
       setTitle('');
       setContent('');
       setMedia(null);
       setsubTitle('');
-      dispatch(getBlogs())
+      dispatch(getBlogs());
     };
     submit();
   };
