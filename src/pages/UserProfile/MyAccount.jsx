@@ -6,13 +6,12 @@ import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
-import { auth } from '../../firebase/firebase';
+
 
 
 
 function MyAccount() {
   const {blogs} = useSelector(state=>state.blogs)
-  console.log(blogs)
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
@@ -65,7 +64,7 @@ function MyAccount() {
             <div className="p-5 max-lg:pr-4">
               <Slider {...settings}>
                 {blogs.filter(blog=>blog.userID === user.id).map((blog,i) => {
-                  console.log(blog)
+                  
                  return <BlogCard key={i} data={blog} />
                    })}
               </Slider>

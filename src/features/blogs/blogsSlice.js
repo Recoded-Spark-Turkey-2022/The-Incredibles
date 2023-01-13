@@ -22,7 +22,7 @@ const blogsSlice = createSlice({
   extraReducers: {
     [getBlogs.fulfilled]: (state, action)=>{
       state.blogs = action.payload
-      console.log(state.blogs)
+      
     }
   },
 });
