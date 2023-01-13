@@ -1,44 +1,26 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { db, storage } from '../../firebase/firebase';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
-
+import { getDocs, addDoc, collection, query, where } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-//Fetch POST blog form data to firebase
-// export const postBlogs = createAsyncThunk(
-//     'blogs/postBlogs',
-//     async (data, thunkAPI) => {
-//       const { media, blogFormData } = data;
-//       const { userID, content, subtitle, title, date, likes } = blogFormData;
-//       const { dispatch } = thunkAPI;
-//       if (media) {
-//         const imageRef = ref(storage, `BlogImages/${media.name + userID}`);
-//         const snapshot = await uploadBytes(imageRef, media);
-//         const mediaURL = await getDownloadURL(imageRef);
-//         const blogs = doc(db, 'blogs', userID);
-//         await setDoc(
-//           blogs,
-//           { mediaURL, userID, content, subtitle, title, date, likes },
-//           { merge: false }
-//         );
-//         dispatch(getBlogs(userID));
-//       }
-//       const blogs = doc(db, 'blogs', userID);
-//       await setDoc(
-//         blogs,
-//         { mediaURL, userID, content, subtitle, title, date, likes },
-//         { merge: false }
-//       );
-//       dispatch(getBlogs(userID));
-//     }
-//   );
+import { v4 } from 'uuid';
 
-//Fetch GET data coming from firebase
-export const getBlogs = createAsyncThunk("blogs/getBlogs", async ()=>{
-    const docRef = doc(db, "blogs", "rXHVkUlUYyVnXo9Cafzs");
-    const docSnap = await getDoc(docRef);
-    return docSnap.data();
+
+
+//CHITURCA still works on this part, please do not change it and related data
+//Fetch GET blogs coming from firebase
+export const getBlogs = createAsyncThunk(
+    "blogs/getBlogs", 
+    async (blogData)=>{
+        const colRef = collection(db, "blogs");
+        const q = query(colRef, where("userID", "==", "hPQTyjT8TaaG26EkILSgvNKjJhe2" ));
+        const querySnapshot = await getDocs(q);
+         querySnapshot.forEach((doc) => {
+            console.log(doc.id, "=>", doc.data())
+            // console.log(blogData);
+            return 
+            });
 })
 
 const initialState = {

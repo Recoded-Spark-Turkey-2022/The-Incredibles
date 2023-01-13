@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { auth } from '../../firebase/firebase';
 import GetBlogs from '../../features/blogs/GetBlogs';
+import { selectBlog } from '../../features/blogs/blogsSlice';
 
 //temporary data
 const blogs = [
@@ -23,6 +24,7 @@ const blogs = [
 function MyAccount() {
   const currentUser = auth.currentUser;
   const { user } = useSelector(selectUser);
+  // const {blogs} = useSelector(selectBlog)
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -72,10 +74,10 @@ function MyAccount() {
           </div>
           <div>
             <div className="p-5 max-lg:pr-4">
+              {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
                 {/* {blogs.map((blog) => ( */}
-                  <GetBlogs key={blogs.blogID} path="/myaccount/write" />
-                   {/* path is not working now, needs to be fixed */}
+                <MyAccountCard key={blogs.id} />
                 {/* ))} */}
               </Slider>
             </div>
