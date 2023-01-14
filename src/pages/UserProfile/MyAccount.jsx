@@ -62,7 +62,7 @@ function MyAccount() {
             <div className="p-5 max-lg:pr-4">
               {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
-              {blogs
+                {blogs
                   .filter((blog) => blog.userID === user.id)
                   .map((blog, i) => {
                     return <MyAccountCard key={i} data={blog} />;

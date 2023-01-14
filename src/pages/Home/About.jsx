@@ -2,8 +2,11 @@ import React from 'react';
 import Button from '../../components/Button';
 import AboutHero from '../../assets/pics/homepage/about-hero.svg';
 import AboutStar from '../../assets/pics/homepage/about-star.svg';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+  const [t, i18n] = useTranslation();
+
   return (
     <section name="about" className="bg-emerald-50">
       <div
@@ -11,26 +14,12 @@ function About() {
         className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 "
       >
         <h1 className="text-cyan-600 lg:pb-8 font-bold text-4xl max-lg:mb-4">
-          About
+          {t('home.about.h1')}
         </h1>
 
-        <p className="mx-20 lg:px-40 lg:pb-10">
-          Welcome to our website! We are a group of volunteers dedicated to
-          helping refugees navigate their new lives and communities. We
-          understand that the journey to seeking refuge can be incredibly
-          difficult and disorienting, and we want to do everything we can to
-          make the transition as smooth as possible. Our team is made up of
-          individuals from all walks of life, united in our belief that everyone
-          deserves a chance at a better future. We offer a range of services,
-          including language classes, cultural orientation, legal assistance,
-          and support finding housing and employment. We believe in the power of
-          community and connection, and we strive to create a welcoming and
-          supportive environment for all of our members. Thank you for visiting
-          our website and for considering how you can help make a difference in
-          the lives of refugees.
-        </p>
+        <p className="mx-20 lg:px-40 lg:pb-10">{t('home.about.p')}</p>
         <div className="my-9">
-          <Button name="Learn More" path="about" />
+          <Button name={t('home.about.learnmore')} path="about" />
         </div>
       </div>
       <div
@@ -46,49 +35,35 @@ function About() {
                   alt="about-star"
                   className="lg:mx-3 max-lg:w-10"
                 />
-                Dependability
+                {t('home.about.section.h1')}
               </h2>
-              <p className="lg:pt-6 flex-wrap">
-                We are committed to being dependable and trustworthy, and we
-                work hard to follow through on our commitments to refugees by
-                giving fresh and truth information.{' '}
-              </p>
+              <p className="lg:pt-6 flex-wrap">{t('home.about.section.p1')}</p>
             </div>
             <div className="lg:p-6 max-w-sm mx-auto space-x-4 max-lg:hidden ">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Determination
+                {t('home.about.section.h2')}
               </h2>
               <br />
-              <p>
-                We are determined to help refugees overcome obstacles and
-                achieve their goals.
-              </p>
+              <p>{t('home.about.section.p2')}</p>
             </div>
           </div>
           <div name="right-side-cards" className="max-lg:hidden">
             <div className="lg:p-6 max-w-sm mx-auto space-x-4 ">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Collaboration
+                {t('home.about.section.h3')}
               </h2>
               <br />
-              <p>
-                We believe that collaboration is key to achieving success, and
-                we work with a network of partners and community organizations
-                to support refugees.
-              </p>
+              <p>{t('home.about.section.p3')}</p>
             </div>
             <div className="lg:p-6 max-w-sm mx-auto space-x-4">
               <h2 className="flex justify-start font-bold">
                 <img src={AboutStar} alt="about-star" className="mx-3" />
-                Productivity
+                {t('home.about.section.h4')}
               </h2>
               <br />
-              <p>
-                We work efficiently and effectively to help refugees make the
-                most of their opportunities.
-              </p>
+              <p>{t('home.about.section.p4')}</p>
             </div>
           </div>
         </div>
