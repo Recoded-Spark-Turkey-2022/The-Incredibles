@@ -11,6 +11,7 @@ import { getBlogs } from '../../features/blogs/blogsSlice';
 function WriteBlog() {
   const { user } = useSelector(selectUser);
   const dispatch = useDispatch();
+
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +28,7 @@ function WriteBlog() {
       return url;
     };
     const submit = async () => {
+      //likes and date added because they are going to be used in blogs pages as filters
       const url = await uploadImg();
       await addDoc(collection(db, 'blogs'), {
         title: title,
@@ -34,7 +36,7 @@ function WriteBlog() {
         content: content,
         mediaURL: url,
         likes: 0,
-        user_name: user.username,
+        date: '',
         userID: user.id,
       });
       alert('Blog submitted successfully');

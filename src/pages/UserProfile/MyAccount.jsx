@@ -1,4 +1,4 @@
-import BlogCard from '../Blogs/BlogCard';
+import MyAccountCard from './MyAccountCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
@@ -10,6 +10,7 @@ import { selectUser } from '../../features/users/usersSlice';
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
+  // const {blogs} = useSelector(selectBlog)
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -49,7 +50,7 @@ function MyAccount() {
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
-              className="lg:w-1/5 m-auto"
+              className="m-auto h-40 w-40 rounded-full"
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
@@ -59,11 +60,12 @@ function MyAccount() {
           </div>
           <div>
             <div className="p-5 max-lg:pr-4">
+              {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
-                {blogs
+              {blogs
                   .filter((blog) => blog.userID === user.id)
                   .map((blog, i) => {
-                    return <BlogCard key={i} data={blog} />;
+                    return <MyAccountCard key={i} data={blog} />;
                   })}
               </Slider>
             </div>
