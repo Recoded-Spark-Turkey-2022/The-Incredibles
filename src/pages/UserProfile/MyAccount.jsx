@@ -7,22 +7,10 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { auth } from '../../firebase/firebase';
-import GetBlogs from '../../features/blogs/GetBlogs';
 import { selectBlog } from '../../features/blogs/blogsSlice';
 
-//temporary data
-const blogs = [
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 0,
-  },
-];
-
 function MyAccount() {
-  const currentUser = auth.currentUser;
+  const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   // const {blogs} = useSelector(selectBlog)
   const navigate = useNavigate();
@@ -76,9 +64,11 @@ function MyAccount() {
             <div className="p-5 max-lg:pr-4">
               {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
-                {/* {blogs.map((blog) => ( */}
-                <MyAccountCard key={blogs.id} />
-                {/* ))} */}
+              {blogs
+                  .filter((blog) => blog.userID === user.id)
+                  .map((blog, i) => {
+                    return <MyAccountCard key={i} data={blog} />;
+                  })}
               </Slider>
             </div>
           </div>

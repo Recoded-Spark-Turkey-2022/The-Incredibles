@@ -5,12 +5,12 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
+import { useDispatch } from 'react-redux';
+import { getBlogs } from '../../features/blogs/blogsSlice';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);
-  //userID has been added because we need to filter blogs based on userID but it needs to be global
-  // this part can be taken for somebody else because it is so much for me
-  //just please if you would like to change it into a redux component, put it into blogs slice because they need to share data
+  const dispatch = useDispatch();
 
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
@@ -37,6 +37,7 @@ function WriteBlog() {
         mediaURL: url,
         likes: 0,
         date: '',
+        user_name: user.username,
         userID: user.id,
       });
       alert('Blog submitted successfully');
@@ -44,6 +45,7 @@ function WriteBlog() {
       setContent('');
       setMedia(null);
       setsubTitle('');
+      dispatch(getBlogs());
     };
     submit();
   };

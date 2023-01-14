@@ -17,12 +17,13 @@ import { auth } from './firebase/firebase';
 import { getUser } from './features/users/usersSlice';
 import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
-import GetBlogs from './features/blogs/GetBlogs';
+import { getBlogs } from './features/blogs/blogsSlice';
 
 function App() {
   // const [user] = useAuthState(auth);
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getBlogs());
     onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(getUser(user.uid));
@@ -50,7 +51,6 @@ function App() {
         <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
       <Footer />
-      <GetBlogs />
     </div>
   );
 }
