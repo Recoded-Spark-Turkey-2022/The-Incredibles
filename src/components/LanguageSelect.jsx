@@ -12,7 +12,6 @@ function LanguageSelect() {
     } else {
       setLang({ lang: 'en', dir: 'ltr' });
     }
-    console.log(lang);
 
     i18n.changeLanguage(selected);
   };
