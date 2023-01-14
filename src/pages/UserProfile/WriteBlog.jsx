@@ -37,7 +37,6 @@ function WriteBlog() {
         mediaURL: url,
         likes: 0,
         date: '',
-        user_name: user.username,
         userID: user.id,
       });
       alert('Blog submitted successfully');
