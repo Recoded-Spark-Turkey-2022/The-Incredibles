@@ -4,7 +4,7 @@ import Button from './Button';
 import Logo from '../assets/pics/navbar/logo.svg';
 import Menu from '../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../assets/pics/navbar/backArrow.svg';
-import UserPhoto from '../assets/pics/navbar/userProfil.svg';
+import UserPhoto from '../assets/pics/profilepage/profilepic.svg';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/users/usersSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -12,23 +12,22 @@ import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-
 function Navbar() {
-  const [t,i18n]=useTranslation();
+  const [t, i18n] = useTranslation();
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
   const [users] = useAuthState(auth);
   const links = users
     ? [
-        { name: `${t("nav.home")}`, link: '/blogs' },
-        { name: `${t("nav.write")}`, link: '/myaccount/write' },
-        { name: `${t("nav.myaccount")}`, link: '/myaccount' },
+        { name: `${t('nav.home')}`, link: '/blogs' },
+        { name: `${t('nav.write')}`, link: '/myaccount/write' },
+        { name: `${t('nav.myaccount')}`, link: '/myaccount' },
       ]
     : [
-        { name: `${t("nav.home")}`, link: '/' },
-        { name: `${t("nav.about")}`, link: '/about' },
-        { name: `${t("nav.blogs")}`, link: '/blogs' },
-        { name: `${t("nav.contact")}`, link: '/contact' },
+        { name: `${t('nav.home')}`, link: '/' },
+        { name: `${t('nav.about')}`, link: '/about' },
+        { name: `${t('nav.blogs')}`, link: '/blogs' },
+        { name: `${t('nav.contact')}`, link: '/contact' },
       ];
   const [open, setOpen] = useState(false);
   const [page, setPage] = useState('');
@@ -66,11 +65,11 @@ function Navbar() {
               }}
               className="lg:p-7 md:p-4 sm:p-2 text-cyan-600 font-medium hover:text-cyan-500 duration-500"
             >
-              {t("nav.signout")}
+              {t('nav.signout')}
             </button>
           ) : (
             <div>
-              <Button name={t("nav.signup")} path="/signup" />
+              <Button name={t('nav.signup')} path="/signup" />
             </div>
           )}
         </div>
@@ -93,7 +92,7 @@ function Navbar() {
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <p className="text-center font-bold mt-4">
-              {user.username + user.usersurname}
+              {user.username ? user.username + user.usersurname : 'user name'}
             </p>
           </div>
         ) : (
@@ -111,7 +110,7 @@ function Navbar() {
                 }}
                 className="max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2 "
               >
-              {t("nav.signout")}
+                {t('nav.signout')}
               </li>
             )}
           </ul>

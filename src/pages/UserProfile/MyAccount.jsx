@@ -6,57 +6,11 @@ import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
-import { auth } from '../../firebase/firebase';
-
-//temporary data
-const blogs = [
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 0,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 1,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 2,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 3,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 4,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 5,
-  },
-];
 
 function MyAccount() {
-  const currentUser = auth.currentUser;
+  const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
+  // const {blogs} = useSelector(selectBlog)
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -96,7 +50,7 @@ function MyAccount() {
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
-              className="lg:w-1/5 m-auto"
+              className="m-auto h-40 w-40 rounded-full"
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
@@ -106,10 +60,13 @@ function MyAccount() {
           </div>
           <div>
             <div className="p-5 max-lg:pr-4">
+              {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
-                {blogs.map((blog) => (
-                  <MyAccountCard key={blog.id} />
-                ))}
+                {blogs
+                  .filter((blog) => blog.userID === user.id)
+                  .map((blog, i) => {
+                    return <MyAccountCard key={i} data={blog} />;
+                  })}
               </Slider>
             </div>
           </div>

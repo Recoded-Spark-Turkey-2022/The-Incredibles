@@ -12,7 +12,7 @@ import { auth } from '../../firebase/firebase';
 import { useTranslation } from 'react-i18next';
 
 function HomePage() {
-  const [t,i18n]=useTranslation();
+  const [t, i18n] = useTranslation();
   const [user] = useAuthState(auth);
   return (
     <section name="home">
@@ -24,16 +24,16 @@ function HomePage() {
           name="wirtting"
           className="lg:my-20 max-lg:my-10 max-lg:text-center max-lg:flex-wrap"
         >
-          <h1 className="font-bold text-7xl text-cyan-600">{t("home.h1")}</h1>
+          <h1 className="font-bold text-7xl text-cyan-600">
+            {t('home.home.h1')}
+          </h1>
           <h2 className="text-5xl my-5 text-rose-400 font-medium lg:w-10">
-          {t("home.h2")}
+            {t('home.home.h2')}
           </h2>
-          <div className=''>
-          <p className="text-xl">
-          {t("home.p")}
-          </p>
+          <div className="">
+            <p className="text-xl">{t('home.home.p')}</p>
           </div>
-         
+
           <div className={user ? 'hidden' : 'my-9'}>
             <Button name={t('nav.signup')} path="/signup" />
           </div>

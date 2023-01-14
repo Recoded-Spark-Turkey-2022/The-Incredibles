@@ -1,7 +1,9 @@
 import React from 'react';
 import Partner from '../../assets/pics/homepage/partner.svg';
+import { useTranslation } from 'react-i18next';
 
 function Partners() {
+  const [t, i18n] = useTranslation();
   const partners = [
     'recoded',
     'recoded',
@@ -13,7 +15,7 @@ function Partners() {
   ];
   return (
     <div className="pt-8 max-lg:pt-0">
-      <h1 className="text-center font-bold text-3xl">Our Partners</h1>
+      <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
       <div className="flex justify-center flex-col overflow-hidden px-4">
         <div className="w-full flex justify-center">
           {partners.map((par, index) => (

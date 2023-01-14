@@ -53,7 +53,7 @@ function MyAccountDetails() {
               <PopoverHandler className="relative">
                 <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
                   <img
-                    className="m-auto h-40 w-40"
+                    className="m-auto h-40 w-40 rounded-full"
                     src={user.photoURL ? user.photoURL : ChangePhoto}
                     alt="avatar-preview"
                   />

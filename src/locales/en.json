@@ -10,15 +10,48 @@
     "signup": "Sign Up",
     "signout": "Sign Out"
   },
-  "home":{
-    "h1":"Refubook",
-    "h2":"Express Freely",
-    "p":"  We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members.\n Welcom to our website! From now thank you for considering how you can help make a difference in the lives of refugees!"
-  },
-  "about": {
-    "story":{
-      "p":"We believe that everyone deserves to live with dignity, respect, and the opportunity to reach their full potential. That is why we are dedicated to providing support and resources to refugees, who have fled their homes due to conflict, persecution, or other ife-threatening circumstances. Our organization was founded by a group of passionate individuals who saw the need for more comprehensive, compassionate care for refugees. Since then, we have grown to become a leading provider of assistance to refugees in different countries. Through our website, we offer a range of services to refugees, including housing, medical care, education, and employment support. We also work to advocate for the rights and needs of refugees on the local, national, and international level. But our work would not be possible without the support of people like you. By donating, volunteering, or spreading awareness about the refugee crisis, or just go and post welcoming new refugees in your country by providing information that is help them adapting their new life! You can make a meaningful difference in the lives of refugees. We are proud of the impact that we have made so far, but there is still much more work to be done. Join us in our mission to build a more inclusive and welcoming world for all!",
-      "h":"Our Story"
+  "home": {
+    "home": {
+      "h1": "Refubook",
+      "h2": "Express Freely",
+      "p": "  We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members.\n Welcom to our website! From now thank you for considering how you can help make a difference in the lives of refugees!"
+    },
+    "about": {
+      "h1": "About",
+      "p": "Welcome to our website! We are a group of volunteers dedicated to helping refugees navigate their new lives and communities. We understand that the journey to seeking refuge can be incredibly difficult and disorienting, and we want to do everything we can to make the transition as smooth as possible. Our team is made up of individuals from all walks of life, united in our belief that everyone deserves a chance at a better future. We offer a range of services, including language classes, cultural orientation, legal assistance, and support finding housing and employment. We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members. Thank you for visiting our website and for considering how you can help make a difference in the lives of refugees.",
+      "learnmore": "Learn More",
+      "section": {
+        "h1": "Dependability",
+        "p1": "We are committed to being dependable and trustworthy, and we work hard to follow through on our commitments to refugees by giving fresh and truth information.",
+        "h2": "Determination",
+        "p2": "We are determined to help refugees overcome obstacles and achieve their goals.",
+        "h3": "Collaboration",
+        "p3": "We believe that collaboration is key to achieving success, and we work with a network of partners and community organizations to support refugees.",
+        "h4": "Productivity",
+        "p4": "We work efficiently and effectively to help refugees make the most of their opportunities."
+      }
+    },
+    "partner": "Our Partners",
+    "latest": {
+      "h1": "Latest Stories",
+      "p1": "Home is behind, the world ahead and there are many <br /> paths to tread through shadows to the edge.",
+      "section": {
+        "label1": "Job",
+        "h1": "Follow this steps and you will get your first job in Germany as a reugee!",
+        "p1.1": "Khaled Hatem",
+        "p1.2": "Refugee in Germany",
+        "label2": "Language",
+        "h2": "Here is how i learned Turkish in just few months!",
+        "p2.1": " Ahmad Fesal",
+        "p2.2": "Refugee in Turkey"
+      }
+    },
+    "location": {
+      "text1": "\"Working with the team at Refubook has been an incredibly rewarding experience. It is heartwarming to see the positive impact we are having on the lives of refugees every day.\"",
+      "text2": "\"Proud to be a part of the Refubook team and am constantly impressed by the compassion and professionalism of my colleagues. It is a pleasure to work with such a dedicated group of individuals who are committed to making a difference in the lives of refugees\"",
+      "text3": "\"As a member of the Refubook team, I am constantly amazed by the impact our work has on the lives of refugees. It is truly fulfilling to be a part of this organization.\"",
+      "text4": "\"Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause.\"",
+      "team": " Refubook Team member"
+    }
   }
-}
 }

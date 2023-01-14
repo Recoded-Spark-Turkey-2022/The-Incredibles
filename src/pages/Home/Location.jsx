@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import Worldmap from '../../assets/pics/homepage/world-map.svg';
 import LocationSlide from './LocationSlide';
+import { useTranslation } from 'react-i18next';
 
 function Location() {
+  const [t, i18n] = useTranslation();
+
   const slides = [
     {
-      text: '"Working with the team at Refubook has been an incredibly rewarding experience. It is heartwarming to see the positive impact we are having on the lives of refugees every day."',
+      text: `${t('home.location.text1')}`,
       author: 'Omer,',
     },
     {
-      text: '"Proud to be a part of the Refubook team and am constantly impressed by the compassion and professionalism of my colleagues. It is a pleasure to work with such a dedicated group of individuals who are committed to making a difference in the lives of refugees"',
+      text: `${t('home.location.text2')}`,
       author: 'Ahmad,',
     },
     {
-      text: '"As a member of the Refubook team, I am constantly amazed by the impact our work has on the lives of refugees. It is truly fulfilling to be a part of this organization."',
+      text: `${t('home.location.text3')}`,
       author: 'Miray,',
     },
     {
-      text: '"Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause."',
+      text: `${t('home.location.text4')}`,
       author: 'Rabia,',
     },
   ];
