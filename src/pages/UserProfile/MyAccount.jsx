@@ -52,7 +52,7 @@ function MyAccount() {
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
-              className="lg:w-1/5 m-auto h-40 w-40"
+              className="m-auto h-40 w-40 rounded-full"
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">

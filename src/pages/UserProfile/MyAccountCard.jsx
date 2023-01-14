@@ -32,7 +32,7 @@ function MyAccountCard({data}) {
           <img
             src={user.photoURL ? user.photoURL : User}
             alt="author"
-            className="w-10"
+            className="w-10 rounded-full"
           />
           <h1 className="ml-4 text-cyan-600 font-medium">
             {user.username ? user.username : 'Name'}{' '}
