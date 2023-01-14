@@ -3,8 +3,14 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db, storage } from '../../firebase/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/users/usersSlice';
+import { useDispatch } from 'react-redux';
+import { getBlogs } from '../../features/blogs/blogsSlice';
 
 function WriteBlog() {
+  const { user } = useSelector(selectUser);
+  const dispatch = useDispatch();
   //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,13 +34,15 @@ function WriteBlog() {
         content: content,
         mediaURL: url,
         likes: 0,
-        user_name: null,
+        user_name: user.username,
+        userID: user.id,
       });
       alert('Blog submitted successfully');
       setTitle('');
       setContent('');
       setMedia(null);
       setsubTitle('');
+      dispatch(getBlogs());
     };
     submit();
   };

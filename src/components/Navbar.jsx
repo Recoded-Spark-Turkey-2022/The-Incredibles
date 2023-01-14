@@ -4,7 +4,7 @@ import Button from './Button';
 import Logo from '../assets/pics/navbar/logo.svg';
 import Menu from '../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../assets/pics/navbar/backArrow.svg';
-import UserProfile from '../assets/pics/navbar/userProfil.svg';
+import UserPhoto from '../assets/pics/profilepage/profilepic.svg';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/users/usersSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -89,7 +89,7 @@ function Navbar() {
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <p className="text-center font-bold mt-4">
-              {user.username + user.usersurname}
+              {user.username ? user.username + user.usersurname : 'user name'}
             </p>
           </div>
         ) : (
