@@ -46,7 +46,6 @@ function WriteBlog() {
       setMedia(null);
       setsubTitle('');
       dispatch(getBlogs());
-      dispatch(getBlogs());
     };
     submit();
   };
