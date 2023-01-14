@@ -7,6 +7,10 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../features/blogs/blogsSlice';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/users/usersSlice';
+import { useDispatch } from 'react-redux';
+import { getBlogs } from '../../features/blogs/blogsSlice';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);
@@ -45,6 +49,7 @@ function WriteBlog() {
       setContent('');
       setMedia(null);
       setsubTitle('');
+      dispatch(getBlogs());
       dispatch(getBlogs());
     };
     submit();

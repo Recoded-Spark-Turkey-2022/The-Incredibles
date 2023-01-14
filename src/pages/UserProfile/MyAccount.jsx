@@ -1,4 +1,4 @@
-import MyAccountCard from './MyAccountCard';
+import BlogCard from '../Blogs/BlogCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
@@ -10,6 +10,7 @@ import { auth } from '../../firebase/firebase';
 import { selectBlog } from '../../features/blogs/blogsSlice';
 
 function MyAccount() {
+  const { blogs } = useSelector((state) => state.blogs);
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   // const {blogs} = useSelector(selectBlog)
