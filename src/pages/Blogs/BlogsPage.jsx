@@ -7,7 +7,6 @@ import '../../slick-theme.css';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 
-
 function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
@@ -39,7 +38,6 @@ function BlogsPage() {
       },
     ],
   };
-  
 
   return (
     <div className="px-28 max-lg:px-4">
@@ -70,34 +68,27 @@ function BlogsPage() {
           Popular:
         </h1>
         <div className="max-lg:pr-4">
-        
-         {/* <Slider {...settings}>
+          {/* <Slider {...settings}>
             {blogs.map((blog) =>
               blog.state === 'popular' ? <BlogCard key={blog.title} /> : null
             )}
           </Slider> */}
 
-<Slider {...settings}>
-            {blogs 
-             .map((blog, i) =>
-             <BlogCard key={i} blog = {blog} /> 
-            
-            )}
+          <Slider {...settings}>
+            {blogs.map((blog, i) => (
+              <BlogCard key={i} blog={blog} />
+            ))}
           </Slider>
-
         </div>
         <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Read also:
         </h1>
         <div className="max-lg:pr-4">
           <Slider {...settings}>
-            {blogs 
-             .map((blog, i) =>
-             <BlogCard key={i} blog = {blog} /> 
-            
-            )}
+            {blogs.map((blog, i) => (
+              <BlogCard key={i} blog={blog} />
+            ))}
           </Slider>
-
         </div>
       </div>
     </div>
@@ -105,4 +96,3 @@ function BlogsPage() {
 }
 
 export default BlogsPage;
-
