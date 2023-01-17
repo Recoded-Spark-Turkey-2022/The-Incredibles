@@ -83,7 +83,7 @@ function Blog() {
           Read also:
         </h1>
         <div className="max-lg:flex">
-          {blogs.slice(0, 2).map((blog, i) => (
+          {blogs.filter(el=>el.categorey === blog.categorey && el.title !== blog.title).slice(0, 2).map((blog, i) => (
             <BlogCard key={i} blog={blog} />
           ))}
         </div>
