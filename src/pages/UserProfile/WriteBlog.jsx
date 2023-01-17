@@ -37,7 +37,8 @@ function WriteBlog() {
         content: content,
         mediaURL: url,
         likes: 0,
-        date: '',
+        unlikes:0,
+        date:new Date().toISOString(),
         userID: user.id,
         categorey
       });
