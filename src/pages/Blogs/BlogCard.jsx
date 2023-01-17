@@ -3,8 +3,15 @@ import User from '../../assets/pics/navbar/userProfil.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
+import {parseISO, formatDistanceToNow} from 'date-fns';
 
 function BlogCard({ blog }) {
+  let timeAgo =''
+  if(blog.date){
+    const date = parseISO(blog.date)
+    const time = formatDistanceToNow(date)
+    timeAgo = `created ${time} ago`
+  } 
   const handleClick=()=>{
     
     navigate('/blogs/blog', {state:{blog: blog}})
@@ -29,6 +36,7 @@ function BlogCard({ blog }) {
         <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
           {blog.subTitle}
         </p>
+          <span>{timeAgo}</span>
         <div className="flex items-center ">
           <img
             src={user.photoURL ? user.photoURL : User}
