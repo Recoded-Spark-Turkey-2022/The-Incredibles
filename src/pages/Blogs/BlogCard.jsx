@@ -3,19 +3,18 @@ import User from '../../assets/pics/navbar/userProfil.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
-import {parseISO, formatDistanceToNow} from 'date-fns';
+import { parseISO, formatDistanceToNow } from 'date-fns';
 
 function BlogCard({ blog }) {
-  let timeAgo =''
-  if(blog.data.date){
-    const date = parseISO(blog.data.date)
-    const time = formatDistanceToNow(date)
-    timeAgo = `created ${time} ago`
-  } 
-  const handleClick= async ()=>{
-    
-   await navigate('/blogs/blog', {state:{blog: blog}})
+  let timeAgo = '';
+  if (blog.data.date) {
+    const date = parseISO(blog.data.date);
+    const time = formatDistanceToNow(date);
+    timeAgo = `created ${time} ago`;
   }
+  const handleClick = async () => {
+    await navigate('/blogs/blog', { state: { blog: blog } });
+  };
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
   return (

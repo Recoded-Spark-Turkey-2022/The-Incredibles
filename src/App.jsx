@@ -23,7 +23,6 @@ function App() {
   // const [user] = useAuthState(auth);
   const dispatch = useDispatch();
   useEffect(() => {
-
     dispatch(getBlogs());
     onAuthStateChanged(auth, (user) => {
       if (user) {

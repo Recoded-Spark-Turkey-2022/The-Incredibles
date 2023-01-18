@@ -4,15 +4,11 @@ import BlogCard from './BlogCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
-import { useSelector} from 'react-redux';
-
+import { useSelector } from 'react-redux';
 
 function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
 
-  
-
-  
   const settings = {
     dots: true,
     infinite: false,
@@ -70,7 +66,6 @@ function BlogsPage() {
           Popular:
         </h1>
         <div className="max-lg:pr-4">
-
           <Slider {...settings}>
             {blogs.map((blog, i) => (
               <BlogCard key={i} blog={blog} />

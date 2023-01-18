@@ -9,7 +9,7 @@ import User from '../../assets/pics/profilepage/profilepic.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { useLocation } from 'react-router';
-import { addLikes,addUnlikes } from '../../features/blogs/blogsSlice';
+import { addLikes, addUnlikes } from '../../features/blogs/blogsSlice';
 
 function Blog() {
   const dispatch = useDispatch();
@@ -19,10 +19,20 @@ function Blog() {
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   const handleLikeClick = async () => {
-    await dispatch(addLikes({ id: blog.id, state: thisBlog && thisBlog.data.likedUsers.includes(user.id) }));
+    await dispatch(
+      addLikes({
+        id: blog.id,
+        state: thisBlog && thisBlog.data.likedUsers.includes(user.id),
+      })
+    );
   };
   const handleUnLikeClick = async () => {
-    await dispatch(addUnlikes({ id: blog.id, state: thisBlog && thisBlog.data.unlikedUsers.includes(user.id) }));
+    await dispatch(
+      addUnlikes({
+        id: blog.id,
+        state: thisBlog && thisBlog.data.unlikedUsers.includes(user.id),
+      })
+    );
   };
   return (
     <div className="border-t-2 pt-8 flex max-lg:flex-col max-lg:border-t-0">
@@ -63,37 +73,41 @@ function Blog() {
               />
             </div>
           </div>
-          <div className='flex justify-between'>
+          <div className="flex justify-between">
             <div>
-          <span> {thisBlog && thisBlog.data.likes} likes</span>
-          <button
-            className={
-              thisBlog && thisBlog.data.likedUsers.includes(user.id)
-                ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-            }
-            onClick={handleLikeClick}
-          >
-            <span className="likes-counter button">{`${
-              thisBlog && thisBlog.data.likedUsers.includes(user.id) ? 'liked' : 'Like'
-            }`}</span>
-          </button>
-          </div>
-          <div>
-          <span> {thisBlog && thisBlog.data.unlikes} dislike </span>
-          <button
-            className={
-              thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
-                ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-            }
-            onClick={handleUnLikeClick}
-          >
-            <span className="likes-counter button">{`${
-              thisBlog && thisBlog.data.unlikedUsers.includes(user.id) ? 'disliked' : 'dislike'
-            }`}</span>
-          </button>
-          </div>
+              <span> {thisBlog && thisBlog.data.likes} likes</span>
+              <button
+                className={
+                  thisBlog && thisBlog.data.likedUsers.includes(user.id)
+                    ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                    : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                }
+                onClick={handleLikeClick}
+              >
+                <span className="likes-counter button">{`${
+                  thisBlog && thisBlog.data.likedUsers.includes(user.id)
+                    ? 'liked'
+                    : 'Like'
+                }`}</span>
+              </button>
+            </div>
+            <div>
+              <span> {thisBlog && thisBlog.data.unlikes} dislike </span>
+              <button
+                className={
+                  thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
+                    ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                    : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                }
+                onClick={handleUnLikeClick}
+              >
+                <span className="likes-counter button">{`${
+                  thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
+                    ? 'disliked'
+                    : 'dislike'
+                }`}</span>
+              </button>
+            </div>
           </div>
 
           <div className="flex items-center py-10">
@@ -132,7 +146,7 @@ function Blog() {
             )
             .slice(0, 2)
             .map((blog, i) => (
-              <BlogCard key={i} blog={blog}  />
+              <BlogCard key={i} blog={blog} />
             ))}
         </div>
       </div>
