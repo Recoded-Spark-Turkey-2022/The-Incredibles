@@ -9,7 +9,7 @@ import User from '../../assets/pics/profilepage/profilepic.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { useLocation } from 'react-router';
-import { addLikes } from '../../features/blogs/blogsSlice';
+import { addLikes,addUnlikes } from '../../features/blogs/blogsSlice';
 
 function Blog() {
   const dispatch = useDispatch();
@@ -19,9 +19,14 @@ function Blog() {
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   const [isLiked, setIsLiked] = useState(localStorage.getItem('isLiked'));
+  const [isUnliked, setIsUnliked] = useState(localStorage.getItem('isUnliked'));
   const handleLikeClick = async () => {
     await dispatch(addLikes({ id: blog.id, state: isLiked }));
     setIsLiked(!isLiked);
+  };
+  const handleUnLikeClick = async () => {
+    await dispatch(addUnlikes({ id: blog.id, state: isUnliked }));
+    setIsUnliked(!isUnliked);
   };
 
   return (
@@ -63,8 +68,9 @@ function Blog() {
               />
             </div>
           </div>
+          <div className='flex justify-between'>
+            <div>
           <span> {thisBlog && thisBlog.data.likes} likes</span>
-
           <button
             className={
               isLiked
@@ -77,6 +83,23 @@ function Blog() {
               isLiked ? 'liked' : 'Like'
             }`}</span>
           </button>
+          </div>
+          <div>
+          <span> {thisBlog && thisBlog.data.unlikes} dislike </span>
+          <button
+            className={
+              isUnliked
+                ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            }
+            onClick={handleUnLikeClick}
+          >
+            <span className="likes-counter button">{`${
+              isUnliked ? 'disliked' : 'dislike'
+            }`}</span>
+          </button>
+          </div>
+          </div>
 
           <div className="flex items-center py-10">
             <p className="pr-2">by:</p>

@@ -30,6 +30,21 @@ export const addLikes = createAsyncThunk('blogs/addLikes', async (data,thunkAPI)
   localStorage.setItem("isLiked",true)
   }
 })
+export const addUnlikes = createAsyncThunk('blogs/addUnlikes', async (data,thunkAPI) =>{
+  const {dispatch} = thunkAPI
+  const {id,state} = data
+  const docRef = doc(db,'blogs',id)
+  if(state){
+  const decrement = await updateDoc(docRef,{unlikes:increment(-1)})
+  dispatch(getBlogs())
+  localStorage.clear()
+  }
+  else{
+  const incrementing = await updateDoc(docRef,{unlikes:increment(1)})
+  dispatch(getBlogs())
+  localStorage.setItem("isUnliked",true)
+  }
+})
 
 const initialState = { blogs: [] };
 
