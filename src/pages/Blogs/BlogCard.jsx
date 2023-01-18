@@ -12,9 +12,9 @@ function BlogCard({ blog }) {
     const time = formatDistanceToNow(date)
     timeAgo = `created ${time} ago`
   } 
-  const handleClick=()=>{
+  const handleClick= async ()=>{
     
-    navigate('/blogs/blog', {state:{blog: blog}})
+   await navigate('/blogs/blog', {state:{blog: blog}})
   }
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);

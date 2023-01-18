@@ -18,17 +18,12 @@ function Blog() {
   const location = useLocation();
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
-  const [isLiked, setIsLiked] = useState(false);
-  const [isUnliked, setIsUnliked] = useState(false);
   const handleLikeClick = async () => {
-    await dispatch(addLikes({ id: blog.id, state: isLiked }));
-    setIsLiked(!isLiked);
+    await dispatch(addLikes({ id: blog.id, state: thisBlog && thisBlog.data.likedUsers.includes(user.id) }));
   };
   const handleUnLikeClick = async () => {
-    await dispatch(addUnlikes({ id: blog.id, state: isUnliked }));
-    setIsUnliked(!isUnliked);
+    await dispatch(addUnlikes({ id: blog.id, state: thisBlog && thisBlog.data.unlikedUsers.includes(user.id) }));
   };
-
   return (
     <div className="border-t-2 pt-8 flex max-lg:flex-col max-lg:border-t-0">
       <div
@@ -73,14 +68,14 @@ function Blog() {
           <span> {thisBlog && thisBlog.data.likes} likes</span>
           <button
             className={
-              isLiked
+              thisBlog && thisBlog.data.likedUsers.includes(user.id)
                 ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                 : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             }
             onClick={handleLikeClick}
           >
             <span className="likes-counter button">{`${
-              isLiked ? 'liked' : 'Like'
+              thisBlog && thisBlog.data.likedUsers.includes(user.id) ? 'liked' : 'Like'
             }`}</span>
           </button>
           </div>
@@ -88,14 +83,14 @@ function Blog() {
           <span> {thisBlog && thisBlog.data.unlikes} dislike </span>
           <button
             className={
-              isUnliked
+              thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
                 ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                 : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
             }
             onClick={handleUnLikeClick}
           >
             <span className="likes-counter button">{`${
-              isUnliked ? 'disliked' : 'dislike'
+              thisBlog && thisBlog.data.unlikedUsers.includes(user.id) ? 'disliked' : 'dislike'
             }`}</span>
           </button>
           </div>
@@ -137,7 +132,7 @@ function Blog() {
             )
             .slice(0, 2)
             .map((blog, i) => (
-              <BlogCard key={i} blog={blog} />
+              <BlogCard key={i} blog={blog}  />
             ))}
         </div>
       </div>
