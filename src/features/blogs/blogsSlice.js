@@ -37,12 +37,12 @@ export const addUnlikes = createAsyncThunk('blogs/addUnlikes', async (data,thunk
   if(state){
   const decrement = await updateDoc(docRef,{unlikes:increment(-1)})
   dispatch(getBlogs())
-  localStorage.clear()
+  
   }
   else{
   const incrementing = await updateDoc(docRef,{unlikes:increment(1)})
   dispatch(getBlogs())
-  localStorage.setItem("isUnliked",true)
+  
   }
 })
 

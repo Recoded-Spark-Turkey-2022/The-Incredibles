@@ -18,8 +18,8 @@ function Blog() {
   const location = useLocation();
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
-  const [isLiked, setIsLiked] = useState(localStorage.getItem('isLiked'));
-  const [isUnliked, setIsUnliked] = useState(localStorage.getItem('isUnliked'));
+  const [isLiked, setIsLiked] = useState(false);
+  const [isUnliked, setIsUnliked] = useState(false);
   const handleLikeClick = async () => {
     await dispatch(addLikes({ id: blog.id, state: isLiked }));
     setIsLiked(!isLiked);
