@@ -23,6 +23,7 @@ function App() {
   // const [user] = useAuthState(auth);
   const dispatch = useDispatch();
   useEffect(() => {
+
     dispatch(getBlogs());
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -44,7 +45,7 @@ function App() {
         <Route path="/blogs/blog" element={<Blog />} />
         <Route path="/myaccount" element={<MyAccount />} />
         <Route
-          path="/signin/:id/myaccount/myaccountdetails"
+          path="/myaccount/myaccountdetails"
           element={<MyAccountDetails />}
         />
         <Route path="/myaccount/write" element={<WriteBlog />} />

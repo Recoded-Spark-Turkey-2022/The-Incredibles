@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);
+  console.log(user.id)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

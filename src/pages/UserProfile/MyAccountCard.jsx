@@ -6,7 +6,6 @@ import { selectUser } from '../../features/users/usersSlice';
 
 function MyAccountCard({ data }) {
   const navigate = useNavigate();
-  const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   return (
     <div

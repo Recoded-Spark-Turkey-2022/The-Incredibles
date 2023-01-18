@@ -7,8 +7,8 @@ import {parseISO, formatDistanceToNow} from 'date-fns';
 
 function BlogCard({ blog }) {
   let timeAgo =''
-  if(blog.date){
-    const date = parseISO(blog.date)
+  if(blog.data.date){
+    const date = parseISO(blog.data.date)
     const time = formatDistanceToNow(date)
     timeAgo = `created ${time} ago`
   } 
@@ -26,17 +26,18 @@ function BlogCard({ blog }) {
       <div className="transition-all duration-500 w-full bg-gray-200 border overflow-hidden group-hover:py-1">
         <img
           className="m-auto h-60 w-60"
-          src={blog.mediaURL ? blog.mediaURL : null}
+          src={blog.data.mediaURL ? blog.data.mediaURL : null}
           alt="blog-photo-preview"
         />
       </div>
 
       <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
-        <h1 className="font-bold">{blog.title}</h1>
+        <h1 className="font-bold">{blog.data.title}</h1>
         <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
-          {blog.subTitle}
+          {blog.data.subTitle}
         </p>
-          <span>{timeAgo}</span>
+        <span>{timeAgo}</span>
+        <span>{blog.data.likes} likes</span>
         <div className="flex items-center ">
           <img
             src={user.photoURL ? user.photoURL : User}

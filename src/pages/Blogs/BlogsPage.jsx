@@ -4,13 +4,15 @@ import BlogCard from './BlogCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import { useSelector} from 'react-redux';
+
 
 function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
-  const { user } = useSelector(selectUser);
 
+  
+
+  
   const settings = {
     dots: true,
     infinite: false,
@@ -68,11 +70,6 @@ function BlogsPage() {
           Popular:
         </h1>
         <div className="max-lg:pr-4">
-          {/* <Slider {...settings}>
-            {blogs.map((blog) =>
-              blog.state === 'popular' ? <BlogCard key={blog.title} /> : null
-            )}
-          </Slider> */}
 
           <Slider {...settings}>
             {blogs.map((blog, i) => (

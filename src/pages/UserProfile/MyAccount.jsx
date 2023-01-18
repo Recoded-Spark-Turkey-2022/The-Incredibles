@@ -10,7 +10,6 @@ import { selectUser } from '../../features/users/usersSlice';
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
-  // const {blogs} = useSelector(selectBlog)
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -46,7 +45,7 @@ function MyAccount() {
         <div className="lg:p-28 lg:pb-10 max-lg:p-3">
           <div
             className="flex flex-col items-center lg:pb-20 max-lg:p-10"
-            onClick={() => navigate('/signin/:id/myaccount/myaccountdetails')}
+            onClick={() => navigate('/myaccount/myaccountdetails')}
           >
             {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
             <img
@@ -63,9 +62,9 @@ function MyAccount() {
               {/* CHITURCA will change this part workon progress */}
               <Slider {...settings}>
                 {blogs
-                  .filter((blog) => blog.userID === user.id)
+                  .filter((blog) => blog.data.userID === user.id)
                   .map((blog, i) => {
-                    return <MyAccountCard key={i} data={blog} />;
+                    return <MyAccountCard key={i} data={blog.data} />;
                   })}
               </Slider>
             </div>
