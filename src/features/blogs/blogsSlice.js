@@ -28,14 +28,14 @@ export const addLikes = createAsyncThunk(
     const docRef = doc(db, 'blogs', id);
     if (state) {
       const decrement = await updateDoc(docRef, {
-        likes: increment(-1),
+        
         likedUsers: arrayRemove(userId),
       });
 
       dispatch(getBlogs());
     } else {
       const incrementing = await updateDoc(docRef, {
-        likes: increment(1),
+        
         likedUsers: arrayUnion(userId),
       });
       dispatch(getBlogs());
@@ -51,13 +51,13 @@ export const addUnlikes = createAsyncThunk(
     const docRef = doc(db, 'blogs', id);
     if (state) {
       const decrement = await updateDoc(docRef, {
-        unlikes: increment(-1),
+       
         unlikedUsers: arrayRemove(userId),
       });
       dispatch(getBlogs());
     } else {
       const incrementing = await updateDoc(docRef, {
-        unlikes: increment(1),
+       
         unlikedUsers: arrayUnion(userId),
       });
       dispatch(getBlogs());

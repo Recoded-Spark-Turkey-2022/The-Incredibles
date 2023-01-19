@@ -17,7 +17,9 @@ function Blog() {
   const { user } = useSelector(selectUser);
   const location = useLocation();
   const blog = location.state.blog;
+  console.log(blog)
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
+  console.log(thisBlog)
   const blogData = thisBlog && thisBlog.data;
   const handleLikeClick = async () => {
     await dispatch(
@@ -76,7 +78,7 @@ function Blog() {
           </div>
           <div className="flex justify-between">
             <div>
-              <span> {blogData && blogData.likes} likes</span>
+              <span> {blogData && blogData.likedUsers.length} likes</span>
               <button
                 className={
                   blogData && blogData.likedUsers.includes(user.id)
@@ -93,7 +95,7 @@ function Blog() {
               </button>
             </div>
             <div>
-              <span> {blogData && blogData.unlikes} dislike </span>
+              <span> {blogData && blogData.unlikedUsers.length} dislike </span>
               <button
                 className={
                   blogData && blogData.unlikedUsers.includes(user.id)

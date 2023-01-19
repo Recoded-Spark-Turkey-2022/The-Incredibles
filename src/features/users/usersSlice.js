@@ -28,7 +28,7 @@ export const userData = createAsyncThunk(
     const { profilImg, formData } = data;
     const { username, usersurname, biography, location, id } = formData;
     const { dispatch } = thunkAPI;
-    if (profilImg !== null) {
+    if (profilImg) {
       const imageRef = ref(storage, `usersImages/${profilImg.name + id}`);
       const snapshot = await uploadBytes(imageRef, profilImg);
       const photoURL = await getDownloadURL(imageRef);
