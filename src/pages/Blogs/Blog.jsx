@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BlogCard from './BlogCard';
 import BlogImage from '../../assets/pics/blogpage/blogImage.svg';
 import ShareIcon from '../../assets/pics/blogpage/share.svg';
@@ -18,11 +18,12 @@ function Blog() {
   const location = useLocation();
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
+  const blogData = thisBlog && thisBlog.data;
   const handleLikeClick = async () => {
     await dispatch(
       addLikes({
         id: blog.id,
-        state: thisBlog && thisBlog.data.likedUsers.includes(user.id),
+        state: blogData && blogData.likedUsers.includes(user.id),
       })
     );
   };
@@ -30,7 +31,7 @@ function Blog() {
     await dispatch(
       addUnlikes({
         id: blog.id,
-        state: thisBlog && thisBlog.data.unlikedUsers.includes(user.id),
+        state: blogData && blogData.unlikedUsers.includes(user.id),
       })
     );
   };
@@ -75,34 +76,34 @@ function Blog() {
           </div>
           <div className="flex justify-between">
             <div>
-              <span> {thisBlog && thisBlog.data.likes} likes</span>
+              <span> {blogData && blogData.likes} likes</span>
               <button
                 className={
-                  thisBlog && thisBlog.data.likedUsers.includes(user.id)
+                  blogData && blogData.likedUsers.includes(user.id)
                     ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                     : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                 }
                 onClick={handleLikeClick}
               >
                 <span className="likes-counter button">{`${
-                  thisBlog && thisBlog.data.likedUsers.includes(user.id)
+                  blogData && blogData.likedUsers.includes(user.id)
                     ? 'liked'
                     : 'Like'
                 }`}</span>
               </button>
             </div>
             <div>
-              <span> {thisBlog && thisBlog.data.unlikes} dislike </span>
+              <span> {blogData && blogData.unlikes} dislike </span>
               <button
                 className={
-                  thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
+                  blogData && blogData.unlikedUsers.includes(user.id)
                     ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                     : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
                 }
                 onClick={handleUnLikeClick}
               >
                 <span className="likes-counter button">{`${
-                  thisBlog && thisBlog.data.unlikedUsers.includes(user.id)
+                  blogData && blogData.unlikedUsers.includes(user.id)
                     ? 'disliked'
                     : 'dislike'
                 }`}</span>
