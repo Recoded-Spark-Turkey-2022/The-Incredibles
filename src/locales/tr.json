@@ -1,57 +1,58 @@
 {
   "nav": {
-    "home": "ana sayfa",
-    "about": "Hakkimizda",
-    "write": "Yaz",
-    "myaccount": "My account",
-    "blogs": "Blogs",
-    "contact": "Contact",
-    "signin": "Sign In",
-    "signup": "Sign Up",
-    "signout": "Sign Out"
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "write": "Blog yaz",
+    "myaccount": "Hesabım",
+    "blogs": "Bloglar",
+    "contact": "İletişim",
+    "signin": "Oturum aç",
+    "signup": "Kaydol",
+    "signout": "Oturumu Kapat"
   },
   "home": {
     "home": {
       "h1": "Refubook",
-      "h2": "Express Freely",
-      "p": "  We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members.\n Welcom to our website! From now thank you for considering how you can help make a difference in the lives of refugees!"
+      "h2": "Özgürce ifade et",
+      "p": "Topluluğun ve bağlantının gücüne inanıyoruz bu yüzden tüm üyelerimize hoş ve destekleyici bir ortam yaratmaya çalışıyoruz. Mültecilerin hayatında fark yaratabileceğinizi biliyoruz... Şimdiden teşekkürler!"
     },
     "about": {
-      "h1": "About",
-      "p": "Welcome to our website! We are a group of volunteers dedicated to helping refugees navigate their new lives and communities. We understand that the journey to seeking refuge can be incredibly difficult and disorienting, and we want to do everything we can to make the transition as smooth as possible. Our team is made up of individuals from all walks of life, united in our belief that everyone deserves a chance at a better future. We offer a range of services, including language classes, cultural orientation, legal assistance, and support finding housing and employment. We believe in the power of community and connection, and we strive to create a welcoming and supportive environment for all of our members. Thank you for visiting our website and for considering how you can help make a difference in the lives of refugees.",
-      "learnmore": "Learn More",
+      "h1": "Hakkımızda",
+      "p": "Web sitemize hoş geldiniz! Mültecilerin yeni hayatlarına ve topluluklarına uyum sağlamalarına yardımcı olmak için kurulmuş bir gönüllülük topluluğuyuz. Mülteci olma yolculuğunun inanılmaz zor ve karmaşık olduğunu biliyoruz ve geçişi mümkün olduğunca pürüzsüz hale getirmek için elimizden gelen her şeyi yapmak istiyoruz. Ekibimiz hayatın her alanından kişilerden oluşur ve herkesin daha iyi bir geleceğe hak ettiğine inançla birleşmiştir. Dil eğitimi, kültürel uyum, hukuki yardım ve konut ve iş bulma desteği gibi birçok hizmet sunuyoruz. Topluluk ve bağlantının gücüne inanıyoruz ve üyelerimize hoş ve destekleyici bir ortam sunmaya çalışıyoruz. Web sitemizi ziyaret ettiğiniz ve mültecilerin hayatlarına nasıl katkıda bulunabileceğinizi düşündüğünüz için teşekkür ederiz.",
+      "learnmore": "Daha fazla",
       "section": {
-        "h1": "Dependability",
-        "p1": "We are committed to being dependable and trustworthy, and we work hard to follow through on our commitments to refugees by giving fresh and truth information.",
-        "h2": "Determination",
-        "p2": "We are determined to help refugees overcome obstacles and achieve their goals.",
-        "h3": "Collaboration",
-        "p3": "We believe that collaboration is key to achieving success, and we work with a network of partners and community organizations to support refugees.",
-        "h4": "Productivity",
-        "p4": "We work efficiently and effectively to help refugees make the most of their opportunities."
+        "h1": "Güvenirlik",
+        "p1": "Mültecilerle yaptığımız çalışmalarda sadık ve güvenilir olmaya kararlıyız ve verdiğimiz bilgilerin taze ve doğru olmasını sağlamak için çalışıyoruz.",
+        "h2": "Kararlılık",
+        "p2": "Mültecilerin engelleri aşmasına ve amaçlarına ulaşmasına yardımcı olmak için kararlıyız.",
+        "h3": "İşbirliği",
+        "p3": "Başarıya ulaşmanın anahtarının işbirliği olduğuna inanıyoruz ve mültecilerin desteklenmesi için birçok ortak kuruluş ile çalışıyoruz.",
+        "h4": "Verimlilik",
+        "p4": "Mültecilerin fırsatlarından en iyi şekilde yararlanmalarını sağlamak için etkili ve verimli bir şekilde çalışıyoruz."
       }
     },
-    "partner": "Our Partners",
+    "partner": "Sponsorlarımız",
     "latest": {
-      "h1": "Latest Stories",
-      "p1": "Home is behind, the world ahead and there are many <br /> paths to tread through shadows to the edge.",
+      "h1": "Son hikayeler",
+      "p1": "Ev geride, dünya önünde ve gölgeler Kıyıya doğru. arasında yürünecek birçok yol var.",
       "section": {
-        "label1": "Job",
-        "h1": "Follow this steps and you will get your first job in Germany as a reugee!",
+        "label1": "İş",
+        "h1": "Bu adımları takip ederek  mülteci olarak Almanya'da ilk işinizi elde edin!",
         "p1.1": "Khaled Hatem",
-        "p1.2": "Refugee in Germany",
-        "label2": "Language",
-        "h2": "Here is how i learned Turkish in just few months!",
+        "p1.2": "Almanyada bir mülteci",
+        "label2": "Dil",
+        "h2": "Türkçeyi bir kaç ayda nasıl öğrendim ?",
         "p2.1": " Ahmad Fesal",
-        "p2.2": "Refugee in Turkey"
+        "p2.2": "Türkiyede bir mülteci"
       }
     },
     "location": {
-      "text1": "\"Working with the team at Refubook has been an incredibly rewarding experience. It is heartwarming to see the positive impact we are having on the lives of refugees every day.\"",
-      "text2": "\"Proud to be a part of the Refubook team and am constantly impressed by the compassion and professionalism of my colleagues. It is a pleasure to work with such a dedicated group of individuals who are committed to making a difference in the lives of refugees\"",
-      "text3": "\"As a member of the Refubook team, I am constantly amazed by the impact our work has on the lives of refugees. It is truly fulfilling to be a part of this organization.\"",
-      "text4": "\"Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause.\"",
-      "team": " Refubook Team member"
+      "text1": "\"Refubook ekibi ile çalışmak inanılmaz derecede karşılıklı olarak ödüllendirici bir deneyim oldu. Her gün mültecilerin hayatlarına olumlu bir etki yaptığımızı görmek insanın içini ısındıran bir duygu...\"",
+      "text2": "\"Refubook ekibinin bir parçası olmaktan gurur duyuyorum ve meslektaşlarımın azim ve profesyonelliğinden sürekli olarak etkileniyorum. Mültecilerin yaşamlarında fark yaratmaya kendini adamış, bu kadar özverili bir grup insanla çalışmak bir zevk\"",
+      "text3": "\"Refubook ekibinin bir üyesi olarak, çalışmalarımızın mültecilerin yaşamları üzerindeki etkisi beni her zaman şaşırtıyor. Bu organizasyonun bir parçası olmak gerçekten tatmin edici.\"",
+      "text4": "\"Refubook ekibinin bir parçası olmak, mültecilerin hayatlarında anlamlı bir fark yaratmamı sağladı. Böylesine önemli ve gerekli bir amaca katkıda bulunabilmek benim için bir onurdur.\"",
+      "team": " Refubook takım üyesi"
     }
   }
 }
+
