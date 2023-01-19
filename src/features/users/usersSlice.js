@@ -26,8 +26,6 @@ export const userData = createAsyncThunk(
   'user/userData',
   async (data, thunkAPI) => {
     const { profilImg, formData } = data;
-    console.log(profilImg);
-    console.log(formData);
     const { username, usersurname, biography, location, id } = formData;
     const { dispatch } = thunkAPI;
     if (profilImg !== null) {
