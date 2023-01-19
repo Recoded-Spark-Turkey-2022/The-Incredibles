@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
 import {
   Popover,
@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);
-  console.log(user.id);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,7 +19,7 @@ function MyAccountDetails() {
     usersurname: user.usersurname ? user.usersurname : '',
     biography: user.biography ? user.biography : '',
     location: user.location ? user.location : '',
-    id: user.id,
+    id: user && user.id,
   });
   const [profilImg, setProfileImg] = useState(null);
 

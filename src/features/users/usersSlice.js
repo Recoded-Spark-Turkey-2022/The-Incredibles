@@ -26,9 +26,11 @@ export const userData = createAsyncThunk(
   'user/userData',
   async (data, thunkAPI) => {
     const { profilImg, formData } = data;
+    console.log(profilImg);
+    console.log(formData);
     const { username, usersurname, biography, location, id } = formData;
     const { dispatch } = thunkAPI;
-    if (profilImg) {
+    if (profilImg !== null) {
       const imageRef = ref(storage, `usersImages/${profilImg.name + id}`);
       const snapshot = await uploadBytes(imageRef, profilImg);
       const photoURL = await getDownloadURL(imageRef);
@@ -39,14 +41,15 @@ export const userData = createAsyncThunk(
         { merge: true }
       );
       dispatch(getUser(id));
+    } else {
+      const users = doc(db, 'users', id);
+      await setDoc(
+        users,
+        { username, usersurname, biography, location, id },
+        { merge: true }
+      );
+      dispatch(getUser(id));
     }
-    const users = doc(db, 'users', id);
-    await setDoc(
-      users,
-      { photoURL, username, usersurname, biography, location, id },
-      { merge: true }
-    );
-    dispatch(getUser(id));
   }
 );
 export const getUser = createAsyncThunk('user/getUser', async (id) => {
