@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../features/blogs/blogsSlice';
+import { CATEGORIES } from '../../data';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);
@@ -36,8 +37,10 @@ function WriteBlog() {
         content: content,
         mediaURL: url,
         likes: 0,
-        date: '',
+        unlikes: 0,
+        date: new Date().toISOString(),
         userID: user.id,
+        categorey,
       });
       alert('Blog submitted successfully');
       setTitle('');
@@ -53,6 +56,11 @@ function WriteBlog() {
   const [subTitle, setsubTitle] = useState('');
   const [content, setContent] = useState('');
   const [media, setMedia] = useState(null);
+  const [categorey, setCategorey] = useState('social');
+
+  const categoreyToDisplay = CATEGORIES.map((cat, i) => (
+    <option key={i}> {cat} </option>
+  ));
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -64,6 +72,9 @@ function WriteBlog() {
 
   const handleContentChange = (event) => {
     setContent(event.target.value);
+  };
+  const handleCategoreyChange = (event) => {
+    setCategorey(event.target.value);
   };
 
   const handleMediaChange = (event) => {
@@ -93,6 +104,16 @@ function WriteBlog() {
             value={title}
             onChange={handleTitleChange}
           />
+          <label className="font-bold text-gray-700 text-m">
+            Category
+            <select
+              onChange={handleCategoreyChange}
+              value={categorey}
+              className="w-fit  m-1 text-sm bg-cyan-100"
+            >
+              {categoreyToDisplay}
+            </select>
+          </label>
         </div>
         <div className="mb-4">
           <label

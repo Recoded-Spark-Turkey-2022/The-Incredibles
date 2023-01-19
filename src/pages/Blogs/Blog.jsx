@@ -6,16 +6,37 @@ import FaceIcon from '../../assets/pics/blogpage/faceb.svg';
 import InstaIcon from '../../assets/pics/blogpage/insta.svg';
 import TweterIcon from '../../assets/pics/blogpage/tweter.svg';
 import User from '../../assets/pics/profilepage/profilepic.svg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { useLocation } from 'react-router';
+import { addLikes, addUnlikes } from '../../features/blogs/blogsSlice';
 
 function Blog() {
+  const dispatch = useDispatch();
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   const location = useLocation();
   const blog = location.state.blog;
-
+  console.log(blog)
+  const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
+  console.log(thisBlog)
+  const blogData = thisBlog && thisBlog.data;
+  const handleLikeClick = async () => {
+    await dispatch(
+      addLikes({
+        id: blog.id,
+        state: blogData && blogData.likedUsers.includes(user.id),
+      })
+    );
+  };
+  const handleUnLikeClick = async () => {
+    await dispatch(
+      addUnlikes({
+        id: blog.id,
+        state: blogData && blogData.unlikedUsers.includes(user.id),
+      })
+    );
+  };
   return (
     <div className="border-t-2 pt-8 flex max-lg:flex-col max-lg:border-t-0">
       <div
@@ -24,11 +45,11 @@ function Blog() {
       >
         <div className="">
           <h1 className="font-bold text-5xl pb-8">
-            {blog.title ? blog.title : 'Blog Title'}{' '}
+            {blog.data.title ? blog.data.title : 'Blog Title'}{' '}
           </h1>
           <div className=" relative border flex">
             <img
-              src={blog.mediaURL ? blog.mediaURL : BlogImage}
+              src={blog.data.mediaURL ? blog.data.mediaURL : BlogImage}
               alt="blog-image"
               className="h-96"
             />
@@ -55,6 +76,43 @@ function Blog() {
               />
             </div>
           </div>
+          <div className="flex justify-between">
+            <div>
+              <span> {blogData && blogData.likedUsers.length} likes</span>
+              <button
+                className={
+                  blogData && blogData.likedUsers.includes(user.id)
+                    ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                    : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                }
+                onClick={handleLikeClick}
+              >
+                <span className="likes-counter button">{`${
+                  blogData && blogData.likedUsers.includes(user.id)
+                    ? 'liked'
+                    : 'Like'
+                }`}</span>
+              </button>
+            </div>
+            <div>
+              <span> {blogData && blogData.unlikedUsers.length} dislike </span>
+              <button
+                className={
+                  blogData && blogData.unlikedUsers.includes(user.id)
+                    ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                    : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                }
+                onClick={handleUnLikeClick}
+              >
+                <span className="likes-counter button">{`${
+                  blogData && blogData.unlikedUsers.includes(user.id)
+                    ? 'disliked'
+                    : 'dislike'
+                }`}</span>
+              </button>
+            </div>
+          </div>
+
           <div className="flex items-center py-10">
             <p className="pr-2">by:</p>
             <img
@@ -69,10 +127,10 @@ function Blog() {
           </div>
           <div name="content div" className="">
             <h2 className="text-blod text-3xl text-center pb-6">
-              {blog.subTitle ? blog.subTitle : 'Subtitle'}
+              {blog.data.subTitle ? blog.data.subTitle : 'Subtitle'}
             </h2>
             <p className="text-lg max-lg:px-6 max-lg:pb-6">
-              {blog.content ? blog.content : 'Content'}
+              {blog.data.content ? blog.data.content : 'Content'}
             </p>
           </div>
         </div>
@@ -83,9 +141,16 @@ function Blog() {
           Read also:
         </h1>
         <div className="max-lg:flex">
-          {blogs.slice(0, 2).map((blog, i) => (
-            <BlogCard key={i} blog={blog} />
-          ))}
+          {blogs
+            .filter(
+              (el) =>
+                el.data.categorey === blog.data.categorey &&
+                el.data.title !== blog.data.title
+            )
+            .slice(0, 2)
+            .map((blog, i) => (
+              <BlogCard key={i} blog={blog} />
+            ))}
         </div>
       </div>
     </div>

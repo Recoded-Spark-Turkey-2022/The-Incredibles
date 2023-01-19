@@ -39,14 +39,15 @@ export const userData = createAsyncThunk(
         { merge: true }
       );
       dispatch(getUser(id));
+    } else {
+      const users = doc(db, 'users', id);
+      await setDoc(
+        users,
+        { username, usersurname, biography, location, id },
+        { merge: true }
+      );
+      dispatch(getUser(id));
     }
-    const users = doc(db, 'users', id);
-    await setDoc(
-      users,
-      { photoURL, username, usersurname, biography, location, id },
-      { merge: true }
-    );
-    dispatch(getUser(id));
   }
 );
 export const getUser = createAsyncThunk('user/getUser', async (id) => {

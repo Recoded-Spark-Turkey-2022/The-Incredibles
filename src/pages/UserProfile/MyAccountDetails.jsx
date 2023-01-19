@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
 import {
   Popover,
@@ -19,7 +19,7 @@ function MyAccountDetails() {
     usersurname: user.usersurname ? user.usersurname : '',
     biography: user.biography ? user.biography : '',
     location: user.location ? user.location : '',
-    id: user.id,
+    id: user && user.id,
   });
   const [profilImg, setProfileImg] = useState(null);
 
