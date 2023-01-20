@@ -12,8 +12,6 @@ import { CATEGORIES } from '../../data';
 function WriteBlog() {
   const { user } = useSelector(selectUser);
   const dispatch = useDispatch();
-
-  //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -29,21 +27,21 @@ function WriteBlog() {
       return url;
     };
     const submit = async () => {
-      //likes and date added because they are going to be used in blogs pages as filters
       const url = await uploadImg();
       await addDoc(collection(db, 'blogs'), {
         title: title,
         subTitle: subTitle,
         content: content,
         mediaURL: url,
-        likes: 0,
-        unlikes: 0,
+        likedUsers: [],
+        unlikedUsers: [],
         date: new Date().toISOString(),
-        userID: user.id,
-        userName: user.username, 
-        userSurname: user.usersurname,
-        userPhoto: user.photoURL    ? user.photoURL:null,
         categorey,
+        author: {
+          authorId: user.id,
+          authorName: user.username + user.usersurname,
+          authorPhoto: user.photoURL,
+        },
       });
       alert('Blog submitted successfully');
       setTitle('');
@@ -54,7 +52,6 @@ function WriteBlog() {
     };
     submit();
   };
-  //
   const [title, setTitle] = useState('');
   const [subTitle, setsubTitle] = useState('');
   const [content, setContent] = useState('');
