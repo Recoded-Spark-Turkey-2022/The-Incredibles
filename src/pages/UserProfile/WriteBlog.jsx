@@ -33,10 +33,9 @@ function WriteBlog() {
         subTitle: subTitle,
         content: content,
         mediaURL: url,
-        likes: 0,
-        unlikes: 0,
+        likedUsers: [],
+        unlikedUsers: [],
         date: new Date().toISOString(),
-        userID: user.id,
         categorey,
         author: {
           authorId: user.id,
