@@ -6,60 +6,22 @@ import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
+import BlogCard from '../Blogs/BlogCard';
 
 const emptyCard = [
-  // {
-  //   title: 'Your Blog Title',
-  //   content: 'Start to write here',
-  //   date: 'date',
-  //   id: 0,
-  // }
   {
     title: 'title',
-    text: 'text',
+    content: 'content',
     author: 'author',
     date: 'date',
     id: 0,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 1,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 2,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 3,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 4,
-  },
-  {
-    title: 'title',
-    text: 'text',
-    author: 'author',
-    date: 'date',
-    id: 5,
   },
 ]
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
+  console.log(blogs)
+  console.log(emptyCard)
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
@@ -110,11 +72,11 @@ function MyAccount() {
           <div>
             <div className="pb-5 max-lg:pr-4">
               <Slider {...settings}>
-                { blogs?
+                { blogs ?
                 blogs
                   .filter((blog) => blog.data.userID === user.id)
                   .map((blog, i) => {
-                    return <MyAccountCard key={i} data={blog.data} />;
+                    return <BlogCard key={i} blog={blog} />;
                   }) :
                 emptyCard.map((holder) =>(<MyAccountCard key={holder.id}/>))
                 }
