@@ -39,8 +39,12 @@ function WriteBlog() {
         likedUsers: [],
         unlikedUsers: [],
         date: new Date().toISOString(),
-        userID: user.id,
         categorey,
+        author:{
+          authorId:user.id,
+          authorName:user.username + user.usersurname,
+          authorPhoto:user.photoURL
+        }
       });
       alert('Blog submitted successfully');
       setTitle('');

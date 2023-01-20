@@ -1,8 +1,6 @@
 import React from 'react';
-import User from '../../assets/pics/navbar/userProfil.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 
 function BlogCard({ blog }) {
@@ -18,7 +16,6 @@ function BlogCard({ blog }) {
     await navigate('/blogs/blog', { state: { blog: blog } });
   };
   const navigate = useNavigate();
-  const { user } = useSelector(selectUser);
   return (
     <div
       onClick={handleClick}
@@ -41,13 +38,12 @@ function BlogCard({ blog }) {
         <span>{thisBlog && thisBlog.data.likedUsers.length} likes</span>
         <div className="flex items-center ">
           <img
-            src={user.photoURL ? user.photoURL : User}
+            src={thisBlog && thisBlog.data.author.authorPhoto}
             alt="author"
             className="w-10 rounded-full"
           />
           <h1 className="ml-4 text-cyan-600 font-medium">
-            {user.username ? user.username : 'Name'}{' '}
-            {user.usersurname ? user.usersurname : 'Surname'}
+            {thisBlog && thisBlog.data.author.authorName}
           </h1>
         </div>
       </div>
