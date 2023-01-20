@@ -96,10 +96,10 @@ function MyAccount() {
         <div className="lg:p-16 lg:pb-8 max-lg:p-3">
           <div
             className="flex flex-col items-center lg:pb-5 max-lg:p-10"
-            onClick={() => navigate('/myaccount/myaccountdetails')}
           >
             <img
               className="m-auto h-40 w-40 rounded-full"
+              onClick={() => navigate('/myaccount/myaccountdetails')}
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
