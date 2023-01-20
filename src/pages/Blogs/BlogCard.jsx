@@ -39,13 +39,13 @@ function BlogCard({ blog }) {
         <span>{blog.data.likes} likes</span>
         <div className="flex items-center ">
           <img
-            src={user.photoURL ? user.photoURL : User}
+            src={blog.data.userPhoto ? blog.data.userPhoto : User}
             alt="author"
             className="w-10 rounded-full"
           />
           <h1 className="ml-4 text-cyan-600 font-medium">
-            {user.username ? user.username : 'Name'}{' '}
-            {user.usersurname ? user.usersurname : 'Surname'}
+            {blog.data.userName ? blog.data.userName : 'Name'}{' '}
+            {blog.data.userSurname ? blog.data.userSurname : 'Surname'}
           </h1>
         </div>
       </div>
