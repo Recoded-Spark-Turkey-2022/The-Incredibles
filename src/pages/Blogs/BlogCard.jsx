@@ -6,6 +6,8 @@ import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 
 function BlogCard({ blog }) {
+  const { blogs } = useSelector((state) => state.blogs);
+  const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   let timeAgo = '';
   if (blog.data.date) {
     const date = parseISO(blog.data.date);
@@ -36,7 +38,7 @@ function BlogCard({ blog }) {
           {blog.data.subTitle}
         </p>
         <span>{timeAgo}</span>
-        <span>{blog.data.likes} likes</span>
+        <span>{thisBlog && thisBlog.data.likedUsers.length} likes</span>
         <div className="flex items-center ">
           <img
             src={user.photoURL ? user.photoURL : User}

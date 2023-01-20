@@ -17,9 +17,7 @@ function Blog() {
   const { user } = useSelector(selectUser);
   const location = useLocation();
   const blog = location.state.blog;
-  console.log(blog)
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
-  console.log(thisBlog)
   const blogData = thisBlog && thisBlog.data;
   const handleLikeClick = async () => {
     await dispatch(
