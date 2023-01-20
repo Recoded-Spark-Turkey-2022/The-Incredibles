@@ -40,6 +40,9 @@ function WriteBlog() {
         unlikes: 0,
         date: new Date().toISOString(),
         userID: user.id,
+        userName: user.username, 
+        userSurname: user.usersurname,
+        userPhoto: user.photoURL    ? user.photoURL:null,
         categorey,
       });
       alert('Blog submitted successfully');
