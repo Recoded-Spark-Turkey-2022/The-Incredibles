@@ -38,15 +38,12 @@ function BlogCard({ blog }) {
         <span>{thisBlog && thisBlog.data.likedUsers.length} likes</span>
         <div className="flex items-center ">
           <img
-
             src={thisBlog && thisBlog.data.author.authorPhoto}
             alt="author"
             className="w-10 rounded-full"
           />
           <h1 className="ml-4 text-cyan-600 font-medium">
-
             {thisBlog && thisBlog.data.author.authorName}
-
           </h1>
         </div>
       </div>

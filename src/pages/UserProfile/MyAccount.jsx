@@ -16,7 +16,7 @@ const emptyCard = [
     date: 'date',
     id: 0,
   },
-]
+];
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
@@ -54,30 +54,28 @@ function MyAccount() {
     <section name="myaccount" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
         <div className="lg:p-16 lg:pb-8 max-lg:p-3">
-          <div
-            className="flex flex-col items-center lg:pb-5 max-lg:p-10"
-          >
+          <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
             <img
               className="m-auto h-40 w-40 rounded-full"
               onClick={() => navigate('/myaccount/myaccountdetails')}
               src={user.photoURL ? user.photoURL : UserPhoto}
             />
             <h2 className="p-5 font-bold text-lg">
-              {user.username}{' '}
-              {user.usersurname}
+              {user.username} {user.usersurname}
             </h2>
           </div>
           <div>
             <div className="pb-5 max-lg:pr-4">
               <Slider {...settings}>
-                {blogs ?
-                blogs
-                  .filter((blog) => blog.data.author.authorId === user.id)
-                  .map((blog, i) => {
-                    return <BlogCard key={i} blog={blog} />;
-                  }) :
-                emptyCard.map((holder) =>(<MyAccountCard key={holder.id}/>))
-                }
+                {blogs
+                  ? blogs
+                      .filter((blog) => blog.data.author.authorId === user.id)
+                      .map((blog, i) => {
+                        return <BlogCard key={i} blog={blog} />;
+                      })
+                  : emptyCard.map((holder) => (
+                      <MyAccountCard key={holder.id} />
+                    ))}
               </Slider>
             </div>
           </div>

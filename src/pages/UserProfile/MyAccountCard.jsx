@@ -6,7 +6,7 @@ function MyAccountCard() {
   const navigate = useNavigate();
   return (
     <div
-      onClick={() => navigate('/myaccount/write')} 
+      onClick={() => navigate('/myaccount/write')}
       className="group h-1/4 border mx-6 max-lg:mx-4 mb-6 rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]"
     >
       <div className="transition-all duration-500 w-full h-1/4 bg-gray-200 border py-24 overflow-hidden group-hover:py-16"></div>
