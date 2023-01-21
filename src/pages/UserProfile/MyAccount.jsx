@@ -78,9 +78,14 @@ function MyAccount() {
                       </p>
                       <br />
                       <div className="flex items-center p-2">
-                        <img src={User} alt="author" className="w-10" />
+                        <img
+                          src={user.photoURL ? user.photoURL : User}
+                          alt="author"
+                          className="w-10 rounded-full"
+                        />
                         <h1 className="ml-4 text-cyan-600 font-medium">
-                          User Name
+                          {user.username ? user.username : 'Name'}{' '}
+                          {user.usersurname ? user.usersurname : 'Surname'}
                         </h1>
                       </div>
                     </div>
