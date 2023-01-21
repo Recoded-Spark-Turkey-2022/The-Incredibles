@@ -1,13 +1,13 @@
-import Slider from 'react-slick';
-import '../../slick.css';
-import '../../slick-theme.css';
-import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import BlogCard from '../Blogs/BlogCard';
-import User from '../../assets/pics/profilepage/profilepic.svg';
 import MyAccountCard from './MyAccountCard';
+import Slider from 'react-slick';
+import '../../slick.css';
+import '../../slick-theme.css';
+import User from '../../assets/pics/profilepage/profilepic.svg';
+import ChangePen from '../../assets/pics/profilepage/changeprofile.svg';
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
@@ -47,9 +47,14 @@ function MyAccount() {
         <div className="lg:p-16 lg:pb-8 max-lg:p-3">
           <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
             <img
+              className="m-auto relative top-36 left-16"
+              onClick={() => navigate('/myaccount/myaccountdetails')}
+              src={ChangePen}
+            />
+            <img
               className="m-auto h-40 w-40 rounded-full"
               onClick={() => navigate('/myaccount/myaccountdetails')}
-              src={user.photoURL ? user.photoURL : UserPhoto}
+              src={user.photoURL ? user.photoURL : User}
             />
             <h2 className="p-5 font-bold text-lg">
               {user.username} {user.usersurname}
