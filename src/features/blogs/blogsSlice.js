@@ -3,7 +3,6 @@ import {
   collection,
   getDocs,
   doc,
-  increment,
   updateDoc,
   arrayUnion,
   arrayRemove,
@@ -28,14 +27,12 @@ export const addLikes = createAsyncThunk(
     const docRef = doc(db, 'blogs', id);
     if (state) {
       const decrement = await updateDoc(docRef, {
-        
         likedUsers: arrayRemove(userId),
       });
 
       dispatch(getBlogs());
     } else {
       const incrementing = await updateDoc(docRef, {
-        
         likedUsers: arrayUnion(userId),
       });
       dispatch(getBlogs());
@@ -51,13 +48,11 @@ export const addUnlikes = createAsyncThunk(
     const docRef = doc(db, 'blogs', id);
     if (state) {
       const decrement = await updateDoc(docRef, {
-       
         unlikedUsers: arrayRemove(userId),
       });
       dispatch(getBlogs());
     } else {
       const incrementing = await updateDoc(docRef, {
-       
         unlikedUsers: arrayUnion(userId),
       });
       dispatch(getBlogs());

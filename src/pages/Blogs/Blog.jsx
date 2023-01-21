@@ -17,9 +17,7 @@ function Blog() {
   const { user } = useSelector(selectUser);
   const location = useLocation();
   const blog = location.state.blog;
-  console.log(blog)
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
-  console.log(thisBlog)
   const blogData = thisBlog && thisBlog.data;
   const handleLikeClick = async () => {
     await dispatch(
@@ -116,13 +114,12 @@ function Blog() {
           <div className="flex items-center py-10">
             <p className="pr-2">by:</p>
             <img
-              src={user.photoURL ? user.photoURL : User}
+              src={blogData ? blogData.author.authorPhoto : User}
               alt="author"
               className="w-10"
             />
             <h1 className="ml-4 text-cyan-600 font-medium">
-              {user.username ? user.username : 'Name'}{' '}
-              {user.usersurname ? user.usersurname : 'Surname'}
+              {blogData ? blogData.author.authorName : 'Name'}{' '}
             </h1>
           </div>
           <div name="content div" className="">
