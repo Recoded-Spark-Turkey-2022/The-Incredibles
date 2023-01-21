@@ -20,8 +20,6 @@ const emptyCard = [
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
-  console.log(blogs)
-  console.log(emptyCard)
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const settings = {
@@ -72,9 +70,9 @@ function MyAccount() {
           <div>
             <div className="pb-5 max-lg:pr-4">
               <Slider {...settings}>
-                { blogs ?
+                {blogs ?
                 blogs
-                  .filter((blog) => blog.data.userID === user.id)
+                  .filter((blog) => blog.data.author.authorId === user.id)
                   .map((blog, i) => {
                     return <BlogCard key={i} blog={blog} />;
                   }) :
