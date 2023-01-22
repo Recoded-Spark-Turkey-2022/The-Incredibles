@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { userData, selectUser } from '../../features/users/usersSlice';
+import { userData, selectUser } from '../../../features/users/usersSlice';
 import {
   Popover,
   PopoverHandler,
   PopoverContent,
 } from '@material-tailwind/react';
-import User from '../../assets/pics/profilepage/profilepic.svg';
-import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
+import User from '../../../assets/pics/profilepage/profilepic.svg';
+import ChangePhoto from '../../../assets/pics/profilepage/changepic.svg';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);

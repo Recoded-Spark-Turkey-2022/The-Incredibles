@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import AboutPage from './pages/About/AboutPage';
-import ContactPage from './pages/Contact/ContactPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import Footer from './components/Footer';
 import HomePage from './pages/Home/HomePage';
 import Navbar from './components/Navbar';
 import BlogsPage from './pages/Blogs/BlogsPage';
-import Blog from './pages/Blogs/Blog';
-import Signup from './pages/Signup/Signup';
-import Signin from './pages/Signup/Signin';
+import BlogDetails from './pages/Blogs/BlogDetails';
+import SignUp from './pages/Signup/SignUp';
+import SignIn from './pages/Signup/SingIn';
 import MyAccount from './pages/UserProfile/MyAccount';
 import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
@@ -35,12 +35,12 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blogs/blog" element={<Blog />} />
+        <Route path="/blogs/blog" element={<BlogDetails />} />
         <Route path="/myaccount" element={<MyAccount />} />
         <Route
           path="/myaccount/myaccountdetails"

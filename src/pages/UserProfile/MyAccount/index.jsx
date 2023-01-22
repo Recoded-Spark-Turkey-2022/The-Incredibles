@@ -1,19 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
-import BlogCard from '../../components/BlogCard';
-import MyAccountCard from '../../components/MyAccountCard';
+import { selectUser } from '../../../features/users/usersSlice';
+import BlogCard from '../../../components/BlogCard';
+import MyAccountCard from '../../../components/MyAccountCard';
 import Slider from 'react-slick';
-import '../../slick.css';
-import '../../slick-theme.css';
-import User from '../../assets/pics/profilepage/profilepic.svg';
-import ChangePen from '../../assets/pics/profilepage/changeprofile.svg';
+import '../../../style/slick.css';
+import '../../../style/slick-theme.css';
+import User from '../../../assets/pics/profilepage/profilepic.svg';
+import ChangePen from '../../../assets/pics/profilepage/changeprofile.svg';
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
-  const userBlogs = blogs.filter((blog) => blog.data.author.authorId === user.id)
+  const userBlogs = blogs.filter(
+    (blog) => blog.data.author.authorId === user.id
+  );
   const settings = {
     dots: true,
     infinite: false,
@@ -64,15 +66,15 @@ function MyAccount() {
           <div>
             <div className="pb-5 max-lg:pr-4">
               <Slider {...settings}>
-                {userBlogs[0] ?  (
+                {userBlogs[0] ? (
                   blogs
                     .filter((blog) => blog.data.author.authorId === user.id)
                     .map((blog, i) => {
                       return <BlogCard key={i} blog={blog} />;
                     })
-                ) : 
+                ) : (
                   <MyAccountCard />
-                }
+                )}
               </Slider>
             </div>
           </div>

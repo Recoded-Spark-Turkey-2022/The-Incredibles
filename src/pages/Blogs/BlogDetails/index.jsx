@@ -1,17 +1,17 @@
 import React from 'react';
-import BlogCard from '../../components/BlogCard';
-import BlogImage from '../../assets/pics/blogpage/blogImage.svg';
-import ShareIcon from '../../assets/pics/blogpage/share.svg';
-import FaceIcon from '../../assets/pics/blogpage/faceb.svg';
-import InstaIcon from '../../assets/pics/blogpage/insta.svg';
-import TweterIcon from '../../assets/pics/blogpage/tweter.svg';
-import User from '../../assets/pics/profilepage/profilepic.svg';
+import BlogCard from '../../../components/BlogCard';
+import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
+import ShareIcon from '../../../assets/pics/blogpage/share.svg';
+import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';
+import InstaIcon from '../../../assets/pics/blogpage/insta.svg';
+import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
+import User from '../../../assets/pics/profilepage/profilepic.svg';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import { selectUser } from '../../../features/users/usersSlice';
 import { useLocation } from 'react-router';
-import { addLikes, addUnlikes } from '../../features/blogs/blogsSlice';
+import { addLikes, addUnlikes } from '../../../features/blogs/blogsSlice';
 
-function Blog() {
+function BlogDetails() {
   const dispatch = useDispatch();
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
@@ -154,4 +154,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default BlogDetails;

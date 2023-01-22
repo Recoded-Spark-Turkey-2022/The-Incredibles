@@ -4,7 +4,7 @@ import Stories from '../../components/LatestStories';
 import About from '../../components/AboutSection';
 import Partners from '../../components/Partners';
 import Location from '../../components/LocationSection';
-import Signup from '../Signup/Signup';
+import SignUp from '../Signup/SignUp';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import { useAuthState } from 'react-firebase-hooks/auth';
