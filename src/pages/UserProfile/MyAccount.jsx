@@ -1,11 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/users/usersSlice';
+import BlogCard from '../Blogs/BlogCard';
 import MyAccountCard from './MyAccountCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
-import UserPhoto from '../../assets/pics/profilepage/myaccount-user.svg';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import User from '../../assets/pics/profilepage/profilepic.svg';
+import ChangePen from '../../assets/pics/profilepage/changeprofile.svg';
 
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
@@ -42,30 +44,34 @@ function MyAccount() {
   return (
     <section name="myaccount" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
-        <div className="lg:p-28 lg:pb-10 max-lg:p-3">
-          <div
-            className="flex flex-col items-center lg:pb-20 max-lg:p-10"
-            onClick={() => navigate('/myaccount/myaccountdetails')}
-          >
-            {/* this part navigates user to MyAccountDetails form which does not have root yet  */}
+        <div className="lg:p-16 lg:pb-8 max-lg:p-3">
+          <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
+            <img
+              className="m-auto relative top-36 left-16"
+              onClick={() => navigate('/myaccount/myaccountdetails')}
+              src={ChangePen}
+            />
             <img
               className="m-auto h-40 w-40 rounded-full"
-              src={user.photoURL ? user.photoURL : UserPhoto}
+              onClick={() => navigate('/myaccount/myaccountdetails')}
+              src={user.photoURL ? user.photoURL : User}
             />
             <h2 className="p-5 font-bold text-lg">
-              {user.username}
-              {user.usersurname}
+              {user.username} {user.usersurname}
             </h2>
           </div>
           <div>
-            <div className="p-5 max-lg:pr-4">
-              {/* CHITURCA will change this part workon progress */}
+            <div className="pb-5 max-lg:pr-4">
               <Slider {...settings}>
-                {blogs
-                  .filter((blog) => blog.data.userID === user.id)
-                  .map((blog, i) => {
-                    return <MyAccountCard key={i} data={blog.data} />;
-                  })}
+                {blogs ? (
+                  blogs
+                    .filter((blog) => blog.data.author.authorId === user.id)
+                    .map((blog, i) => {
+                      return <BlogCard key={i} blog={blog} />;
+                    })
+                ) : (
+                  <MyAccountCard />
+                )}
               </Slider>
             </div>
           </div>
