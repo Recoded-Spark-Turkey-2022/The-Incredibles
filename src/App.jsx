@@ -12,7 +12,6 @@ import Signin from './pages/Signup/Signin';
 import MyAccount from './pages/UserProfile/MyAccount';
 import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
-import UserDetails from './pages/UserProfile/UserDetails';
 import { auth } from './firebase/firebase';
 import { getUser } from './features/users/usersSlice';
 import { useDispatch } from 'react-redux';
@@ -48,7 +47,6 @@ function App() {
           element={<MyAccountDetails />}
         />
         <Route path="/myaccount/write" element={<WriteBlog />} />
-        <Route path="/:id/userdetails" element={<UserDetails />} />
       </Routes>
       <Footer />
     </div>

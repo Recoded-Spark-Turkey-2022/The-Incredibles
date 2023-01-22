@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/Button';
+import Button from '../Button';
 import callToActionImg from '../../assets/pics/aboutpage/aboutpgCallToAction.svg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';

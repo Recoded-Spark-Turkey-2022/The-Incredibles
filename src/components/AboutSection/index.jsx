@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/Button';
+import Button from '../Button';
 import AboutHero from '../../assets/pics/homepage/about-hero.svg';
 import AboutStar from '../../assets/pics/homepage/about-star.svg';
 import { useTranslation } from 'react-i18next';

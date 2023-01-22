@@ -1,9 +1,9 @@
 import React from 'react';
 import HomeImage from '../../assets/pics/homepage/hero.svg';
-import Stories from './Stories';
-import About from './About';
-import Partners from './Partners';
-import Location from './Location';
+import Stories from '../../components/LatestStories';
+import About from '../../components/AboutSection';
+import Partners from '../../components/Partners';
+import Location from '../../components/LocationSection';
 import Signup from '../Signup/Signup';
 import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
