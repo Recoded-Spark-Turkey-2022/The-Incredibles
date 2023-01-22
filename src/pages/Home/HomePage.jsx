@@ -1,11 +1,9 @@
 import React from 'react';
 import HomeImage from '../../assets/pics/homepage/hero.svg';
-import Stories from './Stories';
-import About from './About';
-import Partners from './Partners';
-import Location from './Location';
-import Signup from '../Signup/Signup';
-import { Link } from 'react-router-dom';
+import Stories from '../../components/OurStory';
+import About from '../../components/AboutUs';
+import Partners from '../../components/Partners';
+import Location from '../../components/Location';
 import Button from '../../components/Button';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';

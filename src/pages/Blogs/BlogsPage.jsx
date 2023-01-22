@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchIcon from '../../assets/pics/blogpage/searchIcon.svg';
-import BlogCard from './BlogCard';
+import BlogCard from '../../components/BlogCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';

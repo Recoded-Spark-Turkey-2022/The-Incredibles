@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogCard from './BlogCard';
+import BlogCard from '../../components/BlogCard';
 import BlogImage from '../../assets/pics/blogpage/blogImage.svg';
 import ShareIcon from '../../assets/pics/blogpage/share.svg';
 import FaceIcon from '../../assets/pics/blogpage/faceb.svg';
