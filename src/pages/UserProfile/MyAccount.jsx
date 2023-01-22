@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import BlogCard from '../../components/BlogCard';
-import EmptyCard from '../../components/EmptyCard'
+import EmptyCard from '../../components/EmptyCard';
 import Slider from 'react-slick';
 import '../../slick.css';
 import '../../slick-theme.css';
