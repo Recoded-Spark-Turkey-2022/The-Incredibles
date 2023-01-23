@@ -64,10 +64,12 @@ function BlogCard({ blog }) {
           <h2 className="ml-4 text-cyan-600 font-medium text-center">{thisBlog && thisBlog.data.author.authorName}</h2>
           <br />
           <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
-          <p>biography will be here</p>
+          
+          <p>{thisBlog && thisBlog.data.author.authorBio}</p>
           <br />
           <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-          <p>Location here</p>
+          
+          <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
           </div>
               </PopoverContent>
             </Popover>
@@ -92,10 +94,12 @@ function BlogCard({ blog }) {
           <h2 className="ml-4 text-cyan-600 font-medium text-center">{thisBlog && thisBlog.data.author.authorName}</h2>
           <br />
           <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
-          <p>biography will be here</p>
+          
+          <p>{thisBlog && thisBlog.data.author.authorBio}</p>
           <br />
           <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-          <p>location here</p>
+          
+          <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
           </div>
               </PopoverContent>
             </Popover>
