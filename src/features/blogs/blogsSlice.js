@@ -6,6 +6,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
+  deleteDoc 
 } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
@@ -59,6 +60,11 @@ export const addUnlikes = createAsyncThunk(
     }
   }
 );
+export const deleteBlog = createAsyncThunk('blogs/deleteBlog', async(id,thunkAPI)=>{
+  const { dispatch } = thunkAPI;
+  await deleteDoc(doc(db, "blogs", id));
+  dispatch(getBlogs())
+})
 
 const initialState = { blogs: [] };
 
