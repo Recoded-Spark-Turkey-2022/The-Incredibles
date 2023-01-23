@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchIcon from '../../assets/pics/blogpage/searchIcon.svg';
-import BlogCard from './BlogCard';
+import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
+import BlogCard from '../../../components/BlogCard';
 import Slider from 'react-slick';
-import '../../slick.css';
-import '../../slick-theme.css';
+import '../../../style/slick.css';
+import '../../../style/slick-theme.css';
 import { useSelector } from 'react-redux';
 
 function BlogsPage() {

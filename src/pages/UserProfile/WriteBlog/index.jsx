@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db, storage } from '../../firebase/firebase';
+import { db, storage } from '../../../firebase/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import { selectUser } from '../../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
-import { getBlogs } from '../../features/blogs/blogsSlice';
-import { CATEGORIES } from '../../data';
+import { getBlogs } from '../../../features/blogs/blogsSlice';
+import { CATEGORIES } from '../../../data';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);

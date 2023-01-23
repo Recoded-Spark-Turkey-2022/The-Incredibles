@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Worldmap from '../../assets/pics/homepage/world-map.svg';
-import LocationSlide from './LocationSlide';
+import LocationSlide from '../LocationSlides';
 import { useTranslation } from 'react-i18next';
 
 function Location() {

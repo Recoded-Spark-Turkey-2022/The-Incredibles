@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { creatUser } from '../../features/users/usersSlice';
-import { googleProvider, faceBookProvider } from '../../firebase/firebase';
+import { creatUser } from '../../../features/users/usersSlice';
+import { googleProvider, faceBookProvider } from '../../../firebase/firebase';
 
-function Signup() {
+function SignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -48,4 +48,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default SignUp;

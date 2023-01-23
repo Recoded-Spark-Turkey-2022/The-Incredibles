@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Button from './Button';
-import Logo from '../assets/pics/navbar/logo.svg';
-import Menu from '../assets/pics/navbar/menu-button.svg';
-import BackAroww from '../assets/pics/navbar/backArrow.svg';
-import UserPhoto from '../assets/pics/profilepage/profilepic.svg';
+import Button from '../Button';
+import Logo from '../../assets/pics/navbar/logo.svg';
+import Menu from '../../assets/pics/navbar/menu-button.svg';
+import BackAroww from '../../assets/pics/navbar/backArrow.svg';
+import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../features/users/usersSlice';
+import { selectUser } from '../../features/users/usersSlice';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase/firebase';
+import { auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
