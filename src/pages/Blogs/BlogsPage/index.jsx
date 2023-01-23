@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
 import BlogCard from '../../../components/BlogCard';
 import Slider from 'react-slick';
@@ -8,7 +8,10 @@ import { useSelector } from 'react-redux';
 
 function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
-
+  const [sortBy, setSortBy] = useState('Date')
+  const blogsToDisplay = sortBy === 'Date' ?
+   [...blogs].sort((a,b)=>b.data.date.localeCompare(a.data.date)):
+   [...blogs].sort((a,b)=>b.data.likedUsers.length > a.data.likedUsers.length ? 1 : -1 )
   const settings = {
     dots: true,
     infinite: false,
@@ -36,16 +39,18 @@ function BlogsPage() {
       },
     ],
   };
+  function handleChangeSort(e){
+    setSortBy(e.target.value)
+  }
 
   return (
     <div className="px-28 max-lg:px-4">
       <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden ">
         <label className="font-medium text-gray-500 text-lg">
           sort by:
-          <select className="w-fit  m-1 text-sm bg-cyan-100">
+          <select className="w-fit  m-1 text-sm bg-cyan-100" onClick={handleChangeSort} >
             <option> Date </option>
             <option> Popular </option>
-            <option> other thing </option>
           </select>
         </label>
         <div className="flex items-center">
@@ -62,17 +67,17 @@ function BlogsPage() {
         </div>
       </div>
       <div>
-        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+        {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Popular:
-        </h1>
+        </h1> */}
         <div className="max-lg:pr-4">
           <Slider {...settings}>
-            {blogs.map((blog, i) => (
+            {blogsToDisplay.map((blog, i) => (
               <BlogCard key={i} blog={blog} />
             ))}
           </Slider>
         </div>
-        <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+        {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Read also:
         </h1>
         <div className="max-lg:pr-4">
@@ -81,7 +86,7 @@ function BlogsPage() {
               <BlogCard key={i} blog={blog} />
             ))}
           </Slider>
-        </div>
+        </div> */}
       </div>
     </div>
   );
