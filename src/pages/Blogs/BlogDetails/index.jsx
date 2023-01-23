@@ -10,6 +10,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../../features/users/usersSlice';
 import { useLocation } from 'react-router';
 import { addLikes, addUnlikes } from '../../../features/blogs/blogsSlice';
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+} from '@material-tailwind/react';
 
 function BlogDetails() {
   const dispatch = useDispatch();
@@ -113,14 +118,80 @@ function BlogDetails() {
 
           <div className="flex items-center py-10">
             <p className="pr-2">by:</p>
-            <img
-              src={blogData ? blogData.author.authorPhoto : User}
-              alt="author"
-              className="w-10"
-            />
-            <h1 className="ml-4 text-cyan-600 font-medium">
-              {blogData ? blogData.author.authorName : 'Name'}{' '}
-            </h1>
+            <Popover placement="right">
+              <PopoverHandler className="relative">
+                <div>
+                  <img
+                    src={blogData ? blogData.author.authorPhoto : User}
+                    alt="author"
+                    className="w-10 h-10 rounded-full"
+                  />
+                </div>
+              </PopoverHandler>
+              <PopoverContent className="absolute">
+                <div className="p-5">
+                  <img
+                    src={blogData ? blogData.author.authorPhoto : User}
+                    alt="author"
+                    className="w-10 h-10 rounded-full"
+                  />
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                    {thisBlog && thisBlog.data.author.authorName}
+                  </h2>
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
+
+                  <p>
+                    {blogData ? blogData.author.authorBio : 'Author Biography'}
+                  </p>
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+
+                  <p>
+                    {blogData
+                      ? blogData.author.authorLocation
+                      : 'Author Location'}
+                  </p>
+                </div>
+              </PopoverContent>
+            </Popover>
+            <Popover placement="right">
+              <PopoverHandler className="relative">
+                <div>
+                  <h1 className="ml-4 text-cyan-600 font-medium">
+                    {blogData ? blogData.author.authorName : 'Name'}{' '}
+                  </h1>
+                </div>
+              </PopoverHandler>
+              <PopoverContent className="absolute">
+                <div className="p-5">
+                  <img
+                    src={blogData ? blogData.author.authorPhoto : User}
+                    alt="author"
+                    className="w-10 h-10 rounded-full"
+                  />
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                    {thisBlog && thisBlog.data.author.authorName}
+                  </h2>
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
+
+                  <p>
+                    {blogData ? blogData.author.authorBio : 'Author Biography'}
+                  </p>
+                  <br />
+                  <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+
+                  <p>
+                    {blogData
+                      ? blogData.author.authorLocation
+                      : 'Author Location'}
+                  </p>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
           <div name="content div" className="">
             <h2 className="text-blod text-3xl text-center pb-6">

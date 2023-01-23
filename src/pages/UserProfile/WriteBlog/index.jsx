@@ -39,8 +39,10 @@ function WriteBlog() {
         categorey,
         author: {
           authorId: user.id,
-          authorName: user.username + user.usersurname,
+          authorName: user.username + ' ' + user.usersurname,
           authorPhoto: user.photoURL,
+          authorBio: user.biography,
+          authorLocation: user.location,
         },
       });
       alert('Blog submitted successfully');

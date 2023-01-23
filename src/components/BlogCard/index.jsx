@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { deleteBlog } from '../../features/blogs/blogsSlice';
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+} from '@material-tailwind/react';
 
 function BlogCard({ blog }) {
   const dispatch = useDispatch();
@@ -46,23 +51,80 @@ function BlogCard({ blog }) {
 
       <div
         className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap"
-        onClick={handleClick}
       >
+        <div onClick={handleClick}>
         <h1 className="font-bold">{blog.data.title}</h1>
         <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
           {blog.data.subTitle}
         </p>
         <span>{timeAgo}</span>
-        <span>{thisBlog && thisBlog.data.likedUsers.length} likes</span>
+        <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
+        </div>
         <div className="flex items-center ">
-          <img
-            src={thisBlog && thisBlog.data.author.authorPhoto}
-            alt="author"
-            className="w-10 rounded-full"
-          />
-          <h1 className="ml-4 text-cyan-600 font-medium">
-            {thisBlog && thisBlog.data.author.authorName}
-          </h1>
+        <Popover placement="right">
+            <PopoverHandler className="relative">
+              <div>
+                <img
+                  src={thisBlog && thisBlog.data.author.authorPhoto}
+                  alt="author"
+                  className="w-10 h-10 rounded-full"
+                />
+              </div>
+            </PopoverHandler>
+            <PopoverContent className="absolute">
+              <div className="p-5">
+                <img
+                  src={thisBlog && thisBlog.data.author.authorPhoto}
+                  alt="author"
+                  className="w-10 h-10 rounded-full"
+                />
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                  {thisBlog && thisBlog.data.author.authorName}
+                </h2>
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
+
+                <p>{thisBlog && thisBlog.data.author.authorBio}</p>
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+
+                <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
+              </div>
+            </PopoverContent>
+          </Popover>
+          <Popover placement="right">
+            <PopoverHandler className="relative">
+              <div>
+                <h1 className="ml-4 text-cyan-600 font-medium">
+                  {thisBlog && thisBlog.data.author.authorName}
+                </h1>
+              </div>
+            </PopoverHandler>
+            <PopoverContent className="absolute">
+              <div className="p-5">
+                <div>
+                  <img
+                    src={thisBlog && thisBlog.data.author.authorPhoto}
+                    alt="author"
+                    className="w-10 h-10 rounded-full"
+                  />
+                </div>
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                  {thisBlog && thisBlog.data.author.authorName}
+                </h2>
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
+
+                <p>{thisBlog && thisBlog.data.author.authorBio}</p>
+                <br />
+                <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+
+                <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
     </div>
