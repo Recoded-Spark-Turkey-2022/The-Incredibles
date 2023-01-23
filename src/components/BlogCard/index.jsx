@@ -1,10 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
+import { deleteBlog } from '../../features/blogs/blogsSlice';
 
 function BlogCard({ blog }) {
+  const dispatch = useDispatch();
   const { blogs } = useSelector((state) => state.blogs);
+  const { user } = useSelector(selectUser);
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   let timeAgo = '';
   if (blog.data.date) {
@@ -12,24 +16,38 @@ function BlogCard({ blog }) {
     const time = formatDistanceToNow(date);
     timeAgo = `created ${time} ago`;
   }
-  const handleClick = async () => {
-    await navigate('/blogs/blog', { state: { blog: blog } });
-  };
   const navigate = useNavigate();
+
+  const handleClick = async () => {
+    navigate('/blogs/blog', { state: { blog: blog } });
+  };
+  const handleDelete = () => {
+    dispatch(deleteBlog(blog.id));
+  };
+
   return (
-    <div
-      onClick={handleClick}
-      className="group h-1/4 border mx-6 max-lg:mx-4 mb-6 rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]"
-    >
+    <div className="group h-1/4 border mx-6 max-lg:mx-4 mb-6 rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]">
       <div className="transition-all duration-500 w-full bg-gray-200 border overflow-hidden group-hover:py-1">
+        {user.id === thisBlog.data.author.authorId ? (
+          <div
+            className=" w-4 text-center absolute bg-red-200 font-bold hover:bg-red-600"
+            onClick={handleDelete}
+          >
+            X
+          </div>
+        ) : null}
         <img
+          onClick={handleClick}
           className="m-auto h-60 w-60"
           src={blog.data.mediaURL ? blog.data.mediaURL : null}
           alt="blog-photo-preview"
         />
       </div>
 
-      <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
+      <div
+        className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap"
+        onClick={handleClick}
+      >
         <h1 className="font-bold">{blog.data.title}</h1>
         <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
           {blog.data.subTitle}
