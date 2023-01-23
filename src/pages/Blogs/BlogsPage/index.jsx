@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
 import BlogCard from '../../../components/BlogCard';
 import Slider from 'react-slick';
@@ -8,19 +8,24 @@ import { useSelector } from 'react-redux';
 
 function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
-  const [sortBy, setSortBy] = useState('Date')
-  const [searchedBlogs,setsearchedBlogs] = useState(blogs)
-  console.log(searchedBlogs)
-  const blogsToDisplay = sortBy === 'Date' ?
-   [...searchedBlogs].sort((a,b)=>b.data.date.localeCompare(a.data.date)):
-   [...searchedBlogs].sort((a,b)=>b.data.likedUsers.length > a.data.likedUsers.length ? 1 : -1 )
+  const [sortBy, setSortBy] = useState('Date');
+  const [searchedBlogs, setsearchedBlogs] = useState(blogs);
+  console.log(searchedBlogs);
+  const blogsToDisplay =
+    sortBy === 'Date'
+      ? [...searchedBlogs].sort((a, b) =>
+          b.data.date.localeCompare(a.data.date)
+        )
+      : [...searchedBlogs].sort((a, b) =>
+          b.data.likedUsers.length > a.data.likedUsers.length ? 1 : -1
+        );
   const settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    rows:2,
+    rows: 2,
     responsive: [
       {
         breakpoint: 760,
@@ -28,7 +33,7 @@ function BlogsPage() {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: false,
-          rows:1,
+          rows: 1,
           dots: true,
         },
       },
@@ -38,23 +43,28 @@ function BlogsPage() {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: false,
-          rows:1,
+          rows: 1,
           dots: true,
         },
       },
     ],
   };
-  useEffect(()=>{
-    blogs && setsearchedBlogs(blogs)
-  },[blogs])
-  function handleChangeSort(e){
-    setSortBy(e.target.value)
+  useEffect(() => {
+    blogs && setsearchedBlogs(blogs);
+  }, [blogs]);
+  function handleChangeSort(e) {
+    setSortBy(e.target.value);
   }
-  function handleSearch(e){
-    if(e.target.value){
-      setsearchedBlogs((current)=>current.filter(el=>el.data.title.toLowerCase().includes(e.target.value.toLowerCase())))
+  function handleSearch(e) {
+    if (e.target.value) {
+      setsearchedBlogs((current) =>
+        current.filter((el) =>
+          el.data.title.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    } else {
+      setsearchedBlogs(blogs);
     }
-    else{setsearchedBlogs(blogs)}
   }
 
   return (
@@ -62,7 +72,10 @@ function BlogsPage() {
       <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden ">
         <label className="font-medium text-gray-500 text-lg">
           sort by:
-          <select className="w-fit  m-1 text-sm bg-cyan-100" onClick={handleChangeSort} >
+          <select
+            className="w-fit  m-1 text-sm bg-cyan-100"
+            onClick={handleChangeSort}
+          >
             <option> Date </option>
             <option> Popular </option>
           </select>
