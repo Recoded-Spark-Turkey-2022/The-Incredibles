@@ -3,15 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
-<<<<<<< HEAD
+import { deleteBlog } from '../../features/blogs/blogsSlice';
 import {
   Popover,
   PopoverHandler,
   PopoverContent,
 } from '@material-tailwind/react';
-=======
-import { deleteBlog } from '../../features/blogs/blogsSlice';
->>>>>>> a4cd9f45992d4c0f1b355ce626ce4930d3328dbd
 
 function BlogCard({ blog }) {
   const dispatch = useDispatch();
@@ -51,18 +48,20 @@ function BlogCard({ blog }) {
           alt="blog-photo-preview"
         />
       </div>
-<<<<<<< HEAD
-      <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
+
+      <div
+        className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap"
+      >
         <div onClick={handleClick}>
-          <h1 className="font-bold">{blog.data.title}</h1>
-          <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
-            {blog.data.subTitle}
-          </p>
-          <span>{timeAgo}</span>
-          <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
+        <h1 className="font-bold">{blog.data.title}</h1>
+        <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
+          {blog.data.subTitle}
+        </p>
+        <span>{timeAgo}</span>
+        <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
         </div>
-        <div className="flex items-center">
-          <Popover placement="right">
+        <div className="flex items-center ">
+        <Popover placement="right">
             <PopoverHandler className="relative">
               <div>
                 <img
@@ -126,28 +125,6 @@ function BlogCard({ blog }) {
               </div>
             </PopoverContent>
           </Popover>
-=======
-
-      <div
-        className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap"
-        onClick={handleClick}
-      >
-        <h1 className="font-bold">{blog.data.title}</h1>
-        <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
-          {blog.data.subTitle}
-        </p>
-        <span>{timeAgo}</span>
-        <span>{thisBlog && thisBlog.data.likedUsers.length} likes</span>
-        <div className="flex items-center ">
-          <img
-            src={thisBlog && thisBlog.data.author.authorPhoto}
-            alt="author"
-            className="w-10 rounded-full"
-          />
-          <h1 className="ml-4 text-cyan-600 font-medium">
-            {thisBlog && thisBlog.data.author.authorName}
-          </h1>
->>>>>>> a4cd9f45992d4c0f1b355ce626ce4930d3328dbd
         </div>
       </div>
     </div>
