@@ -8,23 +8,23 @@ function About() {
   const [t, i18n] = useTranslation();
 
   return (
-    <section name="about" className="bg-emerald-50">
+    <section name="about" className="bg-emerald-50 m-auto p-10">
       <div
         name="about-header"
-        className="text-center lg:p-20 lg:mx-10 max-lg:pt-10 "
+        className="text-center w-3/4 m-auto "
       >
-        <h1 className="text-cyan-600 lg:pb-8 font-bold text-4xl max-lg:mb-4">
+        <h1 className="text-cyan-600 py-4 font-bold sm:text-4xl  text-2xl">
           {t('home.about.h1')}
         </h1>
 
-        <p className="mx-20 lg:px-40 lg:pb-10">{t('home.about.p')}</p>
-        <div className="my-9">
+        <p className="sm:text-xl text-m">{t('home.about.p')}</p>
+        <div className="my-5">
           <Button name={t('home.about.learnmore')} path="about" />
         </div>
       </div>
       <div
         name="about-body"
-        className="flex lg:justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:text-center lg:px-20"
+        className="flex sm:justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:text-center lg:px-20"
       >
         <div name="cards" className="flex lg:justify-start ">
           <div name="left-side-cards" className="lg:">
