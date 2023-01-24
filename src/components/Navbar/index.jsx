@@ -22,6 +22,7 @@ function Navbar() {
         { name: `${t('nav.home')}`, link: '/blogs' },
         { name: `${t('nav.write')}`, link: '/myaccount/write' },
         { name: `${t('nav.myaccount')}`, link: '/myaccount' },
+        { name: `${t('nav.messages')}`, link: '/chat' },
       ]
     : [
         { name: `${t('nav.home')}`, link: '/' },
