@@ -9,7 +9,10 @@ function Brief() {
   const [user] = useAuthState(auth);
 
   return (
-    <div name="main" className="container m-auto flex flex-col-reverse lg:flex-row lg:justify-between py-10 lg:h-auto max-w-screen-xl ">
+    <div
+      name="main"
+      className="container m-auto flex flex-col-reverse lg:flex-row lg:justify-between py-10 lg:h-auto max-w-screen-xl "
+    >
       <div name="wirtting" className="lg:w-1/2 lg:text-left text-center">
         <h1 className="font-bold lg:text-7xl text-cyan-600 text-5xl my-5">
           {t('home.home.h1')}

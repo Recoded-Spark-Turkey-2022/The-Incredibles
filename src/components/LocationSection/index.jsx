@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Worldmap from '../../assets/pics/homepage/world-map.svg';
 import LocationSlide from '../LocationSlides';
 import { useTranslation } from 'react-i18next';
-import Slider from "react-slick";
+import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
 
@@ -34,14 +34,10 @@ function Location() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    cssEase: "linear",
+    cssEase: 'linear',
     autoplaySpeed: 5000,
     swipeToSlide: true,
-
   };
-
-
-
 
   return (
     <div
@@ -56,16 +52,11 @@ function Location() {
         name="paragraphs"
         className=" h-fit lg:w-1/2 flex justify-center flex-col align-middle max-lg:mt-5"
       >
-       
-
         <div className=" ">
-        <Slider {...settings}>
-          {slides.map((slide, slideIndex) => (
-            <LocationSlide key={slideIndex} data={slide} />
-           
-          ))}
-         
-
+          <Slider {...settings}>
+            {slides.map((slide, slideIndex) => (
+              <LocationSlide key={slideIndex} data={slide} />
+            ))}
           </Slider>
         </div>
       </div>

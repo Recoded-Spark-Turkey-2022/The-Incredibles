@@ -6,10 +6,9 @@ import Location from '../../components/LocationSection';
 import Brief from '../../components/Brief';
 
 function HomePage() {
-
   return (
-    <section name="home" className=''>
-      <Brief/>
+    <section name="home" className="">
+      <Brief />
       <About />
       <Location />
       <Partners />

@@ -46,8 +46,8 @@ function Partners() {
           infinite: true,
           dots: true,
           autoplaySpeed: 1000,
-
-        }},
+        },
+      },
       {
         breakpoint: 760,
         settings: {
@@ -56,7 +56,6 @@ function Partners() {
           infinite: true,
           dots: true,
           autoplaySpeed: 1000,
-
         },
       },
       {
@@ -76,15 +75,15 @@ function Partners() {
       <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
       <div className="">
         <div className="max-w-screen-xl m-auto flex-row p-7">
-          <Slider {...settings} className='mx-10'>
-          {partners.map((par, i) => (<div  key={i} className="px-10"> <img src={par}
-                alt="partner-logo"
-                className=" "
-               /></div>))}
-         
+          <Slider {...settings} className="mx-10">
+            {partners.map((par, i) => (
+              <div key={i} className="px-10">
+                {' '}
+                <img src={par} alt="partner-logo" className=" " />
+              </div>
+            ))}
           </Slider>
         </div>
-       
       </div>
     </div>
   );
