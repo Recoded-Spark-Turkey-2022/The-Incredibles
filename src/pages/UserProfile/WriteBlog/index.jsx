@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import { db, storage } from '../../firebase/firebase';
+import { db, storage } from '../../../firebase/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import { selectUser } from '../../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
-import { getBlogs } from '../../features/blogs/blogsSlice';
+import { getBlogs } from '../../../features/blogs/blogsSlice';
+import { CATEGORIES } from '../../../data';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);
   const dispatch = useDispatch();
-
-  //function to store images in firebase storage
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,16 +27,23 @@ function WriteBlog() {
       return url;
     };
     const submit = async () => {
-      //likes and date added because they are going to be used in blogs pages as filters
       const url = await uploadImg();
       await addDoc(collection(db, 'blogs'), {
         title: title,
         subTitle: subTitle,
         content: content,
         mediaURL: url,
-        likes: 0,
-        date: '',
-        userID: user.id,
+        likedUsers: [],
+        unlikedUsers: [],
+        date: new Date().toISOString(),
+        categorey,
+        author: {
+          authorId: user.id,
+          authorName: user.username + ' ' + user.usersurname,
+          authorPhoto: user.photoURL,
+          authorBio: user.biography,
+          authorLocation: user.location,
+        },
       });
       alert('Blog submitted successfully');
       setTitle('');
@@ -48,11 +54,15 @@ function WriteBlog() {
     };
     submit();
   };
-  //
   const [title, setTitle] = useState('');
   const [subTitle, setsubTitle] = useState('');
   const [content, setContent] = useState('');
   const [media, setMedia] = useState(null);
+  const [categorey, setCategorey] = useState('social');
+
+  const categoreyToDisplay = CATEGORIES.map((cat, i) => (
+    <option key={i}> {cat} </option>
+  ));
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -64,6 +74,9 @@ function WriteBlog() {
 
   const handleContentChange = (event) => {
     setContent(event.target.value);
+  };
+  const handleCategoreyChange = (event) => {
+    setCategorey(event.target.value);
   };
 
   const handleMediaChange = (event) => {
@@ -93,6 +106,16 @@ function WriteBlog() {
             value={title}
             onChange={handleTitleChange}
           />
+          <label className="font-bold text-gray-700 text-m">
+            Category
+            <select
+              onChange={handleCategoreyChange}
+              value={categorey}
+              className="w-fit  m-1 text-sm bg-cyan-100"
+            >
+              {categoreyToDisplay}
+            </select>
+          </label>
         </div>
         <div className="mb-4">
           <label

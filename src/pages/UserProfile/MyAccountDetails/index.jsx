@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { userData, selectUser } from '../../../features/users/usersSlice';
 import {
   Popover,
   PopoverHandler,
   PopoverContent,
 } from '@material-tailwind/react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userData, selectUser } from '../../features/users/usersSlice';
-import { useNavigate } from 'react-router-dom';
+import User from '../../../assets/pics/profilepage/profilepic.svg';
+import ChangePhoto from '../../../assets/pics/profilepage/changepic.svg';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);
@@ -19,7 +20,7 @@ function MyAccountDetails() {
     usersurname: user.usersurname ? user.usersurname : '',
     biography: user.biography ? user.biography : '',
     location: user.location ? user.location : '',
-    id: user.id,
+    id: user && user.id,
   });
   const [profilImg, setProfileImg] = useState(null);
 
@@ -53,8 +54,12 @@ function MyAccountDetails() {
               <PopoverHandler className="relative">
                 <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
                   <img
+                    className="m-auto relative top-36 left-16"
+                    src={ChangePhoto}
+                  />
+                  <img
                     className="m-auto h-40 w-40 rounded-full"
-                    src={user.photoURL ? user.photoURL : ChangePhoto}
+                    src={user.photoURL ? user.photoURL : User}
                     alt="avatar-preview"
                   />
                 </div>

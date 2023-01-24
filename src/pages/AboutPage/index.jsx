@@ -1,9 +1,9 @@
 import React from 'react';
-import Story from './Story';
-import CallToAction from './CallToAction';
-import Team from './Team';
-import Location from '../Home/Location';
-import Partners from '../Home/Partners';
+import Story from '../../components/OurStory';
+import CallToAction from '../../components/UserStory';
+import Team from '../../components/OurTeam';
+import Location from '../../components/LocationSection';
+import Partners from '../../components/Partners';
 
 // This component will be used as a container for About Page Components
 
