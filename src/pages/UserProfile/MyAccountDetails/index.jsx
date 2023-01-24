@@ -42,7 +42,7 @@ function MyAccountDetails() {
 
     setFormData({
       ...formData,
-      [key]: value,
+      [key]: value.toLowerCase(),
     });
   }
   return (
