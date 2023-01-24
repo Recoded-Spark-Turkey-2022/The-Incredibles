@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { creatUser } from '../../features/users/usersSlice';
 import { googleProvider, faceBookProvider } from '../../firebase/firebase';
+import { FacebookLoginButton } from "react-social-login-buttons";
+import { GoogleLoginButton } from "react-social-login-buttons";
 
 function Signup() {
   const dispatch = useDispatch();
@@ -17,11 +19,10 @@ function Signup() {
             onClick={() =>
               dispatch(creatUser(googleProvider)).then(navigate('/myaccount'))
             }
-            className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
+            className="text-white font-medium text-2xl
+            ease-in duration-300 drop-shadow-xl  hover:scale-110"
           >
-            G
+           <GoogleLoginButton/>
           </button>
           <p className="px-8 text-center text-cyan-600 text-l font-medium">
             OR
@@ -30,11 +31,10 @@ function Signup() {
             onClick={() =>
               dispatch(creatUser(faceBookProvider).then(navigate('/myaccount')))
             }
-            className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
+            className="text-white font-medium text-2xl
+            ease-in duration-300 drop-shadow-xl  hover:scale-110"
           >
-            f
+           <FacebookLoginButton/>
           </button>
         </div>
         <div className="flex">
