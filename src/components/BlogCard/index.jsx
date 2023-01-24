@@ -49,19 +49,17 @@ function BlogCard({ blog }) {
         />
       </div>
 
-      <div
-        className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap"
-      >
+      <div className="w-full h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
         <div onClick={handleClick}>
-        <h1 className="font-bold">{blog.data.title}</h1>
-        <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
-          {blog.data.subTitle}
-        </p>
-        <span>{timeAgo}</span>
-        <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
+          <h1 className="font-bold">{blog.data.title}</h1>
+          <p className="font-medium overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
+            {blog.data.subTitle}
+          </p>
+          <span>{timeAgo}</span>
+          <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
         </div>
         <div className="flex items-center ">
-        <Popover placement="right">
+          <Popover placement="right">
             <PopoverHandler className="relative">
               <div>
                 <img

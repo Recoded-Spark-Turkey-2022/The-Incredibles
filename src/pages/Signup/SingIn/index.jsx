@@ -7,6 +7,21 @@ import { googleProvider, faceBookProvider } from '../../../firebase/firebase';
 function SignIn() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleGLogin = async () => {
+    await dispatch(creatUser(googleProvider));
+    await new Promise((resolve) => setTimeout(resolve, 1000)).then(
+      navigate('/blogs')
+    );
+  };
+
+  const handleFLogin = async () => {
+    await dispatch(creatUser(faceBookProvider));
+    await new Promise((resolve) => setTimeout(resolve, 1000)).then(
+      navigate('/blogs')
+    );
+  };
+
   return (
     <div>
       {/* <div className='absolute top-0  min-h-screen w-1/2 rounded-r-full bg-cyan-100 opacity-30 z-10  '></div> */}
@@ -17,9 +32,7 @@ function SignIn() {
             className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
-            onClick={() =>
-              dispatch(creatUser(googleProvider)).then(navigate('/blogs'))
-            }
+            onClick={handleGLogin}
           >
             G
           </button>
@@ -27,9 +40,7 @@ function SignIn() {
             OR
           </p>
           <button
-            onClick={() =>
-              dispatch(creatUser(faceBookProvider).then(navigate('/blogs')))
-            }
+            onClick={handleFLogin}
             className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
              rounded-full shadow-md
              ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
