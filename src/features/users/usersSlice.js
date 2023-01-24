@@ -12,11 +12,14 @@ export const creatUser = createAsyncThunk(
     const { dispatch } = thunkAPI;
     const signIn = await signInWithPopup(auth, provider);
     const users = doc(db, 'users', signIn.user.uid);
+    
     await setDoc(
       users,
       { id: signIn.user.uid, email: signIn.user.email },
       { merge: true }
     );
+    const userChats = doc(db, 'userChats', signIn.user.uid)
+    await setDoc(userChats,{},{merge:true});
     dispatch(getUser(signIn.user.uid));
     return signIn.user.uid;
   }
