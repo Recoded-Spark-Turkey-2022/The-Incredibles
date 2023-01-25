@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Message from '../Message';
+import { useSelector } from 'react-redux';
+import { doc, onSnapshot } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
 
 function Messages() {
+  const [messages, setMessages] = useState([]);
+  const { chat } = useSelector((state) => state);
+  const { chatId, chatUser } = chat;
+
+  useEffect(() => {
+    const fetchChat = () => {
+      const unsup = onSnapshot(doc(db, 'chats', chatId), (doc) => {
+        doc.exists() && setMessages(doc.data().messages);
+      });
+
+      return () => {
+        unsup();
+      };
+    };
+    chatId && fetchChat()
+  }, [chatId]);
+
   return (
     <div
       className="h-[25.5rem] overflow-y-scroll"
@@ -15,7 +35,7 @@ function Messages() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <Message />
+      {messages?.map((m,i)=><Message key={i} message={m}/>)}
     </div>
   );
 }

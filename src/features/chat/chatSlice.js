@@ -10,7 +10,6 @@ const chatSlice = createSlice({
   initialState,
   reducers: {
     getChat: (state, action) => {
-      console.log(action.payload);
       state.chatId = action.payload.id;
       state.chatUser = action.payload.data;
     },

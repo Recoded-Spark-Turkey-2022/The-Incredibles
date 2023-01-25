@@ -13,7 +13,7 @@ import {
 import { db } from '../../firebase/firebase';
 import { useSelector,useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
-import { v4 as uuid } from 'uuid';
+
 import { getChat } from '../../features/chat/chatSlice';
 
 function ChatSearch() {

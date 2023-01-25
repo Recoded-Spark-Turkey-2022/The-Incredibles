@@ -42,7 +42,7 @@ function Chats() {
             />
             <div>
               <p className="text-white ">{chat[1].userInfo.name}</p>
-              <p className="text-sm text-gray-200">alhamdu allah</p>
+              <p className="text-sm text-gray-200">{chat[1].lastMessage && chat[1].lastMessage.text}</p>
             </div>
           </div>
         );
