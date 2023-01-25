@@ -42,27 +42,27 @@ function Location() {
 
   return (
     <Container>
-    <div
-      name="main"
-      className=" flex justify-between max-md:flex-col pt-12 gap-5"
-    >
-      <div name="Photo" className=" h-fit m-auto">
-        <img src={Worldmap} alt="world-map" />
-      </div>
-
       <div
-        name="paragraphs"
-        className=" h-fit md:w-1/2 flex justify-center flex-col align-middle max-md:mt-5"
+        name="main"
+        className=" flex justify-between max-md:flex-col pt-12 gap-5"
       >
-        <div className=" ">
-          <Slider {...settings}>
-            {slides.map((slide, slideIndex) => (
-              <LocationSlide key={slideIndex} data={slide} />
-            ))}
-          </Slider>
+        <div name="Photo" className=" h-fit m-auto">
+          <img src={Worldmap} alt="world-map" />
+        </div>
+
+        <div
+          name="paragraphs"
+          className=" h-fit md:w-1/2 flex justify-center flex-col align-middle max-md:mt-5"
+        >
+          <div className=" ">
+            <Slider {...settings}>
+              {slides.map((slide, slideIndex) => (
+                <LocationSlide key={slideIndex} data={slide} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
-    </div>
     </Container>
   );
 }

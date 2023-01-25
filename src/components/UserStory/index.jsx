@@ -9,7 +9,7 @@ function CallToAction() {
   return (
     <Container>
       <div className="">
-        <img src={story} className=" m-auto "  />
+        <img src={story} className=" m-auto " />
       </div>
       <div className="text-center p-10">
         <h4 className="font-normal text-3xl text-cyan-600">

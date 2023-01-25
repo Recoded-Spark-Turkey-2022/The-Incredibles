@@ -72,19 +72,19 @@ function Partners() {
   };
   return (
     <Container>
-    <div className=" my-10">
-      <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
-     
+      <div className=" my-10">
+        <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
+
         <div className="max-w-screen-xl m-auto flex-row p-7">
           <Slider {...settings} className="py-5">
             {partners.map((par, i) => (
               <div key={i} className="lg:px-10 px-5 ">
-                <img src={par} alt="partner-logo"/>
+                <img src={par} alt="partner-logo" />
               </div>
             ))}
           </Slider>
         </div>
-    </div>
+      </div>
     </Container>
   );
 }

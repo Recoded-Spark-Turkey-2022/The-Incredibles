@@ -70,7 +70,6 @@ function Team() {
         ? 'rounded-full inline-block w-32 py-1 border-solid border-2 md:border-cyan-700 md:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300'
         : 'rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50';
     return (
-      
       <div
         key={country}
         className={
@@ -108,44 +107,42 @@ function Team() {
   //Again, when we put info in firebase, the array used here will be change, but it functions both in md and sm screens
 
   return (
-    
     <section name="team" className="bg-emerald-50 pb-20 w-screen pt-10">
       <Container>
-      <h2 className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2">
-        Our Team
-      </h2>
-      <div name="toggle-button" className="text-center pt-5">
-        <button
-          onClick={() => {
-            setShow((s) => !s), setCategory('View All');
-          }}
-          className={
-            show
-              ? 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 md:hidden'
-              : 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 md:hidden'
-          }
-        >
-          {!show ? 'Show All' : 'Hide'}
-        </button>
-        <div className="grid grid-cols-2 md:hidden">
-          {show ? memberCard : null}
+        <h2 className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2">
+          Our Team
+        </h2>
+        <div name="toggle-button" className="text-center pt-5">
+          <button
+            onClick={() => {
+              setShow((s) => !s), setCategory('View All');
+            }}
+            className={
+              show
+                ? 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 md:hidden'
+                : 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 md:hidden'
+            }
+          >
+            {!show ? 'Show All' : 'Hide'}
+          </button>
+          <div className="grid grid-cols-2 md:hidden">
+            {show ? memberCard : null}
+          </div>
+          {/* this button is not active in md screens */}
         </div>
-        {/* this button is not active in md screens */}
-      </div>
-      <div
-        name="country-filter"
-        className="flex justify-center md:pt-5 md:flex-row sm: flex-col text-center pt-3"
-      >
-        {renderBtn}
-      </div>
-      <div
-        name="team-members"
-        className="md:flex flex-wrap justify-center gap-5 max-md:hidden"
-      >
-        {memberCard}
-      </div>
+        <div
+          name="country-filter"
+          className="flex justify-center md:pt-5 md:flex-row sm: flex-col text-center pt-3"
+        >
+          {renderBtn}
+        </div>
+        <div
+          name="team-members"
+          className="md:flex flex-wrap justify-center gap-5 max-md:hidden"
+        >
+          {memberCard}
+        </div>
       </Container>
-
     </section>
   );
 }
