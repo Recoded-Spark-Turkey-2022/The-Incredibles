@@ -11,11 +11,13 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { v4 as uuid } from 'uuid';
+import { getChat } from '../../features/chat/chatSlice';
 
 function ChatSearch() {
+  const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const [userName, setUserName] = useState('');
   const [theUser, setTheUser] = useState(null);
@@ -44,6 +46,7 @@ function ChatSearch() {
       user.id > theUser.id ? user.id + theUser.id : theUser.id + user.id;
     const res = await getDoc(doc(db, 'chats', chatId));
     if (!res.exists()) {
+      dispatch(getChat({data:theUser,id:chatId}))
       await setDoc(doc(db, 'chats', chatId), { messages: [] });
       await updateDoc(doc(db, 'userChats', user.id), {
         [chatId + '.userInfo']: {
@@ -61,7 +64,9 @@ function ChatSearch() {
         },
         [chatId + '.date']: serverTimestamp(),
       });
+      
     } else {
+      dispatch(getChat({data:theUser,id:chatId}))
     }
     setTheUser(null)
     setUserName('')
