@@ -1,43 +1,88 @@
 import React from 'react';
-import Partner from '../../assets/pics/homepage/partner.svg';
+import partner1 from '../../assets/pics/homepage/partners/n0.png';
+import partner2 from '../../assets/pics/homepage/partners/n1.jpeg';
+import partner3 from '../../assets/pics/homepage/partners/n2.png';
+import partner4 from '../../assets/pics/homepage/partners/n3.png';
+import partner5 from '../../assets/pics/homepage/partners/n4.jpeg';
+import partner6 from '../../assets/pics/homepage/partners/n5.png';
+import partner7 from '../../assets/pics/homepage/partners/n6.jpeg';
+import partner8 from '../../assets/pics/homepage/partners/n7.jpeg';
+import partner9 from '../../assets/pics/homepage/partners/n8.jpeg';
+import Slider from 'react-slick';
+import '../../style/slick.css';
+import '../../style/slick-theme.css';
+
 import { useTranslation } from 'react-i18next';
 
 function Partners() {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
   const partners = [
-    'recoded',
-    'recoded',
-    'recoded',
-    'recoded',
-    'recoded',
-    'recoded',
-    'recoded',
+    partner1,
+    partner2,
+    partner3,
+    partner4,
+    partner5,
+    partner6,
+    partner7,
+    partner8,
+    partner9,
   ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 3000,
+    slidesToShow: 6,
+    slidesToScroll: 4,
+    autoplay: true,
+    cssEase: 'linear',
+    autoplaySpeed: 6000,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+          autoplaySpeed: 1000,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+          autoplaySpeed: 1000,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          autoplaySpeed: 1000,
+        },
+      },
+    ],
+  };
   return (
-    <div className="pt-8 max-lg:pt-0">
+    <div className="py-10 mt-10">
       <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
-      <div className="flex justify-center flex-col overflow-hidden px-4">
-        <div className="w-full flex justify-center">
-          {partners.map((par, index) => (
-            <img
-              key={index}
-              src={Partner}
-              alt="partner-logo"
-              className="w-24 grow m-10"
-            />
-          ))}
-        </div>
-        <div className="w-full hidden max-lg:flex justify-center pb-8">
-          {partners.map((par, i) => (
-            <button
-              key={i}
-              data-bs-target="#carouselDarkVariant"
-              data-bs-slide-to="0"
-              className="rounded-full inline-block p-1 mx-1 border-solid border-2 border-cyan-600 focus:bg-cyan-600"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-          ))}
+      <div className="">
+        <div className="max-w-screen-xl m-auto flex-row p-7">
+          <Slider {...settings} className="mx-10">
+            {partners.map((par, i) => (
+              <div key={i} className="px-10">
+                {' '}
+                <img src={par} alt="partner-logo" className=" " />
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </div>

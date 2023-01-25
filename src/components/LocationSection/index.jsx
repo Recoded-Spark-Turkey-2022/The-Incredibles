@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Worldmap from '../../assets/pics/homepage/world-map.svg';
 import LocationSlide from '../LocationSlides';
 import { useTranslation } from 'react-i18next';
+import Slider from 'react-slick';
+import '../../style/slick.css';
+import '../../style/slick-theme.css';
 
 function Location() {
   const [t, i18n] = useTranslation();
@@ -24,45 +27,37 @@ function Location() {
       author: 'Rabia,',
     },
   ];
-  const [current, setCurrent] = useState(0);
-
-  // for making the pointer working bellow the text
-  const goToSlide = (slideIndex) => {
-    setCurrent(slideIndex);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    cssEase: 'linear',
+    autoplaySpeed: 5000,
+    swipeToSlide: true,
   };
 
   return (
     <div
       name="main"
-      className="lg:py-44 lg:px-14 mx-20 flex justify-between max-lg:flex-col max-lg:py-10"
+      className=" flex justify-between max-lg:flex-col p-5 pt-20 gap-2 max-w-screen-xl m-auto"
     >
-      <div name="Photo" className=" h-fit">
+      <div name="Photo" className=" h-fit m-auto">
         <img src={Worldmap} alt="world-map" />
       </div>
 
       <div
         name="paragraphs"
-        className=" h-fit lg:w-1/3 flex justify-center flex-col align-middle max-lg:mt-5"
+        className=" h-fit lg:w-1/2 flex justify-center flex-col align-middle max-lg:mt-5"
       >
-        <LocationSlide data={slides[current]} />
-
-        {/* points for clicking and slicking */}
-        <div className=" flex pt-4 max-lg:justify-center">
-          {slides.map((slide, slideIndex) => (
-            <div
-              key={slideIndex}
-              onClick={() => goToSlide(slideIndex)}
-              className=" "
-            >
-              <button
-                data-bs-target="#carouselDarkVariant"
-                data-bs-slide-to="2"
-                className="focus:border-blue-500 focus:bg-blue-500 rounded-full p-1 mx-1 border-solid border-2 border-gray-300"
-                aria-current="false"
-                aria-label="Slide 1"
-              ></button>
-            </div>
-          ))}
+        <div className=" ">
+          <Slider {...settings}>
+            {slides.map((slide, slideIndex) => (
+              <LocationSlide key={slideIndex} data={slide} />
+            ))}
+          </Slider>
         </div>
       </div>
     </div>

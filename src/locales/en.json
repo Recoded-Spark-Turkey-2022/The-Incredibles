@@ -8,7 +8,8 @@
     "contact": "Contact",
     "signin": "Sign In",
     "signup": "Sign Up",
-    "signout": "Sign Out"
+    "signout": "Sign Out",
+    "messages": "Messages"
   },
   "home": {
     "home": {
@@ -34,7 +35,7 @@
     "partner": "Our Partners",
     "latest": {
       "h1": "Latest Stories",
-      "p1": "Home is behind, the world ahead and there are many <br /> paths to tread through shadows to the edge.",
+      "p1": "Home is behind, the world ahead and there are many paths to tread through shadows to the edge.",
       "section": {
         "label1": "Job",
         "h1": "Follow this steps and you will get your first job in Germany as a reugee!",

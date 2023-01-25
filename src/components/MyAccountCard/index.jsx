@@ -20,13 +20,13 @@ function MyAccountCard() {
         <br />
         <div className="flex items-center p-2">
           <img
-            src={user.photoURL ? user.photoURL : User}
+            src={user.photoURL ? user.photoURL : user.authPhoto ? user.authPhoto : User}
             alt="author"
             className="w-10 rounded-full"
           />
           <h1 className="ml-4 text-cyan-600 font-medium">
-            {user.username ? user.username : 'Name'}{' '}
-            {user.usersurname ? user.usersurname : 'Surname'}
+            {user.username ? user.username : user.displayName}{' '}
+            {user.usersurname ? user.usersurname : ''}
           </h1>
         </div>
       </div>
