@@ -9,6 +9,7 @@ import {
   PopoverHandler,
   PopoverContent,
 } from '@material-tailwind/react';
+import NoMedia from '../../assets/pics/blogpage/nomedia.svg';
 
 function BlogCard({ blog }) {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ function BlogCard({ blog }) {
         <img
           onClick={handleClick}
           className="m-auto h-60 w-60"
-          src={blog.data.mediaURL ? blog.data.mediaURL : null}
+          src={blog.data.mediaURL ? blog.data.mediaURL : NoMedia}
           alt="blog-photo-preview"
         />
       </div>
