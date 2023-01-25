@@ -7,7 +7,7 @@ import { db } from '../../firebase/firebase';
 function Messages() {
   const [messages, setMessages] = useState([]);
   const { chat } = useSelector((state) => state);
-  const { chatId, chatUser } = chat;
+  const { chatId } = chat;
 
   useEffect(() => {
     const fetchChat = () => {

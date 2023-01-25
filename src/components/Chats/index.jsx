@@ -24,7 +24,7 @@ function Chats() {
 
   return (
     <div className="pt-4 overflow-auto scroll-smooth flex flex-col gap-8">
-      {Object.entries(chats)?.map((chat) => {
+      {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => {
         return (
           <div
             className="flex items-center cursor-pointer hover:bg-cyan-800"
