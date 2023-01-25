@@ -20,7 +20,13 @@ function MyAccountCard() {
         <br />
         <div className="flex items-center p-2">
           <img
-            src={user.photoURL ? user.photoURL : user.authPhoto ? user.authPhoto : User}
+            src={
+              user.photoURL
+                ? user.photoURL
+                : user.authPhoto
+                ? user.authPhoto
+                : User
+            }
             alt="author"
             className="w-10 rounded-full"
           />
