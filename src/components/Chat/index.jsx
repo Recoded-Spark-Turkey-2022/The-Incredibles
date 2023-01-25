@@ -16,7 +16,7 @@ function Chat() {
         />
         <div>
           <p className="text-black font-bold text-3xl">
-            {chatUser && chatUser.name?chatUser.name:chatUser.username}
+            {chatUser && chatUser.name ? chatUser.name : chatUser.username}
           </p>
         </div>
       </div>

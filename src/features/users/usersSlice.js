@@ -15,7 +15,12 @@ export const creatUser = createAsyncThunk(
 
     await setDoc(
       users,
-      { id: signIn.user.uid, email: signIn.user.email, authPhoto:signIn.user.photoURL, displayName:signIn.user.displayName },
+      {
+        id: signIn.user.uid,
+        email: signIn.user.email,
+        authPhoto: signIn.user.photoURL,
+        displayName: signIn.user.displayName,
+      },
       { merge: true }
     );
     const userChats = doc(db, 'userChats', signIn.user.uid);

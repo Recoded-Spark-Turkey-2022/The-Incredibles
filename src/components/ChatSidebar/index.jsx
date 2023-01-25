@@ -10,13 +10,15 @@ function ChatSidebar() {
     <div className="bg-cyan-700 h-full w-1/4">
       <div className="p-2 flex items-center bg-cyan-900">
         <img
-          src={user.photoURL?user.photoURL:user.authPhoto}
+          src={user.photoURL ? user.photoURL : user.authPhoto}
           alt="userProfil"
           className="w-16 h-16 rounded-full mr-2 "
         />
         <div>
           <p className="text-white font-bold">
-            {user.username ? user.username +' '+ user.usersurname:user.displayName}
+            {user.username
+              ? user.username + ' ' + user.usersurname
+              : user.displayName}
           </p>
           <p>{user.biography}</p>
         </div>

@@ -23,7 +23,13 @@ function Message({ message }) {
     >
       <div className="m-4">
         <img
-          src={message.senderId === user.id ? user.photoURL? user.photoURL:user.authPhoto : chatUser.photoURL}
+          src={
+            message.senderId === user.id
+              ? user.photoURL
+                ? user.photoURL
+                : user.authPhoto
+              : chatUser.photoURL
+          }
           className="w-12 h-12 rounded-full "
           alt="userPhoto"
         />
