@@ -47,7 +47,7 @@ function ChatSearch() {
       await updateDoc(doc(db, 'userChats', user.id), {
         [chatId + '.userInfo']: {
           id: theUser.id,
-          name: theUser.username,
+          name: theUser.username?theUser.username:theUser.displayName,
           photoURL: theUser.photoURL
             ? theUser.photoURL
             : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
@@ -56,9 +56,11 @@ function ChatSearch() {
       });
       await updateDoc(doc(db, 'userChats', theUser.id), {
         [chatId + '.userInfo']: {
-          id: user.id,
-          name: user.username,
-          photoURL: user.photoURL,
+          id: theUser.id,
+          name: theUser.username?theUser.username:theUser.displayName,
+          photoURL: theUser.photoURL
+            ? theUser.photoURL
+            : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
         },
         [chatId + '.date']: serverTimestamp(),
       });

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 function Chat() {
   const { chat } = useSelector((state) => state);
   const { chatUser } = chat;
+  console.log(chatUser)
 
   return (
     <div className=" w-full relative overflow-hidden">
@@ -16,7 +17,7 @@ function Chat() {
         />
         <div>
           <p className="text-black font-bold text-3xl">
-            {chatUser && chatUser.name}
+            {chatUser && chatUser.name?chatUser.name:chatUser.username}
           </p>
         </div>
       </div>
