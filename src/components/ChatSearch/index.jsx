@@ -48,9 +48,7 @@ function ChatSearch() {
         [chatId + '.userInfo']: {
           id: theUser.id,
           name: theUser.username ? theUser.username : theUser.displayName,
-          photoURL: theUser.photoURL
-            ? theUser.photoURL
-            : theUser.authPhoto,
+          photoURL: theUser.photoURL ? theUser.photoURL : theUser.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
@@ -58,15 +56,12 @@ function ChatSearch() {
         [chatId + '.userInfo']: {
           id: user.id,
           name: user.username ? user.username : user.displayName,
-          photoURL: user.photoURL
-            ? user.photoURL
-            : user.authPhoto,
+          photoURL: user.photoURL ? user.photoURL : user.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
       dispatch(getChat({ data: theUser, id: chatId }));
     } else {
-
       dispatch(getChat({ data: theUser, id: chatId }));
     }
     setTheUser(null);
@@ -89,17 +84,15 @@ function ChatSearch() {
           onClick={handleSelect}
         >
           <img
-            src={
-              theUser.photoURL
-                ? theUser.photoURL
-                : theUser.authPhoto
-            }
+            src={theUser.photoURL ? theUser.photoURL : theUser.authPhoto}
             alt="userProfil"
             className="w-12 h-12 rounded-full mr-2 "
           />
           <div>
             <p className="text-white ">
-              {theUser.username? theUser.username +' '+ theUser.usersurname:theUser.displayName}
+              {theUser.username
+                ? theUser.username + ' ' + theUser.usersurname
+                : theUser.displayName}
             </p>
           </div>
         </div>
