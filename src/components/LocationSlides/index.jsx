@@ -4,12 +4,12 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 function LocationSlide({ data }) {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
 
   return (
     <div>
-      <p className="text-2xl max-lg:text-lg max-lg:text-center ">{data.text}</p>
-      <p className="pt-8 max-lg:text-center">
+      <p className=" max-md:text-lg max-md:text-center sm:text-xl text-base">{data.text}</p>
+      <p className="pt-8 max-md:text-center">
         {data.author}
         <br />
         {t('home.location.team')}

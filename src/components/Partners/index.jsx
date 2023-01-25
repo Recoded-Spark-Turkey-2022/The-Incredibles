@@ -11,7 +11,7 @@ import partner9 from '../../assets/pics/homepage/partners/n8.jpeg';
 import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
-
+import Container from '../Container';
 import { useTranslation } from 'react-i18next';
 
 function Partners() {
@@ -30,12 +30,12 @@ function Partners() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 3000,
+    speed: 2000,
     slidesToShow: 6,
-    slidesToScroll: 4,
+    slidesToScroll: 3,
     autoplay: true,
     cssEase: 'linear',
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     swipeToSlide: true,
     responsive: [
       {
@@ -44,17 +44,17 @@ function Partners() {
           slidesToShow: 5,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
           autoplaySpeed: 1000,
         },
       },
       {
-        breakpoint: 760,
+        breakpoint: 767,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
           autoplaySpeed: 1000,
         },
       },
@@ -71,21 +71,21 @@ function Partners() {
     ],
   };
   return (
-    <div className="py-10 mt-10">
+    <Container>
+    <div className=" my-10">
       <h1 className="text-center font-bold text-3xl">{t('home.partner')}</h1>
-      <div className="">
+     
         <div className="max-w-screen-xl m-auto flex-row p-7">
-          <Slider {...settings} className="mx-10">
+          <Slider {...settings} className="py-5">
             {partners.map((par, i) => (
-              <div key={i} className="px-10">
-                {' '}
-                <img src={par} alt="partner-logo" className=" " />
+              <div key={i} className="lg:px-10 px-5 ">
+                <img src={par} alt="partner-logo"/>
               </div>
             ))}
           </Slider>
         </div>
-      </div>
     </div>
+    </Container>
   );
 }
 
