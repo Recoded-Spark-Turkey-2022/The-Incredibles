@@ -4,7 +4,7 @@ import ChatSidebar from '../../components/ChatSidebar';
 
 function ChatsPage() {
   return (
-    <div className="w-full h-screen p-8 bg-blue-900 rounded-xl  overflow-hidden flex">
+    <div className="w-full h-screen p-4 bg-blue-900 rounded-xl  overflow-hidden flex">
       <ChatSidebar />
       <Chat/>
     </div>

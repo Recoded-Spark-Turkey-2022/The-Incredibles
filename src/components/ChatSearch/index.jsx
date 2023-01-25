@@ -46,7 +46,7 @@ function ChatSearch() {
       user.id > theUser.id ? user.id + theUser.id : theUser.id + user.id;
     const res = await getDoc(doc(db, 'chats', chatId));
     if (!res.exists()) {
-      dispatch(getChat({data:theUser,id:chatId}))
+      
       await setDoc(doc(db, 'chats', chatId), { messages: [] });
       await updateDoc(doc(db, 'userChats', user.id), {
         [chatId + '.userInfo']: {
@@ -64,6 +64,7 @@ function ChatSearch() {
         },
         [chatId + '.date']: serverTimestamp(),
       });
+      dispatch(getChat({data:theUser,id:chatId}))
       
     } else {
       dispatch(getChat({data:theUser,id:chatId}))

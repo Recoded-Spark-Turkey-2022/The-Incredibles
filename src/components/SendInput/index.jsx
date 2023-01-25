@@ -52,7 +52,7 @@ function SendInput() {
   };
 
   return (
-    <div className="bg-gray-300 absolute w-full flex justify-between gap-8 bottom-0 h-20  p-4">
+    <div className="bg-gray-300  w-full flex justify-between gap-8 bottom-0 h-20  p-4">
       <input
         value={text}
         onChange={(e) => setText(e.target.value)}

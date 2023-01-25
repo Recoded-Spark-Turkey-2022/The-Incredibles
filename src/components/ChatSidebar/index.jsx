@@ -7,7 +7,7 @@ import { selectUser } from '../../features/users/usersSlice';
 function ChatSidebar() {
   const { user } = useSelector(selectUser);
   return (
-    <div className="bg-cyan-700  w-1/4">
+    <div className="bg-cyan-700 h-full w-1/4">
       <div className="p-2 flex items-center bg-cyan-900">
         <img
           src={user.photoURL}

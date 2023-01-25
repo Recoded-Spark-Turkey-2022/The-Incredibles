@@ -24,7 +24,7 @@ function Messages() {
 
   return (
     <div
-      className="h-[25.5rem] overflow-y-scroll"
+      className="md:h-[73%] h-[85%] overflow-y-scroll"
       style={{
         backgroundImage:
           'url(' +
