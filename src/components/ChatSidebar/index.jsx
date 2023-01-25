@@ -15,12 +15,14 @@ function ChatSidebar() {
           className="w-16 h-16 rounded-full mr-2 "
         />
         <div>
-          <p className="text-white font-bold">{user.username + user.usersurname}</p>
+          <p className="text-white font-bold">
+            {user.username + user.usersurname}
+          </p>
           <p>{user.biography}</p>
         </div>
       </div>
-      <ChatSearch/>
-      <Chats/>
+      <ChatSearch />
+      <Chats />
     </div>
   );
 }

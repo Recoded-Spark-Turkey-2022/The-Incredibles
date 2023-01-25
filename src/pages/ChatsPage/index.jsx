@@ -6,7 +6,7 @@ function ChatsPage() {
   return (
     <div className="w-full h-screen p-4 bg-blue-900 rounded-xl  overflow-hidden flex">
       <ChatSidebar />
-      <Chat/>
+      <Chat />
     </div>
   );
 }

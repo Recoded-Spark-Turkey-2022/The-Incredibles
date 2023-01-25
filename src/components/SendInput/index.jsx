@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
-import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from 'firebase/firestore';
+import {
+  arrayUnion,
+  doc,
+  serverTimestamp,
+  Timestamp,
+  updateDoc,
+} from 'firebase/firestore';
 import { db, storage } from '../../firebase/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
@@ -39,16 +45,16 @@ function SendInput() {
       });
     }
 
-    await updateDoc(doc(db,'userChats',user.id),{
-      [chatId+'.lastMessage']:{text},
-      [chatId+'.date']:serverTimestamp()
-    })
-    await updateDoc(doc(db,'userChats',chatUser.id),{
-      [chatId+'.lastMessage']:{text},
-      [chatId+'.date']:serverTimestamp()
-    })
-    setImg(null)
-    setText('')
+    await updateDoc(doc(db, 'userChats', user.id), {
+      [chatId + '.lastMessage']: { text },
+      [chatId + '.date']: serverTimestamp(),
+    });
+    await updateDoc(doc(db, 'userChats', chatUser.id), {
+      [chatId + '.lastMessage']: { text },
+      [chatId + '.date']: serverTimestamp(),
+    });
+    setImg(null);
+    setText('');
   };
 
   return (

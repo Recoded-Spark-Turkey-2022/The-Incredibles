@@ -19,7 +19,7 @@ function Messages() {
         unsup();
       };
     };
-    chatId && fetchChat()
+    chatId && fetchChat();
   }, [chatId]);
 
   return (
@@ -35,7 +35,9 @@ function Messages() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {messages?.map((m,i)=><Message key={i} message={m}/>)}
+      {messages?.map((m, i) => (
+        <Message key={i} message={m} />
+      ))}
     </div>
   );
 }
