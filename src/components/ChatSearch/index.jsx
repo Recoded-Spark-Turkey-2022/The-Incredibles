@@ -22,7 +22,7 @@ function ChatSearch() {
   const handleSearch = async () => {
     const q = query(
       collection(db, 'users'),
-      where('username', '==', userName.toLowerCase())
+      where('username', '==', userName)
     );
 
     try {
@@ -49,7 +49,7 @@ function ChatSearch() {
         [chatId + '.userInfo']: {
           id: theUser.id,
           name: theUser.username ,
-          photoURL: theUser.photoURL,
+          photoURL: theUser.photoURL?theUser.photoURL:'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
         },
         [chatId + '.date']: serverTimestamp(),
       });
