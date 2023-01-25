@@ -7,6 +7,7 @@ function Message({ message }) {
   const { user } = useSelector(selectUser);
   const { chat } = useSelector((state) => state);
   const { chatUser } = chat;
+  console.log(chatUser)
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -28,7 +29,7 @@ function Message({ message }) {
               ? user.photoURL
                 ? user.photoURL
                 : user.authPhoto
-              : chatUser.photoURL
+              : chatUser.photoURL ? chatUser.photoURL :chatUser.authPhoto
           }
           className="w-12 h-12 rounded-full "
           alt="userPhoto"

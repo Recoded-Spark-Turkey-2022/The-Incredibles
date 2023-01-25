@@ -50,22 +50,23 @@ function ChatSearch() {
           name: theUser.username ? theUser.username : theUser.displayName,
           photoURL: theUser.photoURL
             ? theUser.photoURL
-            : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
+            : theUser.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
       await updateDoc(doc(db, 'userChats', theUser.id), {
         [chatId + '.userInfo']: {
-          id: theUser.id,
-          name: theUser.username ? theUser.username : theUser.displayName,
-          photoURL: theUser.photoURL
-            ? theUser.photoURL
-            : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
+          id: user.id,
+          name: user.username ? user.username : user.displayName,
+          photoURL: user.photoURL
+            ? user.photoURL
+            : user.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
       dispatch(getChat({ data: theUser, id: chatId }));
     } else {
+
       dispatch(getChat({ data: theUser, id: chatId }));
     }
     setTheUser(null);
@@ -91,14 +92,14 @@ function ChatSearch() {
             src={
               theUser.photoURL
                 ? theUser.photoURL
-                : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+                : theUser.authPhoto
             }
             alt="userProfil"
             className="w-12 h-12 rounded-full mr-2 "
           />
           <div>
             <p className="text-white ">
-              {theUser.username + theUser.usersurname}
+              {theUser.username? theUser.username +' '+ theUser.usersurname:theUser.displayName}
             </p>
           </div>
         </div>
