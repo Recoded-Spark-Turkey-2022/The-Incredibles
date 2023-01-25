@@ -1,6 +1,12 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
+import { doc, onSnapshot } from "firebase/firestore";
 
 function Chats() {
+  const [chats, setChats] = useState()
+
+  useEffect(()=>{},[])
+
+
   return (
     <div className='pt-4 overflow-auto scroll-smooth flex flex-col gap-8'>
         <div className="flex items-center cursor-pointer hover:bg-cyan-800">
