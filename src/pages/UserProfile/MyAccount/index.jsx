@@ -57,10 +57,18 @@ function MyAccount() {
             <img
               className="m-auto h-40 w-40 rounded-full"
               onClick={() => navigate('/myaccount/myaccountdetails')}
-              src={user.photoURL ? user.photoURL : user.authPhoto ? user.authPhoto:User}
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : user.authPhoto
+                  ? user.authPhoto
+                  : User
+              }
             />
             <h2 className="p-5 font-bold text-lg">
-              {user.username ? user.username + user.usersurname :user.displayName}
+              {user.username
+                ? user.username + user.usersurname
+                : user.displayName}
             </h2>
           </div>
           <div>
