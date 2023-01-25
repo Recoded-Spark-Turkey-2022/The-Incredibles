@@ -1,22 +1,22 @@
 import React from 'react';
 import Button from '../Button';
-import callToActionImg from '../../assets/pics/aboutpage/aboutpgCallToAction.svg';
+import story from '../../assets/pics/aboutpage/story.jpg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
-
+import Container from '../Container';
 function CallToAction() {
   const [user] = useAuthState(auth);
   return (
-    <div className="container mx-auto text-center">
+    <Container>
       <div className="">
-        <img src={callToActionImg} className=" m-auto" />
+        <img src={story} className=" m-auto "  />
       </div>
-      <div className="">
-        <h4 className="font-normal text-2xl text-cyan-600">
+      <div className="text-center p-10">
+        <h4 className="font-normal text-3xl text-cyan-600">
           Share your story, help others and get help from others
         </h4>
-        <div className="text-center w-2/4 m-auto pb-3 pt-5 ">
-          <p className="text-zinc-400	font-light  ">
+        <div className="text-center  p-5 max-md:px-0 ">
+          <p className="text-zinc-400	font-light  sm:text-xl text-base ">
             After years of struggling as a refugee, while I was seeking on
             internet I found Refubook website and it changed my life immediately
             finally found a job that allowed me to provide for my family. I
@@ -29,10 +29,10 @@ function CallToAction() {
           </p>
         </div>
       </div>
-      <div className={user ? 'hidden' : ''}>
+      <div className={user ? 'hidden' : 'text-center'}>
         <Button name="Sign Up" path="/signup" />
       </div>
-    </div>
+    </Container>
   );
 }
 
