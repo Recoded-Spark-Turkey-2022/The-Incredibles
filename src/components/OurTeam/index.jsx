@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Container from '../Container';
+import Container from '../UI/Container';
 const MEMBERS = [
   {
     name: 'Miray',

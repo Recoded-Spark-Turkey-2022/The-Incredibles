@@ -7,14 +7,15 @@ import { useSelector } from 'react-redux';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
 import { selectUser } from '../../features/users/usersSlice';
-import Button from '../Button';
+import Button from '../UI/Button';
+import Container  from '../UI/Containerp0';
 import Logo from '../../assets/pics/navbar/logo.svg';
 import MenuB from '../../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
 
 function Navbar() {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
   const [users] = useAuthState(auth);
@@ -32,7 +33,7 @@ function Navbar() {
         { name: `${t('nav.contact')}`, link: '/contact' },
       ];
   const [open, setOpen] = useState(false);
-  const [page, setPage] = useState('');
+  const [page, setPage] = useState('Home');
   const linksToDisplay = links.map((link) => (
     <NavLink
       end
@@ -55,6 +56,7 @@ function Navbar() {
   }
 
   return (
+    <Container>
     <div className="sticky top-0 bg-gradient-to-b from-white z-40">
       <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
         <Link to="/">
@@ -258,6 +260,7 @@ function Navbar() {
         ) : null}
       </nav>
     </div>
+    </Container>
   );
 }
 

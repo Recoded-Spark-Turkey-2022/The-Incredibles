@@ -11,7 +11,7 @@ import partner9 from '../../assets/pics/homepage/partners/n8.jpeg';
 import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
-import Container from '../Container';
+import Container from '../UI/Container';
 import { useTranslation } from 'react-i18next';
 
 function Partners() {
