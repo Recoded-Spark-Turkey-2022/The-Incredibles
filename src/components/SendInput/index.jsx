@@ -22,7 +22,6 @@ function SendInput() {
   const { chatUser, chatId } = chat;
   const [text, setText] = useState('');
   const [img, setImg] = useState(null);
-  console.log(img);
 
   const handleSend = async () => {
     if (img) {
