@@ -16,7 +16,7 @@ import { selectUser } from '../../features/users/usersSlice';
 
 import { getChat } from '../../features/chat/chatSlice';
 
-function ChatSearch() {
+function ChatSearch({ setOpen }) {
   const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const [userName, setUserName] = useState('');
@@ -66,6 +66,7 @@ function ChatSearch() {
     }
     setTheUser(null);
     setUserName('');
+    setOpen(false);
   };
 
   return (

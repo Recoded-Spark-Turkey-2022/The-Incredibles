@@ -24,7 +24,7 @@ function Messages() {
 
   return (
     <div
-      className="md:h-[73%] h-[85%] overflow-y-scroll"
+      className=" w-full bottom-[5rem] absolute overflow-y-scroll"
       style={{
         backgroundImage:
           'url(' +
@@ -33,6 +33,7 @@ function Messages() {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        height: 'calc(100% - 160px )',
       }}
     >
       {messages?.map((m, i) => (
