@@ -20,7 +20,7 @@ import {
 import { loadingState } from '../../../features/blogs/blogsSlice';
 import Spinner from '../../../components/Spinner';
 import { db } from '../../../firebase/firebase';
-import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 import { getChat } from '../../../features/chat/chatSlice';
 
 function BlogDetails() {
