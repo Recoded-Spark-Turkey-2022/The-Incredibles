@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../Button';
+import Button from '../UI/Button';
 import story from '../../assets/pics/aboutpage/story.jpg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
-import Container from '../Container';
+import Container from '../UI/Container';
 function CallToAction() {
   const [user] = useAuthState(auth);
   return (

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Button from '../Button';
+import Button from '../UI/Button';
 import Logo from '../../assets/pics/navbar/logo.svg';
 import { NavLink, Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useTranslation } from 'react-i18next';
 import LanguageSelect from '../LanguageSelect';
-import Container from '../Container'
+import Container from '../UI/Containerp0'
 
 function Footer() {
   const [t] = useTranslation();

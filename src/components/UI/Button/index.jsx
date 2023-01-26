@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../firebase/firebase';
+import { auth } from '../../../firebase/firebase';
 import { useTranslation } from 'react-i18next';
 
 function Button({ name, path }) {
