@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '../Button';
 import Logo from '../../assets/pics/navbar/logo.svg';
-import Menu from '../../assets/pics/navbar/menu-button.svg';
+import MenuB from '../../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
 import { useSelector } from 'react-redux';
@@ -11,11 +11,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-} from '@material-tailwind/react';
+
 
 function Navbar() {
   const [t, i18n] = useTranslation();
@@ -65,9 +61,10 @@ function Navbar() {
         <div className="flex items-center text-xl">
           {linksToDisplay}
           {users ? (
-            <Popover placement="bottom">
-            <PopoverHandler className="relative">
-            <div>
+            <div className='flex justify-center'>
+              <button className='max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
+                rounded-full shadow-md
+                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110'>
             <img
           className="m-auto h-12 w-12 rounded-full"
           src={
@@ -79,23 +76,19 @@ function Navbar() {
           }
           alt="avatar-preview"
         />
-        </div>
-            </PopoverHandler>
-            <PopoverContent className="absolute border-transparent bg-transparent">
-              <div>
+        </button>
             <button
             onClick={() => {
               auth.signOut(), navigate('/');
             }}
             className="px-10 py-2.5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
-                rounded-full shadow-md
+                shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
           >
             {t('nav.signout')}
           </button>
           </div>
-            </PopoverContent>
-          </Popover>
+
           ) : (
             <div>
               <Button name={t('nav.signup')} path="/signup" />
@@ -112,7 +105,7 @@ function Navbar() {
         }
       >
         <button type="button" onClick={() => setOpen(!open)}>
-          <img className="my-7 ml-4" src={open ? BackAroww : Menu} />
+          <img className="my-7 ml-4" src={open ? BackAroww : MenuB} />
         </button>
         {open ? (
           <div className="">
