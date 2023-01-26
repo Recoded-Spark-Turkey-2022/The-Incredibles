@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Menu, Transition } from '@headlessui/react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/firebase';
+import { selectUser } from '../../features/users/usersSlice';
 import Button from '../Button';
 import Logo from '../../assets/pics/navbar/logo.svg';
 import MenuB from '../../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase/firebase';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-
 
 function Navbar() {
   const [t, i18n] = useTranslation();
@@ -49,8 +49,13 @@ function Navbar() {
       {link.name}
     </NavLink>
   ));
+
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ');
+  }
+
   return (
-    <div className='sticky top-0 bg-gradient-to-b from-blue-50 z-40'>
+    <div className="sticky top-0 bg-gradient-to-b from-white z-40">
       <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
         <Link to="/">
           <div className="flex items-center lg:mt-7 mt-3">
@@ -61,34 +66,78 @@ function Navbar() {
         <div className="flex items-center text-xl">
           {linksToDisplay}
           {users ? (
-            <div className='flex justify-center'>
-              <button className='max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
+            <div>
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <Menu.Button
+                    className="bg-transparent lg:text-cyan-600 lg:border-cyan-600 lg:border-2
                 rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110'>
-            <img
-          className="m-auto h-12 w-12 rounded-full"
-          src={
-            user.photoURL
-              ? user.photoURL
-              : user.authPhoto
-              ? user.authPhoto
-              : UserPhoto
-          }
-          alt="avatar-preview"
-        />
-        </button>
-            <button
-            onClick={() => {
-              auth.signOut(), navigate('/');
-            }}
-            className="px-10 py-2.5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
-                shadow-md
-                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
-          >
-            {t('nav.signout')}
-          </button>
-          </div>
+                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
+                  >
+                    <img
+                      className="m-auto h-12 w-12 rounded-full"
+                      src={
+                        user.photoURL
+                          ? user.photoURL
+                          : user.authPhoto
+                          ? user.authPhoto
+                          : UserPhoto
+                      }
+                      alt="avatar-preview"
+                    />
+                  </Menu.Button>
+                </div>
 
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-t from-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            onClick={() => {
+                              navigate('/myaccount/myaccountdetails');
+                            }}
+                            className={classNames(
+                              active
+                                ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-left text-sm'
+                            )}
+                          >
+                            Account settings
+                          </button>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <button
+                            onClick={() => {
+                              auth.signOut(), navigate('/');
+                            }}
+                            className={classNames(
+                              active
+                                ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-left text-sm'
+                            )}
+                          >
+                            {t('nav.signout')}
+                          </button>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+            </div>
           ) : (
             <div>
               <Button name={t('nav.signup')} path="/signup" />
@@ -120,7 +169,9 @@ function Navbar() {
               }
             />
             <p className="text-center font-bold mt-4">
-            { user.username + ' ' + user.usersurname || user.displayName || "User Name" }
+              {user.username + ' ' + user.usersurname ||
+                user.displayName ||
+                'User Name'}
             </p>
           </div>
         ) : (
