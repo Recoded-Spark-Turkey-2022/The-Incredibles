@@ -5,7 +5,7 @@ import { selectUser } from '../../features/users/usersSlice';
 import { db } from '../../firebase/firebase';
 import { getChat } from '../../features/chat/chatSlice';
 
-function Chats() {
+function Chats({setOpen}) {
   const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const [chats, setChats] = useState([]);
@@ -32,7 +32,7 @@ function Chats() {
               className="flex items-center cursor-pointer hover:bg-cyan-800"
               key={chat[0]}
               onClick={() =>
-                dispatch(getChat({ data: chat[1].userInfo, id: chat[0] }))
+                (dispatch(getChat({ data: chat[1].userInfo, id: chat[0] })),setOpen(false))
               }
             >
               <img

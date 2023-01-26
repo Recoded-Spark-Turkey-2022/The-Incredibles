@@ -16,7 +16,7 @@ import { selectUser } from '../../features/users/usersSlice';
 
 import { getChat } from '../../features/chat/chatSlice';
 
-function ChatSearch() {
+function ChatSearch({setOpen}) {
   const dispatch = useDispatch();
   const { user } = useSelector(selectUser);
   const [userName, setUserName] = useState('');
@@ -61,11 +61,13 @@ function ChatSearch() {
         [chatId + '.date']: serverTimestamp(),
       });
       dispatch(getChat({ data: theUser, id: chatId }));
+      
     } else {
       dispatch(getChat({ data: theUser, id: chatId }));
     }
     setTheUser(null);
     setUserName('');
+    setOpen(false)
   };
 
   return (
