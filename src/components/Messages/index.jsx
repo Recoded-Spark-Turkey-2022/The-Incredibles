@@ -33,7 +33,7 @@ function Messages() {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        height: 'calc(100% - 160px )'
+        height: 'calc(100% - 160px )',
       }}
     >
       {messages?.map((m, i) => (

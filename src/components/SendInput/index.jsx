@@ -22,7 +22,7 @@ function SendInput() {
   const { chatUser, chatId } = chat;
   const [text, setText] = useState('');
   const [img, setImg] = useState(null);
-  console.log(img)
+  console.log(img);
 
   const handleSend = async () => {
     if (img) {
@@ -85,7 +85,7 @@ function SendInput() {
             alt="img"
           />{' '}
           <img
-            onClick={()=>setImg(null)}
+            onClick={() => setImg(null)}
             className="w-4 h-4 absolute top-0 right-0 cursor-pointer"
             src={Remove}
             alt="delete"
