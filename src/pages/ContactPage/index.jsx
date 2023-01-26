@@ -57,15 +57,15 @@ function ContactPage() {
               onChange={handleChange}
             ></textarea>
             <div>
-            <input
-              type="submit"
-              value="Send"
-              className="m-auto  h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
+              <input
+                type="submit"
+                value="Send"
+                className="m-auto  h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-md  hover:scale-110"
-            />
+              />
             </div>
-            
+
             <div className="flex flex-row py-9  justify-center md:justify-start ">
               <img src={twitterIcon} alt="" className="p-2 m-auto md:m-0" />
               <img src={instaIcon} alt="" className="p-2 m-auto md:m-0" />
@@ -74,8 +74,7 @@ function ContactPage() {
           </form>
         </div>
       </div>
-      </Container>
-
+    </Container>
   );
 }
 

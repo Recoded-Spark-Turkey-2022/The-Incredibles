@@ -6,7 +6,7 @@ import { auth } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useTranslation } from 'react-i18next';
 import LanguageSelect from '../LanguageSelect';
-import Container from '../UI/Containerp0'
+import Container from '../UI/Containerp0';
 
 function Footer() {
   const [t] = useTranslation();
@@ -34,27 +34,27 @@ function Footer() {
   ));
   return (
     <Container>
-    <div className="md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center align-middle gap-5">
-      <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
-        <div>
-          <Link to="/">
-            <img src={Logo} alt="logo" className="max-md:py-10" />
-          </Link>
+      <div className="md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center align-middle gap-5">
+        <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
+          <div>
+            <Link to="/">
+              <img src={Logo} alt="logo" className="max-md:py-10" />
+            </Link>
+          </div>
+          <div className=" text-xl align-middle">{linksToDisplay}</div>
         </div>
-        <div className=" text-xl align-middle">{linksToDisplay}</div>
-      </div>
-      <div className=" md:flex md:flex-row   max-md:flex  max-md:items-center max-md:justify-center gap-5">
-        <div className="">
-          {user ? (
-            <Button name={t('nav.signout')} path="/" />
-          ) : (
-            <Button name={t('nav.signup')} path="/signup" />
-          )}
-        </div>
+        <div className=" md:flex md:flex-row   max-md:flex  max-md:items-center max-md:justify-center gap-5">
+          <div className="">
+            {user ? (
+              <Button name={t('nav.signout')} path="/" />
+            ) : (
+              <Button name={t('nav.signup')} path="/signup" />
+            )}
+          </div>
 
-        <LanguageSelect />
+          <LanguageSelect />
+        </div>
       </div>
-    </div>
     </Container>
   );
 }
