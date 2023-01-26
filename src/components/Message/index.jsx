@@ -29,6 +29,8 @@ function Message({ message }) {
                 ? user.photoURL
                 : user.authPhoto
               : chatUser.photoURL
+              ? chatUser.photoURL
+              : chatUser.authPhoto
           }
           className="w-12 h-12 rounded-full "
           alt="userPhoto"
