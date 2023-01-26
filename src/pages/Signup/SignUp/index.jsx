@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { creatUser } from '../../../features/users/usersSlice';
 import { googleProvider, faceBookProvider } from '../../../firebase/firebase';
-import { FacebookLoginButton } from 'react-social-login-buttons';
-import { GoogleLoginButton } from 'react-social-login-buttons';
+// import { FacebookLoginButton } from 'react-social-login-buttons';
+// import { GoogleLoginButton } from 'react-social-login-buttons';
 
 function SignUp() {
   const dispatch = useDispatch();
@@ -27,24 +27,26 @@ function SignUp() {
   return (
     <div>
       <div className="border flex flex-col items-center w-1/2 m-auto p-14 rounded-3xl shadow-[5px_5px_15px_-1px_rgba(0,0,0,0.3)] z-50">
-        <h1 className="text-cyan-600 font-bold text-2xl pb-14"> SIGN UP </h1>
+        <h1 className="text-cyan-600 font-bold text-2xl pb-14"> SIGN UP WITH</h1>
         <div className="flex justify-center items-center pb-20">
           <button
             onClick={handleGLogin}
-            className="text-white font-medium text-2xl
-             ease-in duration-300  hover:scale-110 py-4 drop-shadow-xl hover:drop-shadow-xl w-70 h-24"
+            className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
+            rounded-full shadow-md
+            ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
           >
-            <GoogleLoginButton />
+           G
           </button>
           <p className="px-8 text-center text-cyan-600 text-l font-medium">
             OR
           </p>
           <button
             onClick={handleFLogin}
-            className="text-white font-medium text-2xl
-            ease-in duration-300 drop-shadow-xl  hover:scale-110"
+            className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
+            rounded-full shadow-md
+            ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
           >
-            <FacebookLoginButton />
+            f
           </button>
         </div>
         <div className="flex">

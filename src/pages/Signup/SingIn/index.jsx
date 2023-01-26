@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { creatUser } from '../../../features/users/usersSlice';
 import { googleProvider, faceBookProvider } from '../../../firebase/firebase';
-import { FacebookLoginButton } from 'react-social-login-buttons';
-import { GoogleLoginButton } from 'react-social-login-buttons';
+// import { FacebookLoginButton } from 'react-social-login-buttons';
+// import { GoogleLoginButton } from 'react-social-login-buttons';
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -31,21 +31,23 @@ function SignIn() {
         <h1 className="text-cyan-600 font-bold text-2xl pb-14">SIGN IN WITH</h1>
         <div className="flex justify-center items-center pb-20">
           <button
-            className="text-white font-medium text-2xl
-            ease-in duration-300  hover:scale-110 py-4 drop-shadow-xl hover:drop-shadow-xl w-70 h-24"
+            className="px-16 py-1 bg-red-700 text-white font-medium text-2xl leading-tight
+            rounded-full shadow-md
+            ease-in duration-300 hover:bg-red-400 hover:shadow-lg hover:scale-110"
             onClick={handleGLogin}
           >
-            <GoogleLoginButton />
+            G
           </button>
           <p className="px-8 text-center text-cyan-600 text-l font-medium">
             OR
           </p>
           <button
             onClick={handleFLogin}
-            className="text-white font-medium text-2xl
-            ease-in duration-300 drop-shadow-xl  hover:scale-110"
+            className="px-16 py-1 bg-blue-700 text-white font-medium text-2xl leading-tight
+             rounded-full shadow-md
+             ease-in duration-300 hover:bg-blue-400 hover:shadow-lg hover:scale-110"
           >
-            <FacebookLoginButton />
+            f
           </button>
         </div>
         <div className="flex">
