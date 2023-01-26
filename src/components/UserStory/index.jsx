@@ -1,9 +1,9 @@
 import React from 'react';
-import Button from '../Button';
+import Button from '../UI/Button';
 import story from '../../assets/pics/aboutpage/story.jpg';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
-import Container from '../Container';
+import Container from '../UI/Container';
 function CallToAction() {
   const [user] = useAuthState(auth);
   return (
@@ -11,11 +11,11 @@ function CallToAction() {
       <div className="">
         <img src={story} className=" m-auto " />
       </div>
-      <div className="text-center p-10">
-        <h4 className="font-normal text-3xl text-cyan-600">
+      <div className="text-center p-10 max-md:px-0 max-md:py-5">
+        <h4 className="font-normal text-3xl py-5 text-cyan-600">
           Share your story, help others and get help from others
         </h4>
-        <div className="text-center  p-5 max-md:px-0 ">
+        <div className="text-center  ">
           <p className="text-zinc-400	font-light  sm:text-xl text-base ">
             After years of struggling as a refugee, while I was seeking on
             internet I found Refubook website and it changed my life immediately

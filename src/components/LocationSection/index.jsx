@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
-import Container from '../Container';
+import Container from '../UI/Container';
 
 function Location() {
   const [t] = useTranslation();

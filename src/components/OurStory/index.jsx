@@ -1,7 +1,7 @@
 import React from 'react';
 import AboutPHero from '../../assets/pics/aboutpage/support.png';
 import { useTranslation } from 'react-i18next';
-import Container from '../Container';
+import Container from '../UI/Container';
 function Story() {
   return (
     <section name="story" className="">
@@ -20,7 +20,7 @@ function Story() {
             Our Story
           </h2>
 
-          <p className=" pb-20 sm:text-2xl text-base">
+          <p className=" pb-20 sm:text-2xl text-base md:px-10">
             We believe that everyone deserves to live with dignity, respect, and
             the opportunity to reach their full potential. That is why we are
             dedicated to providing support and resources to refugees, who have

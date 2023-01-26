@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import pic1 from '../../assets/pics/homepage/stories/n1.jpeg';
 import pic2 from '../../assets/pics/homepage/stories/n2.jpg';
-import Container from '../Container';
+import Container from '../UI/Container';
 
 function Stories() {
   const [t] = useTranslation();
