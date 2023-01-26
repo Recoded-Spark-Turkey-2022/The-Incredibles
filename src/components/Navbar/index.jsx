@@ -56,7 +56,6 @@ function Navbar() {
   }
 
   return (
-    <Container>
     <div className="sticky top-0 bg-gradient-to-b from-white z-40">
       <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
         <Link to="/">
@@ -143,7 +142,14 @@ function Navbar() {
           ) : (
             <div>
               <Button name={t('nav.signup')} path="/signup" />
+              <div className="flex justify-center">
+            <span className="text-cyan-400 text-base pr-1">or</span>
+            <Link className="text-cyan-600 font-medium text-base" to="/signin">
+              Sign in
+            </Link>
+          </div>
             </div>
+
           )}
         </div>
       </nav>
@@ -160,107 +166,109 @@ function Navbar() {
         </button>
         {open ? (
           <div>
-            <div className='flex justify-center'>
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button
-                    className=" border-cyan-600 border-2
-                rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
-                  >
-                    <img
-                      className="m-auto h-36 w-36 rounded-full"
-                      src={
-                        user.photoURL
-                          ? user.photoURL
-                          : user.authPhoto
-                          ? user.authPhoto
-                          : UserPhoto
-                      }
-                      alt="avatar-preview"
-                    />
-                  </Menu.Button>
-                </div>
+           {users? (
+            <div>
+             <div className='flex justify-center'>
+             <Menu as="div" className="relative inline-block text-left">
+               <div>
+                 <Menu.Button
+                   className=" border-cyan-600 border-2
+               rounded-full shadow-md
+               ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
+                 >
+                   <img
+                     className="m-auto h-36 w-36 rounded-full"
+                     src={user.photoURL || user.authPhoto || UserPhoto }
+                     alt="avatar-preview"
+                   />
+                 </Menu.Button>
+               </div>
 
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            onClick={() => {
-                              navigate('/myaccount/myaccountdetails');
-                            }}
-                            className={classNames(
-                              active
-                                ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-left text-sm'
-                            )}
-                          >
-                            Account settings
-                          </button>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            onClick={() => {
-                              auth.signOut(), navigate('/');
-                            }}
-                            className={classNames(
-                              active
-                                ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-left text-sm'
-                            )}
-                          >
-                            {t('nav.signout')}
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+               <Transition
+                 as={Fragment}
+                 enter="transition ease-out duration-100"
+                 enterFrom="transform opacity-0 scale-95"
+                 enterTo="transform opacity-100 scale-100"
+                 leave="transition ease-in duration-75"
+                 leaveFrom="transform opacity-100 scale-100"
+                 leaveTo="transform opacity-0 scale-95"
+               >
+                 <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                   <div className="py-1">
+                     <Menu.Item>
+                       {({ active }) => (
+                         <button
+                           onClick={() => {
+                             navigate('/myaccount/myaccountdetails');
+                           }}
+                           className={classNames(
+                             active
+                               ? 'bg-gray-300 shadow-lg text-cyan-500'
+                               : 'text-gray-700',
+                             'block w-full px-4 py-2 text-left text-sm'
+                           )}
+                         >
+                           Account settings
+                         </button>
+                       )}
+                     </Menu.Item>
+                     <Menu.Item>
+                       {({ active }) => (
+                         <button
+                           onClick={() => {
+                             auth.signOut(), navigate('/'), setPage('Home');
+                             
+                           }}
+                           className={classNames(
+                             active
+                               ? 'bg-gray-300 shadow-lg text-cyan-500'
+                               : 'text-gray-700',
+                             'block w-full px-4 py-2 text-left text-sm'
+                           )}
+                         >
+                           {t('nav.signout')}
+                         </button>
+                       )}
+                     </Menu.Item>
+                   </div>
+                 </Menu.Items>
+               </Transition>
+             </Menu>
+           </div>
+           <p className="text-center text-cyan-600 font-bold mt-4">
+           {user.username + ' ' + user.usersurname || user.displayName || 'User Name'}
+         </p>
+         <ul className="flex flex-col  mx-10 mt-8">
+            {linksToDisplay}{' '}
+          </ul>
+         </div>
+           ): (
+            <div>
+              <br />
+              <br />
+            <div className='flex justify-center'>
+              <Button name={t('nav.signup')} path="/signup" />
             </div>
-            <p className="text-center text-cyan-600 font-bold mt-4">
-              {user.username + ' ' + user.usersurname ||
-                user.displayName ||
-                'User Name'}
-            </p>
+            <br />
+            <div className="flex justify-center">
+          <p className="text-cyan-400 font-medium pr-1">Already a member?</p>
+          <Link className="text-cyan-600 font-medium" to="/signin">
+            Sign in
+          </Link>
+        </div>
+            <ul className="flex flex-col  mx-10 mt-24">
+            {linksToDisplay}{' '}
+          </ul>
+          </div>
+           )}
           </div>
         ) : (
           <h1 className="self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold">
             {page}
           </h1>
         )}
-        {open ? (
-          <ul className="flex flex-col  mx-10 mt-8">
-            {linksToDisplay}{' '}
-            {users && (
-              <li
-                onClick={() => {
-                  auth.signOut(), navigate('/'), setPage('Home');
-                }}
-                className="max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2 "
-              >
-                {t('nav.signout')}
-              </li>
-            )}
-          </ul>
-        ) : null}
       </nav>
     </div>
-    </Container>
   );
 }
 
