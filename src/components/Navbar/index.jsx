@@ -60,14 +60,7 @@ function Navbar() {
         <div className="flex items-center text-xl">
           {linksToDisplay}
           {users ? (
-            <button
-              onClick={() => {
-                auth.signOut(), navigate('/');
-              }}
-              className="lg:p-7 md:p-4 sm:p-2 text-cyan-600 font-medium hover:text-cyan-500 duration-500"
-            >
-              {t('nav.signout')}
-            </button>
+            <Button name={t('nav.signout')} path="/" />
           ) : (
             <div>
               <Button name={t('nav.signup')} path="/signup" />

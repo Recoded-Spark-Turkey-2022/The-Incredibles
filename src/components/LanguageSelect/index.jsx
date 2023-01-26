@@ -17,11 +17,11 @@ function LanguageSelect() {
   };
 
   return (
-    <div className="px-2">
+    <div className="">
       <label>
         <select
           onChange={handleChange}
-          className="flex items-center justify-between font-medium h-10 border border-cyan-600 rounded-full px-4  w-40 cursor-pointer"
+          className="flex items-center justify-between font-medium border border-cyan-600 rounded-full px-7 py-2 cursor-pointer"
         >
           <option value="en" className="cursor-pointer">
             English

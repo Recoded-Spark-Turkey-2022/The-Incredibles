@@ -4,13 +4,12 @@ import Logo from '../../assets/pics/navbar/logo.svg';
 import { NavLink, Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSelect from '../LanguageSelect';
+import Container from '../Container'
 
 function Footer() {
-  const [t, i18n] = useTranslation();
-  const navigate = useNavigate();
+  const [t] = useTranslation();
   const [user] = useAuthState(auth);
   const links = [
     { name: `${t('nav.home')}`, link: '/' },
@@ -25,7 +24,7 @@ function Footer() {
         isActive ? { color: '#00ACC1', textDecoration: 'underline' } : {}
       }
       className={
-        'pl-10 text-gray-500 font-medium hover:text-blue-500 duration-500'
+        'px-5 text-gray-500 font-medium hover:text-blue-500 duration-500'
       }
       key={link.name}
       to={link.link}
@@ -34,28 +33,20 @@ function Footer() {
     </NavLink>
   ));
   return (
-    <div className="lg:flex lg:justify-between lg:py-16 lg:mx-24 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center">
-      <div className=" lg:flex lg:flex-row lg:pt-4 max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center ">
+    <Container>
+    <div className="md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center align-middle gap-5">
+      <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
         <div>
           <Link to="/">
-            <img src={Logo} alt="logo" className="max-lg:py-10 max-lg:ml-10" />
+            <img src={Logo} alt="logo" className="max-md:py-10" />
           </Link>
         </div>
-        <div className="max-lg:pb-10 text-xl">{linksToDisplay}</div>
+        <div className=" text-xl align-middle">{linksToDisplay}</div>
       </div>
-      <div className=" lg:flex lg:flex-row lg:pt-4  max-lg:pb-4 max-lg:flex  max-lg:items-center max-lg:justify-center">
-        <div className="pl-10">
+      <div className=" md:flex md:flex-row   max-md:flex  max-md:items-center max-md:justify-center gap-5">
+        <div className="">
           {user ? (
-            <button
-              onClick={() => {
-                auth.signOut(), navigate('/');
-              }}
-              className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
-             rounded-full shadow-md
-             ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
-            >
-              {t('nav.signout')}
-            </button>
+            <Button name={t('nav.signout')} path="/" />
           ) : (
             <Button name={t('nav.signup')} path="/signup" />
           )}
@@ -64,6 +55,7 @@ function Footer() {
         <LanguageSelect />
       </div>
     </div>
+    </Container>
   );
 }
 
