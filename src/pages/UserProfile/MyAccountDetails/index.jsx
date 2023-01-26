@@ -48,7 +48,7 @@ function MyAccountDetails() {
   return (
     <section name="myaccountdetails" className="bg-sky-300 lg:p-20 max-lg:p-5">
       <div className="bg-white rounded-3xl">
-        <div className="lg:p-28 max-lg:p-3">
+        <div className="lg:px-28 lg:py-16 max-lg:p-3">
           <form onSubmit={handleSubmit} className="lg:mx-40 lg:px-28">
             <Popover placement="top">
               <PopoverHandler className="relative">
@@ -85,10 +85,11 @@ function MyAccountDetails() {
                 />
               </PopoverContent>
             </Popover>
-            <h2 className="p-5 font-bold text-lg text-center">
+            <h2 className="p-5 font-bold text-lg text-center text-cyan-600">
               {' '}
-              {user.username ? user.username : ''}{' '}
-              {user.usersurname ? user.usersurname : ''}{' '}
+              {user.username + ' ' + user.usersurname ||
+                user.displayName ||
+                'User Name'}
             </h2>
             <div
               name="usernameholder"
@@ -178,7 +179,6 @@ function MyAccountDetails() {
               </button>
             </div>
           </form>
-          <div></div>
         </div>
       </div>
     </section>

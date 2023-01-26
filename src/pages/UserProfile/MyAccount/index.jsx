@@ -65,10 +65,10 @@ function MyAccount() {
                   : User
               }
             />
-            <h2 className="p-5 font-bold text-lg">
-              {user.username
-                ? user.username + user.usersurname
-                : user.displayName}
+            <h2 className="p-5 font-bold text-lg text-cyan-600">
+              {user.username + ' ' + user.usersurname ||
+                user.displayName ||
+                'User Name'}
             </h2>
           </div>
           <div>
