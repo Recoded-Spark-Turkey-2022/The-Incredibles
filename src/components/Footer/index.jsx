@@ -34,7 +34,7 @@ function Footer() {
   ));
   return (
     <Container>
-      <div className="md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center align-middle gap-5">
+      <div className="m-auto py-8 px-5 md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-5">
         <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
           <div>
             <Link to="/">
