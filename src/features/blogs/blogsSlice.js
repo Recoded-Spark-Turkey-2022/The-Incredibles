@@ -69,17 +69,16 @@ export const deleteBlog = createAsyncThunk(
   }
 );
 
-const initialState = { 
-loading: true,
-blogs: [],
-error: '',
-
+const initialState = {
+  loading: true,
+  blogs: [],
+  error: '',
 };
 
 const blogsSlice = createSlice({
   name: 'blogs',
   initialState,
-  extraReducers:(builder) => {
+  extraReducers: (builder) => {
     builder.addCase(getBlogs.pending, (state) => {
       state.loading = true;
     });
@@ -96,7 +95,5 @@ const blogsSlice = createSlice({
   },
 });
 
-  
 export default blogsSlice.reducer;
 export const loadingState = (state) => state.blogs.loading;
-

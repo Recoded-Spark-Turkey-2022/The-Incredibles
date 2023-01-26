@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
 import { useSelector } from 'react-redux';
-import {loadingState} from '../../../features/blogs/blogsSlice';
+import { loadingState } from '../../../features/blogs/blogsSlice';
 import Spinner from '../../../components/Spinner';
 
 function BlogsPage() {
@@ -70,9 +70,9 @@ function BlogsPage() {
     }
   }
 
-if (loading) {
-  return <Spinner />;
-}
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="px-28 max-lg:px-4">
@@ -128,4 +128,3 @@ if (loading) {
 }
 
 export default BlogsPage;
-

@@ -16,7 +16,7 @@ import {
   PopoverContent,
 } from '@material-tailwind/react';
 
-import {loadingState} from '../../../features/blogs/blogsSlice';
+import { loadingState } from '../../../features/blogs/blogsSlice';
 import Spinner from '../../../components/Spinner';
 
 function BlogDetails() {
@@ -44,7 +44,7 @@ function BlogDetails() {
       })
     );
   };
-  
+
   if (loading) {
     return <Spinner />;
   }
