@@ -5,11 +5,15 @@ import Slider from 'react-slick';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
 import { useSelector } from 'react-redux';
+import {loadingState} from '../../../features/blogs/blogsSlice';
+import Spinner from '../../../components/Spinner';
 
 function BlogsPage() {
+  const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
   const [sortBy, setSortBy] = useState('Date');
   const [searchedBlogs, setsearchedBlogs] = useState(blogs);
+  console.log(searchedBlogs);
   const blogsToDisplay =
     sortBy === 'Date'
       ? [...searchedBlogs].sort((a, b) =>
@@ -66,6 +70,10 @@ function BlogsPage() {
     }
   }
 
+if (loading) {
+  return <Spinner />;
+}
+
   return (
     <div className="px-28 max-lg:px-4">
       <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden ">
@@ -120,3 +128,4 @@ function BlogsPage() {
 }
 
 export default BlogsPage;
+

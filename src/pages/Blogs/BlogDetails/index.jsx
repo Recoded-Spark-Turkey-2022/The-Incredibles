@@ -16,8 +16,12 @@ import {
   PopoverContent,
 } from '@material-tailwind/react';
 
+import {loadingState} from '../../../features/blogs/blogsSlice';
+import Spinner from '../../../components/Spinner';
+
 function BlogDetails() {
   const dispatch = useDispatch();
+  const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   const location = useLocation();
@@ -40,6 +44,11 @@ function BlogDetails() {
       })
     );
   };
+  
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <div className="border-t-2 pt-8 flex max-lg:flex-col max-lg:border-t-0">
       <div
