@@ -150,8 +150,8 @@ function Navbar() {
         name="sid-bar"
         className={
           open
-            ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 h-screen absolute bg-gradient-to-r from-white via-gray-50 to-gray-100'
-            : 'md:hidden flex'
+            ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 duration-300 ease-in fixed left-0 h-screen bg-gradient-to-r from-white via-gray-50 to-gray-100'
+            : 'md:hidden left-[-100%] duration-500 ease-in flex'
         }
       >
         <button type="button" onClick={() => setOpen(!open)}>
