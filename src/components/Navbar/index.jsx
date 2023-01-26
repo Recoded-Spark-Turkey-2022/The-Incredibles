@@ -11,6 +11,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import {
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+} from '@material-tailwind/react';
 
 function Navbar() {
   const [t, i18n] = useTranslation();
@@ -19,7 +24,7 @@ function Navbar() {
   const [users] = useAuthState(auth);
   const links = users
     ? [
-        { name: `${t('nav.home')}`, link: '/blogs' },
+        { name: `${t('nav.blogs')}`, link: '/blogs' },
         { name: `${t('nav.write')}`, link: '/myaccount/write' },
         { name: `${t('nav.myaccount')}`, link: '/myaccount' },
         { name: `${t('nav.messages')}`, link: '/chat' },
@@ -49,7 +54,7 @@ function Navbar() {
     </NavLink>
   ));
   return (
-    <div>
+    <div className='sticky top-0 bg-gradient-to-b from-blue-50 z-40'>
       <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
         <Link to="/">
           <div className="flex items-center lg:mt-7 mt-3">
@@ -60,14 +65,37 @@ function Navbar() {
         <div className="flex items-center text-xl">
           {linksToDisplay}
           {users ? (
+            <Popover placement="bottom">
+            <PopoverHandler className="relative">
+            <div>
+            <img
+          className="m-auto h-12 w-12 rounded-full"
+          src={
+            user.photoURL
+              ? user.photoURL
+              : user.authPhoto
+              ? user.authPhoto
+              : UserPhoto
+          }
+          alt="avatar-preview"
+        />
+        </div>
+            </PopoverHandler>
+            <PopoverContent className="absolute border-transparent bg-transparent">
+              <div>
             <button
-              onClick={() => {
-                auth.signOut(), navigate('/');
-              }}
-              className="lg:p-7 md:p-4 sm:p-2 text-cyan-600 font-medium hover:text-cyan-500 duration-500"
-            >
-              {t('nav.signout')}
-            </button>
+            onClick={() => {
+              auth.signOut(), navigate('/');
+            }}
+            className="px-10 py-2.5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
+                rounded-full shadow-md
+                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+          >
+            {t('nav.signout')}
+          </button>
+          </div>
+            </PopoverContent>
+          </Popover>
           ) : (
             <div>
               <Button name={t('nav.signup')} path="/signup" />
@@ -90,10 +118,16 @@ function Navbar() {
           <div className="">
             <img
               className="w-36 h-36 m-auto rounded-full "
-              src={user.photoURL ? user.photoURL : UserPhoto}
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : user.authPhoto
+                  ? user.authPhoto
+                  : UserPhoto
+              }
             />
             <p className="text-center font-bold mt-4">
-              {user.username ? user.username + user.usersurname : 'user name'}
+            { user.username + ' ' + user.usersurname || user.displayName || "User Name" }
             </p>
           </div>
         ) : (
@@ -102,7 +136,7 @@ function Navbar() {
           </h1>
         )}
         {open ? (
-          <ul className="flex flex-col  mx-10 mt-24">
+          <ul className="flex flex-col  mx-10 mt-8">
             {linksToDisplay}{' '}
             {users && (
               <li
