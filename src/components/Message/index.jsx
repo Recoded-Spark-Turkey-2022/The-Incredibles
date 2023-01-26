@@ -53,7 +53,7 @@ function Message({ message }) {
           <img
             src={message.photo}
             alt="sended image"
-            className=" w-36 h-36 mb-4  object-cover "
+            className=" w-[25rem] h-[20rem] mb-4  object-cover "
           />
         )}
       </div>
