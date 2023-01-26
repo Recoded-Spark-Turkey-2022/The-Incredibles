@@ -47,18 +47,16 @@ function ChatSearch() {
       await updateDoc(doc(db, 'userChats', user.id), {
         [chatId + '.userInfo']: {
           id: theUser.id,
-          name: theUser.username,
-          photoURL: theUser.photoURL
-            ? theUser.photoURL
-            : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png',
+          name: theUser.username ? theUser.username : theUser.displayName,
+          photoURL: theUser.photoURL ? theUser.photoURL : theUser.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
       await updateDoc(doc(db, 'userChats', theUser.id), {
         [chatId + '.userInfo']: {
           id: user.id,
-          name: user.username,
-          photoURL: user.photoURL,
+          name: user.username ? user.username : user.displayName,
+          photoURL: user.photoURL ? user.photoURL : user.authPhoto,
         },
         [chatId + '.date']: serverTimestamp(),
       });
@@ -86,17 +84,15 @@ function ChatSearch() {
           onClick={handleSelect}
         >
           <img
-            src={
-              theUser.photoURL
-                ? theUser.photoURL
-                : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
-            }
+            src={theUser.photoURL ? theUser.photoURL : theUser.authPhoto}
             alt="userProfil"
             className="w-12 h-12 rounded-full mr-2 "
           />
           <div>
             <p className="text-white ">
-              {theUser.username + theUser.usersurname}
+              {theUser.username
+                ? theUser.username + ' ' + theUser.usersurname
+                : theUser.displayName}
             </p>
           </div>
         </div>

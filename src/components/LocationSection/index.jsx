@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Worldmap from '../../assets/pics/homepage/world-map.svg';
 import LocationSlide from '../LocationSlides';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
+import Container from '../Container';
 
 function Location() {
-  const [t, i18n] = useTranslation();
+  const [t] = useTranslation();
 
   const slides = [
     {
@@ -40,27 +41,29 @@ function Location() {
   };
 
   return (
-    <div
-      name="main"
-      className=" flex justify-between max-lg:flex-col p-5 pt-20 gap-2 max-w-screen-xl m-auto"
-    >
-      <div name="Photo" className=" h-fit m-auto">
-        <img src={Worldmap} alt="world-map" />
-      </div>
-
+    <Container>
       <div
-        name="paragraphs"
-        className=" h-fit lg:w-1/2 flex justify-center flex-col align-middle max-lg:mt-5"
+        name="main"
+        className=" flex justify-between max-md:flex-col pt-12 gap-5"
       >
-        <div className=" ">
-          <Slider {...settings}>
-            {slides.map((slide, slideIndex) => (
-              <LocationSlide key={slideIndex} data={slide} />
-            ))}
-          </Slider>
+        <div name="Photo" className=" h-fit m-auto">
+          <img src={Worldmap} alt="world-map" />
+        </div>
+
+        <div
+          name="paragraphs"
+          className=" h-fit md:w-1/2 flex justify-center flex-col align-middle max-md:mt-5"
+        >
+          <div className=" ">
+            <Slider {...settings}>
+              {slides.map((slide, slideIndex) => (
+                <LocationSlide key={slideIndex} data={slide} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

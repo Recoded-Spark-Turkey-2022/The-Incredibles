@@ -42,7 +42,7 @@ function MyAccountDetails() {
 
     setFormData({
       ...formData,
-      [key]: value.toLowerCase(),
+      [key]: value,
     });
   }
   return (
@@ -59,7 +59,13 @@ function MyAccountDetails() {
                   />
                   <img
                     className="m-auto h-40 w-40 rounded-full"
-                    src={user.photoURL ? user.photoURL : user.authPhoto ? user.authPhoto:User}
+                    src={
+                      user.photoURL
+                        ? user.photoURL
+                        : user.authPhoto
+                        ? user.authPhoto
+                        : User
+                    }
                     alt="avatar-preview"
                   />
                 </div>

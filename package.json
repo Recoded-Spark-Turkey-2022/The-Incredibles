@@ -1,5 +1,4 @@
-{
-  "name": "capstone-template",
+{ "name": "capstone-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
