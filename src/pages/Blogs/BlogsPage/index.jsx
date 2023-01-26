@@ -13,7 +13,6 @@ function BlogsPage() {
   const { blogs } = useSelector((state) => state.blogs);
   const [sortBy, setSortBy] = useState('Date');
   const [searchedBlogs, setsearchedBlogs] = useState(blogs);
-  console.log(searchedBlogs);
   const blogsToDisplay =
     sortBy === 'Date'
       ? [...searchedBlogs].sort((a, b) =>

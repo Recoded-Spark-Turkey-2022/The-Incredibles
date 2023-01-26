@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogCard from '../../../components/BlogCard';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
 import ShareIcon from '../../../assets/pics/blogpage/share.svg';
@@ -6,9 +6,10 @@ import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';
 import InstaIcon from '../../../assets/pics/blogpage/insta.svg';
 import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
+import Chat from '../../../assets/pics/blogpage/chat.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../../features/users/usersSlice';
-import { useLocation } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { addLikes, addUnlikes } from '../../../features/blogs/blogsSlice';
 import {
   Popover,
@@ -18,8 +19,12 @@ import {
 
 import { loadingState } from '../../../features/blogs/blogsSlice';
 import Spinner from '../../../components/Spinner';
+import { db } from '../../../firebase/firebase';
+import { doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import { getChat } from '../../../features/chat/chatSlice';
 
 function BlogDetails() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
@@ -28,6 +33,7 @@ function BlogDetails() {
   const blog = location.state.blog;
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   const blogData = thisBlog && thisBlog.data;
+  const [theAuthor, setTheAuthor] = useState(null);
   const handleLikeClick = async () => {
     await dispatch(
       addLikes({
@@ -43,6 +49,85 @@ function BlogDetails() {
         state: blogData && blogData.unlikedUsers.includes(user.id),
       })
     );
+  };
+
+  useEffect(() => {
+    handleFindAuthor();
+  }, [thisBlog]);
+
+  const handleFindAuthor = async () => {
+    const docRef = doc(db, 'users', blogData && blogData.author.authorId);
+    const querySnapshot = await getDoc(docRef);
+    setTheAuthor(querySnapshot.data());
+  };
+
+  const startChat = async () => {
+    if (theAuthor) {
+      const chatId =
+        user.id > theAuthor.id
+          ? user.id + theAuthor.id
+          : theAuthor.id + user.id;
+      const res = await getDoc(doc(db, 'chats', chatId));
+      if (!res.exists()) {
+        await setDoc(doc(db, 'chats', chatId), { messages: [] });
+        const userChat = await getDoc(doc(db, 'userChats', user.id));
+        if (userChat.exists()) {
+          await updateDoc(doc(db, 'userChats', user.id), {
+            [chatId + '.userInfo']: {
+              id: theAuthor.id,
+              name: theAuthor.username
+                ? theAuthor.username
+                : theAuthor.displayName,
+              photoURL: theAuthor.photoURL
+                ? theAuthor.photoURL
+                : theAuthor.authPhoto,
+            },
+            [chatId + '.date']: serverTimestamp(),
+          });
+        } else {
+          await setDoc(doc(db, 'userChats', user.id), {
+            [chatId + '.userInfo']: {
+              id: theAuthor.id,
+              name: theAuthor.username
+                ? theAuthor.username
+                : theAuthor.displayName,
+              photoURL: theAuthor.photoURL
+                ? theAuthor.photoURL
+                : theAuthor.authPhoto,
+            },
+            [chatId + '.date']: serverTimestamp(),
+          });
+        }
+        const authorChat = await getDoc(doc(db, 'userChats', theAuthor.id));
+        if (authorChat.exists()) {
+          await updateDoc(doc(db, 'userChats', theAuthor.id), {
+            [chatId + '.userInfo']: {
+              id: user.id,
+              name: user.username ? user.username : user.displayName,
+              photoURL: user.photoURL ? user.photoURL : user.authPhoto,
+            },
+            [chatId + '.date']: serverTimestamp(),
+          });
+        } else {
+          await setDoc(doc(db, 'userChats', theAuthor.id), {
+            [chatId + '.userInfo']: {
+              id: user.id,
+              name: user.username ? user.username : user.displayName,
+              photoURL: user.photoURL ? user.photoURL : user.authPhoto,
+            },
+            [chatId + '.date']: serverTimestamp(),
+          });
+        }
+        navigate('/chat');
+        dispatch(getChat({ data: theAuthor, id: chatId }));
+      } else {
+        navigate('/chat');
+        dispatch(getChat({ data: theAuthor, id: chatId }));
+      }
+      setTheAuthor(null);
+    } else {
+      alert('not found');
+    }
   };
 
   if (loading) {
@@ -162,6 +247,10 @@ function BlogDetails() {
                       ? blogData.author.authorLocation
                       : 'Author Location'}
                   </p>
+                  <br />
+                  <button onClick={startChat}>
+                    <img className="w-10" src={Chat} alt="send message" />
+                  </button>
                 </div>
               </PopoverContent>
             </Popover>
@@ -198,6 +287,10 @@ function BlogDetails() {
                       ? blogData.author.authorLocation
                       : 'Author Location'}
                   </p>
+                  <br />
+                  <button onClick={startChat}>
+                    <img className="w-10" src={Chat} alt="send message" />
+                  </button>
                 </div>
               </PopoverContent>
             </Popover>
