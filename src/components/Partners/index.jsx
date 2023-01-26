@@ -79,7 +79,11 @@ function Partners() {
           <Slider {...settings} className="py-5">
             {partners.map((par, i) => (
               <div key={i} className="lg:px-10 px-5 ">
-                <img src={par} alt="partner-logo" className='w-[120px] m-auto' />
+                <img
+                  src={par}
+                  alt="partner-logo"
+                  className="w-[120px] m-auto"
+                />
               </div>
             ))}
           </Slider>
