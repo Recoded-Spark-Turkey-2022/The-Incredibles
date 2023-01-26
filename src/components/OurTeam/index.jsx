@@ -107,7 +107,7 @@ function Team() {
   //Again, when we put info in firebase, the array used here will be change, but it functions both in md and sm screens
 
   return (
-    <section name="team" className="bg-emerald-50 pb-20 w-screen pt-10">
+    <section name="team" className="bg-emerald-50 ">
       <Container>
         <h2 className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2">
           Our Team

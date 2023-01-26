@@ -76,7 +76,7 @@ function BlogsPage() {
 
   return (
     <div className="px-28 max-lg:px-4">
-      <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden ">
+      <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden p-5 m-5">
         <label className="font-medium text-gray-500 text-lg">
           sort by:
           <select
@@ -105,7 +105,7 @@ function BlogsPage() {
         {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Popular:
         </h1> */}
-        <div className="max-lg:pr-4">
+        <div className="max-lg:pr-4 ">
           <Slider {...settings}>
             {blogsToDisplay.map((blog, i) => (
               <BlogCard key={i} blog={blog} />

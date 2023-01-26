@@ -8,6 +8,7 @@ import { selectUser } from '../../../features/users/usersSlice';
 import { useDispatch } from 'react-redux';
 import { getBlogs } from '../../../features/blogs/blogsSlice';
 import { CATEGORIES } from '../../../data';
+import Container from '../../../components/UI/Container';
 
 function WriteBlog() {
   const { user } = useSelector(selectUser);
@@ -84,9 +85,10 @@ function WriteBlog() {
   };
 
   return (
-    <div>
+    <div className='bg-cyan-600 '>
+    <Container>
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-9/12 m-auto max-sm:text-center"
+        className="bg-white shadow-lg border rounded-3xl md:px-8 px-2 py-10 my-10 md:w-9/12 m-auto max-md:text-center"
         onSubmit={handleSubmit}
       >
         <h1 className="block text-gray-700 text-3xl font-bold mb-10 text-center">
@@ -94,7 +96,7 @@ function WriteBlog() {
         </h1>
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
             htmlFor="title"
           >
             Title:
@@ -106,20 +108,10 @@ function WriteBlog() {
             value={title}
             onChange={handleTitleChange}
           />
-          <label className="font-bold text-gray-700 text-m">
-            Category
-            <select
-              onChange={handleCategoreyChange}
-              value={categorey}
-              className="w-fit  m-1 text-sm bg-cyan-100"
-            >
-              {categoreyToDisplay}
-            </select>
-          </label>
         </div>
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
             htmlFor="subTitle"
           >
             Sub Title:
@@ -133,14 +125,26 @@ function WriteBlog() {
           />
         </div>
         <div className="mb-6">
+          <label className="block text-gray-700 sm:text-xl text-base font-bold mb-2">
+            Category:
+            <select
+              onChange={handleCategoreyChange}
+              value={categorey}
+              className="w-fit mx-5 sm:text-xl text-base font-normal text-center shadow border rounded"
+            >
+              {categoreyToDisplay}
+            </select>
+          </label>
+        </div>
+        <div className="mb-6">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
             htmlFor="content"
           >
             Content:
           </label>
           <textarea
-            rows={8}
+            rows={5}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             name="content"
             value={content}
@@ -149,7 +153,7 @@ function WriteBlog() {
         </div>
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
             htmlFor="media"
           >
             Media (image or video):
@@ -164,7 +168,7 @@ function WriteBlog() {
         </div>
         <div className="flex items-center justify-between">
           <button
-            className="max-sm:m-auto h-10 px-10 py-2.5 text-center bg-cyan-600 text-white font-medium text-l leading-tight 
+            className="max-md:m-auto h-10 px-10 py-2.5 text-center bg-cyan-600 text-white font-medium text-l leading-tight 
           rounded-full shadow-md
           ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
             type="submit"
@@ -173,6 +177,7 @@ function WriteBlog() {
           </button>
         </div>
       </form>
+    </Container>
     </div>
   );
 }

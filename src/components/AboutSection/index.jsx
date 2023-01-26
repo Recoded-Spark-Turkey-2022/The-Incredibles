@@ -23,7 +23,7 @@ function About() {
     swipeToSlide: true,
   };
   return (
-    <section name="about" className="bg-emerald-50 ">
+    <section name="" className="bg-emerald-50 ">
       <Container>
         <div className="">
           <div name="about-header" className=" m-auto text-center ">
