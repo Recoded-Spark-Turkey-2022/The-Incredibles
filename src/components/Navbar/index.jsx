@@ -56,8 +56,8 @@ function Navbar() {
   }
 
   return (
-    <div className="sticky top-0 bg-gradient-to-b from-white z-40">
-      <nav className="lg:mb-10 lg:mx-16  md:mb-5 md:mx-10  md:flex justify-between hidden">
+    <div className="sticky top-0 bg-gradient-to-b from-white shadow-lg z-40">
+      <nav className="lg:mx-16 md:mx-10 md:flex justify-between hidden">
         <Link to="/">
           <div className="flex items-center lg:mt-7 mt-3">
             <img src={Logo} alt="logo" className="w-6" />
@@ -98,7 +98,7 @@ function Navbar() {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-t from-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
                         {({ active }) => (
@@ -141,16 +141,7 @@ function Navbar() {
             </div>
           ) : (
             <div>
-              <Button name={t('nav.signup')} path="/signup" />
-              <div className="flex justify-center">
-                <span className="text-cyan-400 text-base pr-1">or</span>
-                <Link
-                  className="text-cyan-600 font-medium text-base"
-                  to="/signin"
-                >
-                  Sign in
-                </Link>
-              </div>
+              <Button name={t('nav.signin')} path="/signin" />
             </div>
           )}
         </div>
