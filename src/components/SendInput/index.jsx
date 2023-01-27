@@ -65,14 +65,14 @@ function SendInput() {
       onSubmit={(e) => {
         e.preventDefault(), handleSend;
       }}
-      className="bg-gray-300 absolute w-full flex justify-between gap-8 bottom-0 h-20 max-sm:gap-0 p-4"
+      className="bg-white absolute w-full flex justify-between gap-8 bottom-0 h-20 max-sm:gap-0 p-4"
     >
       <input
         value={text}
         onChange={(e) => setText(e.target.value)}
         type="text"
         placeholder="Type your message...."
-        className="w-full outline-none rounded-lg placeholder:p-4 max-sm:placeholder:p-2 max-sm:placeholder:text-sm max-sm:w-"
+        className="w-full pl-4 bg-gray-200 placeholder:bg-gray-200 outline-none rounded-lg placeholder:p-4 max-sm:placeholder:p-2 max-sm:placeholder:text-sm max-sm:w-"
       />
 
       {img && (

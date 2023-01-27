@@ -23,13 +23,13 @@ function Chats({ setOpen }) {
   }, [user.id]);
 
   return (
-    <div className="pt-4 overflow-auto scroll-smooth flex flex-col gap-8">
+    <div className=" overflow-auto scroll-smooth flex flex-col ">
       {Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => {
           return (
             <div
-              className="flex items-center cursor-pointer hover:bg-cyan-800"
+              className="flex py-4 items-center border-b cursor-pointer hover:bg-cyan-800"
               key={chat[0]}
               onClick={() => (
                 dispatch(getChat({ data: chat[1].userInfo, id: chat[0] })),
@@ -43,11 +43,11 @@ function Chats({ setOpen }) {
                     : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
                 }
                 alt="userProfil"
-                className="w-12 h-12 rounded-full mr-2 "
+                className="w-12 h-12 border rounded-full mr-2 "
               />
               <div>
-                <p className="text-white ">{chat[1].userInfo.name}</p>
-                <p className="text-sm text-gray-200">
+                <p className="text-black font-semibold ">{chat[1].userInfo.name}</p>
+                <p className="text-sm text-black">
                   {chat[1].lastMessage && chat[1].lastMessage.text}
                 </p>
               </div>

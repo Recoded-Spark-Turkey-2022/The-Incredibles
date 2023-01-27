@@ -12,23 +12,23 @@ function ChatSidebar() {
   return (
     <>
       <div
-        className={`bg-cyan-700 h-full w-1/4 max-sm:w-full max-sm:${
+        className={`h-full bg-slate-300 border-r w-1/4 max-sm:w-full max-sm:${
           open ? '' : 'hidden'
         }`}
       >
-        <div className="p-2 flex items-center bg-cyan-900">
+        <div className="p-2 flex items-center bg-slate-300 ">
           <img
             src={user.photoURL ? user.photoURL : user.authPhoto}
             alt="userProfil"
-            className="w-16 h-16 rounded-full mr-2 "
+            className="w-16 h-16 border rounded-full mr-2 "
           />
           <div>
-            <p className="text-white font-bold">
+            <p className="text-black font-bold">
               {user.username
                 ? user.username + ' ' + user.usersurname
                 : user.displayName}
             </p>
-            <p>{user.biography}</p>
+            <p className='text-gray-700'>{user.biography}</p>
           </div>
         </div>
         <ChatSearch setOpen={setOpen} />
@@ -41,7 +41,7 @@ function ChatSidebar() {
         className={
           open
             ? 'w-4 h-4 absolute sm:hidden'
-            : 'w-6 h-6 absolute top-10 z-10 sm:hidden '
+            : 'w-6 h-6 absolute right-5 top-5 z-10 sm:hidden '
         }
       />
     </>
