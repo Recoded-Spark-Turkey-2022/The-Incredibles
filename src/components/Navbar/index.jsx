@@ -230,9 +230,8 @@ function Navbar() {
                   </Menu>
                 </div>
                 <p className="text-center text-cyan-600 font-bold mt-4">
-                  {user.username + ' ' + user.usersurname ||
-                    user.displayName ||
-                    'User Name'}
+                  {user.username?user.username + ' ' + user.usersurname :
+                    user.displayName }
                 </p>
                 <ul className="flex flex-col  mx-10 mt-8">{linksToDisplay} </ul>
               </div>
