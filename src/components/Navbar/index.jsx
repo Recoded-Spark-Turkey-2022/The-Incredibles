@@ -1,4 +1,4 @@
-import React, { useState,useEffect, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
@@ -16,25 +16,46 @@ import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
 import { useLocation } from 'react-router';
 
 function Navbar() {
+  //update page name in nav bar depending on changing the path
   const loc = useLocation();
   const [page, setPage] = useState('');
-useEffect(()=>{
-  switch(loc.pathname){
-    case '/signin': setPage('Sign in'); break
-    case '/signup': setPage('Sign up'); break
-    case '/myaccount': setPage('My account'); break
-    case '/myaccount/myaccountdetails': setPage('My account details'); break
-    case '/myaccount/write': setPage('Write'); break
-    case '/about': setPage('About');break
-    case '/blogs': setPage('Blogs'); break
-    case '/chat': setPage('Messages'); break
-    case '/contact': setPage('Contact'); break
-    case '/': setPage('Home'); break
-    default: setPage('')
-  }
-},[loc])
-  
-  console.log(page)
+  useEffect(() => {
+    switch (loc.pathname) {
+      case '/signin':
+        setPage('Sign in');
+        break;
+      case '/signup':
+        setPage('Sign up');
+        break;
+      case '/myaccount':
+        setPage('My account');
+        break;
+      case '/myaccount/myaccountdetails':
+        setPage('My account details');
+        break;
+      case '/myaccount/write':
+        setPage('Write');
+        break;
+      case '/about':
+        setPage('About');
+        break;
+      case '/blogs':
+        setPage('Blogs');
+        break;
+      case '/chat':
+        setPage('Messages');
+        break;
+      case '/contact':
+        setPage('Contact');
+        break;
+      case '/':
+        setPage('Home');
+        break;
+      default:
+        setPage('');
+    }
+  }, [loc]);
+
   const [t] = useTranslation();
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
@@ -63,8 +84,7 @@ useEffect(()=>{
       key={link.name}
       to={link.link}
       onClick={() => {
-        setOpen(false)
-        //  setPage(link.name);
+        setOpen(false);
       }}
     >
       {link.name}
@@ -198,93 +218,93 @@ useEffect(()=>{
                         </Menu.Button>
                       </div>
 
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <div className="py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                onClick={() => {
-                                  navigate('/myaccount/myaccountdetails');
-                                }}
-                                className={classNames(
-                                  active
-                                    ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                    : 'text-gray-700',
-                                  'block w-full px-4 py-2 text-left text-sm'
-                                )}
-                              >
-                                Account settings
-                              </button>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <button
-                                onClick={() => {
-                                  auth.signOut(),
-                                    navigate('/')
-                                    // setPage('Home');
-                                }}
-                                className={classNames(
-                                  active
-                                    ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                    : 'text-gray-700',
-                                  'block w-full px-4 py-2 text-left text-sm'
-                                )}
-                              >
-                                {t('nav.signout')}
-                              </button>
-                            )}
-                          </Menu.Item>
-                        </div>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
-                </div>
-                <p className="text-center text-cyan-600 font-bold mt-4">
-                  {user.username
-                    ? user.username + ' ' + user.usersurname
-                    : user.displayName}
-                </p>
-                <ul className="flex flex-col  mx-10 mt-8">{linksToDisplay} </ul>
-              </div>
-            ) : (
-              <div>
-                <br />
-                <br />
-                <div className="flex justify-center">
-                  <Button name={t('nav.signup')} path="/signup" />
-                </div>
-                <br />
-                <div className="flex justify-center">
-                  <p className="text-cyan-400 font-medium pr-1">
-                    Already a member?
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <div className="py-1">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  onClick={() => {
+                                    navigate('/myaccount/myaccountdetails');
+                                  }}
+                                  className={classNames(
+                                    active
+                                      ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                      : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  Account settings
+                                </button>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  onClick={() => {
+                                    auth.signOut(), navigate('/');
+                                  }}
+                                  className={classNames(
+                                    active
+                                      ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                      : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  {t('nav.signout')}
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </div>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
+                  </div>
+                  <p className="text-center text-cyan-600 font-bold mt-4">
+                    {user.username
+                      ? user.username + ' ' + user.usersurname
+                      : user.displayName}
                   </p>
-                  <Link className="text-cyan-600 font-medium" to="/signin">
-                    Sign in
-                  </Link>
+                  <ul className="flex flex-col  mx-10 mt-8">
+                    {linksToDisplay}{' '}
+                  </ul>
                 </div>
-                <ul className="flex flex-col  mx-10 mt-24">
-                  {linksToDisplay}{' '}
-                </ul>
-              </div>
-            )}
-          </div>
-        ) : (
-          <h1 className="self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold">
-            {page}
-          </h1>
-        )}
-      </nav>
+              ) : (
+                <div>
+                  <br />
+                  <br />
+                  <div className="flex justify-center">
+                    <Button name={t('nav.signup')} path="/signup" />
+                  </div>
+                  <br />
+                  <div className="flex justify-center">
+                    <p className="text-cyan-400 font-medium pr-1">
+                      Already a member?
+                    </p>
+                    <Link className="text-cyan-600 font-medium" to="/signin">
+                      Sign in
+                    </Link>
+                  </div>
+                  <ul className="flex flex-col  mx-10 mt-24">
+                    {linksToDisplay}{' '}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ) : (
+            <h1 className="self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold">
+              {page}
+            </h1>
+          )}
+        </nav>
       </Container>
     </div>
   );
