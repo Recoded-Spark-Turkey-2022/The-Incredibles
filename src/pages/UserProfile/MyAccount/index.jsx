@@ -8,7 +8,7 @@ import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import ChangePen from '../../../assets/pics/profilepage/changeprofile.svg';
-
+import Container from '../../../components/UI/Container';
 function MyAccount() {
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
@@ -45,9 +45,10 @@ function MyAccount() {
   };
 
   return (
-    <section name="myaccount" className="bg-sky-300 lg:p-20 max-lg:p-5">
-      <div className="bg-white rounded-3xl">
-        <div className="lg:p-16 lg:pb-8 max-lg:p-3">
+    <section name="myaccount" className="bg-cyan-600 ">
+      <Container>
+        <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
+         <div className="lg:p-16 lg:pb-8 max-lg:p-3">
           <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
             <img
               className="m-auto relative top-36 left-16"
@@ -66,9 +67,9 @@ function MyAccount() {
               }
             />
             <h2 className="p-5 font-bold text-lg text-cyan-600">
-              {user.username + ' ' + user.usersurname ||
-                user.displayName ||
-                'User Name'}
+              {user.username
+                ? user.username + ' ' + user.usersurname
+                : user.displayName}
             </h2>
           </div>
           <div>
@@ -88,6 +89,7 @@ function MyAccount() {
           </div>
         </div>
       </div>
+      </Container>
     </section>
   );
 }

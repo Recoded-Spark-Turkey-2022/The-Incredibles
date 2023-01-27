@@ -42,8 +42,8 @@ function Message({ message }) {
           <p
             className={
               message.senderId === user.id
-                ? 'bg-cyan-200 p-4 rounded-l-lg rounded-b-lg max-w-fit'
-                : 'bg-white p-4 rounded-r-lg rounded-b-lg max-w-fit '
+                ? 'bg-blue-500 p-4 rounded-l-lg rounded-b-lg max-w-fit'
+                : 'bg-gray-300 p-4 rounded-r-lg rounded-b-lg max-w-fit '
             }
           >
             {message.text}{' '}
