@@ -46,49 +46,49 @@ function MyAccount() {
 
   return (
     <section name="myaccount" className="bg-cyan-600 ">
-     <Container>
-      <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
-        <div className="lg:p-16 lg:pb-8 max-lg:p-3">
-          <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
-            <img
-              className="m-auto relative top-36 left-16"
-              onClick={() => navigate('/myaccount/myaccountdetails')}
-              src={ChangePen}
-            />
-            <img
-              className="m-auto h-40 w-40 rounded-full"
-              onClick={() => navigate('/myaccount/myaccountdetails')}
-              src={
-                user.photoURL
-                  ? user.photoURL
-                  : user.authPhoto
-                  ? user.authPhoto
-                  : User
-              }
-            />
-            <h2 className="p-5 font-bold text-lg text-cyan-600">
-              {user.username + ' ' + user.usersurname ||
-                user.displayName ||
-                'User Name'}
-            </h2>
-          </div>
-          <div>
-            <div className="">
-              <Slider {...settings}>
-                {userBlogs[0] ? (
-                  blogs
-                    .filter((blog) => blog.data.author.authorId === user.id)
-                    .map((blog, i) => {
-                      return <BlogCard key={i} blog={blog} />;
-                    })
-                ) : (
-                  <MyAccountCard />
-                )}
-              </Slider>
+      <Container>
+        <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
+          <div className="lg:p-16 lg:pb-8 max-lg:p-3">
+            <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
+              <img
+                className="m-auto relative top-36 left-16"
+                onClick={() => navigate('/myaccount/myaccountdetails')}
+                src={ChangePen}
+              />
+              <img
+                className="m-auto h-40 w-40 rounded-full"
+                onClick={() => navigate('/myaccount/myaccountdetails')}
+                src={
+                  user.photoURL
+                    ? user.photoURL
+                    : user.authPhoto
+                    ? user.authPhoto
+                    : User
+                }
+              />
+              <h2 className="p-5 font-bold text-lg text-cyan-600">
+                {user.username + ' ' + user.usersurname ||
+                  user.displayName ||
+                  'User Name'}
+              </h2>
+            </div>
+            <div>
+              <div className="">
+                <Slider {...settings}>
+                  {userBlogs[0] ? (
+                    blogs
+                      .filter((blog) => blog.data.author.authorId === user.id)
+                      .map((blog, i) => {
+                        return <BlogCard key={i} blog={blog} />;
+                      })
+                  ) : (
+                    <MyAccountCard />
+                  )}
+                </Slider>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </Container>
     </section>
   );

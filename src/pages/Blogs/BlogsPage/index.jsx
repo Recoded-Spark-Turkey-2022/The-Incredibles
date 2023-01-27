@@ -76,44 +76,44 @@ function BlogsPage() {
 
   return (
     <Container>
-    <div className="">
-      <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
-        <label className="font-medium text-gray-500 text-lg">
-          sort by:
-          <select
-            className="w-fit  m-1 text-sm bg-cyan-100/50"
-            onClick={handleChangeSort}
-          >
-            <option> Date </option>
-            <option> Popular </option>
-          </select>
-        </label>
-        <div className="flex items-center">
-          <input
-            onChange={handleSearch}
-            type="search"
-            placeholder="Search..."
-            className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
-          />
-          <img
-            src={SearchIcon}
-            alt="search-icon"
-            className='className=" w-4 h-4 absolute right-36 text-cyan-600 "'
-          />
+      <div className="">
+        <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
+          <label className="font-medium text-gray-500 text-lg">
+            sort by:
+            <select
+              className="w-fit  m-1 text-sm bg-cyan-100/50"
+              onClick={handleChangeSort}
+            >
+              <option> Date </option>
+              <option> Popular </option>
+            </select>
+          </label>
+          <div className="flex items-center">
+            <input
+              onChange={handleSearch}
+              type="search"
+              placeholder="Search..."
+              className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
+            />
+            <img
+              src={SearchIcon}
+              alt="search-icon"
+              className='className=" w-4 h-4 absolute right-36 text-cyan-600 "'
+            />
+          </div>
         </div>
-      </div>
-      <div>
-        {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+        <div>
+          {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Popular:
         </h1> */}
-        <div className="max-lg:pr-4 ">
-          <Slider {...settings}>
-            {blogsToDisplay.map((blog, i) => (
-              <BlogCard key={i} blog={blog} />
-            ))}
-          </Slider>
-        </div>
-        {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
+          <div className="max-lg:pr-4 ">
+            <Slider {...settings}>
+              {blogsToDisplay.map((blog, i) => (
+                <BlogCard key={i} blog={blog} />
+              ))}
+            </Slider>
+          </div>
+          {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Read also:
         </h1>
         <div className="max-lg:pr-4">
@@ -123,8 +123,8 @@ function BlogsPage() {
             ))}
           </Slider>
         </div> */}
+        </div>
       </div>
-    </div>
     </Container>
   );
 }
