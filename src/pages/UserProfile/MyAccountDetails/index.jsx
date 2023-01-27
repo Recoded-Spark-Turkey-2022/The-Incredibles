@@ -87,9 +87,9 @@ function MyAccountDetails() {
             </Popover>
             <h2 className="p-5 font-bold text-lg text-center text-cyan-600">
               {' '}
-              {user.username + ' ' + user.usersurname ||
-                user.displayName ||
-                'User Name'}
+              {user.username
+                ? user.username + ' ' + user.usersurname
+                : user.displayName}
             </h2>
             <div
               name="usernameholder"
