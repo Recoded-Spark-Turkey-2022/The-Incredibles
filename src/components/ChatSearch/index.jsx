@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SearchIcon from '../../assets/pics/chatpage/searchIcon.svg';
 import {
   collection,
   query,
@@ -70,12 +71,17 @@ function ChatSearch({ setOpen }) {
   };
 
   return (
-    <div className="border-b border-gray-400 h-fit pb-2">
+    <div className="border-b relative bg-slate-200 pl-2 border-gray-400 h-fit ">
+      <img
+        className="w-4 absolute right-3 top-3"
+        src={SearchIcon}
+        alt="search icon"
+      />
       <input
         onKeyDown={handleKey}
         onChange={(e) => setUserName(e.target.value)}
         type="search"
-        className="bg-transparent m-5 outline-none  text-white placeholder:text-gray-200"
+        className="bg-transparent w-full pl-2  outline-none h-10 text-black placeholder:text-gray-600 placeholder:pl-2"
         placeholder="Type user name..."
         value={userName}
       />
@@ -90,7 +96,7 @@ function ChatSearch({ setOpen }) {
             className="w-12 h-12 rounded-full mr-2 "
           />
           <div>
-            <p className="text-white ">
+            <p className="text-black ">
               {theUser.username
                 ? theUser.username + ' ' + theUser.usersurname
                 : theUser.displayName}
