@@ -9,7 +9,7 @@ function NotFoundPage() {
       <Container>
         <div
           name="error-body"
-          className="flex sm:justify-between max-lg:flex-col-reverse max-lg:items-center max-lg:text-center md:px-5"
+          className="flex items-center lg:h-screen sm:justify-between max-lg:flex-col-reverse max-lg:text-center md:px-5"
         >
           <div name="navhome" className="items-center lg:w-1/2 max-lg:w-full">
             <div className="relative lg:top-32 lg:left-40 max-lg:top-32 max-lg:right-8 ">

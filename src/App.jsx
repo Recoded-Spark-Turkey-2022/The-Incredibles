@@ -36,20 +36,23 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+        {/* public */}
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blogs/blog" element={<BlogDetails />} />
-        <Route path="/myaccount" element={<MyAccount />} />
+        {/* protected */}
         <Route path="/chat" element={<ChatsPage />} />
+        <Route path="/myaccount" element={<MyAccount />} />
         <Route
           path="/myaccount/myaccountdetails"
           element={<MyAccountDetails />}
         />
         <Route path="/myaccount/write" element={<WriteBlog />} />
+        {/* catch all */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
