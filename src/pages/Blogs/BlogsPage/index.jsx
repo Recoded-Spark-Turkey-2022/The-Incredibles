@@ -7,6 +7,7 @@ import '../../../style/slick-theme.css';
 import { useSelector } from 'react-redux';
 import { loadingState } from '../../../features/blogs/blogsSlice';
 import Spinner from '../../../components/Spinner';
+import Container from '../../../components/UI/Container';
 
 function BlogsPage() {
   const loading = useSelector(loadingState);
@@ -74,12 +75,13 @@ function BlogsPage() {
   }
 
   return (
-    <div className="px-28 max-lg:px-4">
-      <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden p-5 m-5">
+    <Container>
+    <div className="">
+      <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
         <label className="font-medium text-gray-500 text-lg">
           sort by:
           <select
-            className="w-fit  m-1 text-sm bg-cyan-100"
+            className="w-fit  m-1 text-sm bg-cyan-100/50"
             onClick={handleChangeSort}
           >
             <option> Date </option>
@@ -123,6 +125,7 @@ function BlogsPage() {
         </div> */}
       </div>
     </div>
+    </Container>
   );
 }
 

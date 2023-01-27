@@ -56,8 +56,10 @@ function Navbar() {
   }
 
   return (
+    
     <div className="sticky top-0 bg-gradient-to-b from-white shadow-lg z-40">
-      <nav className="lg:mx-16 md:mx-10 md:flex justify-between hidden">
+      <Container>
+      <nav className=" md:mx-5 md:flex justify-between hidden">
         <Link to="/">
           <div className="flex items-center lg:mt-7 mt-3">
             <img src={Logo} alt="logo" className="w-6" />
@@ -264,7 +266,9 @@ function Navbar() {
           </h1>
         )}
       </nav>
+      </Container>
     </div>
+    
   );
 }
 
