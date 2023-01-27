@@ -46,7 +46,9 @@ function Chats({ setOpen }) {
                 className="w-12 h-12 border rounded-full mr-2 "
               />
               <div>
-                <p className="text-black font-semibold ">{chat[1].userInfo.name}</p>
+                <p className="text-black font-semibold ">
+                  {chat[1].userInfo.name}
+                </p>
                 <p className="text-sm text-black">
                   {chat[1].lastMessage && chat[1].lastMessage.text}
                 </p>

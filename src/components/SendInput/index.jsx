@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
@@ -6,7 +6,6 @@ import Images from '../../assets/pics/chatpage/images.svg';
 import Remove from '../../assets/pics/chatpage/delete.svg';
 import Send from '../../assets/pics/chatpage/send.svg';
 import Emoji from '../../assets/pics/chatpage/emoji.svg';
-
 import {
   arrayUnion,
   doc,
@@ -134,7 +133,13 @@ function SendInput() {
           </label>
           <button
             type="submit"
-            onClick={(e)=>{if (chatId) {handleSend()} else{alert('really!! who are you sending to?!!')}}}
+            onClick={(e) => {
+              if (chatId) {
+                handleSend();
+              } else {
+                alert('really!! who are you sending to?!!');
+              }
+            }}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg max-sm:hidden"
           >
             send
@@ -143,7 +148,13 @@ function SendInput() {
             src={Send}
             alt="send"
             className="hidden hover:w-10 duration-500 cursor-pointer max-sm:flex w-6"
-            onClick={(e)=>{if (chatId) {handleSend()} else{alert('really!! who are you sending to?!!')}}}
+            onClick={(e) => {
+              if (chatId) {
+                handleSend();
+              } else {
+                alert('really!! who are you sending to?!!');
+              }
+            }}
           />
         </div>
       </form>

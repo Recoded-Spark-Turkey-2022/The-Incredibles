@@ -28,7 +28,7 @@ function ChatSidebar() {
                 ? user.username + ' ' + user.usersurname
                 : user.displayName}
             </p>
-            <p className='text-gray-700'>{user.biography}</p>
+            <p className="text-gray-700">{user.biography}</p>
           </div>
         </div>
         <ChatSearch setOpen={setOpen} />

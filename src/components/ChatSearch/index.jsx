@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchIcon from '../../assets/pics/chatpage/searchIcon.svg'
+import SearchIcon from '../../assets/pics/chatpage/searchIcon.svg';
 import {
   collection,
   query,
@@ -72,7 +72,11 @@ function ChatSearch({ setOpen }) {
 
   return (
     <div className="border-b relative bg-slate-200 pl-2 border-gray-400 h-fit ">
-      <img className='w-4 absolute right-3 top-3' src={SearchIcon} alt="search icon" />
+      <img
+        className="w-4 absolute right-3 top-3"
+        src={SearchIcon}
+        alt="search icon"
+      />
       <input
         onKeyDown={handleKey}
         onChange={(e) => setUserName(e.target.value)}
