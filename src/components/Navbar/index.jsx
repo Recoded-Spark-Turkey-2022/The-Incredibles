@@ -57,125 +57,126 @@ function Navbar() {
 
   return (
     <div className="sticky top-0 bg-gradient-to-b from-white shadow-lg z-40">
-      <nav className="lg:mx-16 md:mx-10 md:flex justify-between hidden">
-        <Link to="/">
-          <div className="flex items-center lg:mt-7 mt-3">
-            <img src={Logo} alt="logo" className="w-6" />
-            <h1 className="ml-1 font-bold text-cyan-600 text-xl">Refubook</h1>
-          </div>
-        </Link>
-        <div className="flex items-center text-xl">
-          {linksToDisplay}
-          {users ? (
-            <div>
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button
-                    className="bg-transparent lg:text-cyan-600 lg:border-cyan-600 lg:border-2
-                rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
-                  >
-                    <img
-                      className="m-auto h-12 w-12 rounded-full"
-                      src={
-                        user.photoURL
-                          ? user.photoURL
-                          : user.authPhoto
-                          ? user.authPhoto
-                          : UserPhoto
-                      }
-                      alt="avatar-preview"
-                    />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            onClick={() => {
-                              navigate('/myaccount/myaccountdetails');
-                            }}
-                            className={classNames(
-                              active
-                                ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-left text-sm'
-                            )}
-                          >
-                            Account settings
-                          </button>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            onClick={() => {
-                              auth.signOut(), navigate('/');
-                            }}
-                            className={classNames(
-                              active
-                                ? 'bg-gray-300 shadow-lg text-cyan-500'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-left text-sm'
-                            )}
-                          >
-                            {t('nav.signout')}
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+      <Container>
+        <nav className=" md:mx-5 md:flex justify-between hidden">
+          <Link to="/">
+            <div className="flex items-center lg:mt-7 mt-3">
+              <img src={Logo} alt="logo" className="w-6" />
+              <h1 className="ml-1 font-bold text-cyan-600 text-xl">Refubook</h1>
             </div>
-          ) : (
-            <div>
-              <Button name={t('nav.signin')} path="/signin" />
-            </div>
-          )}
-        </div>
-      </nav>
-      <nav
-        name="sid-bar"
-        className={
-          open
-            ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 duration-300 ease-in fixed left-0 h-screen bg-gradient-to-r from-white via-gray-50 to-gray-100'
-            : 'md:hidden left-[-100%] duration-500 ease-in flex'
-        }
-      >
-        <button type="button" onClick={() => setOpen(!open)}>
-          <img className="my-7 ml-4" src={open ? BackAroww : MenuB} />
-        </button>
-        {open ? (
-          <div>
+          </Link>
+          <div className="flex items-center text-xl">
+            {linksToDisplay}
             {users ? (
               <div>
-                <div className="flex justify-center">
-                  <Menu as="div" className="relative inline-block text-left">
-                    <div>
-                      <Menu.Button
-                        className=" border-cyan-600 border-2
+                <Menu as="div" className="relative inline-block text-left">
+                  <div>
+                    <Menu.Button
+                      className="bg-transparent lg:text-cyan-600 lg:border-cyan-600 lg:border-2
+                rounded-full shadow-md
+                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
+                    >
+                      <img
+                        className="m-auto h-12 w-12 rounded-full"
+                        src={
+                          user.photoURL
+                            ? user.photoURL
+                            : user.authPhoto
+                            ? user.authPhoto
+                            : UserPhoto
+                        }
+                        alt="avatar-preview"
+                      />
+                    </Menu.Button>
+                  </div>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border-cyan-600 border-2 bg-gradient-to-r from-white via-cyan-50 to-cyan-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={() => {
+                                navigate('/myaccount/myaccountdetails');
+                              }}
+                              className={classNames(
+                                active
+                                  ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                  : 'text-gray-700',
+                                'block w-full px-4 py-2 text-left text-sm'
+                              )}
+                            >
+                              Account settings
+                            </button>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              onClick={() => {
+                                auth.signOut(), navigate('/');
+                              }}
+                              className={classNames(
+                                active
+                                  ? 'bg-gray-300 shadow-lg text-cyan-500'
+                                  : 'text-gray-700',
+                                'block w-full px-4 py-2 text-left text-sm'
+                              )}
+                            >
+                              {t('nav.signout')}
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </div>
+            ) : (
+              <div>
+                <Button name={t('nav.signin')} path="/signin" />
+              </div>
+            )}
+          </div>
+        </nav>
+        <nav
+          name="sid-bar"
+          className={
+            open
+              ? 'md:hidden rounded-r-3xl border-gray-100 w-9/12 z-50 border-2 duration-300 ease-in fixed left-0 h-screen bg-gradient-to-r from-white via-gray-50 to-gray-100'
+              : 'md:hidden left-[-100%] duration-500 ease-in flex'
+          }
+        >
+          <button type="button" onClick={() => setOpen(!open)}>
+            <img className="my-7 ml-4" src={open ? BackAroww : MenuB} />
+          </button>
+          {open ? (
+            <div>
+              {users ? (
+                <div>
+                  <div className="flex justify-center">
+                    <Menu as="div" className="relative inline-block text-left">
+                      <div>
+                        <Menu.Button
+                          className=" border-cyan-600 border-2
                rounded-full shadow-md
                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
-                      >
-                        <img
-                          className="m-auto h-36 w-36 rounded-full"
-                          src={user.photoURL || user.authPhoto || UserPhoto}
-                          alt="avatar-preview"
-                        />
-                      </Menu.Button>
-                    </div>
+                        >
+                          <img
+                            className="m-auto h-36 w-36 rounded-full"
+                            src={user.photoURL || user.authPhoto || UserPhoto}
+                            alt="avatar-preview"
+                          />
+                        </Menu.Button>
+                      </div>
 
                     <Transition
                       as={Fragment}
@@ -264,6 +265,7 @@ function Navbar() {
           </h1>
         )}
       </nav>
+      </Container>
     </div>
   );
 }
