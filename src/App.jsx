@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { auth } from './firebase/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { getUser } from './features/users/usersSlice';
+import { getBlogs } from './features/blogs/blogsSlice';
+import HomePage from './pages/Home/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import Footer from './components/Footer';
-import HomePage from './pages/Home/HomePage';
-import Navbar from './components/Navbar';
 import BlogsPage from './pages/Blogs/BlogsPage';
 import BlogDetails from './pages/Blogs/BlogDetails';
 import SignUp from './pages/Signup/SignUp';
@@ -12,11 +15,6 @@ import SignIn from './pages/Signup/SingIn';
 import MyAccount from './pages/UserProfile/MyAccount';
 import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
-import { auth } from './firebase/firebase';
-import { getUser } from './features/users/usersSlice';
-import { useDispatch } from 'react-redux';
-import { onAuthStateChanged } from 'firebase/auth';
-import { getBlogs } from './features/blogs/blogsSlice';
 import ChatsPage from './pages/ChatsPage';
 import NotFoundPage from './pages/NotFoundPage/error';
 
@@ -34,7 +32,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         {/* public */}
         <Route path="/" element={<HomePage />} />
@@ -55,7 +52,6 @@ function App() {
         {/* catch all */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
