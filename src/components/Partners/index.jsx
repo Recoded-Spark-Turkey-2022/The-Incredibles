@@ -30,7 +30,7 @@ function Partners() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     slidesToShow: 6,
     slidesToScroll: 3,
     autoplay: true,
@@ -45,7 +45,7 @@ function Partners() {
           slidesToScroll: 1,
           infinite: true,
           dots: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 2000,
         },
       },
       {
@@ -55,7 +55,7 @@ function Partners() {
           slidesToScroll: 1,
           infinite: true,
           dots: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 2000,
         },
       },
       {
@@ -65,7 +65,7 @@ function Partners() {
           slidesToScroll: 1,
           infinite: true,
           dots: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 3000,
         },
       },
     ],
@@ -79,7 +79,11 @@ function Partners() {
           <Slider {...settings} className="py-5">
             {partners.map((par, i) => (
               <div key={i} className="lg:px-10 px-5 ">
-                <img src={par} alt="partner-logo" />
+                <img
+                  src={par}
+                  alt="partner-logo"
+                  className="w-[120px] m-auto"
+                />
               </div>
             ))}
           </Slider>
