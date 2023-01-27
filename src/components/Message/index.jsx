@@ -1,12 +1,14 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
+import SimpleDateTime from 'react-simple-timestamp-to-date';
 
 function Message({ message }) {
   const ref = useRef();
   const { user } = useSelector(selectUser);
   const { chat } = useSelector((state) => state);
   const { chatUser } = chat;
+  console.log(new Date(message.date));
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -42,20 +44,32 @@ function Message({ message }) {
           <p
             className={
               message.senderId === user.id
-                ? 'bg-blue-500 p-4 rounded-l-lg rounded-b-lg max-w-fit'
-                : 'bg-gray-300 p-4 rounded-r-lg rounded-b-lg max-w-fit '
+                ? 'bg-blue-500  p-4 rounded-l-lg rounded-b-lg max-w-fit'
+                : 'bg-gray-300  p-4 rounded-r-lg rounded-b-lg max-w-fit '
             }
           >
-            {message.text}{' '}
+            {message.text}
           </p>
         )}
+
         {message.photo && (
           <img
             src={message.photo}
             alt="sended image"
-            className=" w-[25rem] h-[20rem] mb-4  object-cover "
+            className=" w-[25rem] h-[20rem]   object-cover "
           />
         )}
+        <span className="text-xs mb-4">
+          <SimpleDateTime
+            timeSeparator=":"
+            format="MYD"
+            showTime="1"
+            showDate="0"
+            meridians="1"
+          >
+            {message.date}
+          </SimpleDateTime>
+        </span>
       </div>
     </div>
   );
