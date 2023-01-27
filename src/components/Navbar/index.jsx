@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState,useEffect, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, Transition } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
@@ -13,8 +13,28 @@ import Logo from '../../assets/pics/navbar/logo.svg';
 import MenuB from '../../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
+import { useLocation } from 'react-router';
 
 function Navbar() {
+  const loc = useLocation();
+  const [page, setPage] = useState('');
+useEffect(()=>{
+  switch(loc.pathname){
+    case '/signin': setPage('Sign in'); break
+    case '/signup': setPage('Sign up'); break
+    case '/myaccount': setPage('My account'); break
+    case '/myaccount/myaccountdetails': setPage('My account details'); break
+    case '/myaccount/write': setPage('Write'); break
+    case '/about': setPage('About');break
+    case '/blogs': setPage('Blogs'); break
+    case '/chat': setPage('Messages'); break
+    case '/contact': setPage('Contact'); break
+    case '/': setPage('Home'); break
+    default: setPage('')
+  }
+},[loc])
+  
+  console.log(page)
   const [t] = useTranslation();
   const navigate = useNavigate();
   const { user } = useSelector(selectUser);
@@ -33,7 +53,6 @@ function Navbar() {
         { name: `${t('nav.contact')}`, link: '/contact' },
       ];
   const [open, setOpen] = useState(false);
-  const [page, setPage] = useState('Home');
   const linksToDisplay = links.map((link) => (
     <NavLink
       end
@@ -44,7 +63,8 @@ function Navbar() {
       key={link.name}
       to={link.link}
       onClick={() => {
-        setOpen(false), setPage(link.name);
+        setOpen(false)
+        //  setPage(link.name);
       }}
     >
       {link.name}
@@ -211,8 +231,8 @@ function Navbar() {
                               <button
                                 onClick={() => {
                                   auth.signOut(),
-                                    navigate('/'),
-                                    setPage('Home');
+                                    navigate('/')
+                                    // setPage('Home');
                                 }}
                                 className={classNames(
                                   active
