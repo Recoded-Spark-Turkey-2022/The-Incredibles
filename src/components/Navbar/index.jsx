@@ -54,6 +54,7 @@ function Navbar() {
       default:
         setPage('');
     }
+    open ? setOpen(!open) : null;
   }, [loc]);
 
   const [t] = useTranslation();
@@ -83,9 +84,6 @@ function Navbar() {
       className="lg:p-7 md:p-4 sm:p-2 text-gray-500 font-medium hover:text-cyan-500 duration-500 max-md:text-cyan-600 max-md:font-bold max-md:text-xl max-md:hover:underline max-md:decoration-solid max-md:p-2"
       key={link.name}
       to={link.link}
-      onClick={() => {
-        setOpen(false);
-      }}
     >
       {link.name}
     </NavLink>
