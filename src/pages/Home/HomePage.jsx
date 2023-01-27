@@ -1,18 +1,21 @@
-import React from 'react';
-import Stories from '../../components/LatestStories';
-import About from '../../components/AboutSection';
-import Partners from '../../components/Partners';
-import Location from '../../components/LocationSection';
+import Navbar from '../../components/Navbar';
 import Brief from '../../components/Brief';
+import About from '../../components/AboutSection';
+import Location from '../../components/LocationSection';
+import Partners from '../../components/Partners';
+import Stories from '../../components/LatestStories';
+import Footer from '../../components/Footer';
 
 function HomePage() {
   return (
-    <section name="home" className="">
+    <section name="home">
+      <Navbar />
       <Brief />
       <About />
       <Location />
       <Partners />
       <Stories />
+      <Footer />
     </section>
   );
 }
