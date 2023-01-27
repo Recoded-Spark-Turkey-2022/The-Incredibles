@@ -18,6 +18,7 @@ import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getBlogs } from './features/blogs/blogsSlice';
 import ChatsPage from './pages/ChatsPage';
+import NotFoundPage from './pages/NotFoundPage/error';
 
 function App() {
   // const [user] = useAuthState(auth);
@@ -49,6 +50,7 @@ function App() {
           element={<MyAccountDetails />}
         />
         <Route path="/myaccount/write" element={<WriteBlog />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>
