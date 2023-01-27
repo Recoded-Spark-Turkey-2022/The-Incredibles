@@ -5,7 +5,7 @@ import Error from '../../assets/pics/404/error.svg';
 
 function NotFoundPage() {
   return (
-    <section name="404" className="bg-emerald-50 h-screen">
+    <section name="404" className="bg-emerald-50 lg:h-full max-lg:h-screen">
       <Container>
         <div
           name="error-body"
