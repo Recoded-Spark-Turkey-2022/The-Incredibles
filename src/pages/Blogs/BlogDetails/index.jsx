@@ -61,7 +61,7 @@ function BlogDetails() {
   };
 
   useEffect(() => {
-   blogData && handleFindAuthor();
+    blogData && handleFindAuthor();
   }, [thisBlog]);
 
   const handleFindAuthor = async () => {
@@ -236,8 +236,8 @@ function BlogDetails() {
                     />
                   </div>
                 </PopoverHandler>
-                <PopoverContent className="absolute">
-                  <div className="p-5">
+                <PopoverContent className="absolute bg-[#70CDD6]">
+                  <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
                     <img
                       src={blogData ? blogData.author.authorPhoto : User}
                       alt="author"
@@ -280,8 +280,8 @@ function BlogDetails() {
                     </h1>
                   </div>
                 </PopoverHandler>
-                <PopoverContent className="absolute">
-                  <div className="p-5">
+                <PopoverContent className="absolute bg-[#70CDD6]">
+                  <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
                     <img
                       src={blogData ? blogData.author.authorPhoto : User}
                       alt="author"

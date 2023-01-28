@@ -4,11 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { deleteBlog } from '../../features/blogs/blogsSlice';
-import {
-  Popover,
-  PopoverHandler,
-  PopoverContent,
-} from '@material-tailwind/react';
 import NoMedia from '../../assets/pics/blogpage/nomedia.svg';
 
 function BlogCard({ blog }) {
@@ -34,7 +29,7 @@ function BlogCard({ blog }) {
   return (
     <div className="group h-[400px] border mx-6 max-lg:mx-4 mb-6 overflow-hidden rounded-lg shadow-[0_5px_5px_-1px_rgba(0,0,0,0.3)] hover:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)] focus:shadow-[5px_5px_5px_-1px_rgba(0,0,0,0.3)]">
       <div className="transition-all duration-500 w-full h-52 bg-gray-200 border overflow-hidden ">
-        {user.id === thisBlog.data.author.authorId ? (
+        {thisBlog && user.id === thisBlog.data.author.authorId ? (
           <div
             className=" w-4 text-center absolute bg-red-200 font-bold hover:bg-red-600"
             onClick={handleDelete}
@@ -60,70 +55,14 @@ function BlogCard({ blog }) {
           <p>{thisBlog && thisBlog.data.likedUsers.length} likes</p>
         </div>
         <div className="flex items-center ">
-          <Popover placement="right">
-            <PopoverHandler className="relative">
-              <div>
-                <img
-                  src={thisBlog && thisBlog.data.author.authorPhoto}
-                  alt="author"
-                  className="w-10 h-10 rounded-full"
-                />
-              </div>
-            </PopoverHandler>
-            <PopoverContent className="absolute">
-              <div className="p-5">
-                <img
-                  src={thisBlog && thisBlog.data.author.authorPhoto}
-                  alt="author"
-                  className="w-10 h-10 rounded-full"
-                />
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                  {thisBlog && thisBlog.data.author.authorName}
-                </h2>
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
-
-                <p>{thisBlog && thisBlog.data.author.authorBio}</p>
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-
-                <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
-              </div>
-            </PopoverContent>
-          </Popover>
-          <Popover placement="right">
-            <PopoverHandler className="relative">
-              <div>
-                <h1 className="ml-4 text-cyan-600 font-medium">
-                  {thisBlog && thisBlog.data.author.authorName}
-                </h1>
-              </div>
-            </PopoverHandler>
-            <PopoverContent className="absolute">
-              <div className="p-5">
-                <div>
-                  <img
-                    src={thisBlog && thisBlog.data.author.authorPhoto}
-                    alt="author"
-                    className="w-10 h-10 rounded-full"
-                  />
-                </div>
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                  {thisBlog && thisBlog.data.author.authorName}
-                </h2>
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium">Biography</h2>
-
-                <p>{thisBlog && thisBlog.data.author.authorBio}</p>
-                <br />
-                <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-
-                <p>{thisBlog && thisBlog.data.author.authorLocation}</p>
-              </div>
-            </PopoverContent>
-          </Popover>
+          <img
+            src={thisBlog && thisBlog.data.author.authorPhoto}
+            alt="author"
+            className="w-10 h-10 rounded-full"
+          />
+          <h1 className="ml-4 text-cyan-600 font-medium">
+            {thisBlog && thisBlog.data.author.authorName}
+          </h1>
         </div>
       </div>
     </div>

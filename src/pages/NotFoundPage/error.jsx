@@ -19,7 +19,10 @@ function NotFoundPage() {
               <img src={Error} alt="404" className="h-full" />
             </div>
           </div>
-          <div name="navcontact" className="text-center lg:w-1/2 max-lg:w-full max-lg:pt-24">
+          <div
+            name="navcontact"
+            className="text-center lg:w-1/2 max-lg:w-full max-lg:pt-24"
+          >
             <h2 className="font-bold md:text-7xl text-cyan-600 text-5xl my-5">
               Oh, no!
             </h2>
