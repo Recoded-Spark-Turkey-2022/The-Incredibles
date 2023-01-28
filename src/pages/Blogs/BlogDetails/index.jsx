@@ -281,7 +281,7 @@ function BlogDetails() {
                   </div>
                 </PopoverHandler>
                 <PopoverContent className="absolute bg-[#70CDD6]">
-                  <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                  <div className="p-5 bg-white bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
                     <img
                       src={blogData ? blogData.author.authorPhoto : User}
                       alt="author"
