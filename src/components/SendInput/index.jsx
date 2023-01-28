@@ -132,14 +132,7 @@ function SendInput() {
             />
           </label>
           <button
-            type="submit"
-            onClick={(e) => {
-              if (chatId) {
-                handleSend();
-              } else {
-                alert('really!! who are you sending to?!!');
-              }
-            }}
+            
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg max-sm:hidden"
           >
             send
