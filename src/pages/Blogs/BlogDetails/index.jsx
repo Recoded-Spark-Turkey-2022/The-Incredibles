@@ -61,7 +61,7 @@ function BlogDetails() {
   };
 
   useEffect(() => {
-   blogData && handleFindAuthor();
+    blogData && handleFindAuthor();
   }, [thisBlog]);
 
   const handleFindAuthor = async () => {

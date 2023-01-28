@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'authorbg': "url('/src/assets/pics/profilepage/authorbg.svg')",
-      }
+        authorbg: "url('/src/assets/pics/profilepage/authorbg.svg')",
+      },
     },
   },
   plugins: [],
