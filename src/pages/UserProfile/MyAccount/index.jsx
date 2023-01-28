@@ -50,7 +50,7 @@ function MyAccount() {
   return (
     <>
       <Navbar />
-      <section name="myaccount" className="bg-cyan-600 ">
+      <section name="myaccount" className="bg-[#70CDD6]">
         <Container>
           <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
             <div className="lg:p-16 lg:pb-8 max-lg:p-3">
