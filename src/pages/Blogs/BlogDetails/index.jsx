@@ -163,35 +163,35 @@ function BlogDetails() {
               />
             </div>
             <div className="flex justify-center absolute translate-x-60 transform-gpu">
-              <div className='px-3 relative bottom-7'>
+              <div className="px-3 relative bottom-7">
                 <img
                   src={ShareIcon}
                   alt="share-image"
                   className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                 />
-                </div>
-                <div className='px-3 relative bottom-7'>
+              </div>
+              <div className="px-3 relative bottom-7">
                 <img
                   src={FaceIcon}
                   alt="face-image"
                   className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                 />
-                </div>
-                <div className='px-3 relative bottom-7'>
+              </div>
+              <div className="px-3 relative bottom-7">
                 <img
                   src={InstaIcon}
                   alt="insta-image"
                   className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                 />
-                </div>
-                <div className='px-3 relative bottom-7'>
+              </div>
+              <div className="px-3 relative bottom-7">
                 <img
                   src={TweterIcon}
                   alt="tweter-image"
                   className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                 />
-                </div>
               </div>
+            </div>
             <div className="flex justify-between">
               <div>
                 <span> {blogData && blogData.likedUsers.length} likes</span>

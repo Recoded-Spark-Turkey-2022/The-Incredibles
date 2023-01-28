@@ -102,7 +102,7 @@ function BlogsPage() {
               <img
                 src={SearchIcon}
                 alt="search-icon"
-                className='className=" w-4 h-4 absolute right-36 text-cyan-600 "'
+                className="w-4 h-4 relative right-8"
               />
             </div>
           </div>
