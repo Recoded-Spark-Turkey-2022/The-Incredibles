@@ -83,6 +83,25 @@
       "save": "Save",
       "cancle": "Cancel"
     }
+  },
+  "message": {
+    "sendinput":{
+      "typeyourmassage": "Type your message....",
+      "send": "send"
+    },
+    "chatsearch": {
+      "typeusername": "Type user name..."
+    }
+  },
+  "writeblog": {
+    "write": "Write new blog",
+    "title":"Title:",
+    "subtitle": "Sub Title:",
+    "category": "Category:",
+    "content": "Content:",
+    "media": "Media (image or video):",
+    "submit": "Submit",
+    "alert": "Blog submitted successfully"
   }
  
 }

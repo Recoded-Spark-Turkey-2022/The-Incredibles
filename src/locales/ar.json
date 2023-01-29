@@ -83,5 +83,24 @@
         "save": "حفظ",
         "cancle": "إلغاء"
       }
+    },
+    "message": {
+      "sendinput":{
+        "typeyourmassage": "اكتب رسالتك هنا...",
+        "send": "إرسال"
+      },
+      "chatsearch": {
+        "typeusername": "اكتب اسم المستخدم..."
+      }
+    },
+    "writeblog": {
+      "write": "اكتب مدونة جديدة",
+      "title":"العنوان:",
+      "subtitle": "العنوان الفرعي:",
+      "category": "الفئة:",
+      "content": "المحتوى:",
+      "media": "الميديا (صورة أو فيديو):",
+      "submit": "نشر",
+      "alert": "تم النشر"
     }
 }

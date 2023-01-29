@@ -10,8 +10,11 @@ import { CATEGORIES } from '../../../data';
 import Navbar from '../../../components/Navbar';
 import Container from '../../../components/UI/Container';
 import Footer from '../../../components/Footer';
+import { useTranslation } from 'react-i18next';
 
 function WriteBlog() {
+  const [t] = useTranslation();
+
   const { user } = useSelector(selectUser);
   const dispatch = useDispatch();
   const handleSubmit = async (event) => {
@@ -50,7 +53,7 @@ function WriteBlog() {
           authorLocation: user.location ? user.location : '',
         },
       });
-      alert('Blog submitted successfully');
+      alert( `${t('writeblog.alert')}`);
       setTitle('');
       setContent('');
       setMedia(null);
@@ -98,14 +101,14 @@ function WriteBlog() {
             onSubmit={handleSubmit}
           >
             <h1 className="block text-gray-700 text-3xl font-bold mb-10 text-center">
-              Write new blog
+            {t('writeblog.write')}
             </h1>
             <div className="mb-4">
               <label
                 className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
                 htmlFor="title"
               >
-                Title:
+                {t('writeblog.title')}
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -120,7 +123,7 @@ function WriteBlog() {
                 className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
                 htmlFor="subTitle"
               >
-                Sub Title:
+                {t('writeblog.subtitle')}
               </label>
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -132,7 +135,7 @@ function WriteBlog() {
             </div>
             <div className="mb-6">
               <label className="block text-gray-700 sm:text-xl text-base font-bold mb-2">
-                Category:
+              {t('writeblog.category')}
                 <select
                   onChange={handleCategoreyChange}
                   value={categorey}
@@ -147,7 +150,7 @@ function WriteBlog() {
                 className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
                 htmlFor="content"
               >
-                Content:
+                {t('writeblog.content')}
               </label>
               <textarea
                 rows={5}
@@ -162,7 +165,7 @@ function WriteBlog() {
                 className="block text-gray-700 sm:text-xl text-base font-bold mb-2"
                 htmlFor="media"
               >
-                Media (image or video):
+                {t('writeblog.media')}
               </label>
 
               <input
@@ -179,7 +182,8 @@ function WriteBlog() {
           ease-in duration-300 hover:bg-purple-700 hover:shadow-lg  hover:scale-110"
                 type="submit"
               >
-                Submit
+                {t('writeblog.submit')}
+                
               </button>
             </div>
           </form>

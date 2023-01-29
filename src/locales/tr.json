@@ -9,7 +9,7 @@
     "signin": "Oturum aç",
     "signup": "Kaydol",
     "signout": "Oturumu Kapat",
-    "messages": "Messajlar"
+    "messages": "Mesajlar"
   },
   "home": {
     "home": {
@@ -83,5 +83,24 @@
       "save": "Kaydet",
       "cancle": "iptal"
     }
+  },
+  "message": {
+    "sendinput":{
+      "typeyourmassage": "Mesajını yaz....",
+      "send": "gönder"
+    },
+    "chatsearch": {
+      "typeusername": "Kullanıcı adını yaz..."
+    }
+  },
+  "writeblog": {
+    "write": "Yeni blog yaz",
+    "title":"Başlık:",
+    "subtitle": "Alt Başlık:",
+    "category": "Kategori:",
+    "content": "İçerik:",
+    "media": "Medya (fotoğraf yada video):",
+    "submit": "Gönder",
+    "alert": "Blog başarıyla gönderildi!"
   }
 }

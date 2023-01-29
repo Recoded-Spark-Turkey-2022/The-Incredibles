@@ -17,8 +17,11 @@ import { db, storage } from '../../firebase/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { v4 as uuid } from 'uuid';
 import Picker from 'emoji-picker-react';
+import { useTranslation } from 'react-i18next';
+
 
 function SendInput() {
+  const [t] = useTranslation();
   const { chat } = useSelector((state) => state);
   const { user } = useSelector(selectUser);
   const { chatUser, chatId } = chat;
@@ -92,7 +95,8 @@ function SendInput() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           type="text"
-          placeholder="Type your message...."
+          placeholder={t('message.sendinput.typeyourmassage')}
+          
           className="w-full pl-4 bg-gray-200 placeholder:bg-gray-200 outline-none rounded-lg placeholder:p-4 max-sm:placeholder:p-2 max-sm:placeholder:text-sm max-sm:w-"
         />
 
@@ -132,7 +136,7 @@ function SendInput() {
             />
           </label>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg max-sm:hidden">
-            send
+          {t('message.sendinput.send')} 
           </button>
           <img
             src={Send}
