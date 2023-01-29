@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Switch, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { auth  } from './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -17,19 +17,11 @@ import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
 import ChatsPage from './pages/ChatsPage';
 import NotFoundPage from './pages/NotFoundPage/error';
-import ProtectedRouts from './Protected.Routes';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
    const [user] = useAuthState(auth);
-  // const [user, setUser] = React.useState(null);
-  // const [isSignedIn, setIsSignedIn] = useState(null)
-  // const SignIn = () => {
-  //   setIsSignedIn(true)
-  // }
-  // const signOut = () => {
-  //   setIsSignedIn(false)
-  // }
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBlogs());
@@ -51,10 +43,10 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         {/* Protected Routes */}
-        {user?<Route path="/chat" element={<ChatsPage />}/>:<Route path="/signin" element={<SignIn />}/>}
-        {user?<Route path="/blogs/blog" element={<BlogDetails />} />:<Route path="/signin" element={<SignIn />}/>}
-        {user?<Route path="/myaccount/write" element={<WriteBlog />} />:<Route path="/signin" element={<SignIn />}/>}
-        {user?<Route path="/myaccount" element={<MyAccount/>}/>:<Route path="/signin" element={<SignIn />}/>}
+        <Route path="/chat" element={ user?<ChatsPage /> :<Navigate to="/SignIn" />}/>
+        <Route path="/blogs/blog" element={user?<BlogDetails /> :<Navigate to="/SignIn" />}/>
+        <Route path="/myaccount/write" element={ user?<WriteBlog /> :<Navigate to="/SignIn" />}/>
+        <Route path="/myaccount" element={ user?<MyAccount /> :<Navigate to="/SignIn" />}/>
         <Route path="*" element={<NotFoundPage />}  />
       </Routes>
 
