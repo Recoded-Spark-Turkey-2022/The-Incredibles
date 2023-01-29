@@ -32,6 +32,11 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+} from 'react-share';
 
 function BlogDetails() {
   const navigate = useNavigate();
@@ -170,14 +175,14 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-cyan-600 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'liked'
+                      ? 'Liked'
                       : 'Like'
                   }`}</span>
                 </button>
@@ -190,15 +195,15 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-gray-500 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleUnLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'disliked'
-                      : 'dislike'
+                      ? 'Disliked'
+                      : 'Dislike'
                   }`}</span>
                 </button>
               </div>
@@ -303,20 +308,36 @@ function BlogDetails() {
                 </Popover>
               </div>
               <div className="flex justify-end relative translate-y-8 transform-gpu">
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={ShareIcon}
-                    alt="share-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={FaceIcon}
-                    alt="face-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
+                <EmailShareButton
+                  subject={blog.data.title}
+                  body={blog.data.content}
+                  default={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={ShareIcon}
+                      alt="share-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </EmailShareButton>
+                <FacebookShareButton
+                  url={
+                    'https://www.facebook.com/sharer/sharer.php?u=' +
+                    window.location.href
+                  }
+                  quote={'Facebook'}
+                  hashtag={'#hashtag'}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={FaceIcon}
+                      alt="face-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </FacebookShareButton>
                 <div className="px-3 relative bottom-7">
                   <img
                     src={InstaIcon}
@@ -324,13 +345,23 @@ function BlogDetails() {
                     className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                   />
                 </div>
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={TweterIcon}
-                    alt="tweter-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
+                <TwitterShareButton
+                  url={
+                    'https://twitter.com/intent/tweet?text=' +
+                    window.location.href
+                  }
+                  quote={'Twitter'}
+                  hashtags={['hashtag1', 'hashtag2']}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={TweterIcon}
+                      alt="tweter-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </TwitterShareButton>
               </div>
             </div>
             <div name="content div" className="">
