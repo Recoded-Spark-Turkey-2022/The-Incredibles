@@ -50,6 +50,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
+        {/* Protected Routes */}
         {user?<Route path="/chat" element={<ChatsPage />}/>:<Route path="/signin" element={<SignIn />}/>}
         {user?<Route path="/blogs/blog" element={<BlogDetails />} />:<Route path="/signin" element={<SignIn />}/>}
         {user?<Route path="/myaccount/write" element={<WriteBlog />} />:<Route path="/signin" element={<SignIn />}/>}
