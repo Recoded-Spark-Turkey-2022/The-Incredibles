@@ -53,7 +53,7 @@ function WriteBlog() {
           authorLocation: user.location ? user.location : '',
         },
       });
-      alert( `${t('writeblog.alert')}`);
+      alert(`${t('writeblog.alert')}`);
       setTitle('');
       setContent('');
       setMedia(null);
@@ -101,7 +101,7 @@ function WriteBlog() {
             onSubmit={handleSubmit}
           >
             <h1 className="block text-gray-700 text-3xl font-bold mb-10 text-center">
-            {t('writeblog.write')}
+              {t('writeblog.write')}
             </h1>
             <div className="mb-4">
               <label
@@ -135,7 +135,7 @@ function WriteBlog() {
             </div>
             <div className="mb-6">
               <label className="block text-gray-700 sm:text-xl text-base font-bold mb-2">
-              {t('writeblog.category')}
+                {t('writeblog.category')}
                 <select
                   onChange={handleCategoreyChange}
                   value={categorey}
@@ -183,7 +183,6 @@ function WriteBlog() {
                 type="submit"
               >
                 {t('writeblog.submit')}
-                
               </button>
             </div>
           </form>

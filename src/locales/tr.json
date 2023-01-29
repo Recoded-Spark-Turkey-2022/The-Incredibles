@@ -55,7 +55,7 @@
       "team": " Refubook takım üyesi"
     }
   },
-  "about":{
+  "about": {
     "ourstory": {
       "h2": "Hikayemiz",
       "p": "Herkesin haysiyet, saygı ve tam potansiyeline ulaşma fırsatı ile yaşamayı hak ettiğine inanıyoruz. Bu nedenle, çatışma, zulüm veya diğer hayati tehlike oluşturan koşullar nedeniyle evlerini terk eden mültecilere destek ve kaynak sağlamaya kendimizi adadık. Kuruluşumuz, mülteciler için daha kapsamlı ve şefkatli bir bakımın gerekliliğini gören bir grup tutkulu kişi tarafından kuruldu. O zamandan beri, farklı ülkelerdeki mültecilere önde gelen yardım sağlayıcısı haline geldik. Web sitemiz aracılığıyla mültecilere barınma, tıbbi bakım, eğitim ve istihdam desteği dahil olmak üzere bir dizi hizmet sunuyoruz. Ayrıca yerel, ulusal ve uluslararası düzeyde mültecilerin haklarını ve ihtiyaçlarını savunmak için çalışıyoruz. Ama sizin gibi insanların desteği olmadan işimiz mümkün olmazdı. Bağışta bulunarak, gönüllü olarak veya mülteci krizi hakkında farkındalık yaratarak ya da gidip yeni mültecilerin yeni yaşamlarına uyum sağlamalarına yardımcı olacak bilgileri sağlayarak ülkenizdeki yeni mültecileri karşılayın! mültecilerin hayatlarında anlamlı bir fark yaratabilirsiniz. Şimdiye kadar yarattığımız etkiden gurur duyuyoruz, ancak daha yapılacak çok iş var. Herkes için daha kapsayıcı ve kucaklayıcı bir dünya inşa etme misyonumuzda bize katılın."
@@ -69,8 +69,8 @@
       "lebanon": "Lübnan"
     },
     "story": {
-      "h4":"Hikayenizi paylaşın, başkalarına yardım edin ve başkalarından yardım alın",
-      "p":"Yıllarca mülteci olarak mücadele ettikten sonra internette araştırma yaparken Refubook sitesini buldum ve bu site bir anda hayatımı değiştirdi ve sonunda ailemi geçindirmeme izin veren bir iş buldum. Çocuklarım için daha iyi bir gelecek inşa etmeye kararlı olarak çok çalıştım ve her kuruşunu biriktirdim. Nazik bir Refubook topluluğunun yardımıyla çocuklarımı okula gönderebildim ve onlara hiç sahip olmadığım fırsatlar sunabildim. Onların hayallerinin peşinden gitmelerini izlerken, bu harika Refubook üyeleriyle bizi buraya getiren yolculuk için gurur ve şükran duyuyorum."
+      "h4": "Hikayenizi paylaşın, başkalarına yardım edin ve başkalarından yardım alın",
+      "p": "Yıllarca mülteci olarak mücadele ettikten sonra internette araştırma yaparken Refubook sitesini buldum ve bu site bir anda hayatımı değiştirdi ve sonunda ailemi geçindirmeme izin veren bir iş buldum. Çocuklarım için daha iyi bir gelecek inşa etmeye kararlı olarak çok çalıştım ve her kuruşunu biriktirdim. Nazik bir Refubook topluluğunun yardımıyla çocuklarımı okula gönderebildim ve onlara hiç sahip olmadığım fırsatlar sunabildim. Onların hayallerinin peşinden gitmelerini izlerken, bu harika Refubook üyeleriyle bizi buraya getiren yolculuk için gurur ve şükran duyuyorum."
     }
   },
   "myaccount": {
@@ -85,7 +85,7 @@
     }
   },
   "message": {
-    "sendinput":{
+    "sendinput": {
       "typeyourmassage": "Mesajını yaz....",
       "send": "gönder"
     },
@@ -95,7 +95,7 @@
   },
   "writeblog": {
     "write": "Yeni blog yaz",
-    "title":"Başlık:",
+    "title": "Başlık:",
     "subtitle": "Alt Başlık:",
     "category": "Kategori:",
     "content": "İçerik:",

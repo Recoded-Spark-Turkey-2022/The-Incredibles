@@ -53,7 +53,7 @@ function MyAccount() {
       <section name="myaccount" className="bg-[#70CDD6]">
         <Container>
           <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
-            <div className="lg:p-16 lg:pb-8 max-lg:p-3">
+            <div className="relative pb-8">
               <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
                 <img
                   className="m-auto relative top-36 left-16"

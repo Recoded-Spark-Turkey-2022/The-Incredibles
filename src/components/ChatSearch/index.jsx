@@ -18,7 +18,6 @@ import { selectUser } from '../../features/users/usersSlice';
 import { getChat } from '../../features/chat/chatSlice';
 import { useTranslation } from 'react-i18next';
 
-
 function ChatSearch({ setOpen }) {
   const [t] = useTranslation();
   const dispatch = useDispatch();
@@ -85,7 +84,7 @@ function ChatSearch({ setOpen }) {
         onChange={(e) => setUserName(e.target.value)}
         type="search"
         className="bg-transparent w-full pl-2  outline-none h-10 text-black placeholder:text-gray-600 placeholder:pl-2"
-        placeholder={t('message.chatsearch.typeusername')} 
+        placeholder={t('message.chatsearch.typeusername')}
         value={userName}
       />
       {theUser && (

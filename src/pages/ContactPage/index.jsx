@@ -36,17 +36,17 @@ function ContactPage() {
           </div>
           <div className=" basis-1/2  text-center md:text-left m-auto md:max-w-xl">
             <h1 className="pb-10 font-bold text-3xl text-cyan-600 md:text-6xl">
-            {t('contactpage.get')} 
+              {t('contactpage.get')}
             </h1>
             <p className="text-zinc-400	font-light pb-2 ">
-            {t('contactpage.p')}
+              {t('contactpage.p')}
             </p>
             <form
               onSubmit={handleSubmit}
               className=" pl-1 flex flex-col gap-2 justify-center md:justify-start "
             >
               <label className="text-zinc-400	font-light text-left ">
-              {t('contactpage.email')}
+                {t('contactpage.email')}
               </label>
               <input
                 id="email"
@@ -57,7 +57,7 @@ function ContactPage() {
               />
               <textarea
                 id="message"
-                placeholder= {t('contactpage.massageplace')} 
+                placeholder={t('contactpage.massageplace')}
                 rows={8}
                 className="border border-solid"
                 onChange={handleChange}
@@ -65,7 +65,7 @@ function ContactPage() {
               <div>
                 <input
                   type="submit"
-                  value= {t('contactpage.send')} 
+                  value={t('contactpage.send')}
                   className="m-auto  h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
              rounded-full shadow-md
              ease-in duration-300 hover:bg-purple-700 hover:shadow-md  hover:scale-110"

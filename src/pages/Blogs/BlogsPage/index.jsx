@@ -85,7 +85,7 @@ function BlogsPage() {
         <div className="">
           <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
             <label className="font-medium text-gray-500 text-lg">
-            {t('blogspage.sort')}
+              {t('blogspage.sort')}
               <select
                 className="w-fit  m-1 text-sm bg-cyan-100/50"
                 onClick={handleChangeSort}
@@ -98,7 +98,7 @@ function BlogsPage() {
               <input
                 onChange={handleSearch}
                 type="search"
-                placeholder= {t('blogspage.searchholder')} 
+                placeholder={t('blogspage.searchholder')}
                 className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
               />
               <img

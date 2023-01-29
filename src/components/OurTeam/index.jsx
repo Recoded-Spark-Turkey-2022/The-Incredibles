@@ -60,17 +60,17 @@ const MEMBERS = [
 ];
 // const members variable will be used as a placeholder for firebase. When we fetch there, this variable will be deleted
 
-
-
 function Team() {
   const [t] = useTranslation();
-  const COUNTRIES = ['View All', t('about.ourteam.usa'), t('about.ourteam.turkey'), t('about.ourteam.lebanon')
- ];
-
+  const COUNTRIES = [
+    'View All',
+    t('about.ourteam.usa'),
+    t('about.ourteam.turkey'),
+    t('about.ourteam.lebanon'),
+  ];
 
   const [category, setCategory] = useState('View All'); //This state is for country filter because both md and sm screens have country filter
   const [show, setShow] = useState(true); //This part is for sm screen and is a toggle button for text to open and close. It works, but sm screen styling is not finished yet.
-  
 
   const renderBtn = COUNTRIES.map((country) => {
     const className =
@@ -120,7 +120,7 @@ function Team() {
         <h2 className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2">
           {t('about.ourteam.h2')}
         </h2>
-        <div name={"toggle-button"} className="text-center pt-5">
+        <div name={'toggle-button'} className="text-center pt-5">
           <button
             onClick={() => {
               setShow((s) => !s), setCategory('View All');
@@ -131,7 +131,9 @@ function Team() {
                 : 'rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-gray-400 bg-gray-400 md:hidden'
             }
           >
-            {!show ? `${t('about.ourteam.showbutton')}` : `${t('about.ourteam.hidebutton')}`}
+            {!show
+              ? `${t('about.ourteam.showbutton')}`
+              : `${t('about.ourteam.hidebutton')}`}
           </button>
           <div className="grid grid-cols-2 md:hidden">
             {show ? memberCard : null}

@@ -16,11 +16,11 @@ function CallToAction() {
       </div>
       <div className="text-center p-10 max-md:px-0 max-md:py-5">
         <h4 className="font-normal text-3xl py-5 text-cyan-600">
-        {t('about.story.h4')}
+          {t('about.story.h4')}
         </h4>
         <div className="text-center  ">
           <p className="text-zinc-400	font-light  sm:text-xl text-base ">
-          {t('about.story.p')}
+            {t('about.story.p')}
           </p>
         </div>
       </div>

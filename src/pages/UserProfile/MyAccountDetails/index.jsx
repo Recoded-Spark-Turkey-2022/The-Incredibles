@@ -12,6 +12,7 @@ import {
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import ChangePhoto from '../../../assets/pics/profilepage/changepic.svg';
 import { useTranslation } from 'react-i18next';
+import Container from '../../../components/UI/Container';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);
@@ -52,16 +53,13 @@ function MyAccountDetails() {
   return (
     <>
       <Navbar />
-      <section
-        name="myaccountdetails"
-        className="bg-[#70CDD6] lg:p-20 max-lg:p-5"
-      >
-        <div className="bg-white rounded-3xl">
-          <div className="lg:px-28 lg:py-16 max-lg:p-3">
-            <form onSubmit={handleSubmit} className="lg:mx-40 lg:px-28">
-              <Popover placement="top">
-                <PopoverHandler className="relative">
-                  <div className="flex flex-col items-center lg:pb-20 max-lg:p-10">
+      <section name="myaccountdetails" className="bg-[#70CDD6]">
+        <Container>
+          <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
+            <form onSubmit={handleSubmit} className="">
+              <Popover placement="bottom">
+                <PopoverHandler className="relative max-lg:pt-10">
+                  <div className="flex flex-col items-center lg:pb-5">
                     <img
                       className="m-auto relative top-36 left-16"
                       src={ChangePhoto}
@@ -100,76 +98,78 @@ function MyAccountDetails() {
                   ? user.username + ' ' + user.usersurname
                   : user.displayName}
               </h2>
-              <div
-                name="usernameholder"
-                className="flex lg:flex-row max-lg:flex-col justify-between w-full"
-              >
-                <div name="username" className="flex flex-col">
-                  <label
-                    className="block text-sky-500 text-sm font-bold mb-2"
-                    htmlFor="username"
-                  >
-                    
-                    {t('myaccount.myaccountdetails.name')}
-                  </label>
-                  <input
-                    type="text"
-                    id="username"
-                    className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    value={formData.username}
-                    onChange={handleChange}
-                  />
+              <div name="formholder" className="lg:mx-48">
+                <div
+                  name="usernameholder"
+                  className="flex lg:flex-row max-lg:flex-col justify-between w-full"
+                >
+                  <div name="username" className="flex flex-col">
+                    <label
+                      className="block text-sky-500 text-sm font-bold mb-2"
+                      htmlFor="username"
+                    >
+                      {t('myaccount.myaccountdetails.name')}
+                    </label>
+                    <input
+                      type="text"
+                      id="username"
+                      className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      value={formData.username}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div name="usersurname" className="flex flex-col">
+                    <label
+                      className="block text-sky-500 text-sm font-bold mb-2"
+                      htmlFor="usersurname"
+                    >
+                      {t('myaccount.myaccountdetails.surname')}
+                    </label>
+                    <input
+                      type="text"
+                      id="usersurname"
+                      className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      value={formData.usersurname}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
-                <div name="usersurname" className="flex flex-col">
-                  <label
-                    className="block text-sky-500 text-sm font-bold mb-2"
-                    htmlFor="usersurname"
-                  >
-                  {t('myaccount.myaccountdetails.surname')}
-                  </label>
-                  <input
-                    type="text"
-                    id="usersurname"
-                    className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    value={formData.usersurname}
-                    onChange={handleChange}
-                  />
+                <div name="infoholder" className="">
+                  <div name="userbio" className="flex flex-col">
+                    <label
+                      className="block text-sky-500 text-sm font-bold mb-2"
+                      htmlFor="biography"
+                    >
+                      {t('myaccount.myaccountdetails.biography')}
+                    </label>
+                    <textarea
+                      rows={1}
+                      className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="biography"
+                      value={formData.biography}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div name="userlocation" className="flex flex-col">
+                    <label
+                      className="block text-sky-500 text-sm font-bold mb-2"
+                      htmlFor="location"
+                    >
+                      {t('myaccount.myaccountdetails.location')}
+                    </label>
+                    <input
+                      type="text"
+                      id="location"
+                      className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      value={formData.location}
+                      onChange={handleChange}
+                    />
+                  </div>
                 </div>
               </div>
-
-              <label
-                className="block text-sky-500 text-sm font-bold mb-2"
-                htmlFor="biography"
-              >
-                {t('myaccount.myaccountdetails.biography')}
-              
-              </label>
-              <textarea
-                rows={1}
-                className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="biography"
-                value={formData.biography}
-                onChange={handleChange}
-              />
-
-              <label
-                className="block text-sky-500 text-sm font-bold mb-2"
-                htmlFor="location"
-              >
-                {t('myaccount.myaccountdetails.location')}
-                
-              </label>
-              <input
-                type="text"
-                id="location"
-                className="shadow appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                value={formData.location}
-                onChange={handleChange}
-              />
-
               <div
                 name="formbuttons"
-                className="flex flex-row justify-center p-2"
+                className="flex flex-row justify-center p-8 pb-16"
               >
                 <button
                   type="submit"
@@ -178,7 +178,6 @@ function MyAccountDetails() {
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
                 >
                   {t('myaccount.myaccountdetails.save')}
-                  
                 </button>
                 <button
                   onClick={() => {
@@ -189,12 +188,11 @@ function MyAccountDetails() {
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
                 >
                   {t('myaccount.myaccountdetails.cancle')}
-                  
                 </button>
               </div>
             </form>
           </div>
-        </div>
+        </Container>
       </section>
       <Footer />
     </>
