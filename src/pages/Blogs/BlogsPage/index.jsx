@@ -10,8 +10,10 @@ import Spinner from '../../../components/Spinner';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
+import { useTranslation } from 'react-i18next';
 
 function BlogsPage() {
+  const [t] = useTranslation();
   const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
   const [sortBy, setSortBy] = useState('Date');
@@ -83,20 +85,20 @@ function BlogsPage() {
         <div className="">
           <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
             <label className="font-medium text-gray-500 text-lg">
-              sort by:
+              {t('blogspage.sort')}
               <select
                 className="w-fit  m-1 text-sm bg-cyan-100/50"
                 onClick={handleChangeSort}
               >
-                <option> Date </option>
-                <option> Popular </option>
+                <option> {t('blogspage.date')} </option>
+                <option> {t('blogspage.popular')} </option>
               </select>
             </label>
             <div className="flex items-center">
               <input
                 onChange={handleSearch}
                 type="search"
-                placeholder="Search..."
+                placeholder={t('blogspage.searchholder')}
                 className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
               />
               <img

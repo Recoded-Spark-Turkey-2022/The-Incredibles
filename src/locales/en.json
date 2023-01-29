@@ -38,7 +38,7 @@
       "p1": "Home is behind, the world ahead and there are many paths to tread through shadows to the edge.",
       "section": {
         "label1": "Job",
-        "h1": "Follow this steps and you will get your first job in Germany as a reugee!",
+        "h1": "Follow this steps and you will get your first job in Germany as a refugee!",
         "p1.1": "Khaled Hatem",
         "p1.2": "Refugee in Germany",
         "label2": "Language",
@@ -54,5 +54,67 @@
       "text4": "\"Being a part of the Refubook team has allowed me to make a meaningful difference in the lives of refugees. It is an honor to be able to contribute to such a important and necessary cause.\"",
       "team": " Refubook Team member"
     }
+  },
+  "about": {
+    "ourstory": {
+      "h2": "Our Story",
+      "p": "We believe that everyone deserves to live with dignity, respect, and the opportunity to reach their full potential. That's why we are dedicated to providing support and resources to refugees, who have fled their homes due to conflict, persecution, or other life-threatening circumstances. Our organization was founded by a group of passionate individuals who saw the need for more comprehensive, compassionate care for refugees. Since then, we have grown to become a leading provider of assistance to refugees in different countries.  Through our website, we offer a range of services to refugees, including housing, medical care, education, and employment support. We also work to advocate for the rights and needs of refugees on the local, national, and international level. But our work wouldn't be possible without the support of people like you. By donating, volunteering, or spreading awareness about the refugee crisis, or just go and post welcoming new refugees in your country by providing information that’s help them adapting their new life! you can make a meaningful difference in the lives of refugees. We are proud of the impact that we have made so far, but there is still much more work to be done. Join us in our mission to build a more inclusive and welcoming world for all."
+    },
+    "ourteam": {
+      "h2": "Our Team",
+      "showbutton": "Show all",
+      "hidebutton": "Hide",
+      "usa": "USA",
+      "turkey": "Turkey",
+      "lebanon": "Lebanon"
+    },
+    "story": {
+      "h4": "Share your story, help others and get help from others",
+      "p": "After years of struggling as a refugee, while I was seeking on internet I found Refubook website and it changed my life immediately finally found a job that allowed me to provide for my family. I worked hard and saved every penny, determined to build a better future for my children. With the help of a kind Refubook community, I was able to put my kids through school and give them opportunities I never had. As I watch them pursue their dreams, I am filled with pride and gratitude for the journey that brought us here with this amazing Refubook members."
+    }
+  },
+  "myaccount": {
+    "myaccountdetails": {
+      "name": "Name:",
+      "uploadphoto": "Upload Photo",
+      "surname": "Surname:",
+      "biography": "Biography:",
+      "location": "Location:",
+      "save": "Save",
+      "cancle": "Cancel"
+    }
+  },
+  "message": {
+    "sendinput": {
+      "typeyourmassage": "Type your message....",
+      "send": "send"
+    },
+    "chatsearch": {
+      "typeusername": "Type user name..."
+    }
+  },
+  "writeblog": {
+    "write": "Write new blog",
+    "title": "Title:",
+    "subtitle": "Sub Title:",
+    "category": "Category:",
+    "content": "Content:",
+    "media": "Media (image or video):",
+    "submit": "Submit",
+    "alert": "Blog submitted successfully"
+  },
+  "blogspage": {
+    "sort": "sort by",
+    "date": "Date",
+    "popular": "Popular",
+    "searchholder": "Search..."
+  },
+  "contactpage": {
+    "get": "Get in Touch",
+    "p": "We are most welcomig your message and suggestions, do not hesitate to contact us.",
+    "email": "Email",
+    "emailplace": "hello@gmail.com",
+    "massageplace": "Message",
+    "send": "Send"
   }
 }

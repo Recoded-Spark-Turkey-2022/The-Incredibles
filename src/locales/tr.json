@@ -9,7 +9,7 @@
     "signin": "Oturum aç",
     "signup": "Kaydol",
     "signout": "Oturumu Kapat",
-    "messages": "Messages"
+    "messages": "Mesajlar"
   },
   "home": {
     "home": {
@@ -54,5 +54,67 @@
       "text4": "\"Refubook ekibinin bir parçası olmak, mültecilerin hayatlarında anlamlı bir fark yaratmamı sağladı. Böylesine önemli ve gerekli bir amaca katkıda bulunabilmek benim için bir onurdur.\"",
       "team": " Refubook takım üyesi"
     }
+  },
+  "about": {
+    "ourstory": {
+      "h2": "Hikayemiz",
+      "p": "Herkesin haysiyet, saygı ve tam potansiyeline ulaşma fırsatı ile yaşamayı hak ettiğine inanıyoruz. Bu nedenle, çatışma, zulüm veya diğer hayati tehlike oluşturan koşullar nedeniyle evlerini terk eden mültecilere destek ve kaynak sağlamaya kendimizi adadık. Kuruluşumuz, mülteciler için daha kapsamlı ve şefkatli bir bakımın gerekliliğini gören bir grup tutkulu kişi tarafından kuruldu. O zamandan beri, farklı ülkelerdeki mültecilere önde gelen yardım sağlayıcısı haline geldik. Web sitemiz aracılığıyla mültecilere barınma, tıbbi bakım, eğitim ve istihdam desteği dahil olmak üzere bir dizi hizmet sunuyoruz. Ayrıca yerel, ulusal ve uluslararası düzeyde mültecilerin haklarını ve ihtiyaçlarını savunmak için çalışıyoruz. Ama sizin gibi insanların desteği olmadan işimiz mümkün olmazdı. Bağışta bulunarak, gönüllü olarak veya mülteci krizi hakkında farkındalık yaratarak ya da gidip yeni mültecilerin yeni yaşamlarına uyum sağlamalarına yardımcı olacak bilgileri sağlayarak ülkenizdeki yeni mültecileri karşılayın! mültecilerin hayatlarında anlamlı bir fark yaratabilirsiniz. Şimdiye kadar yarattığımız etkiden gurur duyuyoruz, ancak daha yapılacak çok iş var. Herkes için daha kapsayıcı ve kucaklayıcı bir dünya inşa etme misyonumuzda bize katılın."
+    },
+    "ourteam": {
+      "h2": "Ekibimiz",
+      "showbutton": "Hepsini göster",
+      "hidebutton": "Gizle",
+      "usa": "Amerika",
+      "turkey": "Türkiye",
+      "lebanon": "Lübnan"
+    },
+    "story": {
+      "h4": "Hikayenizi paylaşın, başkalarına yardım edin ve başkalarından yardım alın",
+      "p": "Yıllarca mülteci olarak mücadele ettikten sonra internette araştırma yaparken Refubook sitesini buldum ve bu site bir anda hayatımı değiştirdi ve sonunda ailemi geçindirmeme izin veren bir iş buldum. Çocuklarım için daha iyi bir gelecek inşa etmeye kararlı olarak çok çalıştım ve her kuruşunu biriktirdim. Nazik bir Refubook topluluğunun yardımıyla çocuklarımı okula gönderebildim ve onlara hiç sahip olmadığım fırsatlar sunabildim. Onların hayallerinin peşinden gitmelerini izlerken, bu harika Refubook üyeleriyle bizi buraya getiren yolculuk için gurur ve şükran duyuyorum."
+    }
+  },
+  "myaccount": {
+    "myaccountdetails": {
+      "name": "isim:",
+      "uploadphoto": "Fotoğraf yükle",
+      "surname": "Soyisim:",
+      "biography": "Biyografi:",
+      "location": "Lokasyon:",
+      "save": "Kaydet",
+      "cancle": "iptal"
+    }
+  },
+  "message": {
+    "sendinput": {
+      "typeyourmassage": "Mesajını yaz....",
+      "send": "gönder"
+    },
+    "chatsearch": {
+      "typeusername": "Kullanıcı adını yaz..."
+    }
+  },
+  "writeblog": {
+    "write": "Yeni blog yaz",
+    "title": "Başlık:",
+    "subtitle": "Alt Başlık:",
+    "category": "Kategori:",
+    "content": "İçerik:",
+    "media": "Medya (fotoğraf yada video):",
+    "submit": "Gönder",
+    "alert": "Blog başarıyla gönderildi!"
+  },
+  "blogspage": {
+    "sort": "sıralama",
+    "date": "Tarihe göre",
+    "popular": "Popülere göre",
+    "searchholder": "Ara..."
+  },
+  "contactpage": {
+    "get": "Temasta kal",
+    "p": "Mesajınızdan ve önerilerinizden çok memnun kalıyoruz, bizimle iletişime geçmekten çekinmeyin.",
+    "email": "Email",
+    "emailplace": "hello@gmail.com",
+    "massageplace": "Mesajınız",
+    "send": "Gönder"
   }
 }

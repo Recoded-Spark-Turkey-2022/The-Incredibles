@@ -11,12 +11,14 @@ import {
 } from '@material-tailwind/react';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import ChangePhoto from '../../../assets/pics/profilepage/changepic.svg';
+import { useTranslation } from 'react-i18next';
 import Container from '../../../components/UI/Container';
 
 function MyAccountDetails() {
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [t] = useTranslation();
 
   const [formData, setFormData] = useState({
     username: user.username ? user.username : '',
@@ -80,7 +82,7 @@ function MyAccountDetails() {
                     className="block text-sky-500 text-sm font-bold mb-2"
                     htmlFor="userphoto"
                   >
-                    Upload Photo
+                    {t('myaccount.myaccountdetails.uploadphoto')}
                   </label>
                   <input
                     type="file"
@@ -106,7 +108,7 @@ function MyAccountDetails() {
                       className="block text-sky-500 text-sm font-bold mb-2"
                       htmlFor="username"
                     >
-                      Name:
+                      {t('myaccount.myaccountdetails.name')}
                     </label>
                     <input
                       type="text"
@@ -121,7 +123,7 @@ function MyAccountDetails() {
                       className="block text-sky-500 text-sm font-bold mb-2"
                       htmlFor="usersurname"
                     >
-                      Surname:
+                      {t('myaccount.myaccountdetails.surname')}
                     </label>
                     <input
                       type="text"
@@ -138,7 +140,7 @@ function MyAccountDetails() {
                       className="block text-sky-500 text-sm font-bold mb-2"
                       htmlFor="biography"
                     >
-                      Biography:
+                      {t('myaccount.myaccountdetails.biography')}
                     </label>
                     <textarea
                       rows={1}
@@ -153,7 +155,7 @@ function MyAccountDetails() {
                       className="block text-sky-500 text-sm font-bold mb-2"
                       htmlFor="location"
                     >
-                      Location:
+                      {t('myaccount.myaccountdetails.location')}
                     </label>
                     <input
                       type="text"
@@ -175,7 +177,7 @@ function MyAccountDetails() {
                 rounded-full shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
                 >
-                  Save
+                  {t('myaccount.myaccountdetails.save')}
                 </button>
                 <button
                   onClick={() => {
@@ -185,7 +187,7 @@ function MyAccountDetails() {
                 rounded-full shadow-md
                 ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
                 >
-                  Cancel
+                  {t('myaccount.myaccountdetails.cancle')}
                 </button>
               </div>
             </form>
