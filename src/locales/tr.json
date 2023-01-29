@@ -72,5 +72,16 @@
       "h4":"Hikayenizi paylaşın, başkalarına yardım edin ve başkalarından yardım alın",
       "p":"Yıllarca mülteci olarak mücadele ettikten sonra internette araştırma yaparken Refubook sitesini buldum ve bu site bir anda hayatımı değiştirdi ve sonunda ailemi geçindirmeme izin veren bir iş buldum. Çocuklarım için daha iyi bir gelecek inşa etmeye kararlı olarak çok çalıştım ve her kuruşunu biriktirdim. Nazik bir Refubook topluluğunun yardımıyla çocuklarımı okula gönderebildim ve onlara hiç sahip olmadığım fırsatlar sunabildim. Onların hayallerinin peşinden gitmelerini izlerken, bu harika Refubook üyeleriyle bizi buraya getiren yolculuk için gurur ve şükran duyuyorum."
     }
+  },
+  "myaccount": {
+    "myaccountdetails": {
+      "name": "isim:",
+      "uploadphoto": "Fotoğraf yükle",
+      "surname": "Soyisim:",
+      "biography": "Biyografi:",
+      "location": "Lokasyon:",
+      "save": "Kaydet",
+      "cancle": "iptal"
+    }
   }
 }
