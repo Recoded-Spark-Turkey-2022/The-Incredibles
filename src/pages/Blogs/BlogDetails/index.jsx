@@ -175,14 +175,14 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-cyan-600 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'liked'
+                      ? 'Liked'
                       : 'Like'
                   }`}</span>
                 </button>
@@ -195,15 +195,15 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-gray-500 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleUnLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'disliked'
-                      : 'dislike'
+                      ? 'Disliked'
+                      : 'Dislike'
                   }`}</span>
                 </button>
               </div>
