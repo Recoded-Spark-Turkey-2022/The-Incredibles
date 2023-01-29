@@ -66,6 +66,10 @@ function App() {
           path="/myaccount"
           element={user ? <MyAccount /> : <Navigate to="/SignIn" />}
         />
+        <Route
+          path="/myaccount/myaccountdetails"
+          element={user ? <MyAccountDetails /> : <Navigate to="/SignIn" />}
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
