@@ -108,5 +108,13 @@
       "date": "التاريخ",
       "popular": "الرواج",
       "searchholder": " ابحث..."
+    },
+    "contactpage": {
+      "get": "ابقى على تواصل معنا",
+      "p": "نحن نسعد برسالتك و اقتراحاتك لا تتردد و تواصل معنا.",
+      "email": "الايميل",
+      "emailplace": "hello@gmail.com",
+      "massageplace": "رسالتك",
+      "send": "أرسل"
     }
 }

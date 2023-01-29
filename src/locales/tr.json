@@ -108,5 +108,13 @@
     "date": "Tarihe göre",
     "popular": "Popülere göre",
     "searchholder": "Ara..."
+  },
+  "contactpage": {
+    "get": "Temasta kal",
+    "p": "Mesajınızdan ve önerilerinizden çok memnun kalıyoruz, bizimle iletişime geçmekten çekinmeyin.",
+    "email": "Email",
+    "emailplace": "hello@gmail.com",
+    "massageplace": "Mesajınız",
+    "send": "Gönder"
   }
 }

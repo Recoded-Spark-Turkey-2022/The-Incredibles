@@ -108,6 +108,14 @@
     "date": "Date",
     "popular": "Popular",
     "searchholder": "Search..."
+  },
+  "contactpage": {
+    "get": "Get in Touch",
+    "p": "We are most welcomig your message and suggestions, do not hesitate to contact us.",
+    "email": "Email",
+    "emailplace": "hello@gmail.com",
+    "massageplace": "Message",
+    "send": "Send"
   }
  
 }
