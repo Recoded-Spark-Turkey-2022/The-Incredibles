@@ -1,9 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, Transition } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import { Menu, Transition } from '@headlessui/react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
 import { selectUser } from '../../features/users/usersSlice';
@@ -13,7 +14,6 @@ import Logo from '../../assets/pics/navbar/logo.svg';
 import MenuB from '../../assets/pics/navbar/menu-button.svg';
 import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
-import { useLocation } from 'react-router';
 
 function Navbar() {
   //update page name in nav bar depending on changing the path
@@ -94,7 +94,7 @@ function Navbar() {
   }
 
   return (
-    <div className="sticky top-0 bg-gradient-to-b from-white shadow-lg z-40">
+    <div className="sticky top-0 bg-gradient-to-t from-white to-cyan-50 shadow-lg z-40">
       <Container>
         <nav className=" md:mx-5 md:flex justify-between hidden">
           <Link to="/">
@@ -110,9 +110,8 @@ function Navbar() {
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
                     <Menu.Button
-                      className="bg-transparent lg:text-cyan-600 lg:border-cyan-600 lg:border-2
-                rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
+                      className="border-cyan-600 border-2 rounded-full shadow-md
+                ease-in duration-300 hover:shadow-lg hover:scale-110"
                     >
                       <img
                         className="m-auto h-12 w-12 rounded-full"
@@ -204,9 +203,8 @@ function Navbar() {
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
                         <Menu.Button
-                          className=" border-cyan-600 border-2
-               rounded-full shadow-md
-               ease-in duration-300 hover:bg-purple-500 hover:shadow-lg hover:scale-110"
+                          className="border-cyan-600 border-2 rounded-full shadow-md
+                          ease-in duration-300 hover:shadow-lg hover:scale-110"
                         >
                           <img
                             className="m-auto h-36 w-36 rounded-full"
