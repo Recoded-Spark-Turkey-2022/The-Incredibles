@@ -32,6 +32,12 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+} from 'react-share';
+
 function BlogDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -155,34 +161,13 @@ function BlogDetails() {
             <h1 className="font-bold text-5xl pb-8">
               {blog.data.title ? blog.data.title : 'Blog Title'}{' '}
             </h1>
+
             <div className=" relative border flex">
               <img
                 src={blog.data.mediaURL ? blog.data.mediaURL : BlogImage}
                 alt="blog-image"
-                className="h-96"
+                className="h-96 w-full"
               />
-              <div className="w-fit h-fit absolute right-3 bottom-1">
-                <img
-                  src={ShareIcon}
-                  alt="share-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-                <img
-                  src={FaceIcon}
-                  alt="face-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-                <img
-                  src={InstaIcon}
-                  alt="insta-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-                <img
-                  src={TweterIcon}
-                  alt="tweter-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-              </div>
             </div>
             <div className="flex justify-between">
               <div>
@@ -190,14 +175,14 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-cyan-600 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'liked'
+                      ? 'Liked'
                       : 'Like'
                   }`}</span>
                 </button>
@@ -210,115 +195,177 @@ function BlogDetails() {
                 <button
                   className={
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-                      : 'bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
+                      : 'bg-gray-500 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleUnLikeClick}
                 >
                   <span className="likes-counter button">{`${
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'disliked'
-                      : 'dislike'
+                      ? 'Disliked'
+                      : 'Dislike'
                   }`}</span>
                 </button>
               </div>
             </div>
 
-            <div className="flex items-center py-10">
-              <p className="pr-2">by:</p>
-              <Popover placement="right">
-                <PopoverHandler className="relative">
-                  <div>
+            <div className="flex justify-between">
+              <div className="flex items-center py-10">
+                <p className="pr-2">by:</p>
+                <Popover placement="right">
+                  <PopoverHandler className="relative">
+                    <div>
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                    </div>
+                  </PopoverHandler>
+                  <PopoverContent className="absolute bg-[#70CDD6]">
+                    <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                        {thisBlog && thisBlog.data.author.authorName}
+                      </h2>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Biography
+                      </h2>
+
+                      <p>
+                        {blogData
+                          ? blogData.author.authorBio
+                          : 'Author Biography'}
+                      </p>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Location
+                      </h2>
+
+                      <p>
+                        {blogData
+                          ? blogData.author.authorLocation
+                          : 'Author Location'}
+                      </p>
+                      <br />
+                      <button onClick={startChat}>
+                        <img className="w-10" src={Chat} alt="send message" />
+                      </button>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+                <Popover placement="right">
+                  <PopoverHandler className="relative">
+                    <div>
+                      <h1 className="ml-4 text-cyan-600 font-medium">
+                        {blogData ? blogData.author.authorName : 'Name'}{' '}
+                      </h1>
+                    </div>
+                  </PopoverHandler>
+                  <PopoverContent className="absolute bg-[#70CDD6]">
+                    <div className="p-5 bg-white bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                        {thisBlog && thisBlog.data.author.authorName}
+                      </h2>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Biography
+                      </h2>
+
+                      <p>
+                        {blogData
+                          ? blogData.author.authorBio
+                          : 'Author Biography'}
+                      </p>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Location
+                      </h2>
+
+                      <p>
+                        {blogData
+                          ? blogData.author.authorLocation
+                          : 'Author Location'}
+                      </p>
+                      <br />
+                      <button onClick={startChat}>
+                        <img className="w-10" src={Chat} alt="send message" />
+                      </button>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <div className="flex justify-end relative translate-y-8 transform-gpu">
+                <EmailShareButton
+                  subject={blog.data.title}
+                  body={blog.data.content}
+                  default={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
                     <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
+                      src={ShareIcon}
+                      alt="share-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
                     />
                   </div>
-                </PopoverHandler>
-                <PopoverContent className="absolute">
-                  <div className="p-5">
+                </EmailShareButton>
+                <FacebookShareButton
+                  url={
+                    'https://www.facebook.com/sharer/sharer.php?u=' +
+                    window.location.href
+                  }
+                  quote={'Facebook'}
+                  hashtag={'#hashtag'}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
                     <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
+                      src={FaceIcon}
+                      alt="face-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
                     />
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                      {thisBlog && thisBlog.data.author.authorName}
-                    </h2>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">
-                      Biography
-                    </h2>
-
-                    <p>
-                      {blogData
-                        ? blogData.author.authorBio
-                        : 'Author Biography'}
-                    </p>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-
-                    <p>
-                      {blogData
-                        ? blogData.author.authorLocation
-                        : 'Author Location'}
-                    </p>
-                    <br />
-                    <button onClick={startChat}>
-                      <img className="w-10" src={Chat} alt="send message" />
-                    </button>
                   </div>
-                </PopoverContent>
-              </Popover>
-              <Popover placement="right">
-                <PopoverHandler className="relative">
-                  <div>
-                    <h1 className="ml-4 text-cyan-600 font-medium">
-                      {blogData ? blogData.author.authorName : 'Name'}{' '}
-                    </h1>
-                  </div>
-                </PopoverHandler>
-                <PopoverContent className="absolute">
-                  <div className="p-5">
+                </FacebookShareButton>
+                <div className="px-3 relative bottom-7">
+                  <img
+                    src={InstaIcon}
+                    alt="insta-image"
+                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
+                  />
+                </div>
+                <TwitterShareButton
+                  url={
+                    'https://twitter.com/intent/tweet?text=' +
+                    window.location.href
+                  }
+                  quote={'Twitter'}
+                  hashtags={['hashtag1', 'hashtag2']}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
                     <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
+                      src={TweterIcon}
+                      alt="tweter-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
                     />
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                      {thisBlog && thisBlog.data.author.authorName}
-                    </h2>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">
-                      Biography
-                    </h2>
-
-                    <p>
-                      {blogData
-                        ? blogData.author.authorBio
-                        : 'Author Biography'}
-                    </p>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
-
-                    <p>
-                      {blogData
-                        ? blogData.author.authorLocation
-                        : 'Author Location'}
-                    </p>
-                    <br />
-                    <button onClick={startChat}>
-                      <img className="w-10" src={Chat} alt="send message" />
-                    </button>
                   </div>
-                </PopoverContent>
-              </Popover>
+                </TwitterShareButton>
+              </div>
             </div>
             <div name="content div" className="">
-              <h2 className="text-blod text-3xl text-center pb-6">
+              <h2 className="text-bold text-3xl text-center pb-6">
                 {blog.data.subTitle ? blog.data.subTitle : 'Subtitle'}
               </h2>
               <p className="text-lg max-lg:px-6 max-lg:pb-6">

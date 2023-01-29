@@ -52,7 +52,7 @@ function MyAccountDetails() {
       <Navbar />
       <section
         name="myaccountdetails"
-        className="bg-sky-300 lg:p-20 max-lg:p-5"
+        className="bg-[#70CDD6] lg:p-20 max-lg:p-5"
       >
         <div className="bg-white rounded-3xl">
           <div className="lg:px-28 lg:py-16 max-lg:p-3">
