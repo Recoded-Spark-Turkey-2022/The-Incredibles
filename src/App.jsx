@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { auth  } from './firebase/firebase';
+import { auth } from './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getUser } from './features/users/usersSlice';
 import { getBlogs } from './features/blogs/blogsSlice';
@@ -20,7 +27,7 @@ import NotFoundPage from './pages/NotFoundPage/error';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
-   const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -43,13 +50,24 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         {/* Protected Routes */}
-        <Route path="/chat" element={ user?<ChatsPage /> :<Navigate to="/SignIn" />}/>
-        <Route path="/blogs/blog" element={user?<BlogDetails /> :<Navigate to="/SignIn" />}/>
-        <Route path="/myaccount/write" element={ user?<WriteBlog /> :<Navigate to="/SignIn" />}/>
-        <Route path="/myaccount" element={ user?<MyAccount /> :<Navigate to="/SignIn" />}/>
-        <Route path="*" element={<NotFoundPage />}  />
+        <Route
+          path="/chat"
+          element={user ? <ChatsPage /> : <Navigate to="/SignIn" />}
+        />
+        <Route
+          path="/blogs/blog"
+          element={user ? <BlogDetails /> : <Navigate to="/SignIn" />}
+        />
+        <Route
+          path="/myaccount/write"
+          element={user ? <WriteBlog /> : <Navigate to="/SignIn" />}
+        />
+        <Route
+          path="/myaccount"
+          element={user ? <MyAccount /> : <Navigate to="/SignIn" />}
+        />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-
     </div>
   );
 }

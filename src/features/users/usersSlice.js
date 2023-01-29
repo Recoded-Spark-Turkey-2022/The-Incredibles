@@ -66,7 +66,8 @@ export const getUser = createAsyncThunk('user/getUser', async (id) => {
 
 const initialState = {
   isLoggedIn: localStorage.getItem('token') ? true : null,
-   user: {} };
+  user: {},
+};
 
 const usersSlice = createSlice({
   name: 'user',
