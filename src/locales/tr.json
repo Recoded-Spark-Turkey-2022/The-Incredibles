@@ -102,5 +102,11 @@
     "media": "Medya (fotoğraf yada video):",
     "submit": "Gönder",
     "alert": "Blog başarıyla gönderildi!"
+  },
+  "blogspage": {
+    "sort": "sıralama",
+    "date": "Tarihe göre",
+    "popular": "Popülere göre",
+    "searchholder": "Ara..."
   }
 }

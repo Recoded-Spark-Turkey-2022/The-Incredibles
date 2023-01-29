@@ -102,6 +102,12 @@
     "media": "Media (image or video):",
     "submit": "Submit",
     "alert": "Blog submitted successfully"
+  },
+  "blogspage": {
+    "sort": "sort by",
+    "date": "Date",
+    "popular": "Popular",
+    "searchholder": "Search..."
   }
  
 }
