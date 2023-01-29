@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Routes, Route, Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { auth } from './firebase/firebase';
+import { auth  } from './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getUser } from './features/users/usersSlice';
 import { getBlogs } from './features/blogs/blogsSlice';
@@ -17,9 +17,19 @@ import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
 import ChatsPage from './pages/ChatsPage';
 import NotFoundPage from './pages/NotFoundPage/error';
+import ProtectedRouts from './Protected.Routes';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
-  // const [user] = useAuthState(auth);
+   const [user] = useAuthState(auth);
+  // const [user, setUser] = React.useState(null);
+  // const [isSignedIn, setIsSignedIn] = useState(null)
+  // const SignIn = () => {
+  //   setIsSignedIn(true)
+  // }
+  // const signOut = () => {
+  //   setIsSignedIn(false)
+  // }
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBlogs());
@@ -34,24 +44,19 @@ function App() {
     <div className="App">
       <Routes>
         {/* public */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" exact element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/blogs/blog" element={<BlogDetails />} />
-        {/* protected */}
-        <Route path="/chat" element={<ChatsPage />} />
-        <Route path="/myaccount" element={<MyAccount />} />
-        <Route
-          path="/myaccount/myaccountdetails"
-          element={<MyAccountDetails />}
-        />
-        <Route path="/myaccount/write" element={<WriteBlog />} />
-        {/* catch all */}
-        <Route path="*" element={<NotFoundPage />} />
+        {user?<Route path="/chat" element={<ChatsPage />}/>:<Route path="/signin" element={<SignIn />}/>}
+        {user?<Route path="/blogs/blog" element={<BlogDetails />} />:<Route path="/signin" element={<SignIn />}/>}
+        {user?<Route path="/myaccount/write" element={<WriteBlog />} />:<Route path="/signin" element={<SignIn />}/>}
+        {user?<Route path="/myaccount" element={<MyAccount/>}/>:<Route path="/signin" element={<SignIn />}/>}
+        <Route path="*" element={<NotFoundPage />}  />
       </Routes>
+
     </div>
   );
 }
