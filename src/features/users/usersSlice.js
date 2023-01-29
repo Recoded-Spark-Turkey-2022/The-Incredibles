@@ -64,17 +64,23 @@ export const getUser = createAsyncThunk('user/getUser', async (id) => {
   return docSnap.data();
 });
 
-const initialState = { user: {} };
+const initialState = {
+  isLoggedIn: localStorage.getItem('token') ? true : null,
+  user: {},
+};
 
 const usersSlice = createSlice({
   name: 'user',
   initialState,
+
   extraReducers: {
     [getUser.fulfilled]: (state, action) => {
       state.user = action.payload;
+      state.isLoggedIn = action.payload.isLoggedIn;
     },
   },
 });
 export const selectUser = (state) => state.user;
+export const selectUserLoggedIn = (state) => state.user.isLoggedIn;
 
 export default usersSlice.reducer;

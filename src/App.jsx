@@ -1,5 +1,12 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { auth } from './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -17,9 +24,11 @@ import MyAccountDetails from './pages/UserProfile/MyAccountDetails';
 import WriteBlog from './pages/UserProfile/WriteBlog';
 import ChatsPage from './pages/ChatsPage';
 import NotFoundPage from './pages/NotFoundPage/error';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBlogs());
@@ -34,22 +43,29 @@ function App() {
     <div className="App">
       <Routes>
         {/* public */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" exact element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
-        <Route path="/blogs/blog" element={<BlogDetails />} />
-        {/* protected */}
-        <Route path="/chat" element={<ChatsPage />} />
-        <Route path="/myaccount" element={<MyAccount />} />
+        {/* Protected Routes */}
         <Route
-          path="/myaccount/myaccountdetails"
-          element={<MyAccountDetails />}
+          path="/chat"
+          element={user ? <ChatsPage /> : <Navigate to="/SignIn" />}
         />
-        <Route path="/myaccount/write" element={<WriteBlog />} />
-        {/* catch all */}
+        <Route
+          path="/blogs/blog"
+          element={user ? <BlogDetails /> : <Navigate to="/SignIn" />}
+        />
+        <Route
+          path="/myaccount/write"
+          element={user ? <WriteBlog /> : <Navigate to="/SignIn" />}
+        />
+        <Route
+          path="/myaccount"
+          element={user ? <MyAccount /> : <Navigate to="/SignIn" />}
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
