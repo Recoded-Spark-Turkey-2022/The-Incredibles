@@ -32,6 +32,7 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
+
 function BlogDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -155,42 +156,13 @@ function BlogDetails() {
             <h1 className="font-bold text-5xl pb-8">
               {blog.data.title ? blog.data.title : 'Blog Title'}{' '}
             </h1>
+
             <div className=" relative border flex">
               <img
                 src={blog.data.mediaURL ? blog.data.mediaURL : BlogImage}
                 alt="blog-image"
                 className="h-96 w-full"
               />
-            </div>
-            <div className="flex justify-center absolute translate-x-60 transform-gpu">
-              <div className="px-3 relative bottom-7">
-                <img
-                  src={ShareIcon}
-                  alt="share-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-              </div>
-              <div className="px-3 relative bottom-7">
-                <img
-                  src={FaceIcon}
-                  alt="face-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-              </div>
-              <div className="px-3 relative bottom-7">
-                <img
-                  src={InstaIcon}
-                  alt="insta-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-              </div>
-              <div className="px-3 relative bottom-7">
-                <img
-                  src={TweterIcon}
-                  alt="tweter-image"
-                  className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                />
-              </div>
             </div>
             <div className="flex justify-between">
               <div>
@@ -232,101 +204,137 @@ function BlogDetails() {
               </div>
             </div>
 
-            <div className="flex items-center py-10">
-              <p className="pr-2">by:</p>
-              <Popover placement="right">
-                <PopoverHandler className="relative">
-                  <div>
-                    <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
-                    />
-                  </div>
-                </PopoverHandler>
-                <PopoverContent className="absolute bg-[#70CDD6]">
-                  <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
-                    <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
-                    />
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                      {thisBlog && thisBlog.data.author.authorName}
-                    </h2>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">
-                      Biography
-                    </h2>
+            <div className="flex justify-between">
+              <div className="flex items-center py-10">
+                <p className="pr-2">by:</p>
+                <Popover placement="right">
+                  <PopoverHandler className="relative">
+                    <div>
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                    </div>
+                  </PopoverHandler>
+                  <PopoverContent className="absolute bg-[#70CDD6]">
+                    <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                        {thisBlog && thisBlog.data.author.authorName}
+                      </h2>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Biography
+                      </h2>
 
-                    <p>
-                      {blogData
-                        ? blogData.author.authorBio
-                        : 'Author Biography'}
-                    </p>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+                      <p>
+                        {blogData
+                          ? blogData.author.authorBio
+                          : 'Author Biography'}
+                      </p>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Location
+                      </h2>
 
-                    <p>
-                      {blogData
-                        ? blogData.author.authorLocation
-                        : 'Author Location'}
-                    </p>
-                    <br />
-                    <button onClick={startChat}>
-                      <img className="w-10" src={Chat} alt="send message" />
-                    </button>
-                  </div>
-                </PopoverContent>
-              </Popover>
-              <Popover placement="right">
-                <PopoverHandler className="relative">
-                  <div>
-                    <h1 className="ml-4 text-cyan-600 font-medium">
-                      {blogData ? blogData.author.authorName : 'Name'}{' '}
-                    </h1>
-                  </div>
-                </PopoverHandler>
-                <PopoverContent className="absolute bg-[#70CDD6]">
-                  <div className="p-5 bg-white bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
-                    <img
-                      src={blogData ? blogData.author.authorPhoto : User}
-                      alt="author"
-                      className="w-10 h-10 rounded-full"
-                    />
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                      {thisBlog && thisBlog.data.author.authorName}
-                    </h2>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">
-                      Biography
-                    </h2>
+                      <p>
+                        {blogData
+                          ? blogData.author.authorLocation
+                          : 'Author Location'}
+                      </p>
+                      <br />
+                      <button onClick={startChat}>
+                        <img className="w-10" src={Chat} alt="send message" />
+                      </button>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+                <Popover placement="right">
+                  <PopoverHandler className="relative">
+                    <div>
+                      <h1 className="ml-4 text-cyan-600 font-medium">
+                        {blogData ? blogData.author.authorName : 'Name'}{' '}
+                      </h1>
+                    </div>
+                  </PopoverHandler>
+                  <PopoverContent className="absolute bg-[#70CDD6]">
+                    <div className="p-5 bg-white bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-10 h-10 rounded-full"
+                      />
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                        {thisBlog && thisBlog.data.author.authorName}
+                      </h2>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Biography
+                      </h2>
 
-                    <p>
-                      {blogData
-                        ? blogData.author.authorBio
-                        : 'Author Biography'}
-                    </p>
-                    <br />
-                    <h2 className="ml-4 text-cyan-600 font-medium">Location</h2>
+                      <p>
+                        {blogData
+                          ? blogData.author.authorBio
+                          : 'Author Biography'}
+                      </p>
+                      <br />
+                      <h2 className="ml-4 text-cyan-600 font-medium">
+                        Location
+                      </h2>
 
-                    <p>
-                      {blogData
-                        ? blogData.author.authorLocation
-                        : 'Author Location'}
-                    </p>
-                    <br />
-                    <button onClick={startChat}>
-                      <img className="w-10" src={Chat} alt="send message" />
-                    </button>
-                  </div>
-                </PopoverContent>
-              </Popover>
+                      <p>
+                        {blogData
+                          ? blogData.author.authorLocation
+                          : 'Author Location'}
+                      </p>
+                      <br />
+                      <button onClick={startChat}>
+                        <img className="w-10" src={Chat} alt="send message" />
+                      </button>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+              <div className="flex justify-end relative translate-y-8 transform-gpu">
+                <div className="px-3 relative bottom-7">
+                  <img
+                    src={ShareIcon}
+                    alt="share-image"
+                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
+                  />
+                </div>
+                <div className="px-3 relative bottom-7">
+                  <img
+                    src={FaceIcon}
+                    alt="face-image"
+                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
+                  />
+                </div>
+                <div className="px-3 relative bottom-7">
+                  <img
+                    src={InstaIcon}
+                    alt="insta-image"
+                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
+                  />
+                </div>
+                <div className="px-3 relative bottom-7">
+                  <img
+                    src={TweterIcon}
+                    alt="tweter-image"
+                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
+                  />
+                </div>
+              </div>
             </div>
             <div name="content div" className="">
-              <h2 className="text-blod text-3xl text-center pb-6">
+              <h2 className="text-bold text-3xl text-center pb-6">
                 {blog.data.subTitle ? blog.data.subTitle : 'Subtitle'}
               </h2>
               <p className="text-lg max-lg:px-6 max-lg:pb-6">
