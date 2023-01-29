@@ -32,6 +32,11 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+} from 'react-share';
 
 function BlogDetails() {
   const navigate = useNavigate();
@@ -303,20 +308,36 @@ function BlogDetails() {
                 </Popover>
               </div>
               <div className="flex justify-end relative translate-y-8 transform-gpu">
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={ShareIcon}
-                    alt="share-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={FaceIcon}
-                    alt="face-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
+                <EmailShareButton
+                  subject={blog.data.title}
+                  body={blog.data.content}
+                  default={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={ShareIcon}
+                      alt="share-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </EmailShareButton>
+                <FacebookShareButton
+                  url={
+                    'https://www.facebook.com/sharer/sharer.php?u=' +
+                    window.location.href
+                  }
+                  quote={'Facebook'}
+                  hashtag={'#hashtag'}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={FaceIcon}
+                      alt="face-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </FacebookShareButton>
                 <div className="px-3 relative bottom-7">
                   <img
                     src={InstaIcon}
@@ -324,13 +345,23 @@ function BlogDetails() {
                     className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                   />
                 </div>
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={TweterIcon}
-                    alt="tweter-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
+                <TwitterShareButton
+                  url={
+                    'https://twitter.com/intent/tweet?text=' +
+                    window.location.href
+                  }
+                  quote={'Twitter'}
+                  hashtags={['hashtag1', 'hashtag2']}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={TweterIcon}
+                      alt="tweter-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
+                    />
+                  </div>
+                </TwitterShareButton>
               </div>
             </div>
             <div name="content div" className="">
