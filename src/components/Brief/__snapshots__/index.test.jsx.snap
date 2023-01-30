@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brief renders correctly 1`] = `
+<div
+  className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+>
+  <div
+    className="flex flex-col-reverse md:flex-row md:justify-between md:h-auto "
+    name="main"
+  >
+    <div
+      className="md:w-1/2 md:text-left text-center"
+      name="wirtting"
+    >
+      <h1
+        className="font-bold md:text-7xl text-cyan-600 text-5xl my-5"
+      >
+        home.home.h1
+      </h1>
+      <h2
+        className="md:text-5xl text-3xl  my-5 text-rose-400 font-medium "
+      >
+        home.home.h2
+      </h2>
+      <div
+        className=""
+      >
+        <p
+          className="sm:text-xl text-base"
+        >
+          home.home.p
+        </p>
+      </div>
+      <div
+        className="my-5"
+      >
+        <button
+          className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight rounded-full shadow-md ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+          onClick={[Function]}
+          type="button"
+        >
+          nav.signup
+        </button>
+      </div>
+    </div>
+    <div
+      className="m-auto md:w-1/2"
+      name="image"
+    >
+      <img
+        alt="logo"
+        className=""
+        src="hero.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
