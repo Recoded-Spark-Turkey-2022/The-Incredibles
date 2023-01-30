@@ -42,10 +42,10 @@ function BlogsPage() {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          rows: 2,
+          rows: 1,
           dots: true,
         },
       },
@@ -55,7 +55,7 @@ function BlogsPage() {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          rows: 5,
+          rows: 1,
           dots: true,
         },
       },
