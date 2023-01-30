@@ -85,16 +85,16 @@ function BlogsPage() {
         <div className="">
           <div className="flex flex-row max-md:flex-col border-b-2 items-center justify-between pb-5 mb-10 gap-1">
             <div>
-            <label className="font-medium text-gray-500 text-lg">
-              {t('blogspage.sort')}
-              <select
-                className="text-base text-center mx-5 bg-cyan-100/50"
-                onClick={handleChangeSort}
-              >
-                <option> {t('blogspage.date')} </option>
-                <option> {t('blogspage.popular')} </option>
-              </select>
-            </label>
+              <label className="font-medium text-gray-500 text-lg">
+                {t('blogspage.sort')}
+                <select
+                  className="text-base text-center mx-5 bg-cyan-100/50"
+                  onClick={handleChangeSort}
+                >
+                  <option> {t('blogspage.date')} </option>
+                  <option> {t('blogspage.popular')} </option>
+                </select>
+              </label>
             </div>
             <div className="flex items-center">
               <input
