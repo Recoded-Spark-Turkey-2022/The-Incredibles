@@ -6,7 +6,7 @@ import Container from '../UI/Container';
 import HomeImage from '../../assets/pics/homepage/hero.svg';
 
 function Brief() {
-  const [t] = useTranslation();
+  const { t } = useTranslation();
   const [user] = useAuthState(auth);
 
   return (
