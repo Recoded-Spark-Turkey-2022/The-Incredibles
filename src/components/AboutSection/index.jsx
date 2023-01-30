@@ -7,7 +7,7 @@ import Container from '../UI/Container';
 import AboutStar from '../../assets/pics/homepage/about-star.svg';
 import AboutHero from '../../assets/pics/homepage/about-hero.svg';
 
-function About() {
+function AboutSection() {
   const { t } = useTranslation();
 
   const settings = {
@@ -131,4 +131,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutSection;
