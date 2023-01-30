@@ -6,10 +6,10 @@ import Footer from '../../../components/Footer';
 import BlogCard from '../../../components/BlogCard';
 import Spinner from '../../../components/Spinner';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
-import ShareIcon from '../../../assets/pics/blogpage/share.svg';
 import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';
-import InstaIcon from '../../../assets/pics/blogpage/insta.svg';
 import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
+import LinkedInIcon from '../../../assets/pics/blogpage/linkedin.svg';
+import WhatsappIcon from '../../../assets/pics/blogpage/whatsapp.svg';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import Chat from '../../../assets/pics/blogpage/chat.svg';
 import {
@@ -36,6 +36,8 @@ import {
   EmailShareButton,
   FacebookShareButton,
   TwitterShareButton,
+  LinkedinShareButton,
+  WhatsappShareButton,
 } from 'react-share';
 
 function BlogDetails() {
@@ -308,19 +310,22 @@ function BlogDetails() {
                 </Popover>
               </div>
               <div className="flex justify-end relative translate-y-8 transform-gpu">
-                <EmailShareButton
-                  subject={blog.data.title}
-                  body={blog.data.content}
-                  default={'refubook'}
+                <WhatsappShareButton
+                  url={
+                    'https://www.whatsapp://send?text=' + window.location.href
+                  }
+                  quote={'Whatsapp'}
+                  hashtag={'#hashtag'}
+                  description={'refubook'}
                 >
                   <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
                     <img
-                      src={ShareIcon}
-                      alt="share-image"
+                      src={WhatsappIcon}
+                      alt="whatsapp-image"
                       className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110"
                     />
                   </div>
-                </EmailShareButton>
+                </WhatsappShareButton>
                 <FacebookShareButton
                   url={
                     'https://www.facebook.com/sharer/sharer.php?u=' +
@@ -338,13 +343,23 @@ function BlogDetails() {
                     />
                   </div>
                 </FacebookShareButton>
-                <div className="px-3 relative bottom-7">
-                  <img
-                    src={InstaIcon}
-                    alt="insta-image"
-                    className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
-                  />
-                </div>
+                <LinkedinShareButton
+                  url={
+                    'https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Fdeveloper.linkedin.com' +
+                    window.location.href
+                  }
+                  quote={'Linkedin'}
+                  hashtag={'#hashtag'}
+                  description={'refubook'}
+                >
+                  <div className="px-3 relative bottom-16 translate-y-2 transform-gpu">
+                    <img
+                      src={LinkedInIcon}
+                      alt="Linkedin-image"
+                      className="w-8 max-md:w-6 pt-8 max-sm:pt-6 hover:scale-110 "
+                    />
+                  </div>
+                </LinkedinShareButton>
                 <TwitterShareButton
                   url={
                     'https://twitter.com/intent/tweet?text=' +
