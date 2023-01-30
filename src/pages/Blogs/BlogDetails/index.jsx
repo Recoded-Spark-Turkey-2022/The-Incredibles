@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
+import Container from '../../../components/UI/Container';
 import BlogCard from '../../../components/BlogCard';
 import Spinner from '../../../components/Spinner';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
@@ -12,6 +13,7 @@ import InstaIcon from '../../../assets/pics/blogpage/insta.svg';
 import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import Chat from '../../../assets/pics/blogpage/chat.svg';
+import {FcLikePlaceholder,FcDislike,FcLike} from 'react-icons/fc'
 import {
   Popover,
   PopoverHandler,
@@ -145,17 +147,18 @@ function BlogDetails() {
     }
   };
 
-  if (loading) {
-    return <Spinner />;
-  }
+  // if (loading) {
+  //   return <Spinner />;
+  // }
 
   return (
     <>
       <Navbar />
-      <div className="border-t-2 pt-8 flex max-lg:flex-col max-lg:border-t-0">
+      <Container>
+      <div className="border-t-2 pt-8 flex max-md:flex-col max-md:border-t-0">
         <div
           name="singleblogholder"
-          className="flex flex-col m-auto w-1/2 max-lg:w-full items-center max-sm:p-2 max-lg:border-b-2"
+          className="flex flex-col  w-2/3 max-md:w-full items-center max-sm:p-2 max-md:border-b-2"
         >
           <div className="">
             <h1 className="font-bold text-5xl pb-8">
@@ -169,56 +172,68 @@ function BlogDetails() {
                 className="h-96 w-full"
               />
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-evenly m-5">
               <div>
-                <span> {blogData && blogData.likedUsers.length} likes</span>
+                <span className=''> {blogData && blogData.likedUsers.length} {' '}</span>
                 <button
                   className={
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
-                      : 'bg-cyan-600 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
+                      ? 'bg-cyan-600  py-2 px-4 rounded-full shadow-md'
+                      : ' hover:bg-cyan-600/30 hover:shadow-lg hover:scale-110  py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleLikeClick}
                 >
-                  <span className="likes-counter button">{`${
+                  {blogData && blogData.likedUsers.includes(user.id)?
+                  <FcLike/>
+                :<FcLike/>}
+                  {/* <span className="likes-counter button">{`${
                     blogData && blogData.likedUsers.includes(user.id)
-                      ? 'Liked'
+                      ? 'AiFillLike'
                       : 'Like'
-                  }`}</span>
+                  }`}</span> */}
                 </button>
               </div>
               <div>
                 <span>
                   {' '}
-                  {blogData && blogData.unlikedUsers.length} dislike{' '}
+                  {blogData && blogData.unlikedUsers.length} {' '}
                 </span>
                 <button
                   className={
                     blogData && blogData.unlikedUsers.includes(user.id)
-                      ? 'bg-[rgba(255, 99, 71, 0)] text-gray-500 font-bold border-2 py-2 px-4 rounded-full'
-                      : 'bg-gray-500 hover:bg-purple-700 hover:shadow-lg hover:scale-110 text-white font-bold py-2 px-4 rounded-full shadow-md'
+                    ? 'bg-gray-400  py-2 px-4 rounded-full shadow-md'
+                    : ' hover:bg-cyan-600/30 hover:shadow-lg hover:scale-110  py-2 px-4 rounded-full shadow-md'
                   }
                   onClick={handleUnLikeClick}
                 >
-                  <span className="likes-counter button">{`${
+                  
+                  <FcDislike/>
+                  {/* <span className="likes-counter button">{`${
                     blogData && blogData.unlikedUsers.includes(user.id)
                       ? 'Disliked'
                       : 'Dislike'
-                  }`}</span>
+                  }`}</span> */}
                 </button>
               </div>
             </div>
 
             <div className="flex justify-between">
-              <div className="flex items-center py-10">
-                <p className="pr-2">by:</p>
-                <Popover placement="right">
-                  <PopoverHandler className="relative">
-                    <div>
+              <div className="flex items-center ">
+                <p className="mr-2">by: </p>
+                <div className=''>
                       <img
                         src={blogData ? blogData.author.authorPhoto : User}
                         alt="author"
-                        className="w-10 h-10 rounded-full"
+                        className="w-12 h-12 rounded-full"
+                      />
+                      </div>
+                {/* <Popover placement="right">
+                  <PopoverHandler className="relative">
+                    <div className=''>
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-12 h-12 rounded-full"
                       />
                     </div>
                   </PopoverHandler>
@@ -259,28 +274,33 @@ function BlogDetails() {
                       </button>
                     </div>
                   </PopoverContent>
-                </Popover>
-                <Popover placement="right">
+                </Popover> */}
+                <Popover placement="center">
                   <PopoverHandler className="relative">
                     <div>
-                      <h1 className="ml-4 text-cyan-600 font-medium">
+                      <h1 className="mx-1 text-cyan-600 font-medium">
                         {blogData ? blogData.author.authorName : 'Name'}{' '}
                       </h1>
                     </div>
                   </PopoverHandler>
-                  <PopoverContent className="absolute bg-[#70CDD6]">
-                    <div className="p-5 bg-white bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
+                  <PopoverContent className="absolute  bg-slate-50">
+                    <div className="bg-slate-50">
+                      <div className='flex gap-3 items-center'>
                       <img
                         src={blogData ? blogData.author.authorPhoto : User}
                         alt="author"
                         className="w-10 h-10 rounded-full"
                       />
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
+                      
+                      <p className=" text-cyan-600 font-medium text-center">
                         {thisBlog && thisBlog.data.author.authorName}
-                      </h2>
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium">
+                      </p>
+                      <button onClick={startChat}>
+                        <img className="w-5" src={Chat} alt="send message" />
+                      </button>
+                      </div>
+                      <div className='my-3'>
+                      <h2 className=" text-cyan-600 font-medium">
                         Biography
                       </h2>
 
@@ -289,8 +309,9 @@ function BlogDetails() {
                           ? blogData.author.authorBio
                           : 'Author Biography'}
                       </p>
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium">
+                      </div>
+                      <div className='my-3'>
+                      <h2 className=" text-cyan-600 font-medium">
                         Location
                       </h2>
 
@@ -299,10 +320,9 @@ function BlogDetails() {
                           ? blogData.author.authorLocation
                           : 'Author Location'}
                       </p>
-                      <br />
-                      <button onClick={startChat}>
-                        <img className="w-10" src={Chat} alt="send message" />
-                      </button>
+                      </div>
+                      
+                      
                     </div>
                   </PopoverContent>
                 </Popover>
@@ -338,13 +358,13 @@ function BlogDetails() {
                     />
                   </div>
                 </FacebookShareButton>
-                <div className="px-3 relative bottom-7">
+                {/* <div className="px-3 relative bottom-7">
                   <img
                     src={InstaIcon}
                     alt="insta-image"
                     className="w-8 max-md:w-6 pt-8 max-sm:pt-6 "
                   />
-                </div>
+                </div> */}
                 <TwitterShareButton
                   url={
                     'https://twitter.com/intent/tweet?text=' +
@@ -365,21 +385,21 @@ function BlogDetails() {
               </div>
             </div>
             <div name="content div" className="">
-              <h2 className="text-bold text-3xl text-center pb-6">
+              <h2 className="text-bold text-3xl text-center py-6">
                 {blog.data.subTitle ? blog.data.subTitle : 'Subtitle'}
               </h2>
-              <p className="text-lg max-lg:px-6 max-lg:pb-6">
+              <p className="text-lg  max-md:pb-6">
                 {blog.data.content ? blog.data.content : 'Content'}
               </p>
             </div>
           </div>
         </div>
 
-        <div className=" w-1/4 m-auto max-lg:w-full">
+        <div className=" w-1/4 m-auto max-md:w-full">
           <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
             Read also:
           </h1>
-          <div className="max-lg:flex">
+          <div className="max-md:flex flex-col">
             {blogs
               .filter(
                 (el) =>
@@ -393,6 +413,7 @@ function BlogDetails() {
           </div>
         </div>
       </div>
+      </Container>
       <Footer />
     </>
   );
