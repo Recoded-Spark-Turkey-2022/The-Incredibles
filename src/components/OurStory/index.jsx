@@ -1,8 +1,8 @@
-import React from 'react';
-import AboutPHero from '../../assets/pics/aboutpage/support.png';
 import { useTranslation } from 'react-i18next';
 import Container from '../UI/Container';
-function Story() {
+import AboutPHero from '../../assets/pics/aboutpage/support.png';
+
+function OurStory() {
   const [t] = useTranslation();
   return (
     <section name="story" className="">
@@ -30,4 +30,4 @@ function Story() {
   );
 }
 
-export default Story;
+export default OurStory;

@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar';
-import Story from '../../components/OurStory';
+import OurStory from '../../components/OurStory';
 import CallToAction from '../../components/UserStory';
 import Team from '../../components/OurTeam';
 import Location from '../../components/LocationSection';
@@ -12,7 +12,7 @@ function AboutPage() {
   return (
     <div name="aboutpage">
       <Navbar />
-      <Story />
+      <OurStory />
       <Team />
       <Location />
       <Partners />
