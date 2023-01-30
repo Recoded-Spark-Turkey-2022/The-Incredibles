@@ -1,0 +1,878 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Partners renders correctly 1`] = `
+<div
+  className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+>
+  <div
+    className=" my-10"
+  >
+    <h1
+      className="text-center font-bold text-3xl"
+    >
+      home.partner
+    </h1>
+    <div
+      className="max-w-screen-xl m-auto flex-row p-7"
+    >
+      <div
+        className="slick-slider py-5 slick-initialized"
+        dir="ltr"
+      >
+        <button
+          className="slick-arrow slick-prev"
+          data-role="none"
+          onClick={[Function]}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
+          type="button"
+        >
+           
+          Previous
+        </button>
+        <div
+          className="slick-list"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={null}
+          onMouseMove={null}
+          onMouseUp={[Function]}
+          onTouchCancel={null}
+          onTouchEnd={[Function]}
+          onTouchMove={null}
+          onTouchStart={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="slick-track"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            style={
+              Object {
+                "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                "WebkitTransition": "",
+                "msTransform": "translateX(0px)",
+                "opacity": 1,
+                "transform": "translate3d(0px, 0px, 0px)",
+                "transition": "",
+              }
+            }
+          >
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-6}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n3.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-5}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n4.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-4}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n5.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-3}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n6.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-2}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n7.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={-1}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n8.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active slick-current"
+              data-index={0}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n0.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active"
+              data-index={1}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n1.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active"
+              data-index={2}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n2.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active"
+              data-index={3}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n3.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active"
+              data-index={4}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n4.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={false}
+              className="slick-slide slick-active"
+              data-index={5}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n5.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={6}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n6.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={7}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n7.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide"
+              data-index={8}
+              onClick={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n8.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={9}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n0.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={10}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n1.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={11}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n2.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={12}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n3.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={13}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n4.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={14}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n5.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={15}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n6.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={16}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n7.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              aria-hidden={true}
+              className="slick-slide slick-cloned"
+              data-index={17}
+              onClick={[Function]}
+              style={
+                Object {
+                  "width": 0,
+                }
+              }
+              tabIndex="-1"
+            >
+              <div>
+                <div
+                  className="lg:px-10 px-5 "
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "width": "100%",
+                    }
+                  }
+                  tabIndex={-1}
+                >
+                  <img
+                    alt="partner-logo"
+                    className="w-[120px] m-auto"
+                    src="n8.jpeg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="slick-arrow slick-next"
+          data-role="none"
+          onClick={[Function]}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
+          type="button"
+        >
+           
+          Next
+        </button>
+        <ul
+          className="slick-dots"
+          onMouseEnter={null}
+          onMouseLeave={null}
+          onMouseOver={null}
+          style={
+            Object {
+              "display": "block",
+            }
+          }
+        >
+          <li
+            className="slick-active"
+          >
+            <button
+              onClick={[Function]}
+            >
+              1
+            </button>
+          </li>
+          <li
+            className=""
+          >
+            <button
+              onClick={[Function]}
+            >
+              2
+            </button>
+          </li>
+          <li
+            className=""
+          >
+            <button
+              onClick={[Function]}
+            >
+              3
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
