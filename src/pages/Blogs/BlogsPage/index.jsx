@@ -35,12 +35,12 @@ function BlogsPage() {
     rows: 2,
     responsive: [
       {
-        breakpoint: 760,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: false,
-          rows: 1,
+          rows: 2,
           dots: true,
         },
       },
@@ -50,7 +50,7 @@ function BlogsPage() {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: false,
-          rows: 1,
+          rows: 5,
           dots: true,
         },
       },
@@ -83,28 +83,30 @@ function BlogsPage() {
       <Navbar />
       <Container>
         <div className="">
-          <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
+          <div className="flex flex-row max-md:flex-col border-b-2 items-center justify-between pb-5 mb-10 gap-1">
+            <div>
             <label className="font-medium text-gray-500 text-lg">
               {t('blogspage.sort')}
               <select
-                className="w-fit  m-1 text-sm bg-cyan-100/50"
+                className="text-base text-center mx-5 bg-cyan-100/50"
                 onClick={handleChangeSort}
               >
                 <option> {t('blogspage.date')} </option>
                 <option> {t('blogspage.popular')} </option>
               </select>
             </label>
+            </div>
             <div className="flex items-center">
               <input
                 onChange={handleSearch}
                 type="search"
                 placeholder={t('blogspage.searchholder')}
-                className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
+                className="w-56 px-8 m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
               />
               <img
                 src={SearchIcon}
                 alt="search-icon"
-                className="w-4 h-4 relative right-8"
+                className="w-4 h-4 relative right-7"
               />
             </div>
           </div>
@@ -112,7 +114,7 @@ function BlogsPage() {
             {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Popular:
         </h1> */}
-            <div className="max-lg:pr-4 ">
+            <div className="">
               <Slider {...settings}>
                 {blogsToDisplay.map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
@@ -122,7 +124,7 @@ function BlogsPage() {
             {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
           Read also:
         </h1>
-        <div className="max-lg:pr-4">
+        <div className="max-md:pr-4">
           <Slider {...settings}>
             {blogs.map((blog, i) => (
               <BlogCard key={i} blog={blog} />
