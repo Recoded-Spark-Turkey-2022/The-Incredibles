@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Container from '../UI/Container';
 import { useTranslation } from 'react-i18next';
+import Container from '../UI/Container';
 
 const MEMBERS = [
   {
@@ -58,9 +58,8 @@ const MEMBERS = [
     id: 8,
   },
 ];
-// const members variable will be used as a placeholder for firebase. When we fetch there, this variable will be deleted
 
-function Team() {
+function OurTeam() {
   const [t] = useTranslation();
   const COUNTRIES = [
     'View All',
@@ -70,7 +69,7 @@ function Team() {
   ];
 
   const [category, setCategory] = useState('View All'); //This state is for country filter because both md and sm screens have country filter
-  const [show, setShow] = useState(true); //This part is for sm screen and is a toggle button for text to open and close. It works, but sm screen styling is not finished yet.
+  const [show, setShow] = useState(true); //This part is for sm screen and is a toggle button for text to open and close.
 
   const renderBtn = COUNTRIES.map((country) => {
     const className =
@@ -112,7 +111,6 @@ function Team() {
     );
   });
   //This part is for rendering each one of the team members based on their names and occupation.
-  //Again, when we put info in firebase, the array used here will be change, but it functions both in md and sm screens
 
   return (
     <section name="team" className="bg-emerald-50 ">
@@ -157,4 +155,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default OurTeam;

@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar';
 import OurStory from '../../components/OurStory';
 import CallToAction from '../../components/UserStory';
-import Team from '../../components/OurTeam';
+import OurTeam from '../../components/OurTeam';
 import Location from '../../components/LocationSection';
 import Partners from '../../components/Partners';
 import Footer from '../../components/Footer';
@@ -13,7 +13,7 @@ function AboutPage() {
     <div name="aboutpage">
       <Navbar />
       <OurStory />
-      <Team />
+      <OurTeam />
       <Location />
       <Partners />
       <CallToAction />
