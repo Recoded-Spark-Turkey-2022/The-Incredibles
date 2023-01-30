@@ -1,9 +1,9 @@
-import Button from '../../components/UI/Button';
+import { useTranslation } from 'react-i18next';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
-import HomeImage from '../../assets/pics/homepage/hero.svg';
-import { useTranslation } from 'react-i18next';
+import Button from '../UI/Button';
 import Container from '../UI/Container';
+import HomeImage from '../../assets/pics/homepage/hero.svg';
 
 function Brief() {
   const [t] = useTranslation();
