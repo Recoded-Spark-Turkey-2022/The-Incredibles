@@ -26,13 +26,49 @@ function BlogsPage() {
       : [...searchedBlogs].sort((a, b) =>
           b.data.likedUsers.length > a.data.likedUsers.length ? 1 : -1
         );
-  const settings = {
+  const fSettings = {
+    dots: true,
+    infinite: true,
+    speed: 400,
+    autoplay: true,
+    cssEase: 'linear',
+    autoplaySpeed: 2500,
+    swipeToSlide: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    rows: 1,
+    lazyLoad:'progressive',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          rows: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          rows: 5,
+          dots: true,
+        },
+      },
+    ],
+  };
+  const sSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    rows: 2,
+    rows: 1,
+    lazyLoad:'progressive',
     responsive: [
       {
         breakpoint: 767,
@@ -111,26 +147,23 @@ function BlogsPage() {
             </div>
           </div>
           <div>
-            {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
-          Popular:
-        </h1> */}
-            <div className="">
-              <Slider {...settings}>
-                {blogsToDisplay.map((blog, i) => (
+            <div className="w-2/3 h-1/2 m-auto">
+              <Slider {...fSettings}>
+                {blogsToDisplay.slice(0, 6).map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
               </Slider>
             </div>
-            {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
-          Read also:
-        </h1>
-        <div className="max-md:pr-4">
-          <Slider {...settings}>
-            {blogs.map((blog, i) => (
-              <BlogCard key={i} blog={blog} />
-            ))}
-          </Slider>
-        </div> */}
+            <h1 className=" mt-8 mx-6 font-bold text-lg pb-2 text-gray-600">
+              Read also:
+            </h1>
+            <div className="max-md:pr-4">
+              <Slider {...sSettings}>
+                {blogsToDisplay.slice(7).map((blog, i) => (
+                  <BlogCard key={i} blog={blog} />
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </Container>
