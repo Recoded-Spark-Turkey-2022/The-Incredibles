@@ -174,7 +174,6 @@ function BlogDetails() {
               </div>
               <div className="flex justify-evenly m-5">
                 <div>
-                  
                   <button
                     className={
                       blogData && blogData.likedUsers.includes(user.id)
@@ -183,19 +182,16 @@ function BlogDetails() {
                     }
                     onClick={handleLikeClick}
                   >
-                    <div className='flex items-center'> 
-                    <span className="pr-2">
-                    
-                    {blogData && blogData.likedUsers.length}
-                  </span>
-                    {blogData && blogData.likedUsers.includes(user.id) ? (
-                      <FcLike />
-                    ) : (
-                      <FcLike />
-                    )}
-                    
+                    <div className="flex items-center">
+                      <span className="pr-2">
+                        {blogData && blogData.likedUsers.length}
+                      </span>
+                      {blogData && blogData.likedUsers.includes(user.id) ? (
+                        <FcLike />
+                      ) : (
+                        <FcLike />
+                      )}
                     </div>
-                   
                   </button>
                 </div>
                 <div>
@@ -207,9 +203,12 @@ function BlogDetails() {
                     }
                     onClick={handleUnLikeClick}
                   >
-                    <div className='flex items-center'> 
-                    <span className="pr-2"> {blogData && blogData.unlikedUsers.length}</span>
-                    <FcDislike />
+                    <div className="flex items-center">
+                      <span className="pr-2">
+                        {' '}
+                        {blogData && blogData.unlikedUsers.length}
+                      </span>
+                      <FcDislike />
                     </div>
                   </button>
                 </div>

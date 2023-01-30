@@ -21,17 +21,19 @@ function MyAccount() {
   );
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    rows: 1,
     responsive: [
       {
-        breakpoint: 760,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
+          rows: 2,
           dots: true,
         },
       },
@@ -40,28 +42,28 @@ function MyAccount() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
+          rows: 5,
           dots: true,
         },
       },
     ],
   };
-
   return (
     <>
       <Navbar />
       <section name="myaccount" className="bg-[#70CDD6]">
         <Container>
-          <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
+          <div className="bg-white rounded-3xl shadow-lg m-auto my-10">
             <div className="relative pb-8">
-              <div className="flex flex-col items-center lg:pb-5 max-lg:p-10">
+              <div className="flex flex-col items-center md:pb-5 max-md:p-10">
                 <img
-                  className="m-auto relative top-36 left-16"
+                  className="m-auto relative top-36 left-16 hover:cursor-pointer "
                   onClick={() => navigate('/myaccount/myaccountdetails')}
                   src={ChangePen}
                 />
                 <img
-                  className="m-auto h-40 w-40 rounded-full"
+                  className="m-auto h-40 w-40 rounded-full hover:cursor-pointer"
                   onClick={() => navigate('/myaccount/myaccountdetails')}
                   src={
                     user.photoURL
@@ -77,20 +79,21 @@ function MyAccount() {
                     : user.displayName}
                 </h2>
               </div>
-              <div>
-                <div className="pb-5 max-lg:pr-4">
+            </div>
+            <div className=" m-auto pb-10">
+              <MyAccountCard />
+              <div className="">
+                {userBlogs[0] ? (
                   <Slider {...settings}>
-                    {userBlogs[0] ? (
-                      blogs
-                        .filter((blog) => blog.data.author.authorId === user.id)
-                        .map((blog, i) => {
-                          return <BlogCard key={i} blog={blog} />;
-                        })
-                    ) : (
-                      <MyAccountCard />
-                    )}
+                    {blogs
+                      .filter((blog) => blog.data.author.authorId === user.id)
+                      .map((blog, i) => {
+                        return <BlogCard key={i} blog={blog} />;
+                      })}
                   </Slider>
-                </div>
+                ) : (
+                  ''
+                )}
               </div>
             </div>
           </div>

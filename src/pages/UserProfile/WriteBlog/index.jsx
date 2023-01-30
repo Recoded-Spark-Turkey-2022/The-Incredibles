@@ -11,9 +11,11 @@ import Navbar from '../../../components/Navbar';
 import Container from '../../../components/UI/Container';
 import Footer from '../../../components/Footer';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 function WriteBlog() {
   const [t] = useTranslation();
+  const navigate = useNavigate();
 
   const { user } = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -54,6 +56,7 @@ function WriteBlog() {
         },
       });
       alert(`${t('writeblog.alert')}`);
+      navigate('/myaccount');
       setTitle('');
       setContent('');
       setMedia(null);

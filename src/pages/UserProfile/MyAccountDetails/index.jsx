@@ -61,11 +61,11 @@ function MyAccountDetails() {
                 <PopoverHandler className="relative max-md:pt-10">
                   <div className="flex flex-col items-center md:pb-5">
                     <img
-                      className="m-auto relative top-36 left-16"
+                      className="m-auto relative top-36 left-16 hover:cursor-pointer"
                       src={ChangePhoto}
                     />
                     <img
-                      className="m-auto h-40 w-40 rounded-full"
+                      className="m-auto h-40 w-40 rounded-full hover:cursor-pointer"
                       src={
                         user.photoURL
                           ? user.photoURL

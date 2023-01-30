@@ -28,7 +28,7 @@ function BlogsPage() {
         );
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -39,7 +39,7 @@ function BlogsPage() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           rows: 2,
           dots: true,
         },
@@ -49,7 +49,7 @@ function BlogsPage() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           rows: 5,
           dots: true,
         },
@@ -64,8 +64,8 @@ function BlogsPage() {
   }
   function handleSearch(e) {
     if (e.target.value) {
-      setsearchedBlogs((current) =>
-        current.filter((el) =>
+      setsearchedBlogs(
+        blogs.filter((el) =>
           el.data.title.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
