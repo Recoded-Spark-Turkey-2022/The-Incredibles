@@ -25,6 +25,8 @@ import WriteBlog from './pages/UserProfile/WriteBlog';
 import ChatsPage from './pages/ChatsPage';
 import NotFoundPage from './pages/NotFoundPage/error';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -41,6 +43,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         {/* public */}
         <Route path="/" exact element={<HomePage />} />
@@ -72,6 +75,7 @@ function App() {
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
