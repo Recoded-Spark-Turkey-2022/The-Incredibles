@@ -29,7 +29,7 @@ function Chats({ setOpen }) {
         .map((chat) => {
           return (
             <div
-              className="flex py-4 items-center border-b cursor-pointer hover:bg-cyan-800"
+              className="flex p-4 items-center border-b cursor-pointer hover:bg-cyan-800"
               key={chat[0]}
               onClick={() => (
                 dispatch(getChat({ data: chat[1].userInfo, id: chat[0] })),

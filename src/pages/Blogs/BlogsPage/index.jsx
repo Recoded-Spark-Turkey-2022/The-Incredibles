@@ -26,20 +26,24 @@ function BlogsPage() {
       : [...searchedBlogs].sort((a, b) =>
           b.data.likedUsers.length > a.data.likedUsers.length ? 1 : -1
         );
-  const settings = {
+  const fSettings = {
     dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    rows: 2,
+    infinite: true,
+    speed: 400,
+    autoplay: true,
+    cssEase: 'linear',
+    autoplaySpeed: 2500,
+    swipeToSlide: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    rows: 1,
     responsive: [
       {
-        breakpoint: 760,
+        breakpoint: 767,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           rows: 1,
           dots: true,
         },
@@ -49,8 +53,38 @@ function BlogsPage() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
+          infinite: true,
           rows: 1,
+          dots: true,
+        },
+      },
+    ],
+  };
+  const sSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          rows: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          rows: 5,
           dots: true,
         },
       },
@@ -64,8 +98,8 @@ function BlogsPage() {
   }
   function handleSearch(e) {
     if (e.target.value) {
-      setsearchedBlogs((current) =>
-        current.filter((el) =>
+      setsearchedBlogs(
+        blogs.filter((el) =>
           el.data.title.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
@@ -83,52 +117,53 @@ function BlogsPage() {
       <Navbar />
       <Container>
         <div className="">
-          <div className="flex ml-6 border-b-2 items-center justify-end max-lg:hidden pb-5 mb-10">
-            <label className="font-medium text-gray-500 text-lg">
-              {t('blogspage.sort')}
-              <select
-                className="w-fit  m-1 text-sm bg-cyan-100/50"
-                onClick={handleChangeSort}
-              >
-                <option> {t('blogspage.date')} </option>
-                <option> {t('blogspage.popular')} </option>
-              </select>
-            </label>
+          <div className="flex flex-row max-md:flex-col border-b-2 items-center justify-between pb-5 mb-10 gap-1">
+            <div>
+              <label className="font-medium text-gray-500 text-lg">
+                {t('blogspage.sort')}
+                <select
+                  className="text-base text-center mx-5 bg-cyan-100/50"
+                  onClick={handleChangeSort}
+                >
+                  <option> {t('blogspage.date')} </option>
+                  <option> {t('blogspage.popular')} </option>
+                </select>
+              </label>
+            </div>
             <div className="flex items-center">
               <input
                 onChange={handleSearch}
                 type="search"
                 placeholder={t('blogspage.searchholder')}
-                className="pl-4 relative m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
+                className="w-56 px-8 m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
               />
               <img
                 src={SearchIcon}
                 alt="search-icon"
-                className="w-4 h-4 relative right-8"
+                className="w-4 h-4 relative right-7"
               />
             </div>
           </div>
           <div>
-            {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
-          Popular:
-        </h1> */}
-            <div className="max-lg:pr-4 ">
-              <Slider {...settings}>
-                {blogsToDisplay.map((blog, i) => (
+            <div className="max-w-lg m-auto">
+              <div className="">
+                <Slider {...fSettings}>
+                  {blogsToDisplay.slice(0, 6).map((blog, i) => (
+                    <BlogCard key={i} blog={blog} />
+                  ))}
+                </Slider>
+              </div>
+            </div>
+            <h1 className=" mt-8 mx-6 font-bold text-lg pb-2 text-gray-600">
+              Read also:
+            </h1>
+            <div className="">
+              <Slider {...sSettings}>
+                {blogsToDisplay.slice(7).map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
               </Slider>
             </div>
-            {/* <h1 className=" mt-2 mx-6 font-bold text-lg pb-2 text-gray-600">
-          Read also:
-        </h1>
-        <div className="max-lg:pr-4">
-          <Slider {...settings}>
-            {blogs.map((blog, i) => (
-              <BlogCard key={i} blog={blog} />
-            ))}
-          </Slider>
-        </div> */}
           </div>
         </div>
       </Container>

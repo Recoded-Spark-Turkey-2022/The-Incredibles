@@ -5,6 +5,7 @@ import { selectUser } from '../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { deleteBlog } from '../../features/blogs/blogsSlice';
 import NoMedia from '../../assets/pics/blogpage/nomedia.svg';
+import { TiDelete } from 'react-icons/ti';
 
 function BlogCard({ blog }) {
   const dispatch = useDispatch();
@@ -35,10 +36,10 @@ function BlogCard({ blog }) {
         <div name="media" className="h-3/4">
           {thisBlog && user.id === thisBlog.data.author.authorId ? (
             <div
-              className=" w-4 text-center absolute bg-red-200 font-bold hover:bg-red-600"
+              className="  text-center absolute hover:bg-cyan-600/90"
               onClick={handleDelete}
             >
-              X
+              <TiDelete className="w-8 my-3 " />
             </div>
           ) : null}
           <img

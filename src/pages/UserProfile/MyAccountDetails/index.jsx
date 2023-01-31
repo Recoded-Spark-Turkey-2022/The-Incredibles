@@ -55,17 +55,17 @@ function MyAccountDetails() {
       <Navbar />
       <section name="myaccountdetails" className="bg-[#70CDD6]">
         <Container>
-          <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
+          <div className="bg-white rounded-3xl shadow-md md:w-9/12 m-auto my-10 max-md:px-10">
             <form onSubmit={handleSubmit} className="">
               <Popover placement="bottom">
-                <PopoverHandler className="relative max-lg:pt-10">
-                  <div className="flex flex-col items-center lg:pb-5">
+                <PopoverHandler className="relative max-md:pt-10">
+                  <div className="flex flex-col items-center md:pb-5">
                     <img
-                      className="m-auto relative top-36 left-16"
+                      className="m-auto relative top-36 left-16 hover:cursor-pointer"
                       src={ChangePhoto}
                     />
                     <img
-                      className="m-auto h-40 w-40 rounded-full"
+                      className="m-auto h-40 w-40 rounded-full hover:cursor-pointer"
                       src={
                         user.photoURL
                           ? user.photoURL
@@ -92,16 +92,16 @@ function MyAccountDetails() {
                   />
                 </PopoverContent>
               </Popover>
-              <h2 className="p-5 font-bold text-lg text-center text-cyan-600">
+              <h2 className="p-5 font-bold text-md text-center text-cyan-600">
                 {' '}
                 {user.username
                   ? user.username + ' ' + user.usersurname
                   : user.displayName}
               </h2>
-              <div name="formholder" className="lg:mx-48">
+              <div name="formholder" className="w-3/4 max-md:w-full m-auto">
                 <div
                   name="usernameholder"
-                  className="flex lg:flex-row max-lg:flex-col justify-between w-full"
+                  className="flex md:flex-row max-md:flex-col justify-between "
                 >
                   <div name="username" className="flex flex-col">
                     <label
@@ -169,13 +169,13 @@ function MyAccountDetails() {
               </div>
               <div
                 name="formbuttons"
-                className="flex flex-row justify-center p-8 pb-16"
+                className="flex flex-row max-md:flex-col gap-5 m-auto justify-center py-8 "
               >
                 <button
                   type="submit"
-                  className="px-10 py-2.5 mr-5 bg-cyan-600 text-white font-medium text-l leading-tight
+                  className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
                 rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+                ease-in duration-300 hover:bg-purple-700 hover:shadow-md hover:scale-110  m-auto"
                 >
                   {t('myaccount.myaccountdetails.save')}
                 </button>
@@ -183,9 +183,9 @@ function MyAccountDetails() {
                   onClick={() => {
                     navigate('/myaccount');
                   }}
-                  className="px-10 py-2.5 ml-5 max-lg:bg-cyan-600 max-lg:text-white lg:bg-white lg:text-cyan-600 lg:border-cyan-600 lg:border-2 font-medium text-l leading-tight
+                  className="px-8 py-2.5 max-md:bg-cyan-600 max-md:text-white md:bg-white md:text-cyan-600 md:border-cyan-600 md:border font-medium text-l leading-tight
                 rounded-full shadow-md
-                ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+                ease-in duration-300 hover:bg-purple-700 hover:shadow-md hover:scale-110 w m-auto"
                 >
                   {t('myaccount.myaccountdetails.cancle')}
                 </button>
