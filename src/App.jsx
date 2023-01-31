@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { auth } from './firebase/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { getUser } from './features/users/usersSlice';
-import { getBlogs } from './features/blogs/blogsSlice';
+import { getBlogs, loadingState } from './features/blogs/blogsSlice';
 import HomePage from './pages/Home/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -20,9 +20,11 @@ import NotFoundPage from './pages/NotFoundPage/error';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoutes from './ProtectedRoutes';
+import Spinner from './components/Spinner';
 
 function App() {
   const dispatch = useDispatch();
+  const loading = useSelector(loadingState);
   useEffect(() => {
     dispatch(getBlogs());
     onAuthStateChanged(auth, (user) => {
@@ -32,7 +34,9 @@ function App() {
     });
   }, [onAuthStateChanged]);
 
-  return (
+  return loading ? (
+    <Spinner />
+  ) : (
     <div className="App">
       <Navbar />
       <Routes>
@@ -55,7 +59,6 @@ function App() {
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />
-        
       </Routes>
       <Footer />
     </div>
