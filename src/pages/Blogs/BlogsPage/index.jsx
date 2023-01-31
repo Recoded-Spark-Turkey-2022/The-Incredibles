@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
 import { loadingState } from '../../../features/blogs/blogsSlice';
-import Navbar from '../../../components/Navbar';
-import Footer from '../../../components/Footer';
 import BlogCard from '../../../components/BlogCard';
 import Container from '../../../components/UI/Container';
 import Spinner from '../../../components/Spinner';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
-import { useTranslation } from 'react-i18next';
 
 function BlogsPage() {
   const [t] = useTranslation();
@@ -113,62 +111,58 @@ function BlogsPage() {
   }
 
   return (
-    <>
-      <Navbar />
-      <Container>
-        <div className="">
-          <div className="flex flex-row max-md:flex-col border-b-2 items-center justify-between pb-5 mb-10 gap-1">
-            <div>
-              <label className="font-medium text-gray-500 text-lg">
-                {t('blogspage.sort')}
-                <select
-                  className="text-base text-center mx-5 bg-cyan-100/50"
-                  onClick={handleChangeSort}
-                >
-                  <option> {t('blogspage.date')} </option>
-                  <option> {t('blogspage.popular')} </option>
-                </select>
-              </label>
-            </div>
-            <div className="flex items-center">
-              <input
-                onChange={handleSearch}
-                type="search"
-                placeholder={t('blogspage.searchholder')}
-                className="w-56 px-8 m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
-              />
-              <img
-                src={SearchIcon}
-                alt="search-icon"
-                className="w-4 h-4 relative right-7"
-              />
-            </div>
-          </div>
+    <Container>
+      <div className="">
+        <div className="flex flex-row max-md:flex-col border-b-2 items-center justify-between pb-5 mb-10 gap-1">
           <div>
-            <div className="max-w-lg m-auto">
-              <div className="">
-                <Slider {...fSettings}>
-                  {blogsToDisplay.slice(0, 6).map((blog, i) => (
-                    <BlogCard key={i} blog={blog} />
-                  ))}
-                </Slider>
-              </div>
-            </div>
-            <h1 className=" mt-8 mx-6 font-bold text-lg pb-2 text-gray-600">
-              Read also:
-            </h1>
+            <label className="font-medium text-gray-500 text-lg">
+              {t('blogspage.sort')}
+              <select
+                className="text-base text-center mx-5 bg-cyan-100/50"
+                onClick={handleChangeSort}
+              >
+                <option> {t('blogspage.date')} </option>
+                <option> {t('blogspage.popular')} </option>
+              </select>
+            </label>
+          </div>
+          <div className="flex items-center">
+            <input
+              onChange={handleSearch}
+              type="search"
+              placeholder={t('blogspage.searchholder')}
+              className="w-56 px-8 m-1 border-2 rounded-full outline-none  focus:border-indigo-600"
+            />
+            <img
+              src={SearchIcon}
+              alt="search-icon"
+              className="w-4 h-4 relative right-7"
+            />
+          </div>
+        </div>
+        <div>
+          <div className="max-w-lg m-auto">
             <div className="">
-              <Slider {...sSettings}>
-                {blogsToDisplay.slice(7).map((blog, i) => (
+              <Slider {...fSettings}>
+                {blogsToDisplay.slice(0, 6).map((blog, i) => (
                   <BlogCard key={i} blog={blog} />
                 ))}
               </Slider>
             </div>
           </div>
+          <h1 className=" mt-8 mx-6 font-bold text-lg pb-2 text-gray-600">
+            Read also:
+          </h1>
+          <div className="">
+            <Slider {...sSettings}>
+              {blogsToDisplay.slice(7).map((blog, i) => (
+                <BlogCard key={i} blog={blog} />
+              ))}
+            </Slider>
+          </div>
         </div>
-      </Container>
-      <Footer />
-    </>
+      </div>
+    </Container>
   );
 }
 
