@@ -37,7 +37,6 @@ function BlogsPage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     rows: 1,
-    lazyLoad: 'progressive',
     responsive: [
       {
         breakpoint: 767,
@@ -68,7 +67,6 @@ function BlogsPage() {
     slidesToShow: 3,
     slidesToScroll: 3,
     rows: 1,
-    lazyLoad: 'progressive',
     responsive: [
       {
         breakpoint: 767,
