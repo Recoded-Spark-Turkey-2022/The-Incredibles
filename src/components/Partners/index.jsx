@@ -1,4 +1,8 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
+import Slider from 'react-slick';
+import '../../style/slick.css';
+import '../../style/slick-theme.css';
+import Container from '../UI/Container';
 import partner1 from '../../assets/pics/homepage/partners/n0.png';
 import partner2 from '../../assets/pics/homepage/partners/n1.jpeg';
 import partner3 from '../../assets/pics/homepage/partners/n2.png';
@@ -8,11 +12,6 @@ import partner6 from '../../assets/pics/homepage/partners/n5.png';
 import partner7 from '../../assets/pics/homepage/partners/n6.jpeg';
 import partner8 from '../../assets/pics/homepage/partners/n7.jpeg';
 import partner9 from '../../assets/pics/homepage/partners/n8.jpeg';
-import Slider from 'react-slick';
-import '../../style/slick.css';
-import '../../style/slick-theme.css';
-import Container from '../UI/Container';
-import { useTranslation } from 'react-i18next';
 
 function Partners() {
   const [t] = useTranslation();

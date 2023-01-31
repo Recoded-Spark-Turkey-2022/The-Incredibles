@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OurStory renders correctly 1`] = `
+<section
+  className=""
+  name="story"
+>
+  <div
+    className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center pt-5  "
+    name="hero-image"
+  >
+    <img
+      className=""
+      src="support.png"
+    />
+  </div>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <div
+      className="  flex flex-col text-center items-center justify-center"
+      name="story"
+    >
+      <h2
+        className="text-center  mb-10  sm:text-7xl   text-5xl font-bold text-cyan-700"
+      >
+        about.ourstory.h2
+      </h2>
+      <p
+        className=" pb-20 sm:text-2xl text-base md:px-10"
+      >
+        about.ourstory.p
+      </p>
+    </div>
+  </div>
+</section>
+`;

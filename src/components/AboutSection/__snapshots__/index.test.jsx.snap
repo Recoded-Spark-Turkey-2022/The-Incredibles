@@ -1,0 +1,629 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutSection renders correctly 1`] = `
+<section
+  className="bg-emerald-50 "
+  name=""
+>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <div
+      className=""
+    >
+      <div
+        className=" m-auto text-center "
+        name="about-header"
+      >
+        <h1
+          className="text-cyan-600 py-4 font-bold sm:text-4xl  text-2xl "
+        >
+          home.about.h1
+        </h1>
+        <p
+          className="sm:text-xl md:px-2 text-base"
+        >
+          home.about.p
+        </p>
+        <div
+          className="my-5 "
+        >
+          <button
+            className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight rounded-full shadow-md ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+            onClick={[Function]}
+            type="button"
+          >
+            home.about.learnmore
+          </button>
+        </div>
+      </div>
+      <div
+        className="flex sm:justify-between max-md:flex-col-reverse max-md:items-center max-md:text-center md:px-5"
+        name="about-body"
+      >
+        <div
+          className="flex md:justify-start max-md:hidden "
+          name="cards"
+        >
+          <div
+            className=""
+            name="left-side-cards"
+          >
+            <div
+              className="md:p-6  max-w-sm mx-auto md:space-x-4 "
+            >
+              <h2
+                className="flex  md:justify-start md:font-bold max-md:flex-col max-md:items-center"
+              >
+                <img
+                  alt="about-star"
+                  className="md:mx-3 max-md:w-10"
+                  src="about-star.svg"
+                />
+                home.about.section.h1
+              </h2>
+              <p
+                className="md:pt-6 flex-wrap"
+              >
+                home.about.section.p1
+              </p>
+            </div>
+            <div
+              className="md:p-6 max-w-sm mx-auto space-x-4 max-md:hidden "
+            >
+              <h2
+                className="flex justify-start font-bold"
+              >
+                <img
+                  alt="about-star"
+                  className="mx-3"
+                  src="about-star.svg"
+                />
+                home.about.section.h2
+              </h2>
+              <br />
+              <p>
+                home.about.section.p2
+              </p>
+            </div>
+          </div>
+          <div
+            className="max-md:hidden"
+            name="right-side-cards"
+          >
+            <div
+              className="md:p-6 max-w-sm mx-auto space-x-4 "
+            >
+              <h2
+                className="flex justify-start font-bold"
+              >
+                <img
+                  alt="about-star"
+                  className="mx-3"
+                  src="about-star.svg"
+                />
+                home.about.section.h3
+              </h2>
+              <br />
+              <p>
+                home.about.section.p3
+              </p>
+            </div>
+            <div
+              className="md:p-6 max-w-sm mx-auto space-x-4"
+            >
+              <h2
+                className="flex justify-start font-bold"
+              >
+                <img
+                  alt="about-star"
+                  className="mx-3"
+                  src="about-star.svg"
+                />
+                home.about.section.h4
+              </h2>
+              <br />
+              <p>
+                home.about.section.p4
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="flex justify-end max-md:justify-center "
+          name="side-hero"
+        >
+          <img
+            alt="about-hero"
+            className=""
+            src="about-hero.svg"
+          />
+        </div>
+      </div>
+      <div
+        className="m-auto text-center md:hidden"
+      >
+        <div
+          className="slick-slider slick-initialized"
+          dir="ltr"
+        >
+          <button
+            className="slick-arrow slick-prev"
+            data-role="none"
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            type="button"
+          >
+             
+            Previous
+          </button>
+          <div
+            className="slick-list"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={null}
+            onMouseMove={null}
+            onMouseUp={[Function]}
+            onTouchCancel={null}
+            onTouchEnd={[Function]}
+            onTouchMove={null}
+            onTouchStart={[Function]}
+            style={Object {}}
+          >
+            <div
+              className="slick-track"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                  "WebkitTransition": "",
+                  "msTransform": "translateX(0px)",
+                  "opacity": 1,
+                  "transform": "translate3d(0px, 0px, 0px)",
+                  "transition": "",
+                }
+              }
+            >
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-1}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="max-w-sm mx-auto space-x-4"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className=" font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h4
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p4
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active slick-current"
+                data-index={0}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h1
+                    </h2>
+                    <p
+                      className="flex-wrap"
+                    >
+                      home.about.section.p1
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={1}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h2
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p2
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={2}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h3
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p3
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={3}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="max-w-sm mx-auto space-x-4"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className=" font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h4
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p4
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={4}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h1
+                    </h2>
+                    <p
+                      className="flex-wrap"
+                    >
+                      home.about.section.p1
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={5}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h2
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p2
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={6}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className=" max-w-sm mx-auto space-x-4 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className="font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h3
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p3
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={7}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="max-w-sm mx-auto space-x-4"
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <h2
+                      className=" font-bold"
+                    >
+                      <img
+                        alt="about-star"
+                        className="m-auto"
+                        src="about-star.svg"
+                      />
+                      home.about.section.h4
+                    </h2>
+                    <br />
+                    <p>
+                      home.about.section.p4
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            className="slick-arrow slick-next"
+            data-role="none"
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            type="button"
+          >
+             
+            Next
+          </button>
+          <ul
+            className="slick-dots"
+            onMouseEnter={null}
+            onMouseLeave={null}
+            onMouseOver={null}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+          >
+            <li
+              className="slick-active"
+            >
+              <button
+                onClick={[Function]}
+              >
+                1
+              </button>
+            </li>
+            <li
+              className=""
+            >
+              <button
+                onClick={[Function]}
+              >
+                2
+              </button>
+            </li>
+            <li
+              className=""
+            >
+              <button
+                onClick={[Function]}
+              >
+                3
+              </button>
+            </li>
+            <li
+              className=""
+            >
+              <button
+                onClick={[Function]}
+              >
+                4
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
