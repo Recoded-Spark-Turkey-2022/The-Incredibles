@@ -24,7 +24,7 @@ function Messages() {
 
   return (
     <div
-      className=" bg-gray-100 w-full bottom-[5rem] absolute overflow-y-scroll"
+      className=" bg-pink-100/20 w-full bottom-[5rem] absolute overflow-y-scroll"
       style={{
         // backgroundImage:
         //   'url(' +

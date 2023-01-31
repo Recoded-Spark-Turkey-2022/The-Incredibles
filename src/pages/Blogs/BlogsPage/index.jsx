@@ -148,12 +148,12 @@ function BlogsPage() {
           </div>
           <div>
             <div className="max-w-lg m-auto">
-              <div className=''>
-              <Slider {...fSettings}>
-                {blogsToDisplay.slice(0, 6).map((blog, i) => (
-                  <BlogCard key={i} blog={blog} />
-                ))}
-              </Slider>
+              <div className="">
+                <Slider {...fSettings}>
+                  {blogsToDisplay.slice(0, 6).map((blog, i) => (
+                    <BlogCard key={i} blog={blog} />
+                  ))}
+                </Slider>
               </div>
             </div>
             <h1 className=" mt-8 mx-6 font-bold text-lg pb-2 text-gray-600">

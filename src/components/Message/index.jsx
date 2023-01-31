@@ -19,11 +19,11 @@ function Message({ message }) {
       ref={ref}
       className={
         message.senderId === user.id
-          ? 'flex flex-row-reverse gap-8'
-          : 'flex gap-8'
+          ? 'flex flex-row-reverse gap-1 items-start'
+          : 'flex gap-1 items-start'
       }
     >
-      <div className="m-4">
+      <div className="">
         <img
           src={
             message.senderId === user.id
@@ -34,18 +34,18 @@ function Message({ message }) {
               ? chatUser.photoURL
               : chatUser.authPhoto
           }
-          className="w-12 h-12 rounded-full "
+          className=" w-12 h-12 m-auto rounded-full "
           alt="userPhoto"
         />
         <span className="text-gray-600 font-medium text-sm">{} </span>
       </div>
-      <div className="flex flex-col gap-2 mt-4">
+      <div className="flex flex-col gap-2 ">
         {message.text !== '' && (
           <p
             className={
               message.senderId === user.id
-                ? 'bg-blue-500  p-4 rounded-l-lg rounded-b-lg max-w-fit'
-                : 'bg-gray-300  p-4 rounded-r-lg rounded-b-lg max-w-fit '
+                ? 'bg-[#4699C2] p-4 rounded-l-lg rounded-b-lg max-w-fit shadow-lg font-medium'
+                : 'bg-gray-300  p-4 rounded-r-lg rounded-b-lg max-w-fit shadow-lg font-medium'
             }
           >
             {message.text}

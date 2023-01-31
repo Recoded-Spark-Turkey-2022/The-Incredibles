@@ -73,9 +73,9 @@ function ChatSearch({ setOpen }) {
   };
 
   return (
-    <div className="border-b relative bg-slate-200 pl-2 border-gray-400 h-fit ">
+    <div className="border-b relative bg-slate-200 border-gray-400 h-fit ">
       <img
-        className="w-4 absolute right-3 top-3"
+        className="w-4 absolute right-2 top-3"
         src={SearchIcon}
         alt="search icon"
       />
@@ -83,19 +83,19 @@ function ChatSearch({ setOpen }) {
         onKeyDown={handleKey}
         onChange={(e) => setUserName(e.target.value)}
         type="search"
-        className="bg-transparent w-full pl-2  outline-none h-10 text-black placeholder:text-gray-600 placeholder:pl-2"
+        className="bg-transparent w-full outline-none h-10 px-7 text-black placeholder:text-gray-600 "
         placeholder={t('message.chatsearch.typeusername')}
         value={userName}
       />
       {theUser && (
         <div
-          className=" items-center cursor-pointer hover:bg-cyan-800"
+          className=" items-center cursor-pointer hover:bg-cyan-800 p-1"
           onClick={handleSelect}
         >
           <img
             src={theUser.photoURL ? theUser.photoURL : theUser.authPhoto}
             alt="userProfil"
-            className="w-12 h-12 rounded-full mr-2 "
+            className="w-12 h-12 rounded-full mx-5 "
           />
           <div>
             <p className="text-black ">

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
-import Images from '../../assets/pics/chatpage/images.svg';
+// import Images from '../../assets/pics/chatpage/images.svg';
 import Remove from '../../assets/pics/chatpage/delete.svg';
 import Send from '../../assets/pics/chatpage/send.svg';
 import Emoji from '../../assets/pics/chatpage/emoji.svg';
+import { AiOutlineSend } from 'react-icons/ai';
 import {
   arrayUnion,
   doc,
@@ -66,7 +67,7 @@ function SendInput() {
 
   return (
     <>
-      <span className={openEmoji ? 'absolute bottom-20' : 'hidden'}>
+      <span className={openEmoji ? 'absolute bottom-20 ' : 'hidden'}>
         <Picker
           searchDisabled={true}
           onEmojiClick={(event, emojiObject) => {
@@ -82,11 +83,11 @@ function SendInput() {
             e.preventDefault(), alert('really!! who are you sending to?!!');
           }
         }}
-        className="bg-white absolute w-full flex justify-between gap-8 bottom-0 h-20 max-sm:gap-0 p-4"
+        className="bg-white absolute w-full flex justify-between gap-1 bottom-0 h-20 max-md :gap-0 py-4"
       >
         <img
           onClick={() => setOpenEmoji(!openEmoji)}
-          className="w-8 cursor-pointer"
+          className="w-8 mx-1 cursor-pointer"
           src={Emoji}
           alt=""
         />
@@ -95,7 +96,7 @@ function SendInput() {
           onChange={(e) => setText(e.target.value)}
           type="text"
           placeholder={t('message.sendinput.typeyourmassage')}
-          className="w-full pl-4 bg-gray-200 placeholder:bg-gray-200 outline-none rounded-lg placeholder:p-4 max-sm:placeholder:p-2 max-sm:placeholder:text-sm max-sm:w-"
+          className="w-full bg-gray-200 placeholder:bg-gray-200 outline-none rounded-lg placeholder:p-4 max-md:placeholder:p-2 max-md:placeholder:text-md px-5"
         />
 
         {img && (
@@ -114,7 +115,7 @@ function SendInput() {
             />{' '}
           </div>
         )}
-        <div className="flex gap-4">
+        <div className="flex gap-1 px-1 items-center">
           <input
             onChange={(e) => setImg(e.target.files[0])}
             type="file"
@@ -123,31 +124,16 @@ function SendInput() {
           />
           <label htmlFor="file">
             <img
-              className="w-16 h-16 block pb-4 cursor-pointer max-sm:hidden hover:w-20 duration-500"
+              className="w-16 h-16 block cursor-pointer  duration-500"
               src={ChangePhoto}
               alt="share"
             />
-            <img
-              className="w-8 h-8 mt-2 hover:w-12 duration-500 cursor-pointer mx-2 hidden max-sm:flex"
-              src={Images}
-              alt="share"
-            />
           </label>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg max-sm:hidden">
-            {t('message.sendinput.send')}
+          <button className="bg-[#4699C2]  h-12 w-14 text-center m-auto  hover:bg-blue-700 text-white font-bold  rounded-lg ">
+            <div className="">
+              <AiOutlineSend className="m-auto" />
+            </div>
           </button>
-          <img
-            src={Send}
-            alt="send"
-            className="hidden hover:w-10 duration-500 cursor-pointer max-sm:flex w-6"
-            onClick={(e) => {
-              if (chatId) {
-                handleSend();
-              } else {
-                alert('really!! who are you sending to?!!');
-              }
-            }}
-          />
         </div>
       </form>
     </>
