@@ -1,6 +1,6 @@
 import Navbar from '../../components/Navbar';
 import Brief from '../../components/Brief';
-import About from '../../components/AboutSection';
+import AboutSection from '../../components/AboutSection';
 import Location from '../../components/LocationSection';
 import Partners from '../../components/Partners';
 import Stories from '../../components/LatestStories';
@@ -11,7 +11,7 @@ function HomePage() {
     <section name="home">
       <Navbar />
       <Brief />
-      <About />
+      <AboutSection />
       <Location />
       <Partners />
       <Stories />

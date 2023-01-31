@@ -1,15 +1,14 @@
-import React from 'react';
-import Button from '../UI/Button';
-import AboutHero from '../../assets/pics/homepage/about-hero.svg';
-import AboutStar from '../../assets/pics/homepage/about-star.svg';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import '../../style/slick.css';
 import '../../style/slick-theme.css';
+import Button from '../UI/Button';
 import Container from '../UI/Container';
+import AboutStar from '../../assets/pics/homepage/about-star.svg';
+import AboutHero from '../../assets/pics/homepage/about-hero.svg';
 
-function About() {
-  const [t, i18n] = useTranslation();
+function AboutSection() {
+  const { t } = useTranslation();
 
   const settings = {
     dots: true,
@@ -132,4 +131,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutSection;

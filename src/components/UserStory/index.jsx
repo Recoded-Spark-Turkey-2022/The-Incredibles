@@ -1,12 +1,11 @@
-import React from 'react';
-import Button from '../UI/Button';
-import story from '../../assets/pics/aboutpage/story.jpg';
+import { useTranslation } from 'react-i18next';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase';
 import Container from '../UI/Container';
-import { useTranslation } from 'react-i18next';
+import Button from '../UI/Button';
+import story from '../../assets/pics/aboutpage/story.jpg';
 
-function CallToAction() {
+function UserStory() {
   const [t] = useTranslation();
   const [user] = useAuthState(auth);
   return (
@@ -31,4 +30,4 @@ function CallToAction() {
   );
 }
 
-export default CallToAction;
+export default UserStory;

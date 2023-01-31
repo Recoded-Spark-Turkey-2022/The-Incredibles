@@ -1,0 +1,335 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OurTeam renders correctly 1`] = `
+<section
+  className="bg-emerald-50 "
+  name="team"
+>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <h2
+      className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2"
+    >
+      about.ourteam.h2
+    </h2>
+    <div
+      className="text-center pt-5"
+      name="toggle-button"
+    >
+      <button
+        className="rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 md:hidden"
+        onClick={[Function]}
+      >
+        about.ourteam.hidebutton
+      </button>
+      <div
+        className="grid grid-cols-2 md:hidden"
+      >
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Miray
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Rabia
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Batoul
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Ahmad
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Omer
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Osman
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Veli
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Ali
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+        <div
+          className="flex flex-col justify-start p-10 "
+        >
+          <h3
+            className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+          >
+            Can
+          </h3>
+          <p
+            className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+          >
+            Team member
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="flex justify-center md:pt-5 md:flex-row sm: flex-col text-center pt-3"
+      name="country-filter"
+    >
+      <div
+        className="max-md:hidden p-3 flex justify-center"
+      >
+        <button
+          className="rounded-full inline-block w-32 py-1 border-solid border-2 md:border-cyan-700 md:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300"
+          onClick={[Function]}
+        >
+          View All
+        </button>
+      </div>
+      <div
+        className="p-3 flex justify-center"
+      >
+        <button
+          className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+          onClick={[Function]}
+        >
+          about.ourteam.usa
+        </button>
+      </div>
+      <div
+        className="p-3 flex justify-center"
+      >
+        <button
+          className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+          onClick={[Function]}
+        >
+          about.ourteam.turkey
+        </button>
+      </div>
+      <div
+        className="p-3 flex justify-center"
+      >
+        <button
+          className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+          onClick={[Function]}
+        >
+          about.ourteam.lebanon
+        </button>
+      </div>
+    </div>
+    <div
+      className="md:flex flex-wrap justify-center gap-5 max-md:hidden"
+      name="team-members"
+    >
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Miray
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Rabia
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Batoul
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Ahmad
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Omer
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Osman
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Veli
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Ali
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+      <div
+        className="flex flex-col justify-start p-10 "
+      >
+        <h3
+          className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm"
+        >
+          Can
+        </h3>
+        <p
+          className="md:text-xl md:p-2 text-cyan-700 sm: text-xs"
+        >
+          Team member
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+`;
