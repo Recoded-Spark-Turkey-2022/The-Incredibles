@@ -12,7 +12,7 @@ export const creatUser = createAsyncThunk(
     const { dispatch } = thunkAPI;
     const signIn = await signInWithPopup(auth, provider);
     const users = doc(db, 'users', signIn.user.uid);
-
+    localStorage.setItem('loggedIn', true);
     await setDoc(
       users,
       {
@@ -65,7 +65,6 @@ export const getUser = createAsyncThunk('user/getUser', async (id) => {
 });
 
 const initialState = {
-  isLoggedIn: localStorage.getItem('token') ? true : null,
   user: {},
 };
 
@@ -76,7 +75,6 @@ const usersSlice = createSlice({
   extraReducers: {
     [getUser.fulfilled]: (state, action) => {
       state.user = action.payload;
-      state.isLoggedIn = action.payload.isLoggedIn;
     },
   },
 });
