@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
-// import Images from '../../assets/pics/chatpage/images.svg';
 import Remove from '../../assets/pics/chatpage/delete.svg';
-import Send from '../../assets/pics/chatpage/send.svg';
 import Emoji from '../../assets/pics/chatpage/emoji.svg';
 import { AiOutlineSend } from 'react-icons/ai';
 import {
@@ -30,18 +28,13 @@ function SendInput() {
   const [openEmoji, setOpenEmoji] = useState(false);
   const handleSend = async () => {
     if (img) {
-      const storageRef = ref(storage, uuid());
-      const uploadTask = await uploadBytesResumable(storageRef, img);
-
-      await getDownloadURL(uploadTask.ref).then(async (downloadURL) => {
-        await updateDoc(doc(db, 'chats', chatId), {
-          messages: arrayUnion({
-            text,
-            senderId: user.id,
-            date: Timestamp.now(),
-            photo: downloadURL,
-          }),
-        });
+      await updateDoc(doc(db, 'chats', chatId), {
+        messages: arrayUnion({
+          text,
+          senderId: user.id,
+          date: Timestamp.now(),
+          photo: img,
+        }),
       });
     } else {
       await updateDoc(doc(db, 'chats', chatId), {
@@ -63,18 +56,20 @@ function SendInput() {
     });
     setImg(null);
     setText('');
+    setOpenEmoji(false)
   };
 
   return (
     <>
-      <span className={openEmoji ? 'absolute bottom-20 ' : 'hidden'}>
-        <Picker
-          searchDisabled={true}
-          onEmojiClick={(event, emojiObject) => {
-            setText(text + emojiObject.emoji);
-          }}
-        />
-      </span>
+        {openEmoji?<span className= 'absolute bottom-20 ' >
+          <Picker
+            searchDisabled={true}
+            onEmojiClick={(event, emojiObject) => {
+              setText(text + emojiObject.emoji);
+            }}
+          />
+        </span>:null}
+      
       <form
         onSubmit={(e) => {
           if (chatId) {
@@ -102,11 +97,7 @@ function SendInput() {
         {img && (
           <div className="relative">
             {' '}
-            <img
-              className="w-14 h-14"
-              src={URL.createObjectURL(img)}
-              alt="img"
-            />{' '}
+            <img className="w-14 h-14" src={img} alt="img" />{' '}
             <img
               onClick={() => setImg(null)}
               className="w-4 h-4 absolute top-0 right-0 cursor-pointer"
@@ -117,7 +108,16 @@ function SendInput() {
         )}
         <div className="flex gap-1 px-1 items-center">
           <input
-            onChange={(e) => setImg(e.target.files[0])}
+            onChange={async (e) => {
+              const storageRef = ref(storage, uuid());
+              const uploadTask = await uploadBytesResumable(
+                storageRef,
+                e.target.files[0]
+              );
+              getDownloadURL(uploadTask.ref).then(async (downloadURL) => {
+                setImg(downloadURL);
+              });
+            }}
             type="file"
             style={{ display: 'none' }}
             id="file"
@@ -129,7 +129,10 @@ function SendInput() {
               alt="share"
             />
           </label>
-          <button className="bg-[#4699C2]  h-12 w-14 text-center m-auto  hover:bg-blue-700 text-white font-bold  rounded-lg ">
+          <button
+            disabled={text === '' && !img ? true : false}
+            className="bg-[#4699C2]  h-12 w-14 text-center m-auto  hover:bg-blue-700 text-white font-bold  rounded-lg "
+          >
             <div className="">
               <AiOutlineSend className="m-auto" />
             </div>

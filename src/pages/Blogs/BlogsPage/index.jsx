@@ -12,7 +12,6 @@ import '../../../style/slick-theme.css';
 
 function BlogsPage() {
   const [t] = useTranslation();
-  const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
   const [sortBy, setSortBy] = useState('Date');
   const [searchedBlogs, setsearchedBlogs] = useState(blogs);
@@ -106,9 +105,7 @@ function BlogsPage() {
     }
   }
 
-  if (loading) {
-    return <Spinner />;
-  }
+  
 
   return (
     <Container>
