@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
 import ChangePhoto from '../../assets/pics/profilepage/changepic.svg';
-// import Images from '../../assets/pics/chatpage/images.svg';
 import Remove from '../../assets/pics/chatpage/delete.svg';
-import Send from '../../assets/pics/chatpage/send.svg';
 import Emoji from '../../assets/pics/chatpage/emoji.svg';
 import { AiOutlineSend } from 'react-icons/ai';
 import {
@@ -35,7 +33,7 @@ function SendInput() {
           text,
           senderId: user.id,
           date: Timestamp.now(),
-          photo: downloadURL,
+          photo: img,
         }),
       });
     } else {
@@ -58,18 +56,20 @@ function SendInput() {
     });
     setImg(null);
     setText('');
+    setOpenEmoji(false)
   };
 
   return (
     <>
-      <span className={openEmoji ? 'absolute bottom-20 ' : 'hidden'}>
-        <Picker
-          searchDisabled={true}
-          onEmojiClick={(event, emojiObject) => {
-            setText(text + emojiObject.emoji);
-          }}
-        />
-      </span>
+        {openEmoji?<span className= 'absolute bottom-20 ' >
+          <Picker
+            searchDisabled={true}
+            onEmojiClick={(event, emojiObject) => {
+              setText(text + emojiObject.emoji);
+            }}
+          />
+        </span>:null}
+      
       <form
         onSubmit={(e) => {
           if (chatId) {

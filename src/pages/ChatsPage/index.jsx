@@ -5,8 +5,8 @@ import Container from '../../components/UI/Containerp0';
 function ChatsPage() {
   return (
     <Container>
-      <div className="px-5">
-        <div className="w-full h-screen relative shadow-xl border my-10 max-md:my-5 rounded-xl  overflow-hidden flex">
+      <div className="">
+        <div className="w-5/6 h-full mx-auto relative shadow-xl border  max-md:my-5 rounded-xl  overflow-hidden flex">
           <ChatSidebar />
           <Chat />
         </div>

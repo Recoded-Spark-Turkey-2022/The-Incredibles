@@ -8,8 +8,6 @@ import Back from '../../assets/pics/navbar/back.svg';
 
 function ChatSidebar() {
   const { user } = useSelector(selectUser);
-  // const { chat } = useSelector((state) => state);
-  // const { chatUser } = chat;
   const [open, setOpen] = useState(true);
 
   return (

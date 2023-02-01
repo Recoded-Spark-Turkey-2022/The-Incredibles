@@ -65,6 +65,22 @@ function ChatSearch({ setOpen }) {
       });
       dispatch(getChat({ data: theUser, id: chatId }));
     } else {
+      await updateDoc(doc(db, 'userChats', user.id), {
+        [chatId + '.userInfo']: {
+          id: theUser.id,
+          name: theUser.username ? theUser.username : theUser.displayName,
+          photoURL: theUser.photoURL ? theUser.photoURL : theUser.authPhoto,
+        },
+        [chatId + '.date']: serverTimestamp(),
+      });
+      await updateDoc(doc(db, 'userChats', theUser.id), {
+        [chatId + '.userInfo']: {
+          id: user.id,
+          name: user.username ? user.username : user.displayName,
+          photoURL: user.photoURL ? user.photoURL : user.authPhoto,
+        },
+        [chatId + '.date']: serverTimestamp(),
+      });
       dispatch(getChat({ data: theUser, id: chatId }));
     }
     setTheUser(null);
