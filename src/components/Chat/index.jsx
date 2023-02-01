@@ -6,7 +6,7 @@ import Call from '../../assets/pics/chatpage/call.svg';
 import VideoCall from '../../assets/pics/chatpage/videoCall.svg';
 import ChatMenu from '../../assets/pics/chatpage/chatMenu.svg';
 
-function Chat() {
+function Chat({open, setOpen}) {
   const { chat } = useSelector((state) => state);
   const { chatUser } = chat;
   if (chatUser.id) {
@@ -47,6 +47,13 @@ function Chat() {
         <SendInput />
       </div>
     );
+  }
+  else if(!open && !chatUser.id){
+    return(
+    <div className='h-16 cursor-pointer w-full justify-center  flex items-center' onClick={()=>setOpen(true)}>
+      <p className="text-black text-3xl font-bold  ">Click to select chat </p>
+    </div>
+    )
   }
 }
 
