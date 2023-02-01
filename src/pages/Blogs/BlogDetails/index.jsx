@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import Container from '../../../components/UI/Container';
-import BlogCard from '../../../components/BlogCard';
+import BlogCard from '../../../components/Cards/BlogCard';
 import Spinner from '../../../components/Spinner';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
 import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';

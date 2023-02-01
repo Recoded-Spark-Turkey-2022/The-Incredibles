@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
 import { loadingState } from '../../../features/blogs/blogsSlice';
-import BlogCard from '../../../components/BlogCard';
+import BlogCard from '../../../components/Cards/BlogCard';
 import Container from '../../../components/UI/Container';
 import Spinner from '../../../components/Spinner';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';

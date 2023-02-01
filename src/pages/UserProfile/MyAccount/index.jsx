@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import { selectUser } from '../../../features/users/usersSlice';
-import BlogCard from '../../../components/BlogCard';
-import MyAccountCard from '../../../components/MyAccountCard';
+import BlogCard from '../../../components/Cards/BlogCard';
+import MyAccountCard from '../../../components/Cards/MyAccountCard';
 import Container from '../../../components/UI/Container';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
@@ -78,10 +78,10 @@ function MyAccount() {
                   : user.displayName}
               </h2>
               <h2 className="p-2 font-bold text-lg text-cyan-600">
-                {user.biography ? user.biography : ''}
+                {user.biography ? user.biography : 'Biography Here'}
               </h2>
               <h2 className="p-2 font-bold text-lg text-cyan-600">
-                {user.location ? user.location : ''}
+                {user.location ? user.location : 'Location'}
               </h2>
             </div>
           </div>
