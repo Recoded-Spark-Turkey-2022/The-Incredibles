@@ -214,55 +214,6 @@ function BlogDetails() {
             <div className="flex justify-between">
               <div className="flex items-center ">
                 <p className="mr-2">by: </p>
-
-                {/* <Popover placement="right">
-                  <PopoverHandler className="relative">
-                    <div className=''>
-                      <img
-                        src={blogData ? blogData.author.authorPhoto : User}
-                        alt="author"
-                        className="w-12 h-12 rounded-full"
-                      />
-                    </div>
-                  </PopoverHandler>
-                  <PopoverContent className="absolute bg-[#70CDD6]">
-                    <div className="p-5 bg-[url('/src/assets/pics/profilepage/authorbg.svg')] bg-no-repeat bg-cover">
-                      <img
-                        src={blogData ? blogData.author.authorPhoto : User}
-                        alt="author"
-                        className="w-10 h-10 rounded-full"
-                      />
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium text-center">
-                        {thisBlog && thisBlog.data.author.authorName}
-                      </h2>
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium">
-                        Biography
-                      </h2>
-
-                      <p>
-                        {blogData
-                          ? blogData.author.authorBio
-                          : 'Author Biography'}
-                      </p>
-                      <br />
-                      <h2 className="ml-4 text-cyan-600 font-medium">
-                        Location
-                      </h2>
-
-                      <p>
-                        {blogData
-                          ? blogData.author.authorLocation
-                          : 'Author Location'}
-                      </p>
-                      <br />
-                      <button onClick={startChat}>
-                        <img className="w-10" src={Chat} alt="send message" />
-                      </button>
-                    </div>
-                  </PopoverContent>
-                </Popover> */}
                 <Popover placement="top">
                   <PopoverHandler className="relative">
                     <div className="">

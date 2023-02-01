@@ -10,8 +10,10 @@ import '../../../style/slick-theme.css';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import ChangePen from '../../../assets/pics/profilepage/changeprofile.svg';
 import FeatherPen from '../../../assets/pics/profilepage/pen.svg';
+import { useTranslation } from 'react-i18next';
 
 function MyAccount() {
+  const [t] = useTranslation();
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();
@@ -78,10 +80,10 @@ function MyAccount() {
                   : user.displayName}
               </h2>
               <h2 className="p-2  text-lg text-cyan-600">
-                {user.biography ? user.biography : 'Biography Will Be Here'}
+                {user.biography ? user.biography : ''}
               </h2>
               <h2 className="p-2  text-lg text-cyan-600">
-                {user.location ? user.location : 'Location Will Be Here'}
+                {user.location ? user.location : ''}
               </h2>
             </div>
           </div>
@@ -96,7 +98,7 @@ function MyAccount() {
                   ease-in duration-300 hover:scale-110 hover:cursor-pointer m-auto"
                     >
                       <h1 className="text-xl font-bold font-mono italic">
-                        Create A New Blog{' '}
+                      {t('myaccount.create.creatNB')}{' '}
                       </h1>
                       <img src={FeatherPen} className="w-10" />
                     </button>

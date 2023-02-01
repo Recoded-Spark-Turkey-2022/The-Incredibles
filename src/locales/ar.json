@@ -82,6 +82,9 @@
       "location": "البلد:",
       "save": "حفظ",
       "cancle": "إلغاء"
+    },
+    "create": {
+      "creatNB":"اكتب مدونة جديدة"
     }
   },
   "message": {
