@@ -26,7 +26,7 @@ function BlogsPage() {
     dots: true,
     infinite: true,
     speed: 400,
-    autoplay: true,
+    autoplay: false,
     cssEase: 'linear',
     autoplaySpeed: 2500,
     swipeToSlide: true,
@@ -135,7 +135,7 @@ function BlogsPage() {
           </div>
         </div>
         <div>
-          <div className="max-w-lg m-auto">
+          <div className="max-w-3xl  m-auto">
             <div className="">
               <Slider {...fSettings}>
                 {blogsToDisplay.slice(0, 6).map((blog, i) => (

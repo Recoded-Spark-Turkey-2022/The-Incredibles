@@ -39,6 +39,8 @@ function Footer() {
   }, [loc]);
   return (
     <Container>
+          <div className='border-t-2 '>
+
       <div
         className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${
           page == 'Messages' ? 'hidden' : 'flex'
@@ -64,7 +66,9 @@ function Footer() {
           <LanguageSelect />
         </div>
       </div>
+      </div>
     </Container>
+  
   );
 }
 
