@@ -20,7 +20,7 @@ function MyAccount() {
   );
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -31,7 +31,7 @@ function MyAccount() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
+          infinite: false,
           rows: 2,
           dots: true,
         },
@@ -41,7 +41,7 @@ function MyAccount() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: true,
+          infinite: false,
           rows: 5,
           dots: true,
         },
