@@ -1,0 +1,1970 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutPage renders correctly 1`] = `
+<div
+  name="aboutpage"
+>
+  <section
+    className=""
+    name="story"
+  >
+    <div
+      className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center pt-5  "
+      name="hero-image"
+    >
+      <img
+        className=""
+        src="support.png"
+      />
+    </div>
+    <div
+      className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+    >
+      <div
+        className="  flex flex-col text-center items-center justify-center"
+        name="story"
+      >
+        <h2
+          className="text-center  mb-10  sm:text-7xl   text-5xl font-bold text-cyan-700"
+        >
+          about.ourstory.h2
+        </h2>
+        <p
+          className=" pb-20 sm:text-2xl text-base md:px-10"
+        >
+          about.ourstory.p
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    className="bg-emerald-50 "
+    name="team"
+  >
+    <div
+      className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+    >
+      <h2
+        className="text-center text-5xl font-bold text-cyan-700 md:pb-10 md:pt-20 sm:pt-5 pb-2"
+      >
+        about.ourteam.h2
+      </h2>
+      <div
+        className="text-center pt-5"
+        name="toggle-button"
+      >
+        <button
+          className="rounded-full inline-block w-32 py-1 border-solid border-2 text-white font-bold text-xl border-orange-300 bg-orange-300 md:hidden"
+          onClick={[Function]}
+        >
+          about.ourteam.hidebutton
+        </button>
+        <div
+          className="grid grid-cols-2 md:hidden"
+        >
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="Miray.jpg"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Miray
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Frontend Developer
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href="https://github.com/chiturca"
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="rabia.jpg"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Rabia
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Frontend Developer
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href=" https://github.com/ladycodeer"
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="Betül.png"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Batoul
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Frontend Developer
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href="https://github.com/batoulst"
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="Ahmad.jpg"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Ahmad
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Frontend Developer
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href="https://github.com/ahmadmhd357"
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="omer.jpg"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Omer
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Frontend Developer
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href="https://github.com/Omer-Amr "
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+          >
+            <div
+              className="flex "
+            >
+              <div
+                className="h-96 w-72"
+              >
+                 
+                <img
+                  alt="member photo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                  src="dev.jpg"
+                />
+              </div>
+              <div
+                className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+              />
+              <div
+                className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+              >
+                <h1
+                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                >
+                  Osman
+                </h1>
+                <p
+                  className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                >
+                  Team member
+                </p>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    href=""
+                  >
+                    GitHup
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="flex justify-center md:pt-5 md:flex-row sm: flex-col text-center pt-3"
+        name="country-filter"
+      >
+        <div
+          className="max-md:hidden p-3 flex justify-center"
+        >
+          <button
+            className="rounded-full inline-block w-32 py-1 md:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300"
+            onClick={[Function]}
+          >
+            View All
+          </button>
+        </div>
+        <div
+          className="p-3 flex justify-center"
+        >
+          <button
+            className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+            onClick={[Function]}
+          >
+            about.ourteam.usa
+          </button>
+        </div>
+        <div
+          className="p-3 flex justify-center"
+        >
+          <button
+            className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+            onClick={[Function]}
+          >
+            about.ourteam.turkey
+          </button>
+        </div>
+        <div
+          className="p-3 flex justify-center"
+        >
+          <button
+            className="rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50"
+            onClick={[Function]}
+          >
+            about.ourteam.lebanon
+          </button>
+        </div>
+      </div>
+      <div
+        className="md:flex flex-wrap justify-center gap-5 max-md:hidden"
+        name="team-members"
+      >
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="Miray.jpg"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Miray
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Frontend Developer
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href="https://github.com/chiturca"
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="rabia.jpg"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Rabia
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Frontend Developer
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href=" https://github.com/ladycodeer"
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="Betül.png"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Batoul
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Frontend Developer
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href="https://github.com/batoulst"
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="Ahmad.jpg"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Ahmad
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Frontend Developer
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href="https://github.com/ahmadmhd357"
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="omer.jpg"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Omer
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Frontend Developer
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href="https://github.com/Omer-Amr "
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+        >
+          <div
+            className="flex "
+          >
+            <div
+              className="h-96 w-72"
+            >
+               
+              <img
+                alt="member photo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+                src="dev.jpg"
+              />
+            </div>
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"
+            />
+            <div
+              className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
+            >
+              <h1
+                className="font-dmserif text-3xl font-bold pb-8 text-white"
+              >
+                Osman
+              </h1>
+              <p
+                className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >
+                Team member
+              </p>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  href=""
+                >
+                  GitHup
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <div
+      className=" flex justify-between max-md:flex-col pt-12 gap-5"
+      name="main"
+    >
+      <div
+        className=" h-fit m-auto"
+        name="Photo"
+      >
+        <img
+          alt="world-map"
+          src="world-map.svg"
+        />
+      </div>
+      <div
+        className=" h-fit md:w-1/2 flex justify-center flex-col align-middle max-md:mt-5"
+        name="paragraphs"
+      >
+        <div
+          className=" "
+        >
+          <div
+            className="slick-slider slick-initialized"
+            dir="ltr"
+          >
+            <button
+              className="slick-arrow slick-prev"
+              data-role="none"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+               
+              Previous
+            </button>
+            <div
+              className="slick-list"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={null}
+              onMouseMove={null}
+              onMouseUp={[Function]}
+              onTouchCancel={null}
+              onTouchEnd={[Function]}
+              onTouchMove={null}
+              onTouchStart={[Function]}
+              style={Object {}}
+            >
+              <div
+                className="slick-track"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                    "WebkitTransition": "",
+                    "msTransform": "translateX(0px)",
+                    "opacity": 1,
+                    "transform": "translate3d(0px, 0px, 0px)",
+                    "transition": "",
+                  }
+                }
+              >
+                <div
+                  aria-hidden={true}
+                  className="slick-slide slick-cloned"
+                  data-index={-1}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text4
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Rabia,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={false}
+                  className="slick-slide slick-active slick-current"
+                  data-index={0}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text1
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Omer,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide"
+                  data-index={1}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text2
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Ahmad,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide"
+                  data-index={2}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text3
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Miray,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide"
+                  data-index={3}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text4
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Rabia,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide slick-cloned"
+                  data-index={4}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text1
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Omer,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide slick-cloned"
+                  data-index={5}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text2
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Ahmad,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide slick-cloned"
+                  data-index={6}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text3
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Miray,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={true}
+                  className="slick-slide slick-cloned"
+                  data-index={7}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div>
+                    <div>
+                      <p
+                        className=" max-md:text-lg max-md:text-center sm:text-xl text-base"
+                      >
+                        home.location.text4
+                      </p>
+                      <p
+                        className="pt-8 max-md:text-center"
+                      >
+                        Rabia,
+                        <br />
+                        home.location.team
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              className="slick-arrow slick-next"
+              data-role="none"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+               
+              Next
+            </button>
+            <ul
+              className="slick-dots"
+              onMouseEnter={null}
+              onMouseLeave={null}
+              onMouseOver={null}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+            >
+              <li
+                className="slick-active"
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  1
+                </button>
+              </li>
+              <li
+                className=""
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  2
+                </button>
+              </li>
+              <li
+                className=""
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  3
+                </button>
+              </li>
+              <li
+                className=""
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  4
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <div
+      className=" my-10"
+    >
+      <h1
+        className="text-center font-bold text-3xl"
+      >
+        home.partner
+      </h1>
+      <div
+        className="max-w-screen-xl m-auto flex-row p-7"
+      >
+        <div
+          className="slick-slider py-5 slick-initialized"
+          dir="ltr"
+        >
+          <button
+            className="slick-arrow slick-prev"
+            data-role="none"
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            type="button"
+          >
+             
+            Previous
+          </button>
+          <div
+            className="slick-list"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={null}
+            onMouseMove={null}
+            onMouseUp={[Function]}
+            onTouchCancel={null}
+            onTouchEnd={[Function]}
+            onTouchMove={null}
+            onTouchStart={[Function]}
+            style={Object {}}
+          >
+            <div
+              className="slick-track"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                  "WebkitTransition": "",
+                  "msTransform": "translateX(0px)",
+                  "opacity": 1,
+                  "transform": "translate3d(0px, 0px, 0px)",
+                  "transition": "",
+                }
+              }
+            >
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-6}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n3.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-5}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n4.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-4}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n5.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-3}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n6.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-2}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n7.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={-1}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n8.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active slick-current"
+                data-index={0}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n0.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active"
+                data-index={1}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n1.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active"
+                data-index={2}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n2.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active"
+                data-index={3}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n3.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active"
+                data-index={4}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n4.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={false}
+                className="slick-slide slick-active"
+                data-index={5}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n5.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={6}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n6.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={7}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n7.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide"
+                data-index={8}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n8.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={9}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n0.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={10}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n1.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={11}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n2.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={12}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n3.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={13}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n4.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={14}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n5.png"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={15}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n6.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={16}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n7.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden={true}
+                className="slick-slide slick-cloned"
+                data-index={17}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "width": 0,
+                  }
+                }
+                tabIndex="-1"
+              >
+                <div>
+                  <div
+                    className="lg:px-10 px-5 "
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={-1}
+                  >
+                    <img
+                      alt="partner-logo"
+                      className="w-[120px] m-auto"
+                      src="n8.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            className="slick-arrow slick-next"
+            data-role="none"
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+            type="button"
+          >
+             
+            Next
+          </button>
+          <ul
+            className="slick-dots"
+            onMouseEnter={null}
+            onMouseLeave={null}
+            onMouseOver={null}
+            style={
+              Object {
+                "display": "block",
+              }
+            }
+          >
+            <li
+              className="slick-active"
+            >
+              <button
+                onClick={[Function]}
+              >
+                1
+              </button>
+            </li>
+            <li
+              className=""
+            >
+              <button
+                onClick={[Function]}
+              >
+                2
+              </button>
+            </li>
+            <li
+              className=""
+            >
+              <button
+                onClick={[Function]}
+              >
+                3
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+  >
+    <div
+      className=""
+    >
+      <img
+        className=" m-auto "
+        src="story.jpg"
+      />
+    </div>
+    <div
+      className="text-center p-10 max-md:px-0 max-md:py-5"
+    >
+      <h4
+        className="font-normal text-3xl py-5 text-cyan-600"
+      >
+        about.story.h4
+      </h4>
+      <div
+        className="text-center  "
+      >
+        <p
+          className="text-zinc-400	font-light  sm:text-xl text-base "
+        >
+          about.story.p
+        </p>
+      </div>
+    </div>
+    <div
+      className="text-center"
+    >
+      <button
+        className="px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight
+ rounded-full shadow-md
+ ease-in duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-110"
+        onClick={[Function]}
+        type="button"
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+</div>
+`;

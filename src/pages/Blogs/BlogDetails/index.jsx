@@ -214,13 +214,7 @@ function BlogDetails() {
             <div className="flex justify-between">
               <div className="flex items-center ">
                 <p className="mr-2">by: </p>
-                <div className="">
-                  <img
-                    src={blogData ? blogData.author.authorPhoto : User}
-                    alt="author"
-                    className="w-12 h-12 rounded-full"
-                  />
-                </div>
+
                 {/* <Popover placement="right">
                   <PopoverHandler className="relative">
                     <div className=''>
@@ -269,7 +263,16 @@ function BlogDetails() {
                     </div>
                   </PopoverContent>
                 </Popover> */}
-                <Popover placement="center">
+                <Popover placement="top">
+                  <PopoverHandler className="relative">
+                    <div className="">
+                      <img
+                        src={blogData ? blogData.author.authorPhoto : User}
+                        alt="author"
+                        className="w-12 h-12 rounded-full"
+                      />
+                    </div>
+                  </PopoverHandler>
                   <PopoverHandler className="relative">
                     <div>
                       <h1 className="mx-1 text-cyan-600 font-medium">
