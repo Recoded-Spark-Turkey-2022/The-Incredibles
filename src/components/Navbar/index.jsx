@@ -94,7 +94,7 @@ function Navbar() {
   }
 
   return (
-    <div className="sticky top-0 bg-gradient-to-t from-white to-cyan-50 shadow-lg z-40">
+    <div className="sticky max-md:h-10 top-0 bg-gradient-to-t from-white to-cyan-50 shadow-lg z-40">
       <Container>
         <nav className=" md:mx-5 md:flex justify-between hidden">
           <Link to="/">
@@ -193,7 +193,7 @@ function Navbar() {
           }
         >
           <button type="button" onClick={() => setOpen(!open)}>
-            <img className="my-7 ml-4" src={open ? BackAroww : MenuB} />
+            <img className="my-2 ml-4" src={open ? BackAroww : MenuB} />
           </button>
           {open ? (
             <div>
@@ -296,7 +296,7 @@ function Navbar() {
               )}
             </div>
           ) : (
-            <h1 className="self-center mx-auto pr-4 text-3xl text-cyan-600 font-bold">
+            <h1 className="self-center mx-auto max-md:text-xl pr-4 text-3xl text-cyan-600 font-bold">
               {page}
             </h1>
           )}

@@ -15,7 +15,7 @@ const MEMBERS = [
     country: 'Turkey',
     id: 0,
     img: Miray,
-    link: "https://github.com/chiturca"
+    link: 'https://github.com/chiturca',
   },
   {
     name: 'Rabia',
@@ -23,7 +23,7 @@ const MEMBERS = [
     country: 'Turkey',
     id: 1,
     img: rabia,
-    link: " https://github.com/ladycodeer"
+    link: ' https://github.com/ladycodeer',
   },
   {
     name: 'Batoul',
@@ -31,7 +31,7 @@ const MEMBERS = [
     country: 'Turkey',
     id: 2,
     img: Betül,
-    link: "https://github.com/batoulst"
+    link: 'https://github.com/batoulst',
   },
   {
     name: 'Ahmad',
@@ -39,7 +39,7 @@ const MEMBERS = [
     country: 'Turkey',
     id: 3,
     img: Ahmad,
-    link: "https://github.com/ahmadmhd357"
+    link: 'https://github.com/ahmadmhd357',
   },
   {
     name: 'Omer',
@@ -47,7 +47,7 @@ const MEMBERS = [
     country: 'Turkey',
     id: 4,
     img: omer,
-    link: "https://github.com/Omer-Amr "
+    link: 'https://github.com/Omer-Amr ',
   },
   {
     name: 'Osman',
@@ -55,7 +55,7 @@ const MEMBERS = [
     country: 'USA',
     id: 5,
     img: dev,
-    link: ""
+    link: '',
   },
   // {
   //   name: 'Veli',
@@ -122,23 +122,28 @@ function OurTeam() {
         key={member.id}
         className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
       >
-        <div className='flex '>
-        <div className='h-96 w-72'>
-          {' '}
-          <img
-            src={member.img}
-            alt="member photo"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
-          />
+        <div className="flex ">
+          <div className="h-96 w-72">
+            {' '}
+            <img
+              src={member.img}
+              alt="member photo"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"></div>
+          <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg">
+            <h1 className="font-dmserif text-3xl font-bold pb-8 text-white">
+              {member.name}
+            </h1>
+            <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              {member.occupation}
+            </p>
+            <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60">
+              <a href={member.link}>GitHup</a>
+            </button>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"></div>
-        <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg">
-        <h1 className="font-dmserif text-3xl font-bold pb-8 text-white">{member.name}</h1>
-        <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">{member.occupation}</p>
-        <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"><a  href={member.link} >GitHup</a></button>
-      </div>
-      </div>
-
       </div>
     );
   });

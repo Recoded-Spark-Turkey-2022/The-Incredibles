@@ -105,8 +105,6 @@ function BlogsPage() {
     }
   }
 
-  
-
   return (
     <Container>
       <div className="">
