@@ -23,7 +23,7 @@ function Chats({ setOpen }) {
   }, [user.id]);
 
   return (
-    <div className=" overflow-auto scroll-smooth flex flex-col ">
+    <div className=" scroll-smooth flex flex-col ">
       {Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => {

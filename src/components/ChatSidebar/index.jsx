@@ -13,7 +13,7 @@ function ChatSidebar() {
   return (
     <>
       <div
-        className={` bg-slate-300 border-r w-1/4 max-md:min-w-full h-[90vh] max-md:${
+        className={` overflow-y-auto bg-slate-300 border-r w-1/4 max-md:min-w-full h-[90vh] max-md:${
           open ? '' : 'hidden'
         }`}
       >
