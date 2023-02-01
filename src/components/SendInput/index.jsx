@@ -61,7 +61,7 @@ function SendInput() {
 
   return (
     <>
-        {openEmoji?<span className= 'absolute bottom-20 ' >
+        {openEmoji?<span className= ' absolute bottom-20 ' >
           <Picker
             searchDisabled={true}
             onEmojiClick={(event, emojiObject) => {
@@ -78,7 +78,7 @@ function SendInput() {
             e.preventDefault(), alert('really!! who are you sending to?!!');
           }
         }}
-        className="bg-white absolute w-full flex justify-between gap-1 bottom-0 h-20 max-md :gap-0 py-4"
+        className="bg-white absolute w-full flex justify-between gap-1 bottom-0 h-20 max-md:gap-0 py-4"
       >
         <img
           onClick={() => setOpenEmoji(!openEmoji)}

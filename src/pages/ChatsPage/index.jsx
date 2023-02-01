@@ -6,7 +6,7 @@ function ChatsPage() {
   return (
     <Container>
       <div className="">
-        <div className="w-4/5 h-full mt-4 mx-auto relative shadow-xl border  max-md:my-5 rounded-xl  overflow-hidden flex">
+        <div className="w-4/5 h-full mt-4 mx-auto relative shadow-xl border max-md:w-full  max-md: rounded-xl  overflow-hidden flex">
           <ChatSidebar />
           <Chat />
         </div>

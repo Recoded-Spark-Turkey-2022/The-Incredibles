@@ -11,7 +11,7 @@ function Chat() {
   const { chatUser } = chat;
   if (chatUser.id) {
     return (
-      <div className=" drop-shadow-lg w-full max-md:min-w-full  relative overflow-hidden">
+      <div className=" drop-shadow-lg  h-[80vh] w-full max-md:h-[90vh] max-md:min-w-full  relative overflow-hidden">
         <div className="flex justify-between  items-center bg-white ">
           <div className="p-2 flex items-center ">
             <img

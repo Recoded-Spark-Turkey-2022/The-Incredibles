@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../UI/Button';
 import Logo from '../../assets/pics/navbar/logo.svg';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { auth } from '../../firebase/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +9,8 @@ import LanguageSelect from '../LanguageSelect';
 import Container from '../UI/Containerp0';
 
 function Footer() {
+  const loc = useLocation();
+  const [page, setPage] = useState('');
   const [t] = useTranslation();
   const [user] = useAuthState(auth);
   const links = [
@@ -32,13 +34,16 @@ function Footer() {
       {link.name}
     </NavLink>
   ));
+  useEffect(()=>{
+    loc.pathname == '/chat' ? setPage('Messages'):setPage('')
+  },[loc])
   return (
     <Container>
-      <div className="m-auto py-8 px-5 md:flex md:justify-between max-md:flex max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-5">
+      <div className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${page=='Messages'?'hidden':'flex'} max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}>
         <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
           <div>
             <Link to="/">
-              <img src={Logo} alt="logo" className="max-md:py-10" />
+              <img src={Logo} alt="logo" className="max-md:py-2" />
             </Link>
           </div>
           <div className=" text-xl align-middle">{linksToDisplay}</div>
