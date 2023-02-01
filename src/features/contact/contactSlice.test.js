@@ -59,4 +59,5 @@ describe('contactSlice', () => {
       });
     });
   });
-})
+});
+
