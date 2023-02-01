@@ -56,20 +56,22 @@ function SendInput() {
     });
     setImg(null);
     setText('');
-    setOpenEmoji(false)
+    setOpenEmoji(false);
   };
 
   return (
     <>
-        {openEmoji?<span className= ' absolute bottom-20 ' >
+      {openEmoji ? (
+        <span className=" absolute bottom-20 ">
           <Picker
             searchDisabled={true}
             onEmojiClick={(event, emojiObject) => {
               setText(text + emojiObject.emoji);
             }}
           />
-        </span>:null}
-      
+        </span>
+      ) : null}
+
       <form
         onSubmit={(e) => {
           if (chatId) {

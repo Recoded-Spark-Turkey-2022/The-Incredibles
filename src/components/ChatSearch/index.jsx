@@ -33,7 +33,7 @@ function ChatSearch({ setOpen }) {
         setTheUser(doc.data());
       });
     } catch {
-      (error) => alert('something went wrong')
+      (error) => alert('something went wrong');
     }
   };
 

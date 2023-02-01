@@ -34,12 +34,16 @@ function Footer() {
       {link.name}
     </NavLink>
   ));
-  useEffect(()=>{
-    loc.pathname == '/chat' ? setPage('Messages'):setPage('')
-  },[loc])
+  useEffect(() => {
+    loc.pathname == '/chat' ? setPage('Messages') : setPage('');
+  }, [loc]);
   return (
     <Container>
-      <div className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${page=='Messages'?'hidden':'flex'} max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}>
+      <div
+        className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${
+          page == 'Messages' ? 'hidden' : 'flex'
+        } max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}
+      >
         <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
           <div>
             <Link to="/">

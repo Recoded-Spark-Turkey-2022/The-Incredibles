@@ -12,7 +12,7 @@ function Button({ name, path }) {
         navigate(path);
         if (name === t('nav.signout')) {
           auth.signOut();
-          localStorage.removeItem('loggedIn')
+          localStorage.removeItem('loggedIn');
         }
       }}
       type="button"
