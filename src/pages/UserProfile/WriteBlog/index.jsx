@@ -93,7 +93,7 @@ function WriteBlog() {
   };
 
   return (
-    <div className="bg-[#70CDD6]">
+    <div className="bg-cyan-600">
       <Container>
         <form
           className="bg-white shadow-lg border rounded-3xl md:px-8 px-2 py-10 my-10 md:w-9/12 m-auto max-md:text-center"

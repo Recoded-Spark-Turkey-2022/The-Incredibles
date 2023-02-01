@@ -49,7 +49,7 @@ function MyAccount() {
     ],
   };
   return (
-    <section name="myaccount" className="bg-[#70CDD6]">
+    <section name="myaccount" className="bg-cyan-600">
       <Container>
         <div className="bg-white rounded-3xl shadow-lg m-auto my-10">
           <div className="relative flex max-md:flex-col max-md:items-center md:justify-around md:mx-24 lg:mx-72">
