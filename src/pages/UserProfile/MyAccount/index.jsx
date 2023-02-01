@@ -2,8 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
 import { selectUser } from '../../../features/users/usersSlice';
-import BlogCard from '../../../components/BlogCard';
-import MyAccountCard from '../../../components/MyAccountCard';
+import MyBlogCard from '../../../components/Cards/MyBlogCard';
+import MyAccountCard from '../../../components/Cards/MyAccountCard';
 import Container from '../../../components/UI/Container';
 import '../../../style/slick.css';
 import '../../../style/slick-theme.css';
@@ -20,7 +20,7 @@ function MyAccount() {
   );
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -33,17 +33,17 @@ function MyAccount() {
           slidesToScroll: 1,
           infinite: false,
           rows: 2,
-          dots: true,
+          dots: false,
         },
       },
       {
-        breakpoint: 450,
+        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: false,
           rows: 5,
-          dots: true,
+          dots: false,
         },
       },
     ],
@@ -78,10 +78,10 @@ function MyAccount() {
                   : user.displayName}
               </h2>
               <h2 className="p-2 font-bold text-lg text-cyan-600">
-                {user.biography ? user.biography : ''}
+                {user.biography ? user.biography : 'Biography Will Be Here'}
               </h2>
               <h2 className="p-2 font-bold text-lg text-cyan-600">
-                {user.location ? user.location : ''}
+                {user.location ? user.location : 'Location Will Be Here'}
               </h2>
             </div>
           </div>
@@ -105,12 +105,14 @@ function MyAccount() {
                     {blogs
                       .filter((blog) => blog.data.author.authorId === user.id)
                       .map((blog, i) => {
-                        return <BlogCard key={i} blog={blog} />;
+                        return <MyBlogCard key={i} blog={blog} />;
                       })}
                   </Slider>
                 </div>
               ) : (
+                <div className='flex justify-center mt-10'>
                 <MyAccountCard />
+                </div>
               )}
             </div>
           </div>

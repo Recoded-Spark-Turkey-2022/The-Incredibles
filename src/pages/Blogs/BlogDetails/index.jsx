@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import Container from '../../../components/UI/Container';
-import BlogCard from '../../../components/BlogCard';
-import Spinner from '../../../components/Spinner';
+import ReadAlsoCard from '../../../components/Cards/BlogCard';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
 import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';
 import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
@@ -415,7 +414,7 @@ function BlogDetails() {
               )
               .slice(0, 2)
               .map((blog, i) => (
-                <BlogCard key={i} blog={blog} />
+                <ReadAlsoCard key={i} blog={blog} />
               ))}
           </div>
         </div>

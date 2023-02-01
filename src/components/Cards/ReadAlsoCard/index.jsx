@@ -1,12 +1,10 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUser } from '../../features/users/usersSlice';
+import { selectUser } from '../../../features/users/usersSlice';
 import { parseISO, formatDistanceToNow } from 'date-fns';
-import { deleteBlog } from '../../features/blogs/blogsSlice';
-import NoMedia from '../../assets/pics/blogpage/nomedia.svg';
-import { TiDelete } from 'react-icons/ti';
+import NoMedia from '../../../assets/pics/blogpage/nomedia.svg';
 
+//read also part blog card does not contain delete function
 function BlogCard({ blog }) {
   const dispatch = useDispatch();
   const { blogs } = useSelector((state) => state.blogs);
@@ -23,9 +21,6 @@ function BlogCard({ blog }) {
   const handleClick = async () => {
     navigate('/blogs/blog', { state: { blog: blog } });
   };
-  const handleDelete = () => {
-    dispatch(deleteBlog(blog.id));
-  };
 
   return (
     <div
@@ -34,14 +29,6 @@ function BlogCard({ blog }) {
     >
       <div name="contentholder" className="h-2/3">
         <div name="media" className="h-3/4">
-          {thisBlog && user.id === thisBlog.data.author.authorId ? (
-            <div
-              className="  text-center absolute hover:bg-cyan-600/90"
-              onClick={handleDelete}
-            >
-              <TiDelete className="w-8 my-3 " />
-            </div>
-          ) : null}
           <img
             onClick={handleClick}
             className="m-auto w-full h-full"
