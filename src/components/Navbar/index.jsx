@@ -159,7 +159,7 @@ function Navbar() {
                           {({ active }) => (
                             <button
                               onClick={() => {
-                                auth.signOut(), navigate('/');
+                                auth.signOut(), navigate('/'),localStorage.removeItem('loggedIn');
                               }}
                               className={classNames(
                                 active
@@ -246,7 +246,7 @@ function Navbar() {
                               {({ active }) => (
                                 <button
                                   onClick={() => {
-                                    auth.signOut(), navigate('/');
+                                    auth.signOut(), navigate('/'),localStorage.removeItem('loggedIn');
                                   }}
                                   className={classNames(
                                     active
