@@ -9,7 +9,6 @@ import ChatMenu from '../../assets/pics/chatpage/chatMenu.svg';
 function Chat() {
   const { chat } = useSelector((state) => state);
   const { chatUser } = chat;
-  console.log(chatUser);
   if (chatUser.id) {
     return (
       <div className=" drop-shadow-lg w-full max-md:min-w-full  relative overflow-hidden">

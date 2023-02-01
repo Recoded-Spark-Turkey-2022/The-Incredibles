@@ -26,13 +26,6 @@ function Messages() {
     <div
       className=" bg-pink-100/20 w-full bottom-[5rem] absolute overflow-y-scroll"
       style={{
-        // backgroundImage:
-        //   'url(' +
-        //   'https://i.pinimg.com/236x/a8/e5/66/a8e5664d7887e8797f168fc2ed394319.jpg' +
-        //   ')',
-        // backgroundPosition: 'center',
-        // backgroundSize: 'cover',
-        // backgroundRepeat: 'no-repeat',
         height: 'calc(100% - 160px )',
       }}
     >
