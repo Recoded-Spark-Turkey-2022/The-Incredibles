@@ -20,7 +20,7 @@ function MyAccount() {
   );
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -49,18 +49,18 @@ function MyAccount() {
     ],
   };
   return (
-    <section name="myaccount" className="bg-[#70CDD6]">
+    <section name="myaccount" className="bg-cyan-600">
       <Container>
         <div className="bg-white rounded-3xl shadow-lg m-auto my-10">
-          <div className="relative flex max-md:flex-col max-md:items-center md:justify-around md:mx-24 lg:mx-72">
-            <div className="flex flex-col items-center md:pb-5 max-md:p-10 ease-in duration-300 hover:scale-110">
+          <div className="relative flex max-md:flex-col  border-b-2 items-center gap-10 pb-5 md:justify-around  md:mx-24 mx-10">
+            <div className="flex flex-col items-center  max-md:p-10 ease-in duration-300 hover:scale-110">
               <img
                 className="m-auto relative top-36 left-16 hover:cursor-pointer "
                 onClick={() => navigate('/myaccount/myaccountdetails')}
                 src={ChangePen}
               />
               <img
-                className="m-auto h-40 w-40 rounded-full hover:cursor-pointer"
+                className="m-auto h-40 w-40  rounded-full hover:cursor-pointer"
                 onClick={() => navigate('/myaccount/myaccountdetails')}
                 src={
                   user.photoURL
@@ -71,25 +71,25 @@ function MyAccount() {
                 }
               />
             </div>
-            <div className="lg:translate-y-10 md:translate-y-20 text-center">
-              <h2 className="p-2 font-bold text-lg text-cyan-600">
+            <div className=" text-center justify-center">
+              <h2 className="p-2 font-bold text-5xl text-cyan-600">
                 {user.username
                   ? user.username + ' ' + user.usersurname
                   : user.displayName}
               </h2>
-              <h2 className="p-2 font-bold text-lg text-cyan-600">
+              <h2 className="p-2  text-lg text-cyan-600">
                 {user.biography ? user.biography : 'Biography Will Be Here'}
               </h2>
-              <h2 className="p-2 font-bold text-lg text-cyan-600">
+              <h2 className="p-2  text-lg text-cyan-600">
                 {user.location ? user.location : 'Location Will Be Here'}
               </h2>
             </div>
           </div>
-          <div className=" m-auto pb-10">
+          <div className=" m-auto py-10">
             <div className="">
               {userBlogs[0] ? (
                 <div>
-                  <div className="m-auto pb-5">
+                  <div className="m-auto pb-10">
                     <button
                       onClick={() => navigate('/myaccount/write')}
                       className="flex bg-transparent text-cyan-600 leading-tight rounded-full
@@ -110,8 +110,8 @@ function MyAccount() {
                   </Slider>
                 </div>
               ) : (
-                <div className='flex justify-center mt-10'>
-                <MyAccountCard />
+                <div className="flex justify-center mt-10">
+                  <MyAccountCard />
                 </div>
               )}
             </div>

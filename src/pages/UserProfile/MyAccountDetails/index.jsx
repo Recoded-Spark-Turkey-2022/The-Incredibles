@@ -47,7 +47,7 @@ function MyAccountDetails() {
     });
   }
   return (
-    <section name="myaccountdetails" className="bg-[#70CDD6]">
+    <section name="myaccountdetails" className="bg-cyan-600">
       <Container>
         <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
           <form onSubmit={handleSubmit} className="">
@@ -92,7 +92,7 @@ function MyAccountDetails() {
                 ? user.username + ' ' + user.usersurname
                 : user.displayName}
             </h2>
-            <div name="formholder" className="lg:mx-48">
+            <div name="formholder" className="lg:mx-48 mx-5">
               <div
                 name="usernameholder"
                 className="flex lg:flex-row max-lg:flex-col justify-between w-full"
