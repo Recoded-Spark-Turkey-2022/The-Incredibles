@@ -52,10 +52,10 @@ function MyAccountDetails() {
         <div className="bg-white rounded-3xl shadow-lg md:w-9/12 m-auto my-10">
           <form onSubmit={handleSubmit} className="">
             <Popover placement="bottom">
-              <PopoverHandler className="relative max-lg:pt-10">
+              <PopoverHandler className="relative m-auto max-lg:pt-10">
                 <div className="flex flex-col items-center lg:pb-5">
                   <img
-                    className="m-auto relative top-36 left-16"
+                    className="m-auto relative top-36 left-16 ease-in duration-300 hover:scale-110 hover:cursor-pointer"
                     src={ChangePhoto}
                   />
                   <img

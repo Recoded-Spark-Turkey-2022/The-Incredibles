@@ -53,7 +53,7 @@ function MyAccount() {
       <Container>
         <div className="bg-white rounded-3xl shadow-lg m-auto my-10">
           <div className="relative flex max-md:flex-col max-md:items-center md:justify-around md:mx-24 lg:mx-72">
-            <div className="flex flex-col items-center md:pb-5 max-md:p-10">
+            <div className="flex flex-col items-center md:pb-5 max-md:p-10 ease-in duration-300 hover:scale-110">
               <img
                 className="m-auto relative top-36 left-16 hover:cursor-pointer "
                 onClick={() => navigate('/myaccount/myaccountdetails')}
@@ -93,7 +93,7 @@ function MyAccount() {
                     <button
                       onClick={() => navigate('/myaccount/write')}
                       className="flex bg-transparent text-cyan-600 leading-tight rounded-full
-                  ease-in duration-300 hover:scale-110 w hover:cursor-pointer m-auto"
+                  ease-in duration-300 hover:scale-110 hover:cursor-pointer m-auto"
                     >
                       <h1 className="text-xl font-bold font-mono italic">
                         Create A New Blog{' '}
