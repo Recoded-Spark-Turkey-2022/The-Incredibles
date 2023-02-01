@@ -1,62 +1,80 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from '../UI/Container';
+import Ahmad from '../../assets/pics/teampics/Ahmad.jpg';
+import Betül from '../../assets/pics/teampics/Betül.png';
+import Miray from '../../assets/pics/teampics/Miray.jpg';
+import omer from '../../assets/pics/teampics/omer.jpg';
+import rabia from '../../assets/pics/teampics/rabia.jpg';
+import dev from '../../assets/pics/teampics/dev.jpg';
 
 const MEMBERS = [
   {
     name: 'Miray',
-    occupation: 'Team member',
+    occupation: 'Frontend Developer',
     country: 'Turkey',
     id: 0,
+    img: Miray,
+    link: "https://github.com/chiturca"
   },
   {
     name: 'Rabia',
-    occupation: 'Team member',
+    occupation: 'Frontend Developer',
     country: 'Turkey',
     id: 1,
+    img: rabia,
+    link: " https://github.com/ladycodeer"
   },
   {
     name: 'Batoul',
-    occupation: 'Team member',
+    occupation: 'Frontend Developer',
     country: 'Turkey',
     id: 2,
+    img: Betül,
+    link: "https://github.com/batoulst"
   },
   {
     name: 'Ahmad',
-    occupation: 'Team member',
+    occupation: 'Frontend Developer',
     country: 'Turkey',
     id: 3,
+    img: Ahmad,
+    link: "https://github.com/ahmadmhd357"
   },
   {
     name: 'Omer',
-    occupation: 'Team member',
+    occupation: 'Frontend Developer',
     country: 'Turkey',
     id: 4,
+    img: omer,
+    link: "https://github.com/Omer-Amr "
   },
   {
     name: 'Osman',
     occupation: 'Team member',
     country: 'USA',
     id: 5,
+    img: dev,
+    link: ""
   },
-  {
-    name: 'Veli',
-    occupation: 'Team member',
-    country: 'USA',
-    id: 6,
-  },
-  {
-    name: 'Ali',
-    occupation: 'Team member',
-    country: 'Lebanon',
-    id: 7,
-  },
-  {
-    name: 'Can',
-    occupation: 'Team member',
-    country: 'Lebanon',
-    id: 8,
-  },
+  // {
+  //   name: 'Veli',
+  //   occupation: 'Team member',
+  //   country: 'USA',
+  //   id: 6,
+  // },
+  // {
+  //   name: 'Ali',
+  //   occupation: 'Team member',
+  //   country: 'Lebanon',
+  //   id: 7,
+  // },
+  // {
+  //   name: 'Can',
+  //   occupation: 'Team member',
+  //   country: 'Lebanon',
+  //   id: 8,
+  // },
 ];
 
 function OurTeam() {
@@ -74,7 +92,7 @@ function OurTeam() {
   const renderBtn = COUNTRIES.map((country) => {
     const className =
       country === category
-        ? 'rounded-full inline-block w-32 py-1 border-solid border-2 md:border-cyan-700 md:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300'
+        ? 'rounded-full inline-block w-32 py-1 md:bg-cyan-700 text-white font-bold text-xl sm: border-orange-300 sm: bg-orange-300'
         : 'rounded-full w-32 py-1 mx-1 text-xl font-bold md:text-cyan-700 md:bg-transparent sm: border-gray-400 sm: bg-gray-400 sm: text-gray-50';
     return (
       <div
@@ -100,13 +118,27 @@ function OurTeam() {
 
   const memberCard = memberFilter.map((member) => {
     return (
-      <div key={member.id} className="flex flex-col justify-start p-10 ">
-        <h3 className="md:text-xl md:p-2 font-bold text-cyan-700 sm:text-sm">
-          {member.name}
-        </h3>
-        <p className="md:text-xl md:p-2 text-cyan-700 sm: text-xs">
-          {member.occupation}
-        </p>
+      <div
+        key={member.id}
+        className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-lg flex "
+      >
+        <div className='flex '>
+        <div className='h-96 w-72'>
+          {' '}
+          <img
+            src={member.img}
+            alt="member photo"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70 rounded-lg"></div>
+        <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg">
+        <h1 className="font-dmserif text-3xl font-bold pb-8 text-white">{member.name}</h1>
+        <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">{member.occupation}</p>
+        <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"><a  href={member.link} >GitHup</a></button>
+      </div>
+      </div>
+
       </div>
     );
   });
