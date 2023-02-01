@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactPage renders correctly 1`] = `
+<div
+  className="container max-w-screen-xl m-auto p-10 max-md:px-5"
+>
+  <div
+    className=" flex flex-col md:flex-row-reverse justify-center items-center "
+  >
+    <div
+      className="basis-1/2 m-auto"
+    >
+      <img
+        className="m-auto hidden md:flex"
+        src="largeScreen.svg"
+      />
+      <img
+        className="m-auto md:hidden"
+        src="smallScreen.svg"
+      />
+    </div>
+    <div
+      className=" basis-1/2  text-center md:text-left m-auto md:max-w-xl"
+    >
+      <h1
+        className="pb-10 font-bold text-3xl text-cyan-600 md:text-6xl"
+      >
+        contactpage.get
+      </h1>
+      <p
+        className="text-zinc-400	font-light pb-2 "
+      >
+        contactpage.p
+      </p>
+      <form
+        className=" pl-1 flex flex-col gap-2 justify-center md:justify-start "
+        onSubmit={[Function]}
+      >
+        <label
+          className="text-zinc-400	font-light text-left "
+        >
+          contactpage.email
+        </label>
+        <input
+          className="border border-solid"
+          id="email"
+          onChange={[Function]}
+          placeholder="contactpage.emailplace"
+          type="email"
+        />
+        <textarea
+          className="border border-solid"
+          id="message"
+          onChange={[Function]}
+          placeholder="contactpage.massageplace"
+          rows={8}
+        />
+        <div>
+          <input
+            className="m-auto  h-10 px-10 py-2.5 bg-cyan-600 text-white font-medium text-l leading-tight 
+ rounded-full shadow-md
+ ease-in duration-300 hover:bg-purple-700 hover:shadow-md  hover:scale-110"
+            type="submit"
+            value="contactpage.send"
+          />
+        </div>
+        <div
+          className="flex flex-row py-9  justify-center md:justify-start "
+        >
+          <img
+            alt=""
+            className="p-2 m-auto md:m-0"
+            src="twitterIcon.svg"
+          />
+          <img
+            alt=""
+            className="p-2 m-auto md:m-0"
+            src="instaIcon.svg"
+          />
+          <img
+            alt=""
+            className="p-2 m-auto md:m-0"
+            src="faceIcon.svg"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

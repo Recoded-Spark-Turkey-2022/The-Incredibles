@@ -94,6 +94,7 @@ function ChatSearch({ setOpen }) {
         className="w-4 absolute right-2 top-3"
         src={SearchIcon}
         alt="search icon"
+        onClick={handleSearch}
       />
       <input
         onKeyDown={handleKey}
