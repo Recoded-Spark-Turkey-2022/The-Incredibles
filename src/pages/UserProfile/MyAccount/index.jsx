@@ -70,8 +70,8 @@ function MyAccount() {
                     : User
                 }
               />
-              </div>
-              <div className='lg:translate-y-10 md:translate-y-20 text-center'>
+            </div>
+            <div className="lg:translate-y-10 md:translate-y-20 text-center">
               <h2 className="p-2 font-bold text-lg text-cyan-600">
                 {user.username
                   ? user.username + ' ' + user.usersurname
@@ -86,26 +86,29 @@ function MyAccount() {
             </div>
           </div>
           <div className=" m-auto pb-10">
-            <div className='m-auto pb-5'>
-              <button
-                onClick={() => navigate('/myaccount/write')}
-                className="flex bg-transparent text-cyan-600 leading-tight rounded-full
-                ease-in duration-300 hover:scale-110 w hover:cursor-pointer m-auto"
-              >
-                <h1 className="text-xl font-bold font-mono italic">Create A New Blog </h1>
-              <img src={FeatherPen} className="w-10" />
-              </button>
-              
-            </div>
             <div className="">
               {userBlogs[0] ? (
-                <Slider {...settings}>
-                  {blogs
-                    .filter((blog) => blog.data.author.authorId === user.id)
-                    .map((blog, i) => {
-                      return <BlogCard key={i} blog={blog} />;
-                    })}
-                </Slider>
+                <div>
+                  <div className="m-auto pb-5">
+                    <button
+                      onClick={() => navigate('/myaccount/write')}
+                      className="flex bg-transparent text-cyan-600 leading-tight rounded-full
+                  ease-in duration-300 hover:scale-110 w hover:cursor-pointer m-auto"
+                    >
+                      <h1 className="text-xl font-bold font-mono italic">
+                        Create A New Blog{' '}
+                      </h1>
+                      <img src={FeatherPen} className="w-10" />
+                    </button>
+                  </div>
+                  <Slider {...settings}>
+                    {blogs
+                      .filter((blog) => blog.data.author.authorId === user.id)
+                      .map((blog, i) => {
+                        return <BlogCard key={i} blog={blog} />;
+                      })}
+                  </Slider>
+                </div>
               ) : (
                 <MyAccountCard />
               )}
