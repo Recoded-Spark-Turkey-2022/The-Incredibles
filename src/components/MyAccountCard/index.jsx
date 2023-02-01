@@ -2,7 +2,6 @@ import User from '../../assets/pics/profilepage/profilepic.svg';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/users/usersSlice';
-import createIcon from '../../assets/pics/profilepage/createIcon.png';
 
 function MyAccountCard() {
   const { user } = useSelector(selectUser);
@@ -12,12 +11,7 @@ function MyAccountCard() {
       onClick={() => navigate('/myaccount/write')}
       className="flex gap-5 m-auto justify-center my-5 hover:cursor-pointer "
     >
-      <div>
-        <h1 className="text-2xl font-bold ">Creat New Blog </h1>
-      </div>
-      <img src={createIcon} className="w-10" />
-
-      {/* <div className="transition-all duration-500 w-full h-1/4 bg-gray-200 border py-24 overflow-hidden group-hover:py-16"></div>
+      <div className="transition-all duration-500 w-full h-1/4 bg-gray-200 border py-24 overflow-hidden group-hover:py-16"></div>
       <div className="w-60 h-full flex flex-col justify-start p-2 mx-2 flex-wrap">
         <h1 className="font-extrabold text-lg p-1">Your Blog Title</h1>
         <p className="font-medium text-lg overflow-hidden transition-all duration-900 h-6 pb-2 group-hover:h-fit group-hover:overflow-visible">
@@ -41,7 +35,7 @@ function MyAccountCard() {
             {user.usersurname ? user.usersurname : ''}
           </h1>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
