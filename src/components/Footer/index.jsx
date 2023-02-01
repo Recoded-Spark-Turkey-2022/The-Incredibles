@@ -39,36 +39,34 @@ function Footer() {
   }, [loc]);
   return (
     <Container>
-          <div className='border-t-2 '>
-
-      <div
-        className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${
-          page == 'Messages' ? 'hidden' : 'flex'
-        } max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}
-      >
-        <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
-          <div>
-            <Link to="/">
-              <img src={Logo} alt="logo" className="max-md:py-2" />
-            </Link>
+      <div className="border-t-2 ">
+        <div
+          className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${
+            page == 'Messages' ? 'hidden' : 'flex'
+          } max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}
+        >
+          <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">
+            <div>
+              <Link to="/">
+                <img src={Logo} alt="logo" className="max-md:py-2" />
+              </Link>
+            </div>
+            <div className=" text-xl align-middle">{linksToDisplay}</div>
           </div>
-          <div className=" text-xl align-middle">{linksToDisplay}</div>
-        </div>
-        <div className=" md:flex md:flex-row   max-md:flex  max-md:items-center max-md:justify-center gap-5">
-          <div className="">
-            {user ? (
-              <Button name={t('nav.signout')} path="/" />
-            ) : (
-              <Button name={t('nav.signup')} path="/signup" />
-            )}
-          </div>
+          <div className=" md:flex md:flex-row   max-md:flex  max-md:items-center max-md:justify-center gap-5">
+            <div className="">
+              {user ? (
+                <Button name={t('nav.signout')} path="/" />
+              ) : (
+                <Button name={t('nav.signup')} path="/signup" />
+              )}
+            </div>
 
-          <LanguageSelect />
+            <LanguageSelect />
+          </div>
         </div>
-      </div>
       </div>
     </Container>
-  
   );
 }
 

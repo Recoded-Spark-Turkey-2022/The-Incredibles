@@ -110,8 +110,8 @@ function MyAccount() {
                   </Slider>
                 </div>
               ) : (
-                <div className='flex justify-center mt-10'>
-                <MyAccountCard />
+                <div className="flex justify-center mt-10">
+                  <MyAccountCard />
                 </div>
               )}
             </div>

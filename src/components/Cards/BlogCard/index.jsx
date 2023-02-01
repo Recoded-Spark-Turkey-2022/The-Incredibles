@@ -48,12 +48,11 @@ function BlogCard({ blog }) {
           </div>
         </div>
       </div>
-      
+
       <div
         name="author"
         className=" m-auto px-3 translate-y-6 transform-gpu h-1/3"
       >
-
         <p className="text-sm">{timeAgo}</p>
         <p className="text-cyan-600 text-sm">
           {thisBlog && thisBlog.data.likedUsers.length} likes

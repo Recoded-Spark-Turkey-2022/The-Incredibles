@@ -96,7 +96,7 @@ function MyAccountDetails() {
               <div
                 name="usernameholder"
                 className="flex lg:flex-row max-lg:flex-col justify-between w-full"
-               >
+              >
                 <div name="username" className="flex flex-col">
                   <label
                     className="block text-sky-500 text-sm font-bold mb-2"
