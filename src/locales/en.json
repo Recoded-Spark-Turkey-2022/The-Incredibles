@@ -82,6 +82,9 @@
       "location": "Location:",
       "save": "Save",
       "cancle": "Cancel"
+    },
+    "create": {
+      "creatNB":"Create A New Blog"
     }
   },
   "message": {
