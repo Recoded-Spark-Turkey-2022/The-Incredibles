@@ -70,7 +70,7 @@ export const deleteBlog = createAsyncThunk(
 );
 
 const initialState = {
-  loading: true,
+  loading: false,
   blogs: [],
   error: '',
 };
@@ -88,7 +88,7 @@ const blogsSlice = createSlice({
       state.error = '';
     });
     builder.addCase(getBlogs.rejected, (state, action) => {
-      state.loading = true;
+      state.loading = false;
       state.error = action.error.message;
       state.blogs = [];
     });
