@@ -8,9 +8,9 @@ function OurStory() {
     <section name="story" className="">
       <div
         name="hero-image"
-        className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center pt-5  "
+        className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center  "
       >
-        <img src={AboutPHero} className="" />
+        <img className="pt-20 " src={AboutPHero} />
       </div>
       <Container>
         <div
