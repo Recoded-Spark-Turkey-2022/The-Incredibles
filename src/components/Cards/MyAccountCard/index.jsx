@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../../features/users/usersSlice';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 
-//empty card for new signed in user
+
 function MyAccountCard() {
   const { user } = useSelector(selectUser);
   const navigate = useNavigate();

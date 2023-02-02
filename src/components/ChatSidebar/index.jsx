@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Chats from '../Chats';
 import ChatSearch from '../ChatSearch';
 import { useSelector } from 'react-redux';
@@ -6,9 +6,8 @@ import { selectUser } from '../../features/users/usersSlice';
 import ChatsIcon from '../../assets/pics/chatpage/chats.svg';
 import Back from '../../assets/pics/navbar/back.svg';
 
-function ChatSidebar() {
+function ChatSidebar({ open, setOpen }) {
   const { user } = useSelector(selectUser);
-  const [open, setOpen] = useState(true);
 
   return (
     <>

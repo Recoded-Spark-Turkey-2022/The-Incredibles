@@ -98,7 +98,7 @@ function MyAccount() {
                   ease-in duration-300 hover:scale-110 hover:cursor-pointer m-auto"
                     >
                       <h1 className="text-xl font-bold font-mono italic">
-                      {t('myaccount.create.creatNB')}{' '}
+                        {t('myaccount.create.creatNB')}{' '}
                       </h1>
                       <img src={FeatherPen} className="w-10" />
                     </button>

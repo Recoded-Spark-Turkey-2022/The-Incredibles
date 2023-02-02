@@ -20,8 +20,6 @@ function Stories() {
           <p className="pt-5 text-white sm:text-xl text-base max-md:text-center md:w-1/2 ">
             {t('home.latest.p1')}
           </p>
-          {/* not: I am thinking of making the next div as component.. so we can always render the latest story.
-        I will check it after the redux and the blog page is ready */}
         </div>
 
         <div className="m-auto flex flex-row  justify-around  max-md:flex-col max-md:justify-start py-5 mb-20 ">

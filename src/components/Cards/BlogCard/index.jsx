@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectUser } from '../../../features/users/usersSlice';
+import { useSelector} from 'react-redux';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import NoMedia from '../../../assets/pics/blogpage/nomedia.svg';
 
-//big blog card does not contain delete function
+
 function BlogCard({ blog }) {
-  const dispatch = useDispatch();
+  
   const { blogs } = useSelector((state) => state.blogs);
-  const { user } = useSelector(selectUser);
+  
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   let timeAgo = '';
   if (blog.data.date) {

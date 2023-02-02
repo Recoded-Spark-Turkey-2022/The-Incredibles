@@ -16,7 +16,6 @@ import BackAroww from '../../assets/pics/navbar/backArrow.svg';
 import UserPhoto from '../../assets/pics/profilepage/profilepic.svg';
 
 function Navbar() {
-  //update page name in nav bar depending on changing the path
   const loc = useLocation();
   const [page, setPage] = useState('');
   useEffect(() => {
@@ -159,7 +158,9 @@ function Navbar() {
                           {({ active }) => (
                             <button
                               onClick={() => {
-                                auth.signOut(), navigate('/');
+                                auth.signOut(),
+                                  navigate('/'),
+                                  localStorage.removeItem('loggedIn');
                               }}
                               className={classNames(
                                 active
@@ -246,7 +247,9 @@ function Navbar() {
                               {({ active }) => (
                                 <button
                                   onClick={() => {
-                                    auth.signOut(), navigate('/');
+                                    auth.signOut(),
+                                      navigate('/'),
+                                      localStorage.removeItem('loggedIn');
                                   }}
                                   className={classNames(
                                     active

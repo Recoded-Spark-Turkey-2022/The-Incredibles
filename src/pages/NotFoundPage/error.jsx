@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import Container from '../../components/UI/Container';
 import Button from '../../components/UI/Button';
 import Error from '../../assets/pics/404/error.svg';
