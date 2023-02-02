@@ -10,7 +10,7 @@ import Container from '../UI/Containerp0';
 
 function Footer() {
   const loc = useLocation();
-  const [page, setPage] = useState('');
+  const [page, setPage] = useState(null);
   const [t] = useTranslation();
   const [user] = useAuthState(auth);
   const links = [
@@ -35,14 +35,50 @@ function Footer() {
     </NavLink>
   ));
   useEffect(() => {
-    loc.pathname == '/chat' ? setPage('Messages') : setPage('');
+    switch (loc.pathname) {
+      case '/signin':
+        setPage('Sign in');
+        break;
+      case '/signup':
+        setPage('Sign up');
+        break;
+      case '/myaccount':
+        setPage('My account');
+        break;
+      case '/myaccount/myaccountdetails':
+        setPage('My account details');
+        break;
+      case '/myaccount/write':
+        setPage('Write');
+        break;
+      case '/about':
+        setPage('About');
+        break;
+      case '/blogs':
+        setPage('Blogs');
+        break;
+      case '/blogs/blog':
+        setPage('Blogs');
+        break;
+      case '/chat':
+        setPage('Messages');
+        break;
+      case '/contact':
+        setPage('Contact');
+        break;
+      case '/':
+        setPage('Home');
+        break;
+      default:
+        setPage(null);
+    }
   }, [loc]);
   return (
     <Container>
       <div className="border-t-2 ">
         <div
-          className={`mx-auto  py-2 px-5 md:flex md:justify-between max-md:${
-            page == 'Messages' ? 'hidden' : 'flex'
+          className={`mx-auto  py-2 px-5 md:${!page?"hidden":'flex'} md:justify-between max-md:${
+             page =='Messages'  ? 'hidden' : 'flex'
           } max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}
         >
           <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">

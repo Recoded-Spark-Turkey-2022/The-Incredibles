@@ -41,6 +41,9 @@ function Navbar() {
       case '/blogs':
         setPage('Blogs');
         break;
+      case '/blogs/blog':
+        setPage('Blogs');
+        break;
       case '/chat':
         setPage('Messages');
         break;
@@ -51,7 +54,7 @@ function Navbar() {
         setPage('Home');
         break;
       default:
-        setPage('');
+        setPage(null);
     }
     open ? setOpen(!open) : null;
   }, [loc]);
@@ -93,7 +96,7 @@ function Navbar() {
   }
 
   return (
-    <div className="sticky max-md:h-10 top-0 bg-gradient-to-t from-white to-cyan-50 shadow-lg z-40">
+    <div className={`${!page ?'hidden':'sticky'} max-md:h-10 top-0 bg-gradient-to-t from-white to-cyan-50 shadow-lg z-40 `}>
       <Container>
         <nav className=" md:mx-5 md:flex justify-between hidden">
           <Link to="/">
