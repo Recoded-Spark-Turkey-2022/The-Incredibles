@@ -5,11 +5,11 @@ import Error from '../../assets/pics/404/error.svg';
 
 function NotFoundPage() {
   return (
-    <section name="404" className="bg-emerald-50 lg:h-full max-lg:h-screen">
-      <Container>
+    <section name="404" className="bg-emerald-50  py-8 lg:h-full max-lg:h-screen">
+
         <div
           name="error-body"
-          className="flex items-center lg:h-screen sm:justify-between max-lg:flex-col-reverse max-lg:text-center md:px-5"
+          className="h-24 min-h-full flex items-center lg:h-screen sm:justify-between max-lg:flex-col-reverse max-lg:text-center md:px-5"
         >
           <div name="navhome" className="items-center lg:w-1/2 max-lg:w-full">
             <div className="relative lg:top-32 lg:left-40 max-lg:top-32 max-lg:right-8 ">
@@ -39,7 +39,7 @@ function NotFoundPage() {
             <Button name="Contact us" path="/contact" />
           </div>
         </div>
-      </Container>
+
     </section>
   );
 }
