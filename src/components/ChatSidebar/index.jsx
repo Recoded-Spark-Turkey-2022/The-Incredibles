@@ -31,7 +31,6 @@ function ChatSidebar({ open, setOpen }) {
                 ? user.username + ' ' + user.usersurname
                 : user.displayName}
             </p>
-            <p className="text-gray-700 text-center">{user.biography}</p>
           </div>
         </div>
         <ChatSearch setOpen={setOpen} />
