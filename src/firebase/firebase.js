@@ -16,10 +16,10 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-export const app = initializeApp(firebaseConfig); 
-export const db = getFirestore(app); 
-export const auth = getAuth(); 
-export const googleProvider = new GoogleAuthProvider(); 
-export const faceBookProvider = new FacebookAuthProvider(); 
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth();
+export const googleProvider = new GoogleAuthProvider();
+export const faceBookProvider = new FacebookAuthProvider();
 
-export const storage = getStorage(app); 
+export const storage = getStorage(app);

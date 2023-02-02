@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router';
 import Container from '../../../components/UI/Container';
-import ReadAlsoCard from '../../../components/Cards/BlogCard';
+import BlogCard from '../../../components/Cards/BlogCard';
 import BlogImage from '../../../assets/pics/blogpage/blogImage.svg';
 import FaceIcon from '../../../assets/pics/blogpage/faceb.svg';
 import TweterIcon from '../../../assets/pics/blogpage/tweter.svg';
@@ -17,10 +17,7 @@ import {
   PopoverContent,
 } from '@material-tailwind/react';
 import { selectUser } from '../../../features/users/usersSlice';
-import {
-  addLikes,
-  addUnlikes,
-} from '../../../features/blogs/blogsSlice';
+import { addLikes, addUnlikes } from '../../../features/blogs/blogsSlice';
 import { getChat } from '../../../features/chat/chatSlice';
 import { db } from '../../../firebase/firebase';
 import {
@@ -142,8 +139,6 @@ function BlogDetails() {
       alert('not found');
     }
   };
-
-  
 
   return (
     <Container>
@@ -360,7 +355,7 @@ function BlogDetails() {
               )
               .slice(0, 2)
               .map((blog, i) => (
-                <ReadAlsoCard key={i} blog={blog} />
+                <BlogCard key={i} blog={blog} />
               ))}
           </div>
         </div>
