@@ -6,7 +6,7 @@ import { deleteBlog } from '../../../features/blogs/blogsSlice';
 import NoMedia from '../../../assets/pics/blogpage/nomedia.svg';
 import { TiDelete } from 'react-icons/ti';
 
-//user blog card contains delete function
+
 function MyBlogCard({ blog }) {
   const dispatch = useDispatch();
   const { blogs } = useSelector((state) => state.blogs);

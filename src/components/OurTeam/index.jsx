@@ -57,24 +57,7 @@ const MEMBERS = [
     img: dev,
     link: '',
   },
-  // {
-  //   name: 'Veli',
-  //   occupation: 'Team member',
-  //   country: 'USA',
-  //   id: 6,
-  // },
-  // {
-  //   name: 'Ali',
-  //   occupation: 'Team member',
-  //   country: 'Lebanon',
-  //   id: 7,
-  // },
-  // {
-  //   name: 'Can',
-  //   occupation: 'Team member',
-  //   country: 'Lebanon',
-  //   id: 8,
-  // },
+  
 ];
 
 function OurTeam() {
@@ -86,8 +69,8 @@ function OurTeam() {
     t('about.ourteam.lebanon'),
   ];
 
-  const [category, setCategory] = useState('View All'); //This state is for country filter because both md and sm screens have country filter
-  const [show, setShow] = useState(true); //This part is for sm screen and is a toggle button for text to open and close.
+  const [category, setCategory] = useState('View All'); 
+  const [show, setShow] = useState(true); 
 
   const renderBtn = COUNTRIES.map((country) => {
     const className =
@@ -109,12 +92,10 @@ function OurTeam() {
       </div>
     );
   });
-  //this part is for making buttons to filter team members based on their countries. They are active both in md and sm screens
-
+  
   const memberFilter = MEMBERS.filter(
     (member) => category === 'View All' || category === member.country
   );
-  //This is the filter part that has been used with the buttons above.
 
   const memberCard = memberFilter.map((member) => {
     return (
@@ -147,7 +128,6 @@ function OurTeam() {
       </div>
     );
   });
-  //This part is for rendering each one of the team members based on their names and occupation.
 
   return (
     <section name="team" className="bg-emerald-50 ">
@@ -173,7 +153,6 @@ function OurTeam() {
           <div className="grid grid-cols-2 md:hidden">
             {show ? memberCard : null}
           </div>
-          {/* this button is not active in md screens */}
         </div>
         <div
           name="country-filter"

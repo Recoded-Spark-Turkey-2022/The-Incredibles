@@ -4,7 +4,6 @@ import Location from '../../components/LocationSection';
 import Partners from '../../components/Partners';
 import UserStory from '../../components/UserStory';
 
-// This component will be used as a container for About Page Components
 
 function AboutPage() {
   return (

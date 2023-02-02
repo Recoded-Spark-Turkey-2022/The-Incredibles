@@ -10,7 +10,7 @@ const initialState = {
 
 export const writeContact = createAsyncThunk(
   'contact/writeContact',
-  async (arg, thunkAPI) => {
+  async (arg) => {
     await setDoc(
       doc(db, 'contactMessages', arg.email),
       { messages: arrayUnion(arg.message) },
@@ -23,14 +23,14 @@ const contactSlice = createSlice({
   name: 'contact',
   initialState,
   extraReducers: {
-    [writeContact.pending]: (state, action) => {
+    [writeContact.pending]: (state) => {
       state.uploading = true;
     },
-    [writeContact.fulfilled]: (state, action) => {
+    [writeContact.fulfilled]: (state) => {
       state.uploading = false;
       alert('Your message submitted successfully');
     },
-    [writeContact.rejected]: (state, action) => {
+    [writeContact.rejected]: (state) => {
       state.uploading = false;
     },
   },

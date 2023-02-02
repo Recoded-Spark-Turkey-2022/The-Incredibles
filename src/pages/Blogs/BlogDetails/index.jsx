@@ -10,7 +10,7 @@ import LinkedInIcon from '../../../assets/pics/blogpage/linkedin.svg';
 import WhatsappIcon from '../../../assets/pics/blogpage/whatsapp.svg';
 import User from '../../../assets/pics/profilepage/profilepic.svg';
 import Chat from '../../../assets/pics/blogpage/chat.svg';
-import { FcLikePlaceholder, FcDislike, FcLike } from 'react-icons/fc';
+import { FcDislike, FcLike } from 'react-icons/fc';
 import {
   Popover,
   PopoverHandler,
@@ -20,7 +20,6 @@ import { selectUser } from '../../../features/users/usersSlice';
 import {
   addLikes,
   addUnlikes,
-  loadingState,
 } from '../../../features/blogs/blogsSlice';
 import { getChat } from '../../../features/chat/chatSlice';
 import { db } from '../../../firebase/firebase';
@@ -32,7 +31,6 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import {
-  EmailShareButton,
   FacebookShareButton,
   TwitterShareButton,
   LinkedinShareButton,
@@ -42,7 +40,6 @@ import {
 function BlogDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const loading = useSelector(loadingState);
   const { blogs } = useSelector((state) => state.blogs);
   const { user } = useSelector(selectUser);
   const location = useLocation();
@@ -146,9 +143,7 @@ function BlogDetails() {
     }
   };
 
-  // if (loading) {
-  //   return <Spinner />;
-  // }
+  
 
   return (
     <Container>

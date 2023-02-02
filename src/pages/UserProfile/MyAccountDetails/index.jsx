@@ -78,7 +78,8 @@ function MyAccountDetails() {
                   className="block text-sky-500 text-sm font-bold mb-2"
                   htmlFor="userphoto"
                 >
-                  {t('myaccount.myaccountdetails.uploadphoto')}                </label>
+                  {t('myaccount.myaccountdetails.uploadphoto')}{' '}
+                </label>
                 <input
                   type="file"
                   id="photo"
