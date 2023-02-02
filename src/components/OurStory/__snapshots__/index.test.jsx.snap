@@ -6,11 +6,11 @@ exports[`OurStory renders correctly 1`] = `
   name="story"
 >
   <div
-    className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center pt-5  "
+    className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center  "
     name="hero-image"
   >
     <img
-      className=""
+      className="pt-20 "
       src="support.png"
     />
   </div>

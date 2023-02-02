@@ -9,11 +9,11 @@ exports[`AboutPage renders correctly 1`] = `
     name="story"
   >
     <div
-      className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center pt-5  "
+      className="bg-emerald-50 max-w-2xl m-auto flex justify-center items-center  "
       name="hero-image"
     >
       <img
-        className=""
+        className="pt-20 "
         src="support.png"
       />
     </div>
@@ -75,7 +75,7 @@ exports[`AboutPage renders correctly 1`] = `
                 <img
                   alt="member photo"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
-                  src="Miray.jpg"
+                  src="mirayySon.png"
                 />
               </div>
               <div
@@ -85,7 +85,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Miray
                 </h1>
@@ -95,12 +95,23 @@ exports[`AboutPage renders correctly 1`] = `
                   Frontend Developer
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href="https://github.com/chiturca"
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                    href="https://www.linkedin.com/in/miraysonmez/"
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -129,7 +140,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Rabia
                 </h1>
@@ -139,12 +150,23 @@ exports[`AboutPage renders correctly 1`] = `
                   Frontend Developer
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href=" https://github.com/ladycodeer"
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                    href="https://www.linkedin.com/in/rabia-kahya/"
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -173,7 +195,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Batoul
                 </h1>
@@ -183,12 +205,23 @@ exports[`AboutPage renders correctly 1`] = `
                   Frontend Developer
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href="https://github.com/batoulst"
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                    href="https://www.linkedin.com/in/batoul-sudki-tenbakjy/"
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -217,7 +250,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Ahmad
                 </h1>
@@ -227,12 +260,23 @@ exports[`AboutPage renders correctly 1`] = `
                   Frontend Developer
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href="https://github.com/ahmadmhd357"
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                    href="https://www.linkedin.com/in/ahmad-hariri-3a8157240/"
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -261,7 +305,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Omer
                 </h1>
@@ -271,12 +315,23 @@ exports[`AboutPage renders correctly 1`] = `
                   Frontend Developer
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href="https://github.com/Omer-Amr "
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                    href=""
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -305,7 +360,7 @@ exports[`AboutPage renders correctly 1`] = `
                 className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
               >
                 <h1
-                  className="font-dmserif text-3xl font-bold pb-8 text-white"
+                  className="font-dmserif text-3xl font-bold  text-white"
                 >
                   Osman
                 </h1>
@@ -315,12 +370,22 @@ exports[`AboutPage renders correctly 1`] = `
                   Team member
                 </p>
                 <button
-                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                  className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
                 >
                   <a
+                    className="font-com text-bold"
                     href=""
                   >
                     GitHup
+                  </a>
+                </button>
+                <button
+                  className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                >
+                  <a
+                    className="font-com text-bold"
+                  >
+                    Linkedin
                   </a>
                 </button>
               </div>
@@ -390,7 +455,7 @@ exports[`AboutPage renders correctly 1`] = `
               <img
                 alt="member photo"
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 rounded-lg"
-                src="Miray.jpg"
+                src="mirayySon.png"
               />
             </div>
             <div
@@ -400,7 +465,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Miray
               </h1>
@@ -410,12 +475,23 @@ exports[`AboutPage renders correctly 1`] = `
                 Frontend Developer
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href="https://github.com/chiturca"
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                  href="https://www.linkedin.com/in/miraysonmez/"
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
@@ -444,7 +520,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Rabia
               </h1>
@@ -454,12 +530,23 @@ exports[`AboutPage renders correctly 1`] = `
                 Frontend Developer
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href=" https://github.com/ladycodeer"
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                  href="https://www.linkedin.com/in/rabia-kahya/"
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
@@ -488,7 +575,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Batoul
               </h1>
@@ -498,12 +585,23 @@ exports[`AboutPage renders correctly 1`] = `
                 Frontend Developer
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href="https://github.com/batoulst"
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                  href="https://www.linkedin.com/in/batoul-sudki-tenbakjy/"
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
@@ -532,7 +630,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Ahmad
               </h1>
@@ -542,12 +640,23 @@ exports[`AboutPage renders correctly 1`] = `
                 Frontend Developer
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href="https://github.com/ahmadmhd357"
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                  href="https://www.linkedin.com/in/ahmad-hariri-3a8157240/"
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
@@ -576,7 +685,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Omer
               </h1>
@@ -586,12 +695,23 @@ exports[`AboutPage renders correctly 1`] = `
                 Frontend Developer
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href="https://github.com/Omer-Amr "
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                  href=""
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
@@ -620,7 +740,7 @@ exports[`AboutPage renders correctly 1`] = `
               className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0 rounded-lg"
             >
               <h1
-                className="font-dmserif text-3xl font-bold pb-8 text-white"
+                className="font-dmserif text-3xl font-bold  text-white"
               >
                 Osman
               </h1>
@@ -630,12 +750,22 @@ exports[`AboutPage renders correctly 1`] = `
                 Team member
               </p>
               <button
-                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+                className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2"
               >
                 <a
+                  className="font-com text-bold"
                   href=""
                 >
                   GitHup
+                </a>
+              </button>
+              <button
+                className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60"
+              >
+                <a
+                  className="font-com text-bold"
+                >
+                  Linkedin
                 </a>
               </button>
             </div>
