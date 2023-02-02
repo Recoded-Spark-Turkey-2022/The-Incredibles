@@ -77,8 +77,10 @@ function Footer() {
     <Container>
       <div className="border-t-2 ">
         <div
-          className={`mx-auto  py-2 px-5 md:${!page?"hidden":'flex'} md:justify-between max-md:${
-             page =='Messages'  ? 'hidden' : 'flex'
+          className={`mx-auto  py-2 px-5 md:${
+            !page ? 'hidden' : 'flex'
+          } md:justify-between max-md:${
+            page == 'Messages' ? 'hidden' : !page ? 'hidden' : 'flex'
           } max-md:flex-col max-md:items-center max-md:justify-center items-center	 gap-4`}
         >
           <div className=" md:flex md:flex-row max-md:flex max-md:flex-col max-md:items-center max-md:justify-center ">

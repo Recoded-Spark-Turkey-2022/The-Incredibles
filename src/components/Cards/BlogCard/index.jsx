@@ -1,13 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import NoMedia from '../../../assets/pics/blogpage/nomedia.svg';
 
-
 function BlogCard({ blog }) {
-  
   const { blogs } = useSelector((state) => state.blogs);
-  
+
   const thisBlog = blogs && blogs.find((el) => el.id === blog.id);
   let timeAgo = '';
   if (blog.data.date) {

@@ -62,7 +62,6 @@ const MEMBERS = [
     img: dev,
     link: '',
   },
-  
 ];
 
 function OurTeam() {
@@ -74,8 +73,8 @@ function OurTeam() {
     t('about.ourteam.lebanon'),
   ];
 
-  const [category, setCategory] = useState('View All'); 
-  const [show, setShow] = useState(true); 
+  const [category, setCategory] = useState('View All');
+  const [show, setShow] = useState(true);
 
   const renderBtn = COUNTRIES.map((country) => {
     const className =
@@ -97,7 +96,7 @@ function OurTeam() {
       </div>
     );
   });
-  
+
   const memberFilter = MEMBERS.filter(
     (member) => category === 'View All' || category === member.country
   );

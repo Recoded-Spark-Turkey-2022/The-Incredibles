@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import NoMedia from '../../../assets/pics/blogpage/nomedia.svg';
-
 
 function BlogCard({ blog }) {
   const { blogs } = useSelector((state) => state.blogs);

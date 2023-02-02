@@ -17,10 +17,7 @@ import {
   PopoverContent,
 } from '@material-tailwind/react';
 import { selectUser } from '../../../features/users/usersSlice';
-import {
-  addLikes,
-  addUnlikes,
-} from '../../../features/blogs/blogsSlice';
+import { addLikes, addUnlikes } from '../../../features/blogs/blogsSlice';
 import { getChat } from '../../../features/chat/chatSlice';
 import { db } from '../../../firebase/firebase';
 import {
@@ -142,8 +139,6 @@ function BlogDetails() {
       alert('not found');
     }
   };
-
-  
 
   return (
     <Container>

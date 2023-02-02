@@ -4,7 +4,6 @@ import Location from '../../components/LocationSection';
 import Partners from '../../components/Partners';
 import UserStory from '../../components/UserStory';
 
-
 function AboutPage() {
   return (
     <div name="aboutpage">
