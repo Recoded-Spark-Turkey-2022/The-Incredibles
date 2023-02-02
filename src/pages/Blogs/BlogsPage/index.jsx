@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
 import BlogCard from '../../../components/Cards/BlogCard';
-import ReadAlsoCard from '../../../components/Cards/BlogCard';
 import Container from '../../../components/UI/Container';
 import SearchIcon from '../../../assets/pics/blogpage/searchIcon.svg';
 import '../../../style/slick.css';
@@ -150,7 +149,7 @@ function BlogsPage() {
           <div className="">
             <Slider {...sSettings}>
               {blogsToDisplay.slice(7).map((blog, i) => (
-                <ReadAlsoCard key={i} blog={blog} />
+                <BlogCard key={i} blog={blog} />
               ))}
             </Slider>
           </div>
