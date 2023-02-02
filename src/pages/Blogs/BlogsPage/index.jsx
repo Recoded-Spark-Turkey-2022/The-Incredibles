@@ -66,16 +66,6 @@ function BlogsPage() {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          rows: 2,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 450,
-        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,

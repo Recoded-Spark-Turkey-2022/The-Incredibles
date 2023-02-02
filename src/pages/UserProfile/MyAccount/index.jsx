@@ -28,18 +28,9 @@ function MyAccount() {
     slidesToScroll: 3,
     rows: 1,
     responsive: [
+      
       {
         breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: false,
-          rows: 2,
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 500,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
