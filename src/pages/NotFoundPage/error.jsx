@@ -16,7 +16,7 @@ function NotFoundPage() {
           <div className="md:relative max-md:absolute lg:top-32 lg:left-40 max-lg:top-8 max-lg:right-8">
             <Button name="Home" path="/" />
           </div>
-          <div className="flex justify-center max-md:hidden">
+          <div className="md:flex md:justify-center max-md:hidden">
             <img src={Error} alt="404" className="h-full" />
           </div>
         </div>
