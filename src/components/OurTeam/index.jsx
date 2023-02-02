@@ -16,7 +16,7 @@ const MEMBERS = [
     id: 0,
     img: Miray,
     link: 'https://github.com/chiturca',
-    link2:"https://www.linkedin.com/in/miraysonmez/"
+    link2: 'https://www.linkedin.com/in/miraysonmez/',
   },
   {
     name: 'Rabia',
@@ -25,7 +25,7 @@ const MEMBERS = [
     id: 1,
     img: rabia,
     link: ' https://github.com/ladycodeer',
-    link2:"https://www.linkedin.com/in/rabia-kahya/",
+    link2: 'https://www.linkedin.com/in/rabia-kahya/',
   },
   {
     name: 'Batoul',
@@ -34,7 +34,7 @@ const MEMBERS = [
     id: 2,
     img: Betül,
     link: 'https://github.com/batoulst',
-    link2:"https://www.linkedin.com/in/batoul-sudki-tenbakjy/",
+    link2: 'https://www.linkedin.com/in/batoul-sudki-tenbakjy/',
   },
   {
     name: 'Ahmad',
@@ -43,7 +43,7 @@ const MEMBERS = [
     id: 3,
     img: Ahmad,
     link: 'https://github.com/ahmadmhd357',
-    link2:"https://www.linkedin.com/in/ahmad-hariri-3a8157240/",
+    link2: 'https://www.linkedin.com/in/ahmad-hariri-3a8157240/',
   },
   {
     name: 'Omer',
@@ -52,7 +52,7 @@ const MEMBERS = [
     id: 4,
     img: omer,
     link: 'https://github.com/Omer-Amr ',
-    link2:"",
+    link2: '',
   },
   {
     name: 'Osman',
@@ -145,10 +145,14 @@ function OurTeam() {
               {member.occupation}
             </p>
             <button className=" pr-5 pl-5 rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60 mb-2">
-              <a className='font-com text-bold' href={member.link}>GitHup</a>
+              <a className="font-com text-bold" href={member.link}>
+                GitHup
+              </a>
             </button>
             <button className="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-bold capitalize text-white shadow shadow-black/60">
-              <a className='font-com text-bold' href={member.link2}>Linkedin</a>
+              <a className="font-com text-bold" href={member.link2}>
+                Linkedin
+              </a>
             </button>
           </div>
         </div>
